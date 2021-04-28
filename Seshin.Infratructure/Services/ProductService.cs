@@ -4,13 +4,13 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Seshin.Core.Models;
-using Seshin.Core.Utility;
-using Seshin.Infrastructure;
-using Seshin.Infrastructure.Repositories;
-using Seshin.Infratructure.Dtos.Product;
+using SpadStore.Core.Models;
+using SpadStore.Core.Utility;
+using SpadStore.Infrastructure;
+using SpadStore.Infrastructure.Repositories;
+using SpadStore.Infratructure.Dtos.Product;
 
-namespace Seshin.Infratructure.Services
+namespace SpadStore.Infratructure.Services
 {
     public class ProductService
     {

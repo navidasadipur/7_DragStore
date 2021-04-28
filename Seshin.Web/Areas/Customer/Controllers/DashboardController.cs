@@ -5,12 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Seshin.Core.Models;
-using Seshin.Core.Utility;
-using Seshin.Infrastructure.Repositories;
-using Seshin.Web.ViewModels;
+using SpadStore.Core.Models;
+using SpadStore.Core.Utility;
+using SpadStore.Infrastructure.Repositories;
+using SpadStore.Web.ViewModels;
 
-namespace Seshin.Web.Areas.Customer.Controllers
+namespace SpadStore.Web.Areas.Customer.Controllers
 {
     [Authorize(Roles = "Customer")]
     public class DashboardController : Controller

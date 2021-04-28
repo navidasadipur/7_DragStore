@@ -1,4 +1,4 @@
-﻿using Seshin.Core.Models;
+﻿using SpadStore.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -7,13 +7,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using Microsoft.AspNet.Identity;
-using Seshin.Infrastructure.Filters;
+using SpadStore.Infrastructure.Filters;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
 using System.Net.Mail;
-using Seshin.Infrastructure;
+using SpadStore.Infrastructure;
 
-namespace Seshin.Infratructure.Repositories
+namespace SpadStore.Infratructure.Repositories
 {
     public class EmailSubscriptionRepository : IDisposable
     {

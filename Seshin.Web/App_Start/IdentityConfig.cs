@@ -10,9 +10,9 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using Seshin.Web.Models;
+using SpadStore.Web.Models;
 
-namespace Seshin.Web
+namespace SpadStore.Web
 {
     public class EmailService : IIdentityMessageService
     {

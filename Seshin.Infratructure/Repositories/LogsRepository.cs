@@ -1,4 +1,4 @@
-﻿using Seshin.Core.Models;
+﻿using SpadStore.Core.Models;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Seshin.Infrastructure.Repositories
+namespace SpadStore.Infrastructure.Repositories
 {
     public class LogsRepository
     {

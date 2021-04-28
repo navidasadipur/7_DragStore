@@ -4,10 +4,10 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Seshin.Core.Models;
-using Seshin.Core.Utility;
+using SpadStore.Core.Models;
+using SpadStore.Core.Utility;
 
-namespace Seshin.Infrastructure.Repositories
+namespace SpadStore.Infrastructure.Repositories
 {
     public class ProductsRepository : BaseRepository<Product, MyDbContext>
     {

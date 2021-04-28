@@ -1,5 +1,5 @@
-﻿using Seshin.Core.Models;
-using Seshin.Infrastructure.Filters;
+﻿using SpadStore.Core.Models;
+using SpadStore.Infrastructure.Filters;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Microsoft.AspNet.Identity;
 
-namespace Seshin.Infrastructure.Repositories
+namespace SpadStore.Infrastructure.Repositories
 {
     public class ArticlesRepository : BaseRepository<Article, MyDbContext>
     {

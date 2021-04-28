@@ -1,4 +1,4 @@
-namespace Seshin.Infratructure.Migrations
+namespace SpadStore.Infratructure.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

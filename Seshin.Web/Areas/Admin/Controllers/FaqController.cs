@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Net;
 using System.Web.Mvc;
-using Seshin.Core.Models;
-using Seshin.Infrastructure.Repositories;
+using SpadStore.Core.Models;
+using SpadStore.Infrastructure.Repositories;
 
-namespace Seshin.Web.Areas.Admin.Controllers
+namespace SpadStore.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class FaqController : Controller

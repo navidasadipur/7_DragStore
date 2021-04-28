@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace Seshin.Web.Areas.Customer
+namespace SpadStore.Web.Areas.Customer
 {
     public class CustomerAreaRegistration : AreaRegistration 
     {

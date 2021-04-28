@@ -5,11 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
-using Seshin.Core.Models;
-using Seshin.Web.Models;
+using SpadStore.Core.Models;
+using SpadStore.Web.Models;
 using Microsoft.AspNet.Identity;
 
-namespace Seshin.Web.Providers
+namespace SpadStore.Web.Providers
 {
     public class CustomerAuthorize : AuthorizeAttribute
     {

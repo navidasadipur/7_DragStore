@@ -1,4 +1,4 @@
-﻿using Seshin.Core.Utility;
+﻿using SpadStore.Core.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Seshin.Core.Models
+namespace SpadStore.Core.Models
 {
     public class EPayment : IBaseEntity
     {

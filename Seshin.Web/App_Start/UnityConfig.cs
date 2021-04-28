@@ -1,12 +1,12 @@
 using System.Web.Mvc;
-using Seshin.Infrastructure.Repositories;
-using Seshin.Web.Areas.Customer.Controllers;
-using Seshin.Web.Controllers;
+using SpadStore.Infrastructure.Repositories;
+using SpadStore.Web.Areas.Customer.Controllers;
+using SpadStore.Web.Controllers;
 using Unity;
 using Unity.Injection;
 using Unity.Mvc5;
 
-namespace Seshin.Web
+namespace SpadStore.Web
 {
     public static class UnityConfig
     {

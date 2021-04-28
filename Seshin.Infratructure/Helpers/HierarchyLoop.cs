@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Seshin.Core.Models;
+using SpadStore.Core.Models;
 
-namespace Seshin.Infrastructure.Helpers
+namespace SpadStore.Infrastructure.Helpers
 {
     public static class HierarchyLoop
     {

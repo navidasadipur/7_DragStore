@@ -7,13 +7,13 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Kendo.Mvc;
-using Seshin.Core.Models;
-using Seshin.Core.Utility;
-using Seshin.Infrastructure.Helpers;
-using Seshin.Infrastructure.Repositories;
-using Seshin.Web.ViewModels;
+using SpadStore.Core.Models;
+using SpadStore.Core.Utility;
+using SpadStore.Infrastructure.Helpers;
+using SpadStore.Infrastructure.Repositories;
+using SpadStore.Web.ViewModels;
 
-namespace Seshin.Web.Areas.Admin.Controllers
+namespace SpadStore.Web.Areas.Admin.Controllers
 {
     public class ProductsController : Controller
     {

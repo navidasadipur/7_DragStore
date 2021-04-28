@@ -1,4 +1,4 @@
-﻿using Seshin.Core.Models;
+﻿using SpadStore.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Seshin.Web.ViewModels
+namespace SpadStore.Web.ViewModels
 {
     public class ArticleFormViewModel
     {

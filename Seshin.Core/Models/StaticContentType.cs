@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Seshin.Core.Models
+namespace SpadStore.Core.Models
 {
     public class StaticContentType : IBaseEntity
     {

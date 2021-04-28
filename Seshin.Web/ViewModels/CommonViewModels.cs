@@ -5,9 +5,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using Newtonsoft.Json.Linq;
-using Seshin.Core.Models;
+using SpadStore.Core.Models;
 
-namespace Seshin.Web.ViewModels
+namespace SpadStore.Web.ViewModels
 {
     public class DiscountFormViewModel
     {

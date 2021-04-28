@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Seshin.Core.Models;
+using SpadStore.Core.Models;
 
-namespace Seshin.Web.ViewModels
+namespace SpadStore.Web.ViewModels
 {
     public class NewProductGroupViewModel
     {

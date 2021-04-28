@@ -4,9 +4,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Seshin.Core.Models;
+using SpadStore.Core.Models;
 
-namespace Seshin.Infrastructure.Repositories
+namespace SpadStore.Infrastructure.Repositories
 {
     public class FeaturesRepository : BaseRepository<Feature, MyDbContext>
     {

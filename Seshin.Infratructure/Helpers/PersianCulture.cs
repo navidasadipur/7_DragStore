@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
 
-namespace Seshin.Infrastructure.Helpers
+namespace SpadStore.Infrastructure.Helpers
 {
 
     public class PersianCulture : CultureInfo

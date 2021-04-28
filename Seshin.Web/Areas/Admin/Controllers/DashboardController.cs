@@ -1,5 +1,5 @@
-﻿using Seshin.Infrastructure;
-using Seshin.Infrastructure.Helpers;
+﻿using SpadStore.Infrastructure;
+using SpadStore.Infrastructure.Helpers;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -7,9 +7,9 @@ using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Seshin.Web.ViewModels;
+using SpadStore.Web.ViewModels;
 
-namespace Seshin.Web.Areas.Admin.Controllers
+namespace SpadStore.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class DashboardController : Controller

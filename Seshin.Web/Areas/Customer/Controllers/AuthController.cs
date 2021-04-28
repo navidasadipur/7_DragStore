@@ -9,13 +9,13 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Newtonsoft.Json;
-using Seshin.Core.Models;
-using Seshin.Core.Utility;
-using Seshin.Infrastructure.Repositories;
-using Seshin.Web.Providers;
-using Seshin.Web.ViewModels;
+using SpadStore.Core.Models;
+using SpadStore.Core.Utility;
+using SpadStore.Infrastructure.Repositories;
+using SpadStore.Web.Providers;
+using SpadStore.Web.ViewModels;
 
-namespace Seshin.Web.Areas.Customer.Controllers
+namespace SpadStore.Web.Areas.Customer.Controllers
 {
     [Authorize]
     public class AuthController : Controller
@@ -163,7 +163,7 @@ namespace Seshin.Web.Areas.Customer.Controllers
                 user = _userRepo.GetUserByPhoneNumber(model.Phone);
                 if (user != null)
                 {
-                    Seshin.Web.Models.ApplicationUser appUser = new Seshin.Web.Models.ApplicationUser();
+                    SpadStore.Web.Models.ApplicationUser appUser = new SpadStore.Web.Models.ApplicationUser();
                     appUser.UserName = user.UserName;
                     appUser.Id = user.Id;
                     await SignInManager.SignInAsync(appUser, true, true);

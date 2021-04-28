@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 
-namespace Seshin.Infrastructure.Helpers
+namespace SpadStore.Infrastructure.Helpers
 {
     public static class CheckImageClass
     {

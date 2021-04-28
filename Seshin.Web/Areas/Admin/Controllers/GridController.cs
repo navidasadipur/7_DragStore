@@ -8,10 +8,10 @@ using System.Web;
 using System.Web.Mvc;
 using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
-using Seshin.Core.Models;
-using Seshin.Infrastructure;
+using SpadStore.Core.Models;
+using SpadStore.Infrastructure;
 
-namespace Seshin.Web.Areas.Admin.Controllers
+namespace SpadStore.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class GridController : Controller

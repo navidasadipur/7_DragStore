@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Seshin.Core.Utility
+namespace SpadStore.Core.Utility
 {
     public enum DiscountType
     {

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Seshin.Infrastructure;
-using Seshin.Infrastructure.Repositories;
-using Seshin.Core.Models;
+using SpadStore.Infrastructure;
+using SpadStore.Infrastructure.Repositories;
+using SpadStore.Core.Models;
 
-namespace Seshin.Infratructure.Repositories
+namespace SpadStore.Infratructure.Repositories
 {
     public class ShoppingRepository
     {

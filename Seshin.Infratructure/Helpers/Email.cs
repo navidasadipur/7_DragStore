@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Web;
 
 
-namespace Seshin.Infrastructure.Helpers
+namespace SpadStore.Infrastructure.Helpers
 {
     public class Email
     {

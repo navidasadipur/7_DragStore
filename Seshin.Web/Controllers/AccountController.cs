@@ -8,13 +8,13 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Seshin.Web.ViewModels;
-using Seshin.Infrastructure.Helpers;
-using Seshin.Infrastructure.Repositories;
+using SpadStore.Web.ViewModels;
+using SpadStore.Infrastructure.Helpers;
+using SpadStore.Infrastructure.Repositories;
 
 
 
-namespace Seshin.Web.Controllers
+namespace SpadStore.Web.Controllers
 {
     [Authorize]
     public class AccountController : Controller
@@ -170,7 +170,7 @@ namespace Seshin.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new Seshin.Web.Models.ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new SpadStore.Web.Models.ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -241,8 +241,8 @@ namespace Seshin.Web.Controllers
                    protocol: Request.Url.Scheme);
                 var emailForm = new Email.EmailFormModel
                 {
-                    FromName = "Seshin Way Team",
-                    FromEmail = "SeshinWayTeam@gmail.com",
+                    FromName = "SpadStore Way Team",
+                    FromEmail = "SpadStoreWayTeam@gmail.com",
                     ToEmail = user.Email,
                     Subject = "بروز رسانی رمز عبور",
                     Message = "با استفاده از این <a href=\"" + callbackUrl + "\">لینک</a> میتوانید رمز عبور خود را بروز رسانی کنید"
@@ -401,7 +401,7 @@ namespace Seshin.Web.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new Seshin.Web.Models.ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new SpadStore.Web.Models.ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

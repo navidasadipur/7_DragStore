@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Seshin.Core.Models
+namespace SpadStore.Core.Models
 {
     public class UserRole : IdentityUserRole
     {

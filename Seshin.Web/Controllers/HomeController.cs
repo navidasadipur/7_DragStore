@@ -4,14 +4,14 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Seshin.Core.Models;
-using Seshin.Core.Utility;
-using Seshin.Infrastructure.Repositories;
-using Seshin.Infratructure.Repositories;
-using Seshin.Infratructure.Services;
-using Seshin.Web.ViewModels;
+using SpadStore.Core.Models;
+using SpadStore.Core.Utility;
+using SpadStore.Infrastructure.Repositories;
+using SpadStore.Infratructure.Repositories;
+using SpadStore.Infratructure.Services;
+using SpadStore.Web.ViewModels;
 
-namespace Seshin.Web.Controllers
+namespace SpadStore.Web.Controllers
 {
     public class HomeController : Controller
     {

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Seshin.Core.Models;
-using Seshin.Infrastructure;
-using Seshin.Infrastructure.Repositories;
+using SpadStore.Core.Models;
+using SpadStore.Infrastructure;
+using SpadStore.Infrastructure.Repositories;
 
-namespace Seshin.Infratructure.Repositories
+namespace SpadStore.Infratructure.Repositories
 {
     public class TestimonialsRepository : BaseRepository<Testimonial, MyDbContext>
     {

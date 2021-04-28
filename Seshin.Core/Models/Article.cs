@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Web.Mvc;
 
-namespace Seshin.Core.Models
+namespace SpadStore.Core.Models
 {
     public class Article : IBaseEntity
     {

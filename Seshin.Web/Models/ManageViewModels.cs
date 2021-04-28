@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace Seshin.Web.Models
+namespace SpadStore.Web.Models
 {
     public class IndexViewModel
     {

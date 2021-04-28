@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using Seshin.Core.Models;
-using Seshin.Core.Utility;
-using Seshin.Infratructure.Dtos.Product;
+using SpadStore.Core.Models;
+using SpadStore.Core.Utility;
+using SpadStore.Infratructure.Dtos.Product;
 
-namespace Seshin.Web.ViewModels
+namespace SpadStore.Web.ViewModels
 {
     public class NewProductViewModel
     {

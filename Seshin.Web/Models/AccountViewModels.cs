@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Seshin.Web.Models
+namespace SpadStore.Web.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

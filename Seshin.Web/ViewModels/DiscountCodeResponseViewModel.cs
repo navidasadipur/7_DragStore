@@ -1,11 +1,11 @@
-﻿using Seshin.Core.Models;
-using Seshin.Infrastructure.Repositories;
+﻿using SpadStore.Core.Models;
+using SpadStore.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Seshin.Web.ViewModels
+namespace SpadStore.Web.ViewModels
 {
     public class DiscountCodeResponseViewModel
     {

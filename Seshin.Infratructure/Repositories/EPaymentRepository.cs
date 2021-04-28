@@ -1,13 +1,13 @@
-﻿using Seshin.Core.Models;
-using Seshin.Infrastructure;
-using Seshin.Infrastructure.Repositories;
+﻿using SpadStore.Core.Models;
+using SpadStore.Infrastructure;
+using SpadStore.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Seshin.Infrastructure.Repositories
+namespace SpadStore.Infrastructure.Repositories
 {
     public class EPaymentRepository : BaseRepository<EPayment, MyDbContext>
     {

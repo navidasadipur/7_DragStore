@@ -6,9 +6,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Seshin.Web.ViewModels;
+using SpadStore.Web.ViewModels;
 
-namespace Seshin.Web.Controllers
+namespace SpadStore.Web.Controllers
 {
     [Authorize]
     public class ManageController : Controller

@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Text;
-using Seshin.Core.Models;
+using SpadStore.Core.Models;
 
-namespace Seshin.Infrastructure
+namespace SpadStore.Infrastructure
 {
     public class MyDbContext : IdentityDbContext<User>
     {

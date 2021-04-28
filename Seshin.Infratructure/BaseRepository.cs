@@ -1,7 +1,7 @@
-﻿using Seshin.Core;
-using Seshin.Core.Models;
-using Seshin.Infrastructure.Filters;
-using Seshin.Infrastructure.Repositories;
+﻿using SpadStore.Core;
+using SpadStore.Core.Models;
+using SpadStore.Infrastructure.Filters;
+using SpadStore.Infrastructure.Repositories;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Seshin.Infrastructure
+namespace SpadStore.Infrastructure
 {
     public interface IBaseRepository<T> where T : class, IBaseEntity
     {

@@ -1,9 +1,9 @@
-﻿using Seshin.Core.Models;
-using Seshin.Core.Utility;
-using Seshin.Infrastructure.Repositories;
-using Seshin.Infratructure.Services;
-using Seshin.Web.Providers;
-using Seshin.Web.ViewModels;
+﻿using SpadStore.Core.Models;
+using SpadStore.Core.Utility;
+using SpadStore.Infrastructure.Repositories;
+using SpadStore.Infratructure.Services;
+using SpadStore.Web.Providers;
+using SpadStore.Web.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -11,7 +11,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Seshin.Web.Controllers
+namespace SpadStore.Web.Controllers
 {
     public class PaymentController : Controller
     {

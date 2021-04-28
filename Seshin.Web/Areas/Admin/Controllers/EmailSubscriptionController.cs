@@ -1,11 +1,11 @@
-﻿using Seshin.Infratructure.Repositories;
+﻿using SpadStore.Infratructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Seshin.Web.Areas.Admin.Controllers
+namespace SpadStore.Web.Areas.Admin.Controllers
 {
     public class EmailSubscriptionController : Controller
     {

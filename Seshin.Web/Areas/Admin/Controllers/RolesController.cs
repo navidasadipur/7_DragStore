@@ -6,13 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Seshin.Infrastructure;
+using SpadStore.Infrastructure;
 using Kendo.Mvc.UI;
-using Seshin.Web.ViewModels;
-using Seshin.Core.Models;
+using SpadStore.Web.ViewModels;
+using SpadStore.Core.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace Seshin.Web.Areas.Admin.Controllers
+namespace SpadStore.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class RolesController : Controller

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Seshin.Core.Models
+namespace SpadStore.Core.Models
 {
     public class RoleMetadata
     {

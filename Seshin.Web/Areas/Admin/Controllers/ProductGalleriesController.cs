@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Seshin.Infrastructure.Repositories;
-using Seshin.Core.Models;
+using SpadStore.Infrastructure.Repositories;
+using SpadStore.Core.Models;
 using System.Net;
 using System.IO;
-using Seshin.Infrastructure.Helpers;
+using SpadStore.Infrastructure.Helpers;
 
-namespace Seshin.Web.Areas.Admin.Controllers
+namespace SpadStore.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class ProductGalleriesController : Controller

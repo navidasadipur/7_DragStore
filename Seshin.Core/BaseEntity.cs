@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Seshin.Core
+namespace SpadStore.Core
 {
     public interface IBaseEntity
     {

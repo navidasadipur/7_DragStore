@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace Seshin.Core.Models
+namespace SpadStore.Core.Models
 {
     public class Product : IBaseEntity
     {

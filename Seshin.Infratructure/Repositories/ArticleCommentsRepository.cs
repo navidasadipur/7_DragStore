@@ -1,4 +1,4 @@
-﻿using Seshin.Core.Models;
+﻿using SpadStore.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Web;
 using Microsoft.AspNet.Identity;
 using System.Data.Entity;
 
-namespace Seshin.Infrastructure.Repositories
+namespace SpadStore.Infrastructure.Repositories
 {
     public class ArticleCommentsRepository : BaseRepository<ArticleComment, MyDbContext>
     {

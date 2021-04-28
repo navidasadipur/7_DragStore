@@ -1,14 +1,14 @@
-﻿using Seshin.Core.Models;
-using Seshin.Core.Utility;
-using Seshin.Infrastructure.Repositories;
-using Seshin.Web.ViewModels;
+﻿using SpadStore.Core.Models;
+using SpadStore.Core.Utility;
+using SpadStore.Infrastructure.Repositories;
+using SpadStore.Web.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Seshin.Web.Controllers
+namespace SpadStore.Web.Controllers
 {
     public class BlogController : Controller
     {

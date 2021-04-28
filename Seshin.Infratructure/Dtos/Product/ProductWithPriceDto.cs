@@ -1,4 +1,4 @@
-﻿using Seshin.Core.Utility;
+﻿using SpadStore.Core.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Seshin.Infratructure.Dtos.Product
+namespace SpadStore.Infratructure.Dtos.Product
 {
     public class ProductGridDto
     {

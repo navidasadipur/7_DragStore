@@ -1,6 +1,6 @@
-﻿using Seshin.Core.Models;
-using Seshin.Infrastructure;
-using Seshin.Infrastructure.Repositories;
+﻿using SpadStore.Core.Models;
+using SpadStore.Infrastructure;
+using SpadStore.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -12,7 +12,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 
-namespace Seshin.Web.Providers
+namespace SpadStore.Web.Providers
 {
     public class PasargadGatewayRepository : IBankGatewayRepository
     {

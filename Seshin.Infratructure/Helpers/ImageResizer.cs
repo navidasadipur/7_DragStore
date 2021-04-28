@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace Seshin.Infrastructure.Helpers
+namespace SpadStore.Infrastructure.Helpers
 {
     public class ImageResizer
     {

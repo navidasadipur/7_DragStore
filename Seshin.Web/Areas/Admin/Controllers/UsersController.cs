@@ -8,16 +8,16 @@ using System.Net;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Seshin.Core.Models;
-using Seshin.Infrastructure;
-using Seshin.Infrastructure.Helpers;
-using Seshin.Infrastructure.Repositories;
-using Seshin.Web.ViewModels;
+using SpadStore.Core.Models;
+using SpadStore.Infrastructure;
+using SpadStore.Infrastructure.Helpers;
+using SpadStore.Infrastructure.Repositories;
+using SpadStore.Web.ViewModels;
 using Kendo.Mvc.UI;
 using Microsoft.AspNet.Identity;
-using Seshin.Core.Utility;
+using SpadStore.Core.Utility;
 
-namespace Seshin.Web.Areas.Admin.Controllers
+namespace SpadStore.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class UsersController : Controller

@@ -5,11 +5,11 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Seshin.Core.Models;
-using Seshin.Infrastructure.Helpers;
-using Seshin.Infrastructure.Repositories;
+using SpadStore.Core.Models;
+using SpadStore.Infrastructure.Helpers;
+using SpadStore.Infrastructure.Repositories;
 
-namespace Seshin.Web.Areas.Admin.Controllers
+namespace SpadStore.Web.Areas.Admin.Controllers
 {
     public class OffersController : Controller
     {

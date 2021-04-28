@@ -1,4 +1,4 @@
-﻿//using Seshin.Core.Models;
+﻿//using SpadStore.Core.Models;
 //using System;
 //using System.Collections.Generic;
 //using System.Data.Entity;
@@ -7,7 +7,7 @@
 //using System.Text;
 //using System.Threading.Tasks;
 
-//namespace Seshin.Infrastructure.Repositories
+//namespace SpadStore.Infrastructure.Repositories
 //{
 //   public class StaticContentsRepository : BaseRepository<StaticContentType, MyDbContext>
 //    {

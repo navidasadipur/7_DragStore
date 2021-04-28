@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Seshin.Infrastructure.Filters
+namespace SpadStore.Infrastructure.Filters
 {
     public class PaginationFilter
     {

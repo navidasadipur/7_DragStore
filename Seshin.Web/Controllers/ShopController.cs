@@ -6,16 +6,16 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json.Linq;
-using Seshin.Core.Models;
-using Seshin.Core.Utility;
-using Seshin.Infrastructure.Repositories;
-using Seshin.Infratructure.Dtos.Product;
-using Seshin.Infratructure.Repositories;
-using Seshin.Infratructure.Services;
-using Seshin.Web.Providers;
-using Seshin.Web.ViewModels;
+using SpadStore.Core.Models;
+using SpadStore.Core.Utility;
+using SpadStore.Infrastructure.Repositories;
+using SpadStore.Infratructure.Dtos.Product;
+using SpadStore.Infratructure.Repositories;
+using SpadStore.Infratructure.Services;
+using SpadStore.Web.Providers;
+using SpadStore.Web.ViewModels;
 
-namespace Seshin.Web.Controllers
+namespace SpadStore.Web.Controllers
 {
     public class ShopController : Controller
     {

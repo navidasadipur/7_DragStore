@@ -1,4 +1,4 @@
-﻿@using Seshin.Core.Models
+﻿@using SpadStore.Core.Models
 @{
     var mainProductGroups = ViewBag.MainProductGroups as List<ProductGroup>;
 }
@@ -25,7 +25,7 @@
 
                                 <a class="navbar-brand page-scroll" href="/">
                                     <!--<img alt="Logo" src="/Content/client/images/logo.png">-->
-                                    <span class="text-logo">SESHIN</span>
+                                    <span class="text-logo">SpadStore</span>
                                 </a>
 
                         </div>
@@ -108,7 +108,7 @@
                     <!--col-lg-9 col-md-8 col-8 p-0 position-initial-->
                                     <div class="left-side">
                                         <div class="overlay"></div>
-                                        <div class="onscroll-logo-container"><span class="scroll-text-logo">SESHIN</span></div>
+                                        <div class="onscroll-logo-container"><span class="scroll-text-logo">SpadStore</span></div>
 
                                         <div id="menu" class="navbar-collapse collapse">
                                             <ul class="nav navbar-nav">
@@ -304,7 +304,7 @@
                             <i class="icon-bars"></i>
                         </button>
 
-                        <a href="index.html" class="logo">
+                        <a href="~/home" class="logo">
                             <img src="./Content/client/pic/Logo_drug_store.png" alt="Molla Logo" width="82" height="25">
                         </a>
                     </div><!-- End .header-left -->
@@ -314,17 +314,17 @@
                         <nav class="main-nav">
                             <ul class="menu sf-arrows sf-js-enabled" style="touch-action: pan-y;">
                                 <li>
-                                    <a href="index.html" class="p-0">خانه</a>
+                                    <a href="/home" class="p-0">خانه</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="sf-with-ul">فروشگاه </a>
+                                    <a href="/shop" class="sf-with-ul">فروشگاه </a>
 
                                     <ul>
                                         <li>
-                                            <a href="login.html">حساب کاربری من</a>
+                                            <a href="/account">حساب کاربری من</a>
                                         </li>
-                                        <li><a href="checkout.html">پرداخت</a></li>
-                                        <li><a href="cart.html">سبد خرید</a></li>
+                                        <li><a href="/payment">پرداخت</a></li>
+                                        <li><a href="/cart">سبد خرید</a></li>
                                     </ul>
                                 </li>
                                 <li>
