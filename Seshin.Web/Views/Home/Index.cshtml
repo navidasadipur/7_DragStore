@@ -4,7 +4,7 @@
     ViewBag.Title = "خانه";
 }
 
-@if (Model.ShortDescription.Equals("فعال"))
+@*@if (Model.ShortDescription.Equals("فعال"))
 {
     <div id="newslater-popup" class="mfp-hide white-popup-block open align-center">
         <div class="nl-popup-main">
@@ -110,6 +110,1693 @@
 <!-- Newslatter section end -->
 
 
-@Html.Action("FooterTopSection", "Home")
+@*@Html.Action("FooterTopSection", "Home")*@
 
+
+    <main class="main">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12 col-12">
+                    <div class="intro-slider-container mt-2">
+                        <div class="intro-slider owl-carousel owl-theme owl-nav-inside owl-light" data-toggle="owl"
+                             data-owl-options='{
+                                    "dots": true,
+                                    "nav": true,
+                                    "rtl": true,
+                            "responsive": {
+                                        "1200": {
+                                            "nav": true,
+                                            "dots": true
+                                        }
+                                    }
+                                }'>
+                            <div class="intro-slide banner-lg"
+                                 style="background-image: url(./Content/client/assets/images/medicine_images/header/102838-2.jpg);">
+                                <div class="intro">
+                                    <div class="title">
+                                        <a>پیشنهاد روزانه</a>
+                                    </div>
+                                    <div class="content">
+                                        <h3><span>بیشتر از</span> 20% <span>تخفیف</span></h3>
+                                        <h4>تخفیف مکمل های ورزشی</h4>
+                                    </div>
+                                    <div class="action">
+                                        <a href="category.html">خرید</a>
+                                    </div>
+                                </div>
+                            </div><!-- End .intro-slide -->
+
+                            <div class="intro-slide banner-lg"
+                                 style="background-image: url(./Content/client/assets/images/medicine_images/header/Magnesium_tablets-4.jpg);">
+                                <div class="intro">
+                                    <div class="title">
+                                        <a>محصولات جدید</a>
+                                    </div>
+                                    <div class="content">
+                                        <h3>برندهای منتخب<br>بیش از <span>30% تخفیف</span></h3>
+                                    </div>
+                                    <div class="action">
+                                        <a href="category.html">خرید</a>
+                                    </div>
+                                </div>
+                            </div><!-- End .intro-slide -->
+
+
+                        </div><!-- End .intro-slider owl-carousel owl-simple -->
+
+                        <span class="slider-loader"></span><!-- End .slider-loader -->
+                    </div><!-- End .intro-slider-container -->
+                </div>
+            </div>
+
+        </div>
+
+        <div class="featured-back" style="background-image: url(./Content/client/assets/images/demos/demo-22/featured/background.jpg)">
+            <div class="container">
+                <div class="section-title">
+                    <ul class="nav nav-pills nav-border-anim" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="tab-featured-link" data-toggle="tab" href="#tab-featured"
+                               role="tab" aria-controls="tab-featured" aria-selected="true"><span>جدیدترین</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="tab-best-link" data-toggle="tab" href="#tab-best" role="tab"
+                               aria-controls="tab-best" aria-selected="false"><span>پرفروش ترین</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="tab-sale-link" data-toggle="tab" href="#tab-sale" role="tab"
+                               aria-controls="tab-sale" aria-selected="false"><span>فروش ویژه</span></a>
+                        </li>
+                    </ul>
+
+
+                    <a class="link" href="#">مشاهده همه محصولات</a>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="tab-featured" role="tabpanel"
+                                 aria-labelledby="tab-featured-link">
+                                <div class="row products all">
+                                    <div class="col-lg-3 col-6">
+                                        <div class="product product-3 text-center">
+                                            <figure class="product-media">
+                                                <span class="product-label label-sale">فروش ویژه</span>
+                                                <a href="product.html">
+                                                    <img src="./Content/client/assets/images/medicine_images/products/custom-surgical-face-mask-boxes-2.png"
+                                                         alt="تصویر محصول" class="product-image">
+                                                </a>
+
+                                                <div class="product-action-vertical">
+                                                    <a href="#"
+                                                       class="btn-product-icon btn-wishlist btn-expandable">
+                                                        <span>
+                                                            افزودن
+                                                            به لیست علاقه مندی
+                                                        </span>
+                                                    </a>
+                                                </div><!-- End .product-action-vertical -->
+                                            </figure><!-- End .product-media -->
+
+                                            <div class="product-body">
+                                                <div class="product-cat text-center">
+                                                    <a href="#">ملزومات بهداشتی</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title text-center">
+                                                    <a href="product.html">
+                                                        محصول
+                                                    </a>
+                                                </h3><!-- End .product-title -->
+                                                <div class="product-price">
+                                                    <span class="new-price">23,000 تومان</span>
+                                                    <span class="old-price">40,000</span>
+                                                </div><!-- End .product-price -->
+                                            </div><!-- End .product-body -->
+
+                                            <div class="product-footer">
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 60%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 4 دیدگاه )</span>
+                                                </div><!-- End .rating-container -->
+
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart"
+                                                       title="افزودن به سبد خرید"></a>
+                                                    <a href="product.html" class="btn-product btn-quickview"
+                                                       title="مشاهده سریع محصول"></a>
+                                                </div><!-- End .product-action -->
+                                            </div><!-- End .product-footer -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                    <div class="col-lg-3 col-6">
+                                        <div class="product product-3 text-center">
+                                            <figure class="product-media">
+                                                <a href="product.html">
+                                                    <img src="./Content/client/assets/images/medicine_images/products/Medicine-Boxes02-3-600x500-2.jpg"
+                                                         alt="تصویر محصول" class="product-image">
+                                                </a>
+
+                                                <div class="product-action-vertical">
+                                                    <a href="#"
+                                                       class="btn-product-icon btn-wishlist btn-expandable">
+                                                        <span>
+                                                            افزودن
+                                                            به لیست علاقه مندی
+                                                        </span>
+                                                    </a>
+                                                </div><!-- End .product-action-vertical -->
+                                            </figure><!-- End .product-media -->
+
+                                            <div class="product-body">
+                                                <div class="product-cat text-center">
+                                                    <a href="#">آرایشی بهداشتی</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title text-center">
+                                                    <a href="product.html">
+                                                        محصول
+                                                    </a>
+                                                </h3><!-- End .product-title -->
+                                                <div class="product-price">
+                                                    34,000 تومان
+                                                </div><!-- End .product-price -->
+                                            </div><!-- End .product-body -->
+
+                                            <div class="product-footer">
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 40%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 4 دیدگاه )</span>
+                                                </div><!-- End .rating-container -->
+
+
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart"
+                                                       title="افزودن به سبد خرید"></a>
+                                                    <a href="product.html" class="btn-product btn-quickview"
+                                                       title="مشاهده سریع محصول"></a>
+                                                </div><!-- End .product-action -->
+                                            </div><!-- End .product-footer -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                    <div class="col-lg-3 col-6">
+                                        <div class="product product-3 text-center">
+                                            <figure class="product-media">
+                                                <a href="product.html">
+                                                    <img src="./Content/client/assets/images/medicine_images/products/Medicine-Boxes-03-525x700-2.jpg"
+                                                         alt="تصویر محصول" class="product-image">
+                                                </a>
+
+                                                <div class="product-action-vertical">
+                                                    <a href="#"
+                                                       class="btn-product-icon btn-wishlist btn-expandable">
+                                                        <span>
+                                                            افزودن
+                                                            به لیست علاقه مندی
+                                                        </span>
+                                                    </a>
+                                                </div><!-- End .product-action-vertical -->
+                                            </figure><!-- End .product-media -->
+
+                                            <div class="product-body">
+                                                <div class="product-cat text-center">
+                                                    <a href="#">مکمل ورزشی</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title text-center">
+                                                    <a href="product.html">
+                                                        محصول
+                                                    </a>
+                                                </h3>
+                                                <!-- End .product-title -->
+                                                <div class="product-price">
+                                                    79,000 تومان
+                                                </div><!-- End .product-price -->
+                                            </div><!-- End .product-body -->
+
+                                            <div class="product-footer">
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 60%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 4 دیدگاه )</span>
+                                                </div><!-- End .rating-container -->
+
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart"
+                                                       title="افزودن به سبد خرید"></a>
+                                                    <a href="product.html" class="btn-product btn-quickview"
+                                                       title="مشاهده سریع محصول"></a>
+                                                </div><!-- End .product-action -->
+                                            </div><!-- End .product-footer -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                    <div class="col-lg-3 col-6">
+                                        <div class="product product-3 text-center">
+                                            <figure class="product-media">
+                                                <a href="product.html">
+                                                    <img src="./Content/client/assets/images/medicine_images/products/medicine-packaging-boxes-500x500-2.jpg"
+                                                         alt="تصویر محصول" class="product-image">
+                                                </a>
+
+                                                <div class="product-action-vertical">
+                                                    <a href="#"
+                                                       class="btn-product-icon btn-wishlist btn-expandable">
+                                                        <span>
+                                                            افزودن
+                                                            به لیست علاقه مندی
+                                                        </span>
+                                                    </a>
+                                                </div><!-- End .product-action-vertical -->
+                                            </figure><!-- End .product-media -->
+
+                                            <div class="product-body">
+                                                <div class="product-cat text-center">
+                                                    <a href="#">قرص و شربت</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title text-center">
+                                                    <a href="product.html">
+                                                        محصول
+                                                    </a>
+                                                </h3><!-- End .product-title -->
+                                                <div class="product-price">
+                                                    302,000 تومان
+                                                </div><!-- End .product-price -->
+                                            </div><!-- End .product-body -->
+
+                                            <div class="product-footer">
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 60%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 4 دیدگاه )</span>
+                                                </div><!-- End .rating-container -->
+
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart"
+                                                       title="افزودن به سبد خرید"></a>
+                                                    <a href="product.html" class="btn-product btn-quickview"
+                                                       title="مشاهده سریع محصول"></a>
+                                                </div><!-- End .product-action -->
+                                            </div><!-- End .product-footer -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                    <div class="col-lg-3 col-6">
+                                        <div class="product product-3 text-center">
+                                            <figure class="product-media">
+                                                <span class="product-label label-sale">فروش ویژه</span>
+                                                <a href="product.html">
+                                                    <img src="./Content/client/assets/images/medicine_images/products/medicine-box-500x500-2.jpg"
+                                                         alt="تصویر محصول" class="product-image">
+                                                </a>
+
+                                                <div class="product-action-vertical">
+                                                    <a href="#"
+                                                       class="btn-product-icon btn-wishlist btn-expandable">
+                                                        <span>
+                                                            افزودن
+                                                            به لیست علاقه مندی
+                                                        </span>
+                                                    </a>
+                                                </div><!-- End .product-action-vertical -->
+                                            </figure><!-- End .product-media -->
+
+                                            <div class="product-body">
+                                                <div class="product-cat text-center">
+                                                    <a href="#">مکمل</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title text-center">
+                                                    <a href="product.html">محصول</a>
+                                                </h3><!-- End .product-title -->
+                                                <div class="product-price">
+                                                    <span class="new-price">70,000 تومان</span>
+                                                    <span class="old-price">90,000</span>
+                                                </div><!-- End .product-price -->
+                                            </div><!-- End .product-body -->
+
+                                            <div class="product-footer">
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 60%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 4 دیدگاه )</span>
+                                                </div><!-- End .rating-container -->
+
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart"
+                                                       title="افزودن به سبد خرید"></a>
+                                                    <a href="product.html" class="btn-product btn-quickview"
+                                                       title="مشاهده سریع محصول"></a>
+                                                </div><!-- End .product-action -->
+                                            </div><!-- End .product-footer -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                    <div class="col-lg-3 col-6">
+                                        <div class="product product-3 text-center">
+                                            <figure class="product-media">
+                                                <a href="product.html">
+                                                    <img src="./Content/client/assets/images/medicine_images/products/medicine-boxes-printing-500x500-2.jpg"
+                                                         alt="تصویر محصول" class="product-image">
+                                                </a>
+
+                                                <div class="product-action-vertical">
+                                                    <a href="#"
+                                                       class="btn-product-icon btn-wishlist btn-expandable">
+                                                        <span>
+                                                            افزودن
+                                                            به لیست علاقه مندی
+                                                        </span>
+                                                    </a>
+                                                </div><!-- End .product-action-vertical -->
+                                            </figure><!-- End .product-media -->
+
+                                            <div class="product-body">
+                                                <div class="product-cat text-center">
+                                                    <a href="#">ملزومات بهداشتی</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title text-center">
+                                                    <a href="product.html">
+                                                        کرم
+                                                        Laktavel
+                                                    </a>
+                                                </h3><!-- End .product-title -->
+                                                <div class="product-price">
+                                                    151,000 تومان
+                                                </div><!-- End .product-price -->
+                                            </div><!-- End .product-body -->
+
+                                            <div class="product-footer">
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 60%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 4 دیدگاه )</span>
+                                                </div><!-- End .rating-container -->
+
+
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart"
+                                                       title="افزودن به سبد خرید"></a>
+                                                    <a href="product.html" class="btn-product btn-quickview"
+                                                       title="مشاهده سریع محصول"></a>
+                                                </div><!-- End .product-action -->
+                                            </div><!-- End .product-footer -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                    <div class="col-lg-3 col-6">
+                                        <div class="product product-3 text-center">
+                                            <figure class="product-media">
+                                                <span class="product-label label-sale">فروش ویژه</span>
+                                                <a href="product.html">
+                                                    <img src="./Content/client/assets/images/medicine_images/products/medicine-box-500x500-2.jpg"
+                                                         alt="تصویر محصول" class="product-image">
+                                                </a>
+
+                                                <div class="product-action-vertical">
+                                                    <a href="#"
+                                                       class="btn-product-icon btn-wishlist btn-expandable">
+                                                        <span>
+                                                            افزودن
+                                                            به لیست علاقه مندی
+                                                        </span>
+                                                    </a>
+                                                </div><!-- End .product-action-vertical -->
+                                            </figure><!-- End .product-media -->
+
+                                            <div class="product-body">
+                                                <div class="product-cat text-center">
+                                                    <a href="#">مکمل</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title text-center">
+                                                    <a href="product.html">
+                                                        محصول
+                                                    </a>
+                                                </h3><!-- End .product-title -->
+                                                <div class="product-price">
+                                                    <span class="new-price">70,000 تومان</span>
+                                                    <span class="old-price">90,000</span>
+                                                </div><!-- End .product-price -->
+                                            </div><!-- End .product-body -->
+
+                                            <div class="product-footer">
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 60%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 4 دیدگاه )</span>
+                                                </div><!-- End .rating-container -->
+
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart"
+                                                       title="افزودن به سبد خرید"></a>
+                                                    <a href="product.html" class="btn-product btn-quickview"
+                                                       title="مشاهده سریع محصول"></a>
+                                                </div><!-- End .product-action -->
+                                            </div><!-- End .product-footer -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                    <div class="col-lg-3 col-6">
+                                        <div class="product product-3 text-center">
+                                            <figure class="product-media">
+                                                <a href="product.html">
+                                                    <img src="./Content/client/assets/images/medicine_images/products/Medicine-Boxes02-3-600x500-2.jpg"
+                                                         alt="تصویر محصول" class="product-image">
+                                                </a>
+
+                                                <div class="product-action-vertical">
+                                                    <a href="#"
+                                                       class="btn-product-icon btn-wishlist btn-expandable">
+                                                        <span>
+                                                            افزودن
+                                                            به لیست علاقه مندی
+                                                        </span>
+                                                    </a>
+                                                </div><!-- End .product-action-vertical -->
+                                            </figure><!-- End .product-media -->
+
+                                            <div class="product-body">
+                                                <div class="product-cat text-center">
+                                                    <a href="#">آرایشی بهداشتی</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title text-center">
+                                                    <a href="product.html">محصول</a>
+                                                </h3><!-- End .product-title -->
+                                                <div class="product-price">
+                                                    34,000 تومان
+                                                </div><!-- End .product-price -->
+                                            </div><!-- End .product-body -->
+
+                                            <div class="product-footer">
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 40%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 4 دیدگاه )</span>
+                                                </div><!-- End .rating-container -->
+
+
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart"
+                                                       title="افزودن به سبد خرید"></a>
+                                                    <a href="product.html" class="btn-product btn-quickview"
+                                                       title="مشاهده سریع محصول"></a>
+                                                </div><!-- End .product-action -->
+                                            </div><!-- End .product-footer -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+
+
+                                </div><!-- End .row -->
+                            </div><!-- .End .tab-pane -->
+                            <div class="tab-pane fade" id="tab-best" role="tabpanel" aria-labelledby="tab-best-link">
+                                <div class="row products">
+                                    <div class="col-lg-4 col-6">
+                                        <div class="product product-3 text-center">
+                                            <figure class="product-media">
+                                                <span class="product-label label-sale">فروش ویژه</span>
+                                                <a href="product.html">
+                                                    <img src="./Content/client/assets/images/medicine_images/products/custom-surgical-face-mask-boxes-2.png"
+                                                         alt="تصویر محصول" class="product-image">
+                                                </a>
+
+                                                <div class="product-action-vertical">
+                                                    <a href="#"
+                                                       class="btn-product-icon btn-wishlist btn-expandable">
+                                                        <span>
+                                                            افزودن
+                                                            به لیست علاقه مندی
+                                                        </span>
+                                                    </a>
+                                                </div><!-- End .product-action-vertical -->
+                                            </figure><!-- End .product-media -->
+
+                                            <div class="product-body">
+                                                <div class="product-cat text-center">
+                                                    <a href="#">ملزومات بهداشتی</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title text-center">
+                                                    <a href="product.html">
+                                                        محصول
+                                                    </a>
+                                                </h3><!-- End .product-title -->
+                                                <div class="product-price">
+                                                    <span class="new-price">23,000 تومان</span>
+                                                    <span class="old-price">40,000</span>
+                                                </div><!-- End .product-price -->
+                                            </div><!-- End .product-body -->
+
+                                            <div class="product-footer">
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 60%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 4 دیدگاه )</span>
+                                                </div><!-- End .rating-container -->
+
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart"
+                                                       title="افزودن به سبد خرید"></a>
+                                                    <a href="product.html" class="btn-product btn-quickview"
+                                                       title="مشاهده سریع محصول"></a>
+                                                </div><!-- End .product-action -->
+                                            </div><!-- End .product-footer -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                    <div class="col-lg-4 col-6">
+                                        <div class="product product-3 text-center">
+                                            <figure class="product-media">
+                                                <span class="product-label label-sale">فروش ویژه</span>
+                                                <a href="product.html">
+                                                    <img src="./Content/client/assets/images/medicine_images/products/custom-surgical-face-mask-boxes-2.png"
+                                                         alt="تصویر محصول" class="product-image">
+                                                </a>
+
+                                                <div class="product-action-vertical">
+                                                    <a href="#"
+                                                       class="btn-product-icon btn-wishlist btn-expandable">
+                                                        <span>
+                                                            افزودن
+                                                            به لیست علاقه مندی
+                                                        </span>
+                                                    </a>
+                                                </div><!-- End .product-action-vertical -->
+                                            </figure><!-- End .product-media -->
+
+                                            <div class="product-body">
+                                                <div class="product-cat text-center">
+                                                    <a href="#">ملزومات بهداشتی</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title text-center">
+                                                    <a href="product.html">
+                                                        کرم
+                                                        Laktavel
+                                                    </a>
+                                                </h3><!-- End .product-title -->
+                                                <div class="product-price">
+                                                    <span class="new-price">23,000 تومان</span>
+                                                    <span class="old-price">40,000</span>
+                                                </div><!-- End .product-price -->
+                                            </div><!-- End .product-body -->
+
+                                            <div class="product-footer">
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 60%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 4 دیدگاه )</span>
+                                                </div><!-- End .rating-container -->
+
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart"
+                                                       title="افزودن به سبد خرید"></a>
+                                                    <a href="product.html" class="btn-product btn-quickview"
+                                                       title="مشاهده سریع محصول"></a>
+                                                </div><!-- End .product-action -->
+                                            </div><!-- End .product-footer -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                    <div class="col-lg-4 col-6">
+                                        <div class="product product-3 text-center">
+                                            <figure class="product-media">
+                                                <span class="product-label label-sale">فروش ویژه</span>
+                                                <a href="product.html">
+                                                    <img src="./Content/client/assets/images/medicine_images/products/custom-surgical-face-mask-boxes-2.png"
+                                                         alt="تصویر محصول" class="product-image">
+                                                </a>
+
+                                                <div class="product-action-vertical">
+                                                    <a href="#"
+                                                       class="btn-product-icon btn-wishlist btn-expandable">
+                                                        <span>
+                                                            افزودن
+                                                            به لیست علاقه مندی
+                                                        </span>
+                                                    </a>
+                                                </div><!-- End .product-action-vertical -->
+                                            </figure><!-- End .product-media -->
+
+                                            <div class="product-body">
+                                                <div class="product-cat text-center">
+                                                    <a href="#">ملزومات بهداشتی</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title text-center">
+                                                    <a href="product.html">
+                                                        کرم
+                                                        Laktavel
+                                                    </a>
+                                                </h3><!-- End .product-title -->
+                                                <div class="product-price">
+                                                    <span class="new-price">23,000 تومان</span>
+                                                    <span class="old-price">40,000</span>
+                                                </div><!-- End .product-price -->
+                                            </div><!-- End .product-body -->
+
+                                            <div class="product-footer">
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 60%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 4 دیدگاه )</span>
+                                                </div><!-- End .rating-container -->
+
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart"
+                                                       title="افزودن به سبد خرید"></a>
+                                                    <a href="product.html" class="btn-product btn-quickview"
+                                                       title="مشاهده سریع محصول"></a>
+                                                </div><!-- End .product-action -->
+                                            </div><!-- End .product-footer -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                    <div class="col-lg-4 col-6">
+                                        <div class="product product-3 text-center">
+                                            <figure class="product-media">
+                                                <span class="product-label label-sale">فروش ویژه</span>
+                                                <a href="product.html">
+                                                    <img src="./Content/client/assets/images/medicine_images/products/custom-surgical-face-mask-boxes-2.png"
+                                                         alt="تصویر محصول" class="product-image">
+                                                </a>
+
+                                                <div class="product-action-vertical">
+                                                    <a href="#"
+                                                       class="btn-product-icon btn-wishlist btn-expandable">
+                                                        <span>
+                                                            افزودن
+                                                            به لیست علاقه مندی
+                                                        </span>
+                                                    </a>
+                                                </div><!-- End .product-action-vertical -->
+                                            </figure><!-- End .product-media -->
+
+                                            <div class="product-body">
+                                                <div class="product-cat text-center">
+                                                    <a href="#">ملزومات بهداشتی</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title text-center">
+                                                    <a href="product.html">
+                                                        کرم
+                                                        Laktavel
+                                                    </a>
+                                                </h3><!-- End .product-title -->
+                                                <div class="product-price">
+                                                    <span class="new-price">23,000 تومان</span>
+                                                    <span class="old-price">40,000</span>
+                                                </div><!-- End .product-price -->
+                                            </div><!-- End .product-body -->
+
+                                            <div class="product-footer">
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 60%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 4 دیدگاه )</span>
+                                                </div><!-- End .rating-container -->
+
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart"
+                                                       title="افزودن به سبد خرید"></a>
+                                                    <a href="product.html" class="btn-product btn-quickview"
+                                                       title="مشاهده سریع محصول"></a>
+                                                </div><!-- End .product-action -->
+                                            </div><!-- End .product-footer -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                    <div class="col-lg-4 col-6">
+                                        <div class="product product-3 text-center">
+                                            <figure class="product-media">
+                                                <a href="product.html">
+                                                    <img src="./Content/client/assets/images/medicine_images/products/Medicine-Boxes-03-525x700-2.jpg"
+                                                         alt="تصویر محصول" class="product-image">
+                                                </a>
+
+                                                <div class="product-action-vertical">
+                                                    <a href="#"
+                                                       class="btn-product-icon btn-wishlist btn-expandable">
+                                                        <span>
+                                                            افزودن
+                                                            به لیست علاقه مندی
+                                                        </span>
+                                                    </a>
+                                                </div><!-- End .product-action-vertical -->
+                                            </figure><!-- End .product-media -->
+
+                                            <div class="product-body">
+                                                <div class="product-cat text-center">
+                                                    <a href="#">مکمل</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title text-center">
+                                                    <a href="product.html">
+                                                        ویتامین
+                                                        D3 1000iu HEATHAID
+                                                    </a>
+                                                </h3><!-- End .product-title -->
+                                                <div class="product-price">
+                                                    79,000 تومان
+                                                </div><!-- End .product-price -->
+                                            </div><!-- End .product-body -->
+
+                                            <div class="product-footer">
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 60%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 4 دیدگاه )</span>
+                                                </div><!-- End .rating-container -->
+
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart"
+                                                       title="افزودن به سبد خرید"></a>
+                                                    <a href="product.html" class="btn-product btn-quickview"
+                                                       title="مشاهده سریع محصول"></a>
+                                                </div><!-- End .product-action -->
+                                            </div><!-- End .product-footer -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                    <div class="col-lg-4 col-6">
+                                        <div class="product product-3 text-center">
+                                            <figure class="product-media">
+                                                <a href="product.html">
+                                                    <img src="./Content/client/assets/images/medicine_images/products/Medicine-Boxes02-3-600x500-2.jpg"
+                                                         alt="تصویر محصول" class="product-image">
+                                                </a>
+
+                                                <div class="product-action-vertical">
+                                                    <a href="#"
+                                                       class="btn-product-icon btn-wishlist btn-expandable">
+                                                        <span>
+                                                            افزودن
+                                                            به لیست علاقه مندی
+                                                        </span>
+                                                    </a>
+                                                </div><!-- End .product-action-vertical -->
+                                            </figure><!-- End .product-media -->
+
+                                            <div class="product-body">
+                                                <div class="product-cat text-center">
+                                                    <a href="#">آرایشی بهداشتی</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title text-center">
+                                                    <a href="product.html">محصول</a>
+                                                </h3><!-- End .product-title -->
+                                                <div class="product-price">
+                                                    302,000 تومان
+                                                </div><!-- End .product-price -->
+                                            </div><!-- End .product-body -->
+
+                                            <div class="product-footer">
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 60%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 4 دیدگاه )</span>
+                                                </div><!-- End .rating-container -->
+
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart"
+                                                       title="افزودن به سبد خرید"></a>
+                                                    <a href="product.html" class="btn-product btn-quickview"
+                                                       title="مشاهده سریع محصول"></a>
+                                                </div><!-- End .product-action -->
+                                            </div><!-- End .product-footer -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="tab-sale" role="tabpanel" aria-labelledby="tab-sale-link">
+                                <div class="row products">
+                                    <div class="col-lg-4 col-6">
+                                        <div class="product product-3 text-center">
+                                            <figure class="product-media">
+                                                <a href="product.html">
+                                                    <img src="./Content/client/assets/images/medicine_images/products/Medicine-Boxes-03-525x700-2.jpg"
+                                                         alt="تصویر محصول" class="product-image">
+                                                </a>
+
+                                                <div class="product-action-vertical">
+                                                    <a href="#"
+                                                       class="btn-product-icon btn-wishlist btn-expandable">
+                                                        <span>
+                                                            افزودن
+                                                            به لیست علاقه مندی
+                                                        </span>
+                                                    </a>
+                                                </div><!-- End .product-action-vertical -->
+                                            </figure><!-- End .product-media -->
+
+                                            <div class="product-body">
+                                                <div class="product-cat text-center">
+                                                    <a href="#">مکمل ورزشی</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title text-center">
+                                                    <a href="product.html">
+                                                        قرص
+                                                        BIOTIN 800 میکروگرم HEALTHAID
+                                                    </a>
+                                                </h3>
+                                                <!-- End .product-title -->
+                                                <div class="product-price">
+                                                    79,000 تومان
+                                                </div><!-- End .product-price -->
+                                            </div><!-- End .product-body -->
+
+                                            <div class="product-footer">
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 60%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 4 دیدگاه )</span>
+                                                </div><!-- End .rating-container -->
+
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart"
+                                                       title="افزودن به سبد خرید"></a>
+                                                    <a href="product.html" class="btn-product btn-quickview"
+                                                       title="مشاهده سریع محصول"></a>
+                                                </div><!-- End .product-action -->
+                                            </div><!-- End .product-footer -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                    <div class="col-lg-4 col-6">
+                                        <div class="product product-3 text-center">
+                                            <figure class="product-media">
+                                                <a href="product.html">
+                                                    <img src="./Content/client/assets/images/medicine_images/products/medicine-packaging-boxes-500x500-2.jpg"
+                                                         alt="تصویر محصول" class="product-image">
+                                                </a>
+
+                                                <div class="product-action-vertical">
+                                                    <a href="#"
+                                                       class="btn-product-icon btn-wishlist btn-expandable">
+                                                        <span>
+                                                            افزودن
+                                                            به لیست علاقه مندی
+                                                        </span>
+                                                    </a>
+                                                </div><!-- End .product-action-vertical -->
+                                            </figure><!-- End .product-media -->
+
+                                            <div class="product-body">
+                                                <div class="product-cat text-center">
+                                                    <a href="#">قرص و شربت</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title text-center">
+                                                    <a href="product.html">
+                                                        مکمل
+                                                        های Vita Biotix
+                                                    </a>
+                                                </h3><!-- End .product-title -->
+                                                <div class="product-price">
+                                                    302,000 تومان
+                                                </div><!-- End .product-price -->
+                                            </div><!-- End .product-body -->
+
+                                            <div class="product-footer">
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 60%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 4 دیدگاه )</span>
+                                                </div><!-- End .rating-container -->
+
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart"
+                                                       title="افزودن به سبد خرید"></a>
+                                                    <a href="product.html" class="btn-product btn-quickview"
+                                                       title="مشاهده سریع محصول"></a>
+                                                </div><!-- End .product-action -->
+                                            </div><!-- End .product-footer -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                    <div class="col-lg-4 col-6">
+                                        <div class="product product-3 text-center">
+                                            <figure class="product-media">
+                                                <a href="product.html">
+                                                    <img src="./Content/client/assets/images/medicine_images/products/Medicine-Boxes-03-525x700-2.jpg"
+                                                         alt="تصویر محصول" class="product-image">
+                                                </a>
+
+                                                <div class="product-action-vertical">
+                                                    <a href="#"
+                                                       class="btn-product-icon btn-wishlist btn-expandable">
+                                                        <span>
+                                                            افزودن
+                                                            به لیست علاقه مندی
+                                                        </span>
+                                                    </a>
+                                                </div><!-- End .product-action-vertical -->
+                                            </figure><!-- End .product-media -->
+
+                                            <div class="product-body">
+                                                <div class="product-cat text-center">
+                                                    <a href="#">مکمل ورزشی</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title text-center">
+                                                    <a href="product.html">
+                                                        قرص
+                                                        BIOTIN 800 میکروگرم HEALTHAID
+                                                    </a>
+                                                </h3>
+                                                <!-- End .product-title -->
+                                                <div class="product-price">
+                                                    79,000 تومان
+                                                </div><!-- End .product-price -->
+                                            </div><!-- End .product-body -->
+
+                                            <div class="product-footer">
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 60%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 4 دیدگاه )</span>
+                                                </div><!-- End .rating-container -->
+
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart"
+                                                       title="افزودن به سبد خرید"></a>
+                                                    <a href="product.html" class="btn-product btn-quickview"
+                                                       title="مشاهده سریع محصول"></a>
+                                                </div><!-- End .product-action -->
+                                            </div><!-- End .product-footer -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                    <div class="col-lg-4 col-6">
+                                        <div class="product product-3 text-center">
+                                            <figure class="product-media">
+                                                <span class="product-label label-sale">فروش ویژه</span>
+                                                <a href="product.html">
+                                                    <img src="./Content/client/assets/images/medicine_images/products/medicine-box-500x500-2.jpg"
+                                                         alt="تصویر محصول" class="product-image">
+                                                </a>
+
+                                                <div class="product-action-vertical">
+                                                    <a href="#"
+                                                       class="btn-product-icon btn-wishlist btn-expandable">
+                                                        <span>
+                                                            افزودن
+                                                            به لیست علاقه مندی
+                                                        </span>
+                                                    </a>
+                                                </div><!-- End .product-action-vertical -->
+                                            </figure><!-- End .product-media -->
+
+                                            <div class="product-body">
+                                                <div class="product-cat text-center">
+                                                    <a href="#">مکمل</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title text-center">
+                                                    <a href="product.html">
+                                                        قرص
+                                                        Phantom Nutrition
+                                                    </a>
+                                                </h3><!-- End .product-title -->
+                                                <div class="product-price">
+                                                    <span class="new-price">70,000 تومان</span>
+                                                    <span class="old-price">90,000</span>
+                                                </div><!-- End .product-price -->
+                                            </div><!-- End .product-body -->
+
+                                            <div class="product-footer">
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 60%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 4 دیدگاه )</span>
+                                                </div><!-- End .rating-container -->
+
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart"
+                                                       title="افزودن به سبد خرید"></a>
+                                                    <a href="product.html" class="btn-product btn-quickview"
+                                                       title="مشاهده سریع محصول"></a>
+                                                </div><!-- End .product-action -->
+                                            </div><!-- End .product-footer -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                    <div class="col-lg-4 col-6">
+                                        <div class="product product-3 text-center">
+                                            <figure class="product-media">
+                                                <a href="product.html">
+                                                    <img src="./Content/client/assets/images/medicine_images/products/Medicine-Boxes-03-525x700-2.jpg"
+                                                         alt="تصویر محصول" class="product-image">
+                                                </a>
+
+                                                <div class="product-action-vertical">
+                                                    <a href="#"
+                                                       class="btn-product-icon btn-wishlist btn-expandable">
+                                                        <span>
+                                                            افزودن
+                                                            به لیست علاقه مندی
+                                                        </span>
+                                                    </a>
+                                                </div><!-- End .product-action-vertical -->
+                                            </figure><!-- End .product-media -->
+
+                                            <div class="product-body">
+                                                <div class="product-cat text-center">
+                                                    <a href="#">مکمل ورزشی</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title text-center">
+                                                    <a href="product.html">
+                                                        قرص
+                                                        BIOTIN 800 میکروگرم HEALTHAID
+                                                    </a>
+                                                </h3>
+                                                <!-- End .product-title -->
+                                                <div class="product-price">
+                                                    79,000 تومان
+                                                </div><!-- End .product-price -->
+                                            </div><!-- End .product-body -->
+
+                                            <div class="product-footer">
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 60%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 4 دیدگاه )</span>
+                                                </div><!-- End .rating-container -->
+
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart"
+                                                       title="افزودن به سبد خرید"></a>
+                                                    <a href="product.html" class="btn-product btn-quickview"
+                                                       title="مشاهده سریع محصول"></a>
+                                                </div><!-- End .product-action -->
+                                            </div><!-- End .product-footer -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                    <div class="col-lg-4 col-6">
+                                        <div class="product product-3 text-center">
+                                            <figure class="product-media">
+                                                <a href="product.html">
+                                                    <img src="./Content/client/assets/images/medicine_images/products/medicine-boxes-printing-500x500-2.jpg"
+                                                         alt="تصویر محصول" class="product-image">
+                                                </a>
+
+                                                <div class="product-action-vertical">
+                                                    <a href="#"
+                                                       class="btn-product-icon btn-wishlist btn-expandable">
+                                                        <span>
+                                                            افزودن
+                                                            به لیست علاقه مندی
+                                                        </span>
+                                                    </a>
+                                                </div><!-- End .product-action-vertical -->
+                                            </figure><!-- End .product-media -->
+
+                                            <div class="product-body">
+                                                <div class="product-cat text-center">
+                                                    <a href="#">ملزومات بهداشتی</a>
+                                                </div><!-- End .product-cat -->
+                                                <h3 class="product-title text-center">
+                                                    <a href="product.html">
+                                                        کرم
+                                                        Laktavel
+                                                    </a>
+                                                </h3><!-- End .product-title -->
+                                                <div class="product-price">
+                                                    151,000 تومان
+                                                </div><!-- End .product-price -->
+                                            </div><!-- End .product-body -->
+
+                                            <div class="product-footer">
+                                                <div class="ratings-container">
+                                                    <div class="ratings">
+                                                        <div class="ratings-val" style="width: 60%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->
+                                                    <span class="ratings-text">( 4 دیدگاه )</span>
+                                                </div><!-- End .rating-container -->
+
+
+                                                <div class="product-action">
+                                                    <a href="#" class="btn-product btn-cart"
+                                                       title="افزودن به سبد خرید"></a>
+                                                    <a href="product.html" class="btn-product btn-quickview"
+                                                       title="مشاهده سریع محصول"></a>
+                                                </div><!-- End .product-action -->
+                                            </div><!-- End .product-footer -->
+                                        </div><!-- End .product -->
+                                    </div><!-- End .col-sm-6 col-md-4 col-lg-3 -->
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="mb-2"></div><!-- End .mb-6 -->
+            </div><!-- End .container -->
+        </div>
+
+
+        <div class="container banner-container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 banner-lg">
+                    <a href="category.html">
+                        <img src="./Content/client/assets/images/medicine_images/banner/mtiva_green-3.jpg">
+                    </a>
+                    <div class="banner-content">
+                        <div class="title">
+                            <a href="category.html">تا 30% تخفیف</a>
+                        </div>
+                        <div class="content">
+                            <a href="category.html">
+                                <h3 class="highlight">برندهای معروف</h3>
+                                <h4>برای همه سنین</h4>
+                            </a>
+                        </div>
+                        <div class="action">
+                            <a href="category.html">خرید</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 banner-lg">
+                    <a href="category.html">
+                        <img src="./Content/client/assets/images/medicine_images/banner/stationery-editable-psd-mockup-with-isometric-two-medication-boxes-pills-plastic-blister_105589-1507-3.jpg">
+                    </a>
+                    <div class="banner-content">
+                        <div class="title">
+                            <a href="category.html">مکمل های پرفروش</a>
+                        </div>
+                        <div class="content">
+                            <a href="category.html">
+                                <h3>مکمل قدرتمند</h3>
+                                <h4 class="highlight">برای استفاده روزانه</h4>
+                            </a>
+                        </div>
+                        <div class="action">
+                            <a href="category.html">خرید</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container service">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="icon-box icon-box-side">
+                        <span class="icon-box-icon text-dark">
+                            <i class="icon-rocket"></i>
+                        </span>
+
+                        <div class="icon-box-content">
+                            <h3 class="icon-box-title">ارسال رایگان</h3><!-- End .icon-box-title -->
+                            <p>سفارشات بالای 50هزار تومان</p>
+                        </div><!-- End .icon-box-content -->
+                    </div><!-- End .icon-box -->
+                </div><!-- End .col-sm-6 col-lg-4 -->
+
+                <div class="col-sm-6 col-lg-3">
+                    <div class="icon-box icon-box-side">
+                        <span class="icon-box-icon text-dark">
+                            <i class="icon-rotate-left"></i>
+                        </span>
+
+                        <div class="icon-box-content">
+                            <h3 class="icon-box-title">بازگشت رایگان</h3><!-- End .icon-box-title -->
+                            <p>به مدت 30 روز</p>
+                        </div><!-- End .icon-box-content -->
+                    </div><!-- End .icon-box -->
+                </div><!-- End .col-sm-6 col-lg-4 -->
+
+                <div class="col-sm-6 col-lg-3">
+                    <div class="icon-box icon-box-side">
+                        <span class="icon-box-icon text-dark">
+                            <i class="icon-info-circle"></i>
+                        </span>
+
+                        <div class="icon-box-content">
+                            <h3 class="icon-box-title">دریافت کد تخفیف 20% </h3>
+                            <!-- End .icon-box-title -->
+                            <p>کافیست ثبت نام کنید</p>
+                        </div><!-- End .icon-box-content -->
+                    </div><!-- End .icon-box -->
+                </div><!-- End .col-sm-6 col-lg-4 -->
+
+                <div class="col-sm-6 col-lg-3">
+                    <div class="icon-box icon-box-side">
+                        <span class="icon-box-icon text-dark">
+                            <i class="icon-life-ring"></i>
+                        </span>
+
+                        <div class="icon-box-content">
+                            <h3 class="icon-box-title">پشتیبانی ما</h3><!-- End .icon-box-title -->
+                            <p>خدمات 24 ساعته/7 روز هفته</p>
+                        </div><!-- End .icon-box-content -->
+                    </div><!-- End .icon-box -->
+                </div><!-- End .col-sm-6 col-lg-4 -->
+
+            </div>
+        </div>
+
+        <div class="container popular">
+            <hr class="mb-5">
+
+            <div class="section-title">
+                <div>
+                    <p class="title"><span>محبوب ترین محصولات</span></p>
+                </div>
+
+                <a class="link" href="#">مشاهده همه محصولات</a>
+            </div>
+
+
+            <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl"
+                 data-owl-options='{
+                            "nav": false,
+                            "dots": true,
+                            "margin": 20,
+                            "loop": false,
+                            "rtl": true,
+                            "responsive": {
+                                "0": {
+                                    "items":1
+                                },
+                                "480": {
+                                    "items":2
+                                },
+                                "768": {
+                                    "items":3
+                                },
+                                "992": {
+                                    "items":4
+                                },
+                                "1200": {
+                                    "items":4,
+                                    "nav": true,
+                                    "dots": false
+                                }
+                            }
+                        }'>
+                <div class="product product-7 text-center">
+                    <figure class="product-media">
+                        <span class="product-label label-new">جدید</span>
+                        <a href="product.html">
+                            <img width="300px" height="300px" src="pic/p4.jpg" alt="تصویر محصول"
+                                 class="product-image">
+                        </a>
+
+                        <div class="product-action-vertical">
+                            <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
+                                <span>
+                                    افزودن به
+                                    لیست علاقه مندی
+                                </span>
+                            </a>
+                            <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
+                               title="مشاهده سریع"><span>مشاهده سریع</span></a>
+                            <a href="#" class="btn-product-icon btn-compare" title="مقایسه">
+                                <span>
+                                    لیست
+                                    مقایسه
+                                </span>
+                            </a>
+                        </div><!-- End .product-action-vertical -->
+
+                        <div class="product-action">
+                            <a href="#" class="btn-product btn-cart"><span>افزودن به سبد خرید</span></a>
+                        </div><!-- End .product-action -->
+                    </figure><!-- End .product-media -->
+
+                    <div class="product-body">
+                        <h3 class="product-title text-center"><a href="product.html">محصول</a></h3>
+                        <!-- End .product-title -->
+                        <div class="product-price">
+                            60,000 تومان
+                        </div><!-- End .product-price -->
+                        <div class="ratings-container">
+                            <div class="ratings">
+                                <div class="ratings-val" style="width: 20%;"></div><!-- End .ratings-val -->
+                            </div><!-- End .ratings -->
+                            <span class="ratings-text">( 2 دیدگاه )</span>
+                        </div><!-- End .rating-container -->
+
+                    </div><!-- End .product-body -->
+                </div><!-- End .product -->
+
+                <div class="product product-7 text-center">
+                    <figure class="product-media">
+                        <span class="product-label label-out">ناموجود</span>
+                        <a href="product.html">
+                            <img width="300px" height="300px" src="pic/p5.jpg" alt="تصویر محصول"
+                                 class="product-image">
+                        </a>
+
+                        <div class="product-action-vertical">
+                            <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
+                                <span>
+                                    افزودن به
+                                    لیست علاقه مندی
+                                </span>
+                            </a>
+                            <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
+                               title="مشاهده سریع"><span>مشاهده سریع</span></a>
+                            <a href="#" class="btn-product-icon btn-compare" title="مقایسه">
+                                <span>
+                                    لیست
+                                    مقایسه
+                                </span>
+                            </a>
+                        </div><!-- End .product-action-vertical -->
+
+                        <div class="product-action">
+                            <a href="#" class="btn-product btn-cart"><span>افزودن به سبد خرید</span></a>
+                        </div><!-- End .product-action -->
+                    </figure><!-- End .product-media -->
+
+                    <div class="product-body">
+                        <h3 class="product-title text-center"><a href="product.html">محصول</a></h3>
+                        <!-- End .product-title -->
+                        <div class="product-price">
+                            <span class="out-price">120,000 تومان</span>
+                        </div><!-- End .product-price -->
+                        <div class="ratings-container">
+                            <div class="ratings">
+                                <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
+                            </div><!-- End .ratings -->
+                            <span class="ratings-text">( 6 دیدگاه )</span>
+                        </div><!-- End .rating-container -->
+                    </div><!-- End .product-body -->
+                </div><!-- End .product -->
+
+                <div class="product product-7 text-center">
+                    <figure class="product-media">
+                        <span class="product-label label-top">برتر</span>
+                        <a href="product.html">
+                            <img width="300px" height="300px" src="pic/p8.jpg" alt="تصویر محصول"
+                                 class="product-image">
+                        </a>
+
+                        <div class="product-action-vertical">
+                            <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
+                                <span>
+                                    افزودن به
+                                    لیست علاقه مندی
+                                </span>
+                            </a>
+                            <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
+                               title="مشاهده سریع"><span>مشاهده سریع</span></a>
+                            <a href="#" class="btn-product-icon btn-compare" title="مقایسه">
+                                <span>
+                                    لیست
+                                    مقایسه
+                                </span>
+                            </a>
+                        </div><!-- End .product-action-vertical -->
+
+                        <div class="product-action">
+                            <a href="#" class="btn-product btn-cart"><span>افزودن به سبد خرید</span></a>
+                        </div><!-- End .product-action -->
+                    </figure><!-- End .product-media -->
+
+                    <div class="product-body">
+                        <h3 class="product-title text-center">
+                            <a href="product.html">محصول</a>
+                        </h3><!-- End .product-title -->
+                        <div class="product-price">
+                            110,000 تومان
+                        </div><!-- End .product-price -->
+                        <div class="ratings-container">
+                            <div class="ratings">
+                                <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
+                            </div><!-- End .ratings -->
+                            <span class="ratings-text">( 1 دیدگاه )</span>
+                        </div><!-- End .rating-container -->
+
+
+                    </div><!-- End .product-body -->
+                </div><!-- End .product -->
+
+                <div class="product product-7 text-center">
+                    <figure class="product-media">
+                        <a href="product.html">
+                            <img width="300px" height="300px" src="pic/p11.jpg" alt="تصویر محصول"
+                                 class="product-image">
+                        </a>
+
+                        <div class="product-action-vertical">
+                            <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
+                                <span>
+                                    افزودن به
+                                    لیست علاقه مندی
+                                </span>
+                            </a>
+                            <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
+                               title="مشاهده سریع"><span>مشاهده سریع</span></a>
+                            <a href="#" class="btn-product-icon btn-compare" title="مقایسه">
+                                <span>
+                                    لیست
+                                    مقایسه
+                                </span>
+                            </a>
+                        </div><!-- End .product-action-vertical -->
+
+                        <div class="product-action">
+                            <a href="#" class="btn-product btn-cart"><span>افزودن به سبد خرید</span></a>
+                        </div><!-- End .product-action -->
+                    </figure><!-- End .product-media -->
+
+                    <div class="product-body">
+                        <h3 class="product-title text-center"><a href="product.html">محصول</a></h3>
+                        <!-- End .product-title -->
+                        <div class="product-price">
+                            56,000 تومان
+                        </div><!-- End .product-price -->
+                        <div class="ratings-container">
+                            <div class="ratings">
+                                <div class="ratings-val" style="width: 0%;"></div><!-- End .ratings-val -->
+                            </div><!-- End .ratings -->
+                            <span class="ratings-text">( 0 دیدگاه )</span>
+                        </div><!-- End .rating-container -->
+                    </div><!-- End .product-body -->
+                </div><!-- End .product -->
+
+                <div class="product product-7 text-center">
+                    <figure class="product-media">
+                        <a href="product.html">
+                            <img width="300px" height="300px" src="pic/p12.jpg" alt="تصویر محصول"
+                                 class="product-image">
+                        </a>
+
+                        <div class="product-action-vertical">
+                            <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
+                                <span>
+                                    افزودن به
+                                    لیست علاقه مندی
+                                </span>
+                            </a>
+                            <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
+                               title="مشاهده سریع"><span>مشاهده سریع</span></a>
+                            <a href="#" class="btn-product-icon btn-compare" title="مقایسه">
+                                <span>
+                                    لیست
+                                    مقایسه
+                                </span>
+                            </a>
+                        </div><!-- End .product-action-vertical -->
+
+                        <div class="product-action">
+                            <a href="#" class="btn-product btn-cart"><span>افزودن به سبد خرید</span></a>
+                        </div><!-- End .product-action -->
+                    </figure><!-- End .product-media -->
+
+                    <div class="product-body">
+                        <h3 class="product-title text-center">
+                            <a href="product.html">محصول</a>
+                        </h3><!-- End .product-title -->
+                        <div class="product-price">
+                            76,000 تومان
+                        </div><!-- End .product-price -->
+                        <div class="ratings-container">
+                            <div class="ratings">
+                                <div class="ratings-val" style="width: 20%;"></div><!-- End .ratings-val -->
+                            </div><!-- End .ratings -->
+                            <span class="ratings-text">( 2 دیدگاه )</span>
+                        </div><!-- End .rating-container -->
+                    </div><!-- End .product-body -->
+                </div><!-- End .product -->
+            </div>
+        </div>
+
+
+        <div class="container post">
+
+            <div class="section-title">
+                <div>
+                    <p class="title"><span>جدیدترین اخبار</span></p>
+                </div>
+
+                <a class="link" href="#">مشاهده همه خبرها</a>
+            </div>
+
+            <div class="owl-carousel owl-simple mb-4" data-toggle="owl" data-owl-options='{
+                        "nav": true,
+                        "dots": false,
+                        "items": 3,
+                        "margin": 20,
+                        "loop": false,
+                        "rtl": true,
+                            "responsive": {
+                            "0": {
+                                "items":1,
+                                "dots":true
+                            },
+                            "520": {
+                                "items":2,
+                                "dots":true
+                            },
+                            "768": {
+                                "items":3
+                            }
+                        }
+                    }'>
+                <article class="entry">
+                    <figure class="entry-media">
+                        <a href="single.html">
+                            <img src="./Content/client/assets/images/medicine_images/news/download-2.jpg" alt="توضیحات عکس">
+                        </a>
+                    </figure><!-- End .entry-media -->
+
+                    <div class="entry-body text-center">
+                        <div class="entry-meta">
+                            <a href="#">22 فروردین 1399</a>، 0 دیدگاه
+                        </div><!-- End .entry-meta -->
+
+                        <h3 class="entry-title text-center">
+                            <a href="single.html">هرآنچه در مورد امگا 3 باید بدانید</a>
+                        </h3><!-- End .entry-title -->
+
+                        <div class="entry-content">
+                            <a href="single.html" class="read-more">ادامه خواندن</a>
+                        </div><!-- End .entry-content -->
+                    </div><!-- End .entry-body -->
+                </article><!-- End .entry -->
+
+                <article class="entry">
+                    <figure class="entry-media">
+                        <a href="single.html">
+                            <img src="./Content/client/assets/images/medicine_images/news/Pill-Bottles-2.jpg" alt="توضیحات عکس">
+                        </a>
+                    </figure><!-- End .entry-media -->
+
+                    <div class="entry-body text-center">
+                        <div class="entry-meta">
+                            <a href="#">22 فروردین 1399</a>، 0 دیدگاه
+                        </div><!-- End .entry-meta -->
+
+                        <h3 class="entry-title text-center">
+                            <a href="single.html">التهاب معده یا گاستریت</a>
+                        </h3><!-- End .entry-title -->
+
+                        <div class="entry-content">
+                            <a href="single.html" class="read-more">ادامه خواندن</a>
+                        </div><!-- End .entry-content -->
+                    </div><!-- End .entry-body -->
+                </article><!-- End .entry -->
+
+                <article class="entry">
+                    <figure class="entry-media">
+                        <a href="single.html">
+                            <img src="./Content/client/assets/images/medicine_images/news/treatment-horizon-inlineimage-2.jpg"
+                                 alt="توضیحات عکس">
+                        </a>
+                    </figure><!-- End .entry-media -->
+
+                    <div class="entry-body text-center">
+                        <div class="entry-meta">
+                            <a href="#">22 فروردین 1399</a>، 2 دیدگاه
+                        </div><!-- End .entry-meta -->
+
+                        <h3 class="entry-title text-center">
+                            <a href="single.html">پروبیوتیک ها و کاهش وزن</a>
+                        </h3><!-- End .entry-title -->
+
+                        <div class="entry-content">
+                            <a href="single.html" class="read-more">ادامه خواندن</a>
+                        </div><!-- End .entry-content -->
+                    </div><!-- End .entry-body -->
+                </article><!-- End .entry -->
+
+                <article class="entry">
+                    <figure class="entry-media">
+                        <a href="single.html">
+                            <img src="./Content/client/assets/images/medicine_images/news/blood-pressure-drug-may-aid-in-alzheimers-disease-treatment-500x400-2.jpg"
+                                 alt="توضیحات عکس">
+                        </a>
+                    </figure><!-- End .entry-media -->
+
+                    <div class="entry-body text-center">
+                        <div class="entry-meta">
+                            <a href="#">22 فروردین 1399</a>، 0 دیدگاه
+                        </div><!-- End .entry-meta -->
+
+                        <h3 class="entry-title text-center">
+                            <a href="single.html">اهمیت مصرف کلسیم</a>
+                        </h3><!-- End .entry-title -->
+
+                        <div class="entry-content">
+                            <a href="single.html" class="read-more">ادامه خواندن</a>
+                        </div><!-- End .entry-content -->
+                    </div><!-- End .entry-body -->
+                </article><!-- End .entry -->
+
+            </div><!-- End .owl-carousel -->
+
+        </div>
+
+
+        <div class="newsletter m-0"
+             style="background-image: url(./Content/client/assets/images/medicine_images/newsletter/cdc-tLQRMO33DeI-unsplash-2.jpg);">
+            <div class="container">
+                <div class="subscribe text-center">
+                    <div class="intro">
+                        <h3 class="title text-center">عضویت در خبرنامه ما</h3>
+                        <h4 class="content">با عضویت در خبرنامه از جدیدترین محصولات و تخفیف ها باخبر شوید</h4>
+                    </div>
+                    <div class="subscribe action">
+                        <form action="#">
+                            <div class="input-group">
+                                <input type="email" placeholder="آدرس ایمیل خود را وارد کنید" aria-label="Email Adress"
+                                       required="">
+                                <div class="input-group-append">
+                                    <button class="btn btn-subscribe" type="submit">
+                                        <span>
+                                            همین حالا عضو
+                                            شوید
+                                        </span>
+                                    </button>
+                                </div><!-- .End .input-group-append -->
+                            </div><!-- .End .input-group -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
 

@@ -1,110 +1,195 @@
 ﻿@model Seshin.Web.ViewModels.ContactUsViewModel
 
-<footer class="footer-part footer-border">
-    <div class="container">
-        <div class="footer-top ptb-100">
-            <div class="mb_-30">
-                <div class="row">
-                    <div class="col-12 col-lg-3 col-md-6">
-                        <div class="footer-about mb-sm-30">
-                            <div class="footer-logo">
-                                <a href="/">
-                                    <img src="~/Content/client/images/bottomLogo.png" alt="logo">
-                                </a>
+@*<footer class="footer-part footer-border">
+        <div class="container">
+            <div class="footer-top ptb-100">
+                <div class="mb_-30">
+                    <div class="row">
+                        <div class="col-12 col-lg-3 col-md-6">
+                            <div class="footer-about mb-sm-30">
+                                <div class="footer-logo">
+                                    <a href="/">
+                                        <img src="~/Content/client/images/bottomLogo.png" alt="logo">
+                                    </a>
+                                </div>
+                                <p class="footer-p">
+                                    گالری سه شین با جمع آوری بهترین نوع عطر ها از بهترین برند ها با
+                                    بهترین قیمت سعی در به دست آوردن هر چه بیشتر رضایت مشتریان خود دارد
+                                </p>
                             </div>
-                            <p class="footer-p">
-                                گالری سه شین با جمع آوری بهترین نوع عطر ها از بهترین برند ها با
-                                بهترین قیمت سعی در به دست آوردن هر چه بیشتر رضایت مشتریان خود دارد
-                            </p>
                         </div>
-                    </div>
-                    <div class="col-12 col-lg-3 col-md-6">
-                        <div class="footer-static-block">
-                            <span class="opener plus"></span>
-                            <h3 class="head-three">اطلاعات</h3>
-                            <ul class="footer-menu footer-block-contant">
-                                <li><a href="/ContactUs">تماس با ما</a></li>
-                                <li><a href="javascript:void(0)">برند ها</a></li>
-                                <li><a href="/Blog">بلاگ</a></li>
-                                <li><a href="javascript:void(0)">شرایط و قوانین</a></li>
-                                <li><a href="javascript:void(0)">حریم خصوصی</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-3 col-md-6">
-                        <div class="footer-static-block">
-                            <span class="opener plus"></span>
-                            <h3 class="head-three">حساب کاربری</h3>
-                            <ul class="footer-menu footer-block-contant">
-                                <li><a href="/Customer/Dashboard/Invoices">تاریخچه سفارش ها</a></li>
-                                <li><a href="javascript:void(0)">تخفیف ها</a></li>
-                                <li><a href="javascript:void(0)">هدایای ویژه</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-3 col-md-6">
-                        <div class="footer-static-block">
-                            <span class="opener plus"></span>
-                            <h3 class="head-three">تماس با ما</h3>
-                            <div class="contact-box footer-block-contant">
-                                <ul>
-                                    <li>
-                                        <div class="contact-thumb">
-                                            <img src="/Content/client/images/address-icon.svg" alt="">
-                                        </div>
-                                        <div class="contact-box-detail">
-                                            <p>
-                                                خیابان میرزای شیرازی جنوبی بین کوچه 20 و 22 پلاک 166 گالری سه شین
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="contact-thumb">
-                                            <img src="/Content/client/images/phone-icon.svg" alt="">
-                                        </div>
-                                        <div class="contact-box-detail">
-                                            <p><a href="tel:@Model.Phone">@Model.Phone</a></p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="contact-thumb">
-                                            <img src="/Content/client/images/mail-icon.svg" alt="">
-                                        </div>
-                                        <div class="contact-box-detail">
-                                            <p><a href="mailto://@Model.Email">@Model.Email</a></p>
-                                        </div>
-                                    </li>
+                        <div class="col-12 col-lg-3 col-md-6">
+                            <div class="footer-static-block">
+                                <span class="opener plus"></span>
+                                <h3 class="head-three">اطلاعات</h3>
+                                <ul class="footer-menu footer-block-contant">
+                                    <li><a href="/ContactUs">تماس با ما</a></li>
+                                    <li><a href="javascript:void(0)">برند ها</a></li>
+                                    <li><a href="/Blog">بلاگ</a></li>
+                                    <li><a href="javascript:void(0)">شرایط و قوانین</a></li>
+                                    <li><a href="javascript:void(0)">حریم خصوصی</a></li>
                                 </ul>
                             </div>
                         </div>
+                        <div class="col-12 col-lg-3 col-md-6">
+                            <div class="footer-static-block">
+                                <span class="opener plus"></span>
+                                <h3 class="head-three">حساب کاربری</h3>
+                                <ul class="footer-menu footer-block-contant">
+                                    <li><a href="/Customer/Dashboard/Invoices">تاریخچه سفارش ها</a></li>
+                                    <li><a href="javascript:void(0)">تخفیف ها</a></li>
+                                    <li><a href="javascript:void(0)">هدایای ویژه</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3 col-md-6">
+                            <div class="footer-static-block">
+                                <span class="opener plus"></span>
+                                <h3 class="head-three">تماس با ما</h3>
+                                <div class="contact-box footer-block-contant">
+                                    <ul>
+                                        <li>
+                                            <div class="contact-thumb">
+                                                <img src="/Content/client/images/address-icon.svg" alt="">
+                                            </div>
+                                            <div class="contact-box-detail">
+                                                <p>
+                                                    خیابان میرزای شیرازی جنوبی بین کوچه 20 و 22 پلاک 166 گالری سه شین
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="contact-thumb">
+                                                <img src="/Content/client/images/phone-icon.svg" alt="">
+                                            </div>
+                                            <div class="contact-box-detail">
+                                                <p><a href="tel:@Model.Phone">@Model.Phone</a></p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="contact-thumb">
+                                                <img src="/Content/client/images/mail-icon.svg" alt="">
+                                            </div>
+                                            <div class="contact-box-detail">
+                                                <p><a href="mailto://@Model.Email">@Model.Email</a></p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom align-center">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="w-100">
+                            <p>
+                                <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=194443&amp;Code=wSxTrsl4FwtayWjy3t2o"><img referrerpolicy="origin" src="https://Trustseal.eNamad.ir/logo.aspx?id=194443&amp;Code=wSxTrsl4FwtayWjy3t2o" alt="Nemad" style="cursor:pointer" id="wSxTrsl4FwtayWjy3t2o"></a>
+                            </p>
+                            <p class="mb-0">
+                                طراحی شده توسط<a href="https://www.spad.co/"
+                                                 target="_blank" title="Spad">اسپاد</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="social-media">
+                            <ul>
+                                <li><a href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="javascript:void(0)"><i class="fa fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom align-center">
+    </footer>*@
+
+
+
+<footer class="footer footer-dark footer-2">
+    <div class="footer-middle">
+        <div class="container">
             <div class="row">
-                <div class="col-12">
-                    <div class="w-100">
+                <div class="col-sm-12 col-lg-6">
+                    <div class="widget widget-about">
+                        <img src="./Content/client/pic/Logo_drug_store.png" class="footer-logo mb-0"
+                             alt="Footer Logo" width="82" height="25">
                         <p>
-                            <a referrerpolicy="origin" target="_blank" href="https://trustseal.enamad.ir/?id=194443&amp;Code=wSxTrsl4FwtayWjy3t2o"><img referrerpolicy="origin" src="https://Trustseal.eNamad.ir/logo.aspx?id=194443&amp;Code=wSxTrsl4FwtayWjy3t2o" alt="Nemad" style="cursor:pointer" id="wSxTrsl4FwtayWjy3t2o"></a>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی
+                            نامفهوم. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با
+                            تولید سادگی نامفهوم.
                         </p>
-                        <p class="mb-0">
-                            طراحی شده توسط<a href="https://www.spad.co/"
-                                             target="_blank" title="Spad">اسپاد</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="social-media">
-                        <ul>
-                            <li><a href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="javascript:void(0)"><i class="fa fa-youtube"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+
+                        <div class="widget-about-info">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-4">
+                                    <span class="widget-about-title">سوالی دارید؟ 7روز هفته/24ساعته</span>
+                                    <a href="tel:02126473569">021-26473569</a>
+                                </div><!-- End .col-sm-6 -->
+                            </div><!-- End .row -->
+                        </div><!-- End .widget-about-info -->
+                    </div><!-- End .widget about-widget -->
+                </div><!-- End .col-sm-12 col-lg-3 -->
+
+                <div class="col-sm-6 col-lg-3">
+                    <div class="widget">
+                        <h4 class="widget-title">لینک های مفید</h4><!-- End .widget-title -->
+
+                        <ul class="widget-list">
+                            <li><a href="blog.html">بلاگ</a></li>
+                            <li><a href="gallery.html">گالری</a></li>
+                            <li><a href="appreciation.html">افتخارات</a></li>
+                            <li><a href="faq.html">سوالات متداول</a></li>
+                            <li><a href="about.html">درباره ما</a></li>
+                            <li><a href="contact.html">تماس با ما</a></li>
+                        </ul><!-- End .widget-list -->
+                    </div><!-- End .widget -->
+                </div><!-- End .col-sm-6 col-lg-3 -->
+
+                <div class="col-sm-6 col-lg-3">
+                    <div class="widget">
+                        <h4 class="widget-title">شبکه های اجتماعی</h4><!-- End .widget-title -->
+
+                        <div class="social-icons social-icons-color">
+                            <a href="#" class="social-icon social-facebook" title="فیسبوک" target="_blank">
+                                <i class="icon-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon social-twitter" title="توییتر" target="_blank">
+                                <i class="icon-twitter"></i>
+                            </a>
+                            <a href="#" class="social-icon social-instagram" title="اینستاگرام" target="_blank">
+                                <i class="icon-instagram"></i>
+                            </a>
+                            <a href="#" class="social-icon social-youtube" title="یوتیوب" target="_blank">
+                                <i class="icon-youtube"></i>
+                            </a>
+                            <a href="#" class="social-icon social-pinterest" title="پینترست" target="_blank">
+                                <i class="icon-pinterest"></i>
+                            </a>
+                        </div><!-- End .soial-icons -->
+                    </div><!-- End .widget -->
+                </div><!-- End .col-sm-6 col-lg-3 -->
+
+            </div><!-- End .row -->
+        </div><!-- End .container -->
+    </div><!-- End .footer-middle -->
+
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="footer-copyright text-white">© طراحی شده توسط <a href="https://www.spad.co/">اسپاد</a></p>
+            <!-- End .footer-copyright -->
+
+
+        </div><!-- End .container -->
+    </div><!-- End .footer-bottom -->
+</footer><!-- End .footer -->
+
+<button id="scroll-top" title="Back to Top"><i class="icon-arrow-up"></i></button>
+
+
+<div class="mobile-menu-overlay"></div><!-- End .mobil-menu-overlay -->

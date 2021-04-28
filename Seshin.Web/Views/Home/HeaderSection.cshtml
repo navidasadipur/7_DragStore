@@ -2,7 +2,7 @@
 @{
     var mainProductGroups = ViewBag.MainProductGroups as List<ProductGroup>;
 }
-    <header id="header">
+    @*<header id="header">
         <div class="header-top-row">
             <div class="top-row-container position-r">
                 <div class="row m-0">
@@ -177,7 +177,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </li>*@
+                                        </li>*@@*
 
                                                 <li class="level dropdown">
                                                     <span class="opener plus"></span>
@@ -290,6 +290,848 @@
             </div>
         </div>
 
+    </header>*@
+
+
+
+    <header class="header header-7">
+        <div class="sticky-wrapper">
+            <div class="header-middle sticky-header">
+                <div class="container">
+                    <div class="header-left">
+                        <button class="mobile-menu-toggler">
+                            <span class="sr-only">فهرست</span>
+                            <i class="icon-bars"></i>
+                        </button>
+
+                        <a href="index.html" class="logo">
+                            <img src="./Content/client/pic/Logo_drug_store.png" alt="Molla Logo" width="82" height="25">
+                        </a>
+                    </div><!-- End .header-left -->
+
+                    <div class="header-right">
+
+                        <nav class="main-nav">
+                            <ul class="menu sf-arrows sf-js-enabled" style="touch-action: pan-y;">
+                                <li>
+                                    <a href="index.html" class="p-0">خانه</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="sf-with-ul">فروشگاه </a>
+
+                                    <ul>
+                                        <li>
+                                            <a href="login.html">حساب کاربری من</a>
+                                        </li>
+                                        <li><a href="checkout.html">پرداخت</a></li>
+                                        <li><a href="cart.html">سبد خرید</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+
+                                    <a href="#" class="sf-with-ul">آرایشی و بهداشتی </a>
+
+                                    <ul>
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">بهداشت دهان و دندان</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">ارتودنسی</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">چسب دندان</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">خمیر دندان</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">دندان مصنوعی</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">دهان شویه</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">نخ دندان</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">مسواک</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">محصولات آفتاب</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">ضد آفتاب بی رنگ</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">ضد آفتاب رنگی</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">ضد آفتاب</a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="productlist.html">افتر سان</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">برنزه کننده</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">مرطوب کننده</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">مرطوب کننده بدن</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">مرطوب کننده پا</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">مرطوب کننده دست</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">مرطوب کننده پوست</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">مرطوب کننده فاقد چربی</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">مرطوب کننده و مات کننده </a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">مرطوب کننده مغذی</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">پاکسازی پوست</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">بدن</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">صورت</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">دور چشم</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">ضد چروک</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">دور چشم و لب</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">صورت</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">ضد لک</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">ضد لک صورت</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">ضد لک بدن</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">ژل ضد لک</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">کنسانتره ضد لک</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">کرم ضد لک</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">سرم ضد لک</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">ضد لک دست</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">ضد لک دور چشم</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">مراقبت از مو</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">اسپری</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">حالت دهنده مو</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">رنگ مو ، ابرو و مژه</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">شامپو</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">ماسک مو</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">نرم کننده</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">مو (درمانی)</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">سرم مو</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">کراتینه مو</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">ضد ریزش</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">موی فر و وز</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">ترمیم کننده پوست</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">زخم ، سوختگی و اسکار</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">ترک</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">لب</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">ناخن</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">لیفتینگ پوست</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">سینه</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">صورت و گردن</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">دور چشم و لب</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">بدن</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="sf-with-ul">تجهیزات پزشکی </a>
+
+                                    <ul>
+
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">ارتوپدی</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">زانو بند</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">آویز دست</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">بالشت طبی</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">قوز بند</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">گردنبد طبی </a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">شکم بند</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">کمربند طبی</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">مچ بند طبی</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">محافظ شست و مچ</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">تجهیزات پزشکی بدن</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">تجهیزات پزشکی تنفس</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html"> تجهیزات پزشکی چشم</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">تجهیزات پزشکی گوارش</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">تجهیزات پزشکی گوش</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">تجهیزات مادر و کودک</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">تجهیزات پزشکی مادران</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html"> تجهیزات پزشکی کودکان</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">ترازو و دما سنج</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">ترازو</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html"> دما سنج</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">سلامت محیط</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">تصفیه هوا</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html"> تنظیم رطوبت</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html"> دستگاه بخور</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">تجهیزات تسکین دهنده</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">پتو و گرمکن پا</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html"> تجهیزات ضد درد</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html"> کیسه آب گرم</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html"> ماساژور</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">تجهیزات قند خون</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">تست قند</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">فشار سنج</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">محافظ انسولین</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">لوازم فردی</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">تجهیزات ورزشی</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">لوازم فردی</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">لوازم کمک درمانی</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#" class="sf-with-ul">مادر و کودک </a>
+
+                                    <ul>
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">بهداشت مادر و کودک</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">بهداشت مادر</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">بهداشت کودک</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">مادر و بارداری</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">بهداشت و مراقبت مادر</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">مراقبت از پوست</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">مراقبت از ناخن و مو</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">تقویت مادر و جنین</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">لوازم کودک و نوزاد</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">لوازم دوران شیر دهی</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">بهداشت کودک</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">مکمل مادران</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">مکمل های بانوان</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="productlist.html" class="sf-with-ul">دوران شیر دهی</a>
+                                            <ul>
+                                                <li>
+                                                    <a href="productlist.html">تقویت مادر</a>
+                                                </li>
+                                                <li>
+                                                    <a href="productlist.html">لوازم دوران شیر دهی</a>
+                                                <li>
+                                                    <a href="productlist.html" class="sf-with-ul">تقویت شیر مادر</a>
+                                                    <ul>
+                                                        <li><a href="productlist.html">تقویتی کودکان</a></li>
+                                                        <li><a href="productlist.html">دستگاه گوارش و نفخ</a></li>
+                                                    </ul>
+                                                </li>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="productlist.html" class="sf-with-ul">شیر خشک و غذای کودک</a>
+                                    <ul>
+                                        <li>
+                                            <a href="productlist.html">شیر خشک</a>
+                                            <a href="productlist.html">غذای کمکی کودکان</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="productlist.html" class="sf-with-ul">مکمل کودکان</a>
+                                    <ul>
+                                        <li>
+                                            <a href="productlist.html">خواب آور کودکان</a>
+                                        </li>
+                                        <li>
+                                            <a href="productlist.html">شیر خشک</a>
+                                        </li>
+                                        <li>
+                                            <a href="productlist.html">غذای کمکی کودکان</a>
+                                        </li>
+                                        <li>
+                                            <a href="productlist.html">ضد سرفه کودکان</a>
+                                        </li>
+                                        <li>
+                                            <a href="productlist.html">کم خونی کودکان</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="sf-with-ul">مکمل غذایی </a>
+
+                                <ul>
+                                    <li>
+                                        <a href="productlist.html" class="sf-with-ul">ویتامین ها و موا معدنی</a>
+                                        <ul>
+                                            <li>
+                                                <a href="productlist.html">مولتی ویتامین ها</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">ویتامین ها</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">املاح</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">سایر ترکیبات</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <a href="productlist.html" class="sf-with-ul">مکمل کودکان</a>
+                                        <ul>
+                                            <li>
+                                                <a href="productlist.html">خواب آور کودکان</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">تقویتی کودکان کودکان</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">دستگاه گوارش و نفخ کودکان</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">شیر خشک</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">غذای کمکی کودکان</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">ضد سرفه کودکان</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">کم خونی کودکان</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="productlist.html" class="sf-with-ul">مکمل آقایان</a>
+                                        <ul>
+                                            <li>
+                                                <a href="productlist.html">مکمل آقایان</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="productlist.html" class="sf-with-ul">مکمل بانوان</a>
+                                        <ul>
+                                            <li>
+                                                <a href="productlist.html">مکمل های بانوان</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="productlist.html" class="sf-with-ul">مکمل تنظیم وزن</a>
+                                        <ul>
+                                            <li>
+                                                <a href="productlist.html">کاهش وزن</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">افزایش وزن</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">کاهش جذب مواد غذایی</a>
+
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="productlist.html" class="sf-with-ul">مکمل کمک درمانی 1</a>
+                                        <ul>
+                                            <li>
+                                                <a href="productlist.html">مغز و اعصاب</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">آنتی اکسیدان</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">پوست ، مو و ناخن</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">سیستم ایمنی</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">قلب و عروق</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">ترک سیگار</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">ترک اعتیاد</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">چشم و بینایی</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="productlist.html" class="sf-with-ul">مکمل درمانی 2</a>
+                                        <ul>
+                                            <li>
+                                                <a href="productlist.html">ضد تعریق</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">مخمر</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">گوارش</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">پروستات</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">دستگاه تنفس ، بینی و گوش</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">دیابت</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">استخوان و مفاصل</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">دهان و دندان</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="productlist.html" class="sf-with-ul">مکمل گیاهی</a>
+                                        <ul>
+                                            <li>
+                                                <a href="productlist.html">تنظیم وزن</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">مکمل های تقویتی گیاهی</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">کمک درمانی های گیاهی</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="productlist.html" class="sf-with-ul">مکمل ورزشی</a>
+                                        <ul>
+                                            <li>
+                                                <a href="productlist.html">پروتثین</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">انرژی زا</a>
+                                            </li>
+
+                                            <li>
+                                                <a href="productlist.html">اسید آمینه</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">کاهش وزن</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">کربوهیدرات</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="sf-with-ul">مکمل ورزشی </a>
+
+                                <ul>
+                                    <li>
+                                        <a href="productlist.html" class="sf-with-ul">کاهش وزن</a>
+                                        <ul>
+                                            <li>
+                                                <a href="productlist.html">سی ال ای</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">فیبر</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">چربی سوز</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">ال کارنتین</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="productlist.html">کراتین</a></li>
+                                    <li><a href="productlist.html">سی ال ای</a></li>
+                                    <li><a href="productlist.html">کارنتین</a></li>
+                                    <li><a href="productlist.html">بی سی ای ای</a></li>
+                                    <li>
+                                        <a href="productlist.html" class="sf-with-ul">انرژی زا</a>
+                                        <ul>
+                                            <li>
+                                                <a href="productlist.html">پمپ</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">کافئین</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">اچ ام بی</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="productlist.html" class="sf-with-ul">اسید آمینه</a>
+                                        <ul>
+                                            <li>
+                                                <a href="productlist.html">آمینو</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">بتا آلانین</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">ال ارژنین</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">بی سی ای ای</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">ال گلوتامین</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="productlist.html">گلوتامین</a></li>
+                                    <li>
+                                        <a href="productlist.html" class="sf-with-ul">پروتئین</a>
+                                        <ul>
+                                            <li>
+                                                <a href="productlist.html">پروتئین بیف</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">پروتئین کازئین</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">پروتئین گیاهی</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">پروتئین وی</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">پروتئین وی آلبومین</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="productlist.html" class="sf-with-ul">کربوهیدرات</a>
+                                        <ul>
+                                            <li>
+                                                <a href="productlist.html">گینز</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">مس</a>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html">کربو</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            </ul><!-- End .menu -->
+                        </nav>
+
+                        <div class="header-search">
+                            <a href="#" class="search-toggle" role="button"><i class="icon-search"></i></a>
+                            <form action="#" method="get">
+                                <div class="header-search-wrapper">
+                                    <label for="q" class="sr-only">جستجو</label>
+                                    <input type="search" class="form-control" name="q" id="q"
+                                           placeholder="جستجوی محصول ..." required="">
+                                </div><!-- End .header-search-wrapper -->
+                            </form>
+                        </div><!-- End .header-search -->
+
+                        <a href="wishlist.html" class="wishlist-link">
+                            <i class="icon-heart-o"></i>
+                            <span class="wishlist-count">3</span>
+                        </a>
+
+                        <div class="dropdown cart-dropdown">
+                            <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false" data-display="static">
+                                <i class="icon-shopping-cart"></i>
+                                <span class="cart-count">2</span>
+                                <span class="cart-txt">164,000 تومان</span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <div class="dropdown-cart-products">
+                                    <div class="product">
+                                        <div class="product-cart-details">
+                                            <h4 class="product-title">
+                                                <a href="product.html">قرص </a>
+                                            </h4>
+
+                                            <span class="cart-product-info">
+                                                <span class="cart-product-qty">1 x </span>
+                                                84,000 تومان
+                                            </span>
+                                        </div><!-- End .product-cart-details -->
+
+                                        <figure class="product-image-container">
+                                            <a href="product.html" class="product-image">
+                                                <img src="./Content/client/assets/images/products/cart/product-1.jpg" alt="محصول">
+                                            </a>
+                                        </figure>
+                                        <a href="#" class="btn-remove" title="حذف محصول"><i class="icon-close"></i></a>
+                                    </div><!-- End .product -->
+
+                                    <div class="product">
+                                        <div class="product-cart-details">
+                                            <h4 class="product-title">
+                                                <a href="product.html">قرص </a>
+                                            </h4>
+
+                                            <span class="cart-product-info">
+                                                <span class="cart-product-qty">1 x </span>
+                                                76,000 تومان
+                                            </span>
+                                        </div><!-- End .product-cart-details -->
+
+                                        <figure class="product-image-container">
+                                            <a href="product.html" class="product-image">
+                                                <img src="./Content/client/assets/images/products/cart/product-2.jpg" alt="محصول">
+                                            </a>
+                                        </figure>
+                                        <a href="#" class="btn-remove" title="حذف محصول"><i class="icon-close"></i></a>
+                                    </div><!-- End .product -->
+                                </div><!-- End .cart-product -->
+
+                                <div class="dropdown-cart-total">
+                                    <span>مجموع</span>
+
+                                    <span class="cart-total-price">160,000 تومان</span>
+                                </div><!-- End .dropdown-cart-total -->
+
+                                <div class="dropdown-cart-action">
+                                    <a href="cart.html" class="btn btn-primary">مشاهده سبد خرید</a>
+                                    <a href="checkout.html" class="btn btn-outline-primary-2">
+                                        <span>پرداخت</span><i class="icon-long-arrow-left"></i>
+                                    </a>
+                                </div><!-- End .dropdown-cart-total -->
+                            </div><!-- End .dropdown-menu -->
+                        </div><!-- End .cart-dropdown -->
+                    </div><!-- End .header-right -->
+                </div><!-- End .container -->
+            </div>
+        </div><!-- End .header-middle -->
     </header>
-
-
