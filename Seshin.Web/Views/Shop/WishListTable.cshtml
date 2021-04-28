@@ -1,0 +1,38 @@
+﻿@model Seshin.Web.ViewModels.WishListModel
+<table class="table border mb-0">
+    <thead>
+    <tr>
+        <th>تصویر</th>
+        <th>نام محصول</th>
+        <th>حذف</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.WishListItems)
+    {
+        <tr>
+            <td>
+                <a href="/Shop/Product/@item.Id">
+                    <div class="product-image">
+                        <img alt="@item.ProductName" src="/Files/ProductImages/Thumb/@item.Image">
+                    </div>
+                </a>
+            </td>
+            <td>
+                <div class="product-title">
+                    <a href="product-page.html">@item.ProductName</a>
+                </div>
+            </td>
+
+
+
+            <td>
+                <a href="javascript:void(0)" class="btn small btn-color" onclick="removeFromWishList(@item.Id)">
+                    <i title="Remove Item From Cart" data-id="100" class="fa fa-trash cart-remove-item"></i>
+                </a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+

@@ -1,0 +1,74 @@
+﻿@model List<Seshin.Infratructure.Dtos.Product.ProductWithPriceDto>
+<section class="product-section pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="heading-part text-center mb-30 mb-sm-20">
+                    <h2 class="main_title">محصولات مرتبط</h2>
+                </div>
+            </div>
+        </div>
+        <div class="position-r">
+            <div class="row">
+                <div class="product-slider owl-carousel position-initial">
+                    @foreach (var item in Model)
+                    {
+                        <div class="item">
+                            <div class="product-item">
+                                <a href="/Shop/Product/@item.Id">
+                                    <div class="product-image">
+                                        <img class="cart-item-image" src="/Files/ProductImages/Thumb/@item.Image" alt="@item.ShortTitle">
+                                    </div>
+                                </a>
+                                <div class="product-details-outer">
+                                    <div class="product-details">
+                                        <div class="product-title">
+                                            <a href="/Shop/Product/@item.Id">@item.ShortTitle</a>
+                                        </div>
+                                        <div class="price-box">
+                                            @if (item.PriceAfterDiscount < item.Price)
+                                            {
+                                                <span class="price">@item.PriceAfterDiscount.ToString("##,###") تومان</span>
+                                                <del class="price old-price">@item.Price.ToString("##,###") تومان</del>
+                                            }
+                                            else
+                                            {
+                                                <span class="price">@item.Price.ToString("##,###") تومان</span>
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="product-details-btn">
+                                        <ul>
+
+                                            <li class="icon wishlist-icon">
+                                                <a href="javascript:void(0)" onclick="AddToWishList(@item.Id)">
+                                                    <span></span>
+                                                </a>
+                                            </li>
+                                            <li class="icon compare-icon">
+                                                <a href="javascript:void(0)" onclick="AddToCart(@item.Id)">
+                                                    <span></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        @if (item.Price > 0 && item.PriceAfterDiscount > 0)
+                                        {
+                                            <a href="javascript:void(0)" onclick="AddToCart(@item.Id)" class="btn add-product-btn">اضافه کردن به سبد خرید</a>
+
+                                        }
+                                        else
+                                        {
+                                            <a href="javascript:void(0)" class="btn add-product-btn" style="background: gray">عدم موجودی</a>
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

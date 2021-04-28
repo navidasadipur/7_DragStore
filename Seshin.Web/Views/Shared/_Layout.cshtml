@@ -1,0 +1,681 @@
+﻿<!DOCTYPE html>
+<html dir="rtl" lang="fa-IR">
+
+<head>
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <title>سه شین | @ViewData["Title"]</title>
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/solid.min.css" integrity="sha512-xIEmv/u9DeZZRfvRS06QVP2C97Hs5i0ePXDooLa5ZPla3jOgPT/w6CzoSMPuRiumP7A/xhnUBxRmgWWwU26ZeQ==" crossorigin="anonymous" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" />
+    <link type="image/x-icon" href="/Content/client/images/fav-icon.png" rel="icon">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/Content/client/css/glass-case.css">
+    <link rel="stylesheet" type="text/css" href="/Content/client/css/xpoge.css">
+    <link rel="stylesheet" type="text/css" href="/Content/client/css/responsive.css">
+</head>
+<body class="text-right">
+    <!-- Start preloader -->
+    <div id="preloader"></div>
+    <!-- End preloader -->
+    <!-- Search Screen start -->
+    <!--
+    <div class="sidebar-search-wrap">
+        <div class="sidebar-table-container">
+            <div class="sidebar-align-container">
+                <div class="search-closer right-side"></div>
+                <div class="search-container">
+                    <form method="get" id="search-form">
+                        <input type="text" class="search-input" name="searchString" id="searchString" placeholder="جستجو کنید">
+                    </form>
+                    <span>محصول مورد نظر را جستجو کنید</span>
+                </div>
+            </div>
+        </div>
+    </div>
+        -->
+    <!-- Search Screen end -->
+
+
+    <div class="main">
+        <!-- Header start -->
+        @Html.Action("HeaderSection", "Home", new { area = "" })
+        <div class="spacer"></div>
+        <!-- Header end -->
+        @RenderBody()
+        <!-- Footer section start -->
+        @Html.Action("FooterSection", "Home", new { area = "" })
+        <!-- Footer section end -->
+    </div>
+    <div class="loading" id="loading" style="display: none"></div>
+    <style>
+        .loading {
+            position: fixed;
+            z-index: 999999999;
+            height: 2em;
+            width: 2em;
+            overflow: visible;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+            /* Transparent Overlay */
+            .loading:before {
+                content: '';
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.3);
+            }
+
+            /* :not(:required) hides these rules from IE9 and below */
+            .loading:not(:required) {
+                /* hide "loading..." text */
+                font: 0/0 a;
+                color: transparent;
+                text-shadow: none;
+                background-color: transparent;
+                border: 0;
+            }
+
+                .loading:not(:required):after {
+                    content: '';
+                    display: block;
+                    font-size: 10px;
+                    width: 1em;
+                    height: 1em;
+                    margin-top: -0.5em;
+                    -webkit-animation: spinner 1500ms infinite linear;
+                    -moz-animation: spinner 1500ms infinite linear;
+                    -ms-animation: spinner 1500ms infinite linear;
+                    -o-animation: spinner 1500ms infinite linear;
+                    animation: spinner 1500ms infinite linear;
+                    border-radius: 0.5em;
+                    -webkit-box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.5) -1.5em 0 0 0, rgba(0, 0, 0, 0.5) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+                    box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) -1.5em 0 0 0, rgba(0, 0, 0, 0.75) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+                }
+
+        /* Animation */
+
+        @@-webkit-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @@-moz-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @@-o-keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+
+        @@keyframes spinner {
+            0% {
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <!-- Loading -->
+    <script src="/Content/client/js/jquery-3.4.1.min.js"></script>
+    <script src="/Content/client/js/bootstrap.min.js"></script>
+    <script>
+        // Here we enable or disable Megamenu tab onHover/onClick
+        /*
+        (function ($) {
+            $(function () {
+                $(document).off('click.bs.tab.data-api', '[data-hover="tab"]');
+                $(document).on('mouseenter.bs.tab.data-api', '[data-toggle="tab"], [data-hover="tab"]', function () {
+                    $(this).tab('show');
+                });
+            });
+        })(jQuery);
+        */
+    </script>
+    <script src="/Content/client/js/owl.carousel.min.js"></script>
+    <script src="/Content/client/js/modernizr.js"></script>
+    @*<script src="/Content/client/js/jquery.magnific-popup.min.js"></script>*@
+    <script src="/Content/client/js/custom.js"></script>
+    @*<script src="/Content/client/js/countDown.js"></script>*@
+    <script src="/Content/client/js/store.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-loading-overlay/2.1.7/loadingoverlay.min.js" integrity="sha512-hktawXAt9BdIaDoaO9DlLp6LYhbHMi5A36LcXQeHgVKUH6kJMOQsAtIw2kmQ9RERDpnSTlafajo6USh9JUXckw==" crossorigin="anonymous"></script>
+    <script>
+        $('.timer').each(function () {
+            var $this = $(this), finalDate = $(this).data('countdown');
+            $this.countdown(finalDate, function (event) {
+                $this.html(event.strftime('%H:%M:%S'));
+            });
+        });
+    </script>
+    <script>
+        var addCount = 1;
+        function IncreaseProductCount() {
+            addCount += 1;
+            $("#txtProductCount").html(addCount);
+        }
+
+        function DecreaseProductCount() {
+            if (addCount > 1)
+                addCount -= 1;
+            $("#txtProductCount").html(addCount);
+        }
+
+        function AddToCart(id, mainFeature) {
+
+            addCount = addCount <= 0 ? 1 : addCount
+
+            var mainFeatureId = null;
+            if (mainFeature != null) {
+                mainFeatureId = mainFeature;
+            }
+            if (mainFeatureId === null) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Shop/AddToCart?productId=' + id + '&count=' + addCount,
+                    success: function (data) {
+                        data = JSON.parse(data);
+
+                        if (data.Message.toLowerCase() == "finished" && addCount > 1) {
+                            toastr.info("این تعداد از محصول در انبار موجود نیست");
+                        }
+                        else if (data.Message.toLowerCase() == "finished") {
+                            toastr.info("محصول در انبار موجود نیست");
+                        }
+                        else if (data.Message.toLowerCase() == "success") {
+                            toastr.success("محصول به سبد اضافه گردید");
+                        }
+
+                        GetCart();
+                    },
+                    error: function (data) {
+                        console.log("error");
+                        console.log(data);
+                    },
+                    complete: function () {
+                    }
+                });
+            } else {
+                $.ajax({
+                    type: 'POST',
+                    url: '/Shop/AddToCart?productId=' + id + '&mainFeatureId=' + mainFeatureId + '&count=' + addCount,
+                    success: function (data) {
+                        data = JSON.parse(data);
+
+                        if (data.Message.toLowerCase() == "finished" && addCount > 1) {
+                            toastr.info("این تعداد از محصول در انبار موجود نیست");
+                        }
+                        else if (data.Message.toLowerCase() == "finished") {
+                            toastr.info("محصول در انبار موجود نیست");
+                        }
+                        else if (data.Message.toLowerCase() == "success") {
+                            toastr.success("محصول به سبد اضافه گردید");
+                        }
+
+                        GetCart();
+                    },
+                    error: function (data) {
+                        console.log("error");
+                        console.log(data);
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+        function RemoveFromCart(id, mainFeatureId, complete) {
+            $.ajax({
+                type: 'POST',
+                url: '/Shop/RemoveFromCart?productId=' + id + '&mainFeatureId=' + mainFeatureId + '&complete=' + complete,
+                success: function (data) {
+                    data = JSON.parse(data);
+
+                    if (data.Message.toLowerCase() == "success") {
+                        toastr.info("محصول از سبد حذف گردید");
+                    }
+
+                    GetCart();
+                },
+                error: function (data) {
+                    console.log("error");
+                    console.log(data);
+                },
+                complete: function () {
+                }
+            });
+        }
+        function GetCart() {
+            $.ajax({
+                type: 'GET',
+                url: '/Home/CartSection',
+                success: function (data) {
+                    $("#cartSection").html(data);
+                },
+                error: function (data) {
+                    console.log("error");
+                    console.log(data);
+                },
+                complete: function () {
+                }
+            });
+            if ($("#CartTable") !== undefined) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/Shop/CartTable',
+                    success: function (data) {
+                        $("#CartTable").html(data);
+                    },
+                    error: function (data) {
+                        console.log("error");
+                        console.log(data);
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+        }
+    </script>
+    <script>
+    function AddToWishList(id) {
+        var userIsLoggedIn = '@(User.Identity.IsAuthenticated)';
+        if (userIsLoggedIn === 'False') {
+            location.href = "/Customer/Auth/Login";
+        } else {
+            $.ajax({
+                type: 'POST',
+                url: '/Shop/AddToWishList?productId=' + id,
+                success: function (data) {
+                    alert('محصول مورد نظر به لیست علاقه مندی های شما افزوده شد');
+                },
+                error: function (data) {
+                    console.log("error");
+                    console.log(data);
+                },
+                complete: function () {
+                }
+            });
+        }
+    }
+    function removeFromWishList(id) {
+        $.ajax({
+                type: 'POST',
+                url: '/Shop/RemoveFromWishList?productId=' + id,
+            success: function (data) {
+                GetWishList();
+            },
+                error: function (data) {
+                    console.log("error");
+                    console.log(data);
+                },
+                complete: function () {
+                }
+            });
+    }
+    function GetWishList() {
+        $.ajax({
+                type: 'GET',
+                url: '/Shop/WishListTable',
+                success: function (data) {
+                    $("#WishListTable").html(data);
+                },
+                error: function (data) {
+                    console.log("error");
+                    console.log(data);
+                },
+                complete: function () {
+                }
+            });
+    }
+    </script>
+    <script>
+        $(".search-form").submit(function (e) {
+            e.preventDefault();
+            var searchString = $(this).children(".searchString").val();
+            location.href = '/Shop/ProductList/Search/' + searchString;
+        });
+
+        function search(e) {
+            e.preventDefault();
+            var searchString = $("#searchString").val();
+            location.href = '/Shop/ProductList/Search/' + searchString;
+        }
+
+        $(".expandable").click(function (e) {
+            var target = e.target;
+            console.log(target);
+            $(target).toggleClass("edeactive");
+            $(target).toggleClass("eactive");
+            $(target).next().slideToggle();
+        })
+
+    </script>
+
+    <!--         Discount functions           -->
+
+    <script>
+        var doc = document;
+        function __(item) {
+            return doc.querySelector(item);
+        }
+
+        $("#chkHasDiscountCode").on("change", function () {
+            //reset
+            __(".discount-message").innerHTML = "";
+            __("#txtDiscountCode").value = "";
+
+            var section = $(".checkout-discount-section");
+
+            if ($("#chkHasDiscountCode").is(':checked')) {
+                section.css({ "display": "block" });
+            }
+            else {
+                section.css({ "display": "none" })
+            }
+        })
+
+        function ApplyDiscountCode(e, invoiceNumber) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            var discountCodeStr = __("#txtDiscountCode").value;
+
+            if (discountCodeStr === "") {
+
+                __("#txtDiscountCode").style.borderColor = "#ff0000";
+                return;
+
+            } else {
+                __("#txtDiscountCode").style.borderColor = "#e5e5e5";
+                $(e.target).LoadingOverlay("show", {
+                    image: "",
+                    fontawesome: "fa fa-spinner fa-spin"
+                });
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/Shop/ApplyDiscountCode?discountCodeStr=' + discountCodeStr + "&invoiceNumber=" + invoiceNumber,
+                    success: function (result) {
+                        var res = JSON.parse(result);
+                        if (res.Response == "invalid") {
+                            __(".discount-message").innerHTML = '<div class="alert alert-warning">کد تخفیف نامعتبر است</div>';
+                            $(e.target).LoadingOverlay("hide");
+                        }
+                        else if (res.Response == "login") {
+                            __(".discount-message").innerHTML = '<div class="alert alert-warning">برای استفاده از کد تخفیف باید ابتدا وارد حساب کاربری خود شوید.</div>';
+                            $(e.target).LoadingOverlay("hide");
+                        }
+                        else {
+                            __(".discount-message").innerHTML = '<div class="alert alert-success">کد تخفیف معتبر بوده و تخفیف اعمال گردید.</div>';
+                            __("#txtDiscountCode").disabled = true;
+                            __(".btn-discount").disabled = true;
+                            __("#DiscountCode").value = discountCodeStr;
+                            $(e.target).LoadingOverlay("hide");
+                        }
+                        __(".finalPrice").innerHTML = Number(res.FinalPrice.toFixed(0)).toLocaleString() + " تومان";
+                        __("#tdDiscountAmount").innerHTML = Number(res.DiscountAmount.toFixed(0)).toLocaleString() + " تومان";
+                    },
+                    error: function (data) {
+                        console.log("error");
+                        console.log(data);
+                        $(e.target).LoadingOverlay("hide");
+                    },
+                    complete: function () {
+                    }
+                });
+            }
+
+
+
+        }
+
+    </script>
+    @RenderSection("scripts", required: false)
+    @RenderSection("LoadingOverlay", required: false)
+    <script src="~/Content/client/js/jquery.magnific-popup.min.js"></script>
+    <script>
+
+        $(".spn-product-code").hover(function (e) {
+            e.stopPropagation();
+            var val = this.firstElementChild.firstElementChild.innerHTML;
+            $(".color-notification").html(val);
+
+            var pos = $(this).position();
+
+            var outerWidth = $(".color-notification").outerWidth() - 20;
+
+
+            if ($(window).outerWidth() < 768) {
+                $(".color-notification").css({ left: (pos.left - outerWidth) + "px", top: (pos.top + 72) + "px", display: "inline-block" });
+            }
+            else {
+                $(".color-notification").css({ left: (pos.left - outerWidth) + "px", top: (pos.top + 42) + "px", display: "inline-block" });
+            }
+
+        });
+        $(".spn-product-code").mouseleave(function () {
+
+            $(".color-notification").css({ display: "none" });
+            $(".color-notification").html("");
+
+        });
+
+        var item = document.getElementById("newslater-popup");
+
+        /* ------------ Newslater-popup JS Start ------------- */
+        $(window).on('load', function () {
+            if (item != null && item != undefined) {
+                setTimeout(function () {
+                    jQuery.magnificPopup.open({
+                        items: { src: '#newslater-popup' }, type: 'inline'
+                    }, 0);
+                }, 1000)
+            }
+        });
+        /* ------------ Newslater-popup JS End ------------- */
+    </script>
+    <script>
+
+        var time = 0;
+        var interval = null;
+        function SendCode(e) {
+
+            if (time > 0) return;
+
+            e.preventDefault();
+        
+            var phone = $("#Phone").val();
+
+            if (phone == "" || phone.length < 11) {
+                alert("شماره موبایل معتبر نمی باشد");
+                $("#Phone").css({ "border": "1px solid #ff0000;" })
+            }
+            else {
+                $("#Phone").css({ "border": "1px solid #e5e5e5;" })
+            }
+
+            $("#phoneNumber").html(phone);
+            
+            $("#step-login-container").LoadingOverlay("show", {
+                image: "",
+                fontawesome: "fa fa-spinner fa-spin"
+            });
+
+            $.ajax({
+                type: 'GET',
+                url: '/Customer/Auth/SendCode?phone=' + phone,
+                success: function (data) {
+                    console.log(data);
+
+                    $("#step-login-container").LoadingOverlay("hide");
+
+                    $("#step-1").css({ "top": "-250px" });
+                    $("#step-2").css({ "top": "-250px" });
+
+                    $(".send-code-timer").css({ "display": "inline" });
+                    $(".resend-code").css({ "display": "none" });
+                    
+                    clearInterval(interval);
+                    time = 60;
+                    interval = setInterval(tick, 1000);
+
+                },
+                error: function (data) {
+
+                },
+                complete: function () {
+                }
+            });
+        }
+
+        function tick() {
+            time -= 1;
+
+            var minutes = Math.trunc(time / 60);
+            var seconds = time % 60;
+            var timeStr = seconds >= 10 ? seconds : "0" + seconds;
+            timeStr += " : ";
+            timeStr += minutes >= 10 ? minutes : "0" + minutes;
+
+            $(".send-code-timer").html(timeStr);
+
+            if (time == 0) {
+                $(".resend-code").css({ "display": "inline" });
+                $(".send-code-timer").css({ "display": "none" });
+
+                clearInterval(interval);
+            }
+        }
+
+        function ChangeNumber() {
+
+            $(".message").html("");
+            time = 0;
+
+            $("#step-1").css({ "top": "0px" });
+            $("#step-2").css({ "top": "0px" });
+
+        }
+
+
+        $("#LoginRegisterForm").on("submit", function (e) {
+
+            e.preventDefault();
+            $("#step-login-container").LoadingOverlay("show", {
+                image: "",
+                fontawesome: "fa fa-spinner fa-spin"
+            });
+
+            var phone = $("#Phone").val();
+            var code = $("#ConfirmCode").val();
+
+            var model = {
+                Phone: phone,
+                ConfirmCode : code
+            }
+
+            $.ajax({
+                type: 'POST',
+                url: '/Customer/Auth/AccountLogin',
+                data: model,
+                success: function (data) {
+                    console.log(data=="invalid code");
+                    data = JSON.parse(data);
+                    console.log(data=="invalid code");
+                    $("#step-login-container").LoadingOverlay("hide");
+
+                    if (data == "ok") {
+                        window.location.href = "/Customer/Dashboard";
+                        var resText = "<div class='alert alert-success' style='font-size: 14px;'>خوش آمدید</div>";
+                        $(".message").html(resText);
+
+                        $("#btnSubmit").attr("disabled", true);
+                    }
+                    else if (data == "invalid") {
+                        var resText = "<div class='alert alert-warning' style='font-size: 14px;'>اطلاعات وارد شده صحیح نمی باشد</div>";
+                        $(".message").html(resText);
+                    }
+                    else if (data == "invalid code") {
+                        var resText = "<div class='alert alert-warning' style='font-size: 14px;'>کد تایید معتبر نمی باشد</div>";
+                        $(".message").html(resText);
+                    }
+                },
+                error: function (data) {
+                    console.log("error");
+                    console.log(data);
+                },
+                complete: function () {
+                }
+            });
+
+        })
+
+
+        
+
+    </script>
+
+</body>
+</html>
+

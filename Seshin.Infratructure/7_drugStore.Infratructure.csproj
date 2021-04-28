@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0D2FF993-9241-444D-8BB7-44B31CCD4165}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Seshin.Infratructure</RootNamespace>
+    <AssemblyName>Seshin.Infratructure</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.5.0.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.5.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.5.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseRepository.cs" />
+    <Compile Include="Dtos\Product\ProductWithPriceDto.cs" />
+    <Compile Include="Extensions\DistinctBy.cs" />
+    <Compile Include="Filters\PaginationFilter.cs" />
+    <Compile Include="Helpers\AsyncHelper.cs" />
+    <Compile Include="Helpers\CheckImageClass.cs" />
+    <Compile Include="Helpers\CheckPermission.cs" />
+    <Compile Include="Helpers\Email.cs" />
+    <Compile Include="Helpers\HierarchyLoop.cs" />
+    <Compile Include="Helpers\ImageResizer.cs" />
+    <Compile Include="Helpers\PasswordHelper.cs" />
+    <Compile Include="Helpers\PersianCulture.cs" />
+    <Compile Include="Migrations\202101061204360_edit.cs" />
+    <Compile Include="Migrations\202101061204360_edit.Designer.cs">
+      <DependentUpon>202101061204360_edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101061208070_test-migration.cs" />
+    <Compile Include="Migrations\202101061208070_test-migration.Designer.cs">
+      <DependentUpon>202101061208070_test-migration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101061210005_test-migration2.cs" />
+    <Compile Include="Migrations\202101061210005_test-migration2.Designer.cs">
+      <DependentUpon>202101061210005_test-migration2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101061316439_Added-testimonial.cs" />
+    <Compile Include="Migrations\202101061316439_Added-testimonial.Designer.cs">
+      <DependentUpon>202101061316439_Added-testimonial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101061437584_Added-partners.cs" />
+    <Compile Include="Migrations\202101061437584_Added-partners.Designer.cs">
+      <DependentUpon>202101061437584_Added-partners.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101080759139_Updated-contactform.cs" />
+    <Compile Include="Migrations\202101080759139_Updated-contactform.Designer.cs">
+      <DependentUpon>202101080759139_Updated-contactform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101081430454_Updated-contactform2.cs" />
+    <Compile Include="Migrations\202101081430454_Updated-contactform2.Designer.cs">
+      <DependentUpon>202101081430454_Updated-contactform2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101100945470_Added-image-to-sufeatures.cs" />
+    <Compile Include="Migrations\202101100945470_Added-image-to-sufeatures.Designer.cs">
+      <DependentUpon>202101100945470_Added-image-to-sufeatures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101101024442_added-shortdescription-to-brands.cs" />
+    <Compile Include="Migrations\202101101024442_added-shortdescription-to-brands.Designer.cs">
+      <DependentUpon>202101101024442_added-shortdescription-to-brands.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101101530566_fixed-product-comment.cs" />
+    <Compile Include="Migrations\202101101530566_fixed-product-comment.Designer.cs">
+      <DependentUpon>202101101530566_fixed-product-comment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101120947271_added-postalcode-email-to-invoice.cs" />
+    <Compile Include="Migrations\202101120947271_added-postalcode-email-to-invoice.Designer.cs">
+      <DependentUpon>202101120947271_added-postalcode-email-to-invoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101240937592_Added-discount-codes.cs" />
+    <Compile Include="Migrations\202101240937592_Added-discount-codes.Designer.cs">
+      <DependentUpon>202101240937592_Added-discount-codes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101250909062_Added-Keywords-field.cs" />
+    <Compile Include="Migrations\202101250909062_Added-Keywords-field.Designer.cs">
+      <DependentUpon>202101250909062_Added-Keywords-field.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101250951198_Update-properties-for-Keywords.cs" />
+    <Compile Include="Migrations\202101250951198_Update-properties-for-Keywords.Designer.cs">
+      <DependentUpon>202101250951198_Update-properties-for-Keywords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102020818061_Added-DeadLine-Discount.cs" />
+    <Compile Include="Migrations\202102020818061_Added-DeadLine-Discount.Designer.cs">
+      <DependentUpon>202102020818061_Added-DeadLine-Discount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102021449277_Added-Tables-ProductColor-ProductPerfume-SimilarProduct.cs" />
+    <Compile Include="Migrations\202102021449277_Added-Tables-ProductColor-ProductPerfume-SimilarProduct.Designer.cs">
+      <DependentUpon>202102021449277_Added-Tables-ProductColor-ProductPerfume-SimilarProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102030710136_Added-ColorCode-to-ProductColors.cs" />
+    <Compile Include="Migrations\202102030710136_Added-ColorCode-to-ProductColors.Designer.cs">
+      <DependentUpon>202102030710136_Added-ColorCode-to-ProductColors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102061341218_added-EmailSubscription.cs" />
+    <Compile Include="Migrations\202102061341218_added-EmailSubscription.Designer.cs">
+      <DependentUpon>202102061341218_added-EmailSubscription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102080850278_Updated-Invoice-Model.cs" />
+    <Compile Include="Migrations\202102080850278_Updated-Invoice-Model.Designer.cs">
+      <DependentUpon>202102080850278_Updated-Invoice-Model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102080852555_Updated-Invoice-with-DiscountCodeId.cs" />
+    <Compile Include="Migrations\202102080852555_Updated-Invoice-with-DiscountCodeId.Designer.cs">
+      <DependentUpon>202102080852555_Updated-Invoice-with-DiscountCodeId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102092136149_Updated-Epayment-Field-PaymentStatus.cs" />
+    <Compile Include="Migrations\202102092136149_Updated-Epayment-Field-PaymentStatus.Designer.cs">
+      <DependentUpon>202102092136149_Updated-Epayment-Field-PaymentStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102101934527_Updated-Featue-Field-OrderPriority.cs" />
+    <Compile Include="Migrations\202102101934527_Updated-Featue-Field-OrderPriority.Designer.cs">
+      <DependentUpon>202102101934527_Updated-Featue-Field-OrderPriority.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202102281113264_Added-Table-AdditionalFeatures.cs" />
+    <Compile Include="Migrations\202102281113264_Added-Table-AdditionalFeatures.Designer.cs">
+      <DependentUpon>202102281113264_Added-Table-AdditionalFeatures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104170511568_Updated-ProductMainFeature-Added-Field-AdditionalInfo.cs" />
+    <Compile Include="Migrations\202104170511568_Updated-ProductMainFeature-Added-Field-AdditionalInfo.Designer.cs">
+      <DependentUpon>202104170511568_Updated-ProductMainFeature-Added-Field-AdditionalInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104181134058_Added-SMSLog-Table.cs" />
+    <Compile Include="Migrations\202104181134058_Added-SMSLog-Table.Designer.cs">
+      <DependentUpon>202104181134058_Added-SMSLog-Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104200719411_Updated-User-Added-VerificationCode.cs" />
+    <Compile Include="Migrations\202104200719411_Updated-User-Added-VerificationCode.Designer.cs">
+      <DependentUpon>202104200719411_Updated-User-Added-VerificationCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104201049539_Updated-User-Table-Required-Values.cs" />
+    <Compile Include="Migrations\202104201049539_Updated-User-Table-Required-Values.Designer.cs">
+      <DependentUpon>202104201049539_Updated-User-Table-Required-Values.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MyDbContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ArticleCategoriesRepository.cs" />
+    <Compile Include="Repositories\ArticleCommentsRepository.cs" />
+    <Compile Include="Repositories\ArticleHeadLinesRepository.cs" />
+    <Compile Include="Repositories\ArticlesRepositoriy.cs" />
+    <Compile Include="Repositories\AuthRepsitory.cs" />
+    <Compile Include="Repositories\BrandsRepository.cs" />
+    <Compile Include="Repositories\ContactFormsRepository.cs" />
+    <Compile Include="Repositories\CustomersRepository.cs" />
+    <Compile Include="Repositories\DiscountsRepository.cs" />
+    <Compile Include="Repositories\EmailSubscriptionRepository.cs" />
+    <Compile Include="Repositories\EPaymentLogRepository.cs" />
+    <Compile Include="Repositories\EPaymentRepository.cs" />
+    <Compile Include="Repositories\FaqRepository.cs" />
+    <Compile Include="Repositories\FeaturesRepository.cs" />
+    <Compile Include="Repositories\GeoDivisionsRepository.cs" />
+    <Compile Include="Repositories\InvoicesRepository.cs" />
+    <Compile Include="Repositories\LogsRepository.cs" />
+    <Compile Include="Repositories\OffersRepository.cs" />
+    <Compile Include="Repositories\PartnersRepository.cs" />
+    <Compile Include="Repositories\ProductCommentsRepository.cs" />
+    <Compile Include="Repositories\ProductFeatureValuesRepository.cs" />
+    <Compile Include="Repositories\ProductGalleriesRepository.cs" />
+    <Compile Include="Repositories\ProductGroupsRepository.cs" />
+    <Compile Include="Repositories\ProductMainFeaturesRepository.cs" />
+    <Compile Include="Repositories\ProductsRepository.cs" />
+    <Compile Include="Repositories\ShoppingRepository.cs" />
+    <Compile Include="Repositories\SMSLogRepository.cs" />
+    <Compile Include="Repositories\StaticContentDetailsRepository.cs" />
+    <Compile Include="Repositories\StaticContentsRepository.cs" />
+    <Compile Include="Repositories\StaticContentTypes.cs" />
+    <Compile Include="Repositories\SubFeaturesRepository.cs" />
+    <Compile Include="Repositories\TestimonialsRepository.cs" />
+    <Compile Include="Repositories\UsersRepository.cs" />
+    <Compile Include="Seed.cs" />
+    <Compile Include="Services\ProductService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Seshin.Core\7_drugStore.Core.csproj">
+      <Project>{c9289f3f-fb24-495e-a361-11d0f3c81456}</Project>
+      <Name>7_drugStore.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202101061204360_edit.resx">
+      <DependentUpon>202101061204360_edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101061208070_test-migration.resx">
+      <DependentUpon>202101061208070_test-migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101061210005_test-migration2.resx">
+      <DependentUpon>202101061210005_test-migration2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101061316439_Added-testimonial.resx">
+      <DependentUpon>202101061316439_Added-testimonial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101061437584_Added-partners.resx">
+      <DependentUpon>202101061437584_Added-partners.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101080759139_Updated-contactform.resx">
+      <DependentUpon>202101080759139_Updated-contactform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101081430454_Updated-contactform2.resx">
+      <DependentUpon>202101081430454_Updated-contactform2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101100945470_Added-image-to-sufeatures.resx">
+      <DependentUpon>202101100945470_Added-image-to-sufeatures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101101024442_added-shortdescription-to-brands.resx">
+      <DependentUpon>202101101024442_added-shortdescription-to-brands.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101101530566_fixed-product-comment.resx">
+      <DependentUpon>202101101530566_fixed-product-comment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101120947271_added-postalcode-email-to-invoice.resx">
+      <DependentUpon>202101120947271_added-postalcode-email-to-invoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101240937592_Added-discount-codes.resx">
+      <DependentUpon>202101240937592_Added-discount-codes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101250909062_Added-Keywords-field.resx">
+      <DependentUpon>202101250909062_Added-Keywords-field.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101250951198_Update-properties-for-Keywords.resx">
+      <DependentUpon>202101250951198_Update-properties-for-Keywords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102020818061_Added-DeadLine-Discount.resx">
+      <DependentUpon>202102020818061_Added-DeadLine-Discount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102021449277_Added-Tables-ProductColor-ProductPerfume-SimilarProduct.resx">
+      <DependentUpon>202102021449277_Added-Tables-ProductColor-ProductPerfume-SimilarProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102030710136_Added-ColorCode-to-ProductColors.resx">
+      <DependentUpon>202102030710136_Added-ColorCode-to-ProductColors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102061341218_added-EmailSubscription.resx">
+      <DependentUpon>202102061341218_added-EmailSubscription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102080850278_Updated-Invoice-Model.resx">
+      <DependentUpon>202102080850278_Updated-Invoice-Model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102080852555_Updated-Invoice-with-DiscountCodeId.resx">
+      <DependentUpon>202102080852555_Updated-Invoice-with-DiscountCodeId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102092136149_Updated-Epayment-Field-PaymentStatus.resx">
+      <DependentUpon>202102092136149_Updated-Epayment-Field-PaymentStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102101934527_Updated-Featue-Field-OrderPriority.resx">
+      <DependentUpon>202102101934527_Updated-Featue-Field-OrderPriority.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202102281113264_Added-Table-AdditionalFeatures.resx">
+      <DependentUpon>202102281113264_Added-Table-AdditionalFeatures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104170511568_Updated-ProductMainFeature-Added-Field-AdditionalInfo.resx">
+      <DependentUpon>202104170511568_Updated-ProductMainFeature-Added-Field-AdditionalInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104181134058_Added-SMSLog-Table.resx">
+      <DependentUpon>202104181134058_Added-SMSLog-Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104200719411_Updated-User-Added-VerificationCode.resx">
+      <DependentUpon>202104200719411_Updated-User-Added-VerificationCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104201049539_Updated-User-Table-Required-Values.resx">
+      <DependentUpon>202104201049539_Updated-User-Table-Required-Values.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

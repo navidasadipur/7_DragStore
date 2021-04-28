@@ -1,0 +1,17 @@
+﻿@model List<Seshin.Core.Models.Partner>
+<div class="brand-part pb-100">
+    <div class="container">
+        <div class="brand-part-inner">
+            <div class="row">
+                <div class="brand-slider owl-carousel">
+                    @foreach (var item in Model)
+                    {
+                        <div class="item">
+                            <img src="/Files/PartnersImages/@item.Image" alt="@item.Title">
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
