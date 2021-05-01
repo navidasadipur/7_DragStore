@@ -28,7 +28,8 @@ namespace drugStore7.Web.Controllers
         private readonly OurTeamRepository _ourTeamRepo;
         private readonly EmailSubscriptionRepository _emailSubscriptionRepo;
 
-        public HomeController(StaticContentDetailsRepository staticContentRepo,
+        public HomeController(
+            StaticContentDetailsRepository staticContentRepo,
             OffersRepository offersRepo, 
             ProductService productService,
             TestimonialsRepository testimonialRepo, 
@@ -145,11 +146,7 @@ namespace drugStore7.Web.Controllers
 
             return PartialView(vm);
         }
-        public ActionResult PartnersSection()
-        {
-            var partners = _partnersRepo.GetAll();
-            return PartialView(partners);
-        }
+
 
         public ActionResult LatestArticlesSection()
         {
@@ -258,11 +255,25 @@ namespace drugStore7.Web.Controllers
             return PartialView();
         }
 
+        public ActionResult AboutOurPropertiesSection()
+        {
+            //var model = _staticContentRepo.GetContentByTypeId();
+
+            return PartialView(/*ourTeam*/);
+        }
+        
+
         public ActionResult OurTeamsSection()
         {
             var ourTeam = _ourTeamRepo.GetAll();
 
             return PartialView(ourTeam);
+        }
+
+        public ActionResult PartnersSection()
+        {
+            var partners = _partnersRepo.GetAll();
+            return PartialView(partners);
         }
 
         [Route("ContactUs")]

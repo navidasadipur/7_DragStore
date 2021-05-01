@@ -10654,6 +10654,7 @@
     <Content Include="Views\Home\FooterTopSection.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\OurTeamsSection.cshtml" />
+    <Content Include="Views\Home\AboutOurPropertiesSection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
