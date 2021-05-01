@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using SpadStore.Core.Models;
-using SpadStore.Core.Utility;
-using SpadStore.Infratructure.Dtos.Product;
+using drugStore7.Core.Models;
+using drugStore7.Core.Utility;
+using drugStore7.Infratructure.Dtos.Product;
 
-namespace SpadStore.Web.ViewModels
+namespace drugStore7.Web.ViewModels
 {
     public class NewProductViewModel
     {

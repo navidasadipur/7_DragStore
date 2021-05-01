@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SpadStore.Core.Models;
-using SpadStore.Infrastructure;
-using SpadStore.Infrastructure.Repositories;
+using drugStore7.Core.Models;
+using drugStore7.Infrastructure;
+using drugStore7.Infrastructure.Repositories;
 
-namespace SpadStore.Infratructure.Repositories
+namespace drugStore7.Infratructure.Repositories
 {
     public class PartnersRepository : BaseRepository<Partner, MyDbContext>
     {

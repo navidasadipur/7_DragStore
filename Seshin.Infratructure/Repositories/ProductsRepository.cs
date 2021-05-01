@@ -4,10 +4,10 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SpadStore.Core.Models;
-using SpadStore.Core.Utility;
+using drugStore7.Core.Models;
+using drugStore7.Core.Utility;
 
-namespace SpadStore.Infrastructure.Repositories
+namespace drugStore7.Infrastructure.Repositories
 {
     public class ProductsRepository : BaseRepository<Product, MyDbContext>
     {

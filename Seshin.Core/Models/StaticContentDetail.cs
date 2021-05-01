@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Web.Mvc;
 
-namespace SpadStore.Core.Models
+namespace drugStore7.Core.Models
 {
    public class StaticContentDetail : IBaseEntity
     {

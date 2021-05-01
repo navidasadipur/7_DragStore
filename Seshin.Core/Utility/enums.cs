@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpadStore.Core.Utility
+namespace drugStore7.Core.Utility
 {
     public enum DiscountType
     {

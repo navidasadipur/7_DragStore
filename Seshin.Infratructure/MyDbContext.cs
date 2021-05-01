@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Text;
-using SpadStore.Core.Models;
+using drugStore7.Core.Models;
 
-namespace SpadStore.Infrastructure
+namespace drugStore7.Infrastructure
 {
     public class MyDbContext : IdentityDbContext<User>
     {
@@ -52,7 +52,7 @@ namespace SpadStore.Infrastructure
         public DbSet<Partner> Partners { get; set; }
         public DbSet<EmailSubscription> EmailSubscriptions { get; set; }
         public DbSet<SMSLog> SMSLogs { get; set; }
-
+        public DbSet<OurTeam> OurTeams { get; set; }
 
     }
 }

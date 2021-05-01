@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SpadStore.Core
+namespace drugStore7.Core
 {
     public interface IBaseEntity
     {

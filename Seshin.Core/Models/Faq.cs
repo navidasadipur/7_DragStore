@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace SpadStore.Core.Models
+namespace drugStore7.Core.Models
 {
     public class Faq : IBaseEntity
     {

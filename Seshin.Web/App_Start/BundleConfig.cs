@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace SpadStore.Web
+namespace drugStore7.Web
 {
     public class BundleConfig
     {

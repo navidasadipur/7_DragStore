@@ -5,12 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using SpadStore.Core.Models;
-using SpadStore.Core.Utility;
-using SpadStore.Infrastructure.Repositories;
-using SpadStore.Web.ViewModels;
+using drugStore7.Core.Models;
+using drugStore7.Core.Utility;
+using drugStore7.Infrastructure.Repositories;
+using drugStore7.Web.ViewModels;
 
-namespace SpadStore.Web.Areas.Customer.Controllers
+namespace drugStore7.Web.Areas.Customer.Controllers
 {
     [Authorize(Roles = "Customer")]
     public class DashboardController : Controller

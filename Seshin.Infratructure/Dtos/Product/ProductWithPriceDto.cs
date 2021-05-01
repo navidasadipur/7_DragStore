@@ -1,4 +1,4 @@
-﻿using SpadStore.Core.Utility;
+﻿using drugStore7.Core.Utility;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpadStore.Infratructure.Dtos.Product
+namespace drugStore7.Infratructure.Dtos.Product
 {
     public class ProductGridDto
     {

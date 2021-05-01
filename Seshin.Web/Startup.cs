@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(SpadStore.Web.Startup))]
-namespace SpadStore.Web
+[assembly: OwinStartupAttribute(typeof(drugStore7.Web.Startup))]
+namespace drugStore7.Web
 {
     public partial class Startup
     {

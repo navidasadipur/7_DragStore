@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
-using SpadStore.Core.Models;
+using drugStore7.Core.Models;
 
-namespace SpadStore.Infrastructure.Repositories
+namespace drugStore7.Infrastructure.Repositories
 {
     public class InvoicesRepository : BaseRepository<Invoice, MyDbContext>
     {

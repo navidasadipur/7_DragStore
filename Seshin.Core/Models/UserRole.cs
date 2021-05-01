@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SpadStore.Core.Models
+namespace drugStore7.Core.Models
 {
     public class UserRole : IdentityUserRole
     {

@@ -195,6 +195,10 @@
     <Compile Include="Migrations\202104201049539_Updated-User-Table-Required-Values.Designer.cs">
       <DependentUpon>202104201049539_Updated-User-Table-Required-Values.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105010848158_ourTeamModelAdded.cs" />
+    <Compile Include="Migrations\202105010848158_ourTeamModelAdded.Designer.cs">
+      <DependentUpon>202105010848158_ourTeamModelAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -216,6 +220,7 @@
     <Compile Include="Repositories\InvoicesRepository.cs" />
     <Compile Include="Repositories\LogsRepository.cs" />
     <Compile Include="Repositories\OffersRepository.cs" />
+    <Compile Include="Repositories\OurTeamRepository.cs" />
     <Compile Include="Repositories\PartnersRepository.cs" />
     <Compile Include="Repositories\ProductCommentsRepository.cs" />
     <Compile Include="Repositories\ProductFeatureValuesRepository.cs" />
@@ -325,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104201049539_Updated-User-Table-Required-Values.resx">
       <DependentUpon>202104201049539_Updated-User-Table-Required-Values.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105010848158_ourTeamModelAdded.resx">
+      <DependentUpon>202105010848158_ourTeamModelAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

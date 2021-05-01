@@ -1,9 +1,9 @@
-﻿using SpadStore.Core.Models;
-using SpadStore.Core.Utility;
-using SpadStore.Infrastructure.Repositories;
-using SpadStore.Infratructure.Services;
-using SpadStore.Web.Providers;
-using SpadStore.Web.ViewModels;
+﻿using drugStore7.Core.Models;
+using drugStore7.Core.Utility;
+using drugStore7.Infrastructure.Repositories;
+using drugStore7.Infratructure.Services;
+using drugStore7.Web.Providers;
+using drugStore7.Web.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -11,7 +11,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace SpadStore.Web.Controllers
+namespace drugStore7.Web.Controllers
 {
     public class PaymentController : Controller
     {

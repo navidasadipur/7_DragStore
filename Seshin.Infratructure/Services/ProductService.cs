@@ -4,13 +4,13 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SpadStore.Core.Models;
-using SpadStore.Core.Utility;
-using SpadStore.Infrastructure;
-using SpadStore.Infrastructure.Repositories;
-using SpadStore.Infratructure.Dtos.Product;
+using drugStore7.Core.Models;
+using drugStore7.Core.Utility;
+using drugStore7.Infrastructure;
+using drugStore7.Infrastructure.Repositories;
+using drugStore7.Infratructure.Dtos.Product;
 
-namespace SpadStore.Infratructure.Services
+namespace drugStore7.Infratructure.Services
 {
     public class ProductService
     {

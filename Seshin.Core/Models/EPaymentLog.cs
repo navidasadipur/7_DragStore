@@ -6,7 +6,7 @@ using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpadStore.Core.Models
+namespace drugStore7.Core.Models
 {
     public class EPaymentLog : IBaseEntity
     {

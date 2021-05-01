@@ -6,16 +6,16 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using Newtonsoft.Json.Linq;
-using SpadStore.Core.Models;
-using SpadStore.Core.Utility;
-using SpadStore.Infrastructure.Repositories;
-using SpadStore.Infratructure.Dtos.Product;
-using SpadStore.Infratructure.Repositories;
-using SpadStore.Infratructure.Services;
-using SpadStore.Web.Providers;
-using SpadStore.Web.ViewModels;
+using drugStore7.Core.Models;
+using drugStore7.Core.Utility;
+using drugStore7.Infrastructure.Repositories;
+using drugStore7.Infratructure.Dtos.Product;
+using drugStore7.Infratructure.Repositories;
+using drugStore7.Infratructure.Services;
+using drugStore7.Web.Providers;
+using drugStore7.Web.ViewModels;
 
-namespace SpadStore.Web.Controllers
+namespace drugStore7.Web.Controllers
 {
     public class ShopController : Controller
     {

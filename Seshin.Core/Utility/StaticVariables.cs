@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SpadStore.Core.Utility
+namespace drugStore7.Core.Utility
 {
     public static class StaticVariables
     {

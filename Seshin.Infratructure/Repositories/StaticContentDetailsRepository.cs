@@ -1,5 +1,5 @@
-﻿using SpadStore.Core.Models;
-using SpadStore.Infrastructure.Filters;
+﻿using drugStore7.Core.Models;
+using drugStore7.Infrastructure.Filters;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Web;
 using Microsoft.AspNet.Identity;
 
-namespace SpadStore.Infrastructure.Repositories
+namespace drugStore7.Infrastructure.Repositories
 {
     public class StaticContentDetailsRepository : BaseRepository<StaticContentDetail, MyDbContext>
     {

@@ -5,7 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace SpadStore.Infrastructure.Helpers
+namespace drugStore7.Infrastructure.Helpers
 {
         public static class AsyncHelper
         {

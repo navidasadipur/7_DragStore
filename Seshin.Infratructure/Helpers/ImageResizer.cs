@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace SpadStore.Infrastructure.Helpers
+namespace drugStore7.Infrastructure.Helpers
 {
     public class ImageResizer
     {

@@ -1,4 +1,4 @@
-namespace SpadStore.Infratructure.Migrations
+namespace drugStore7.Infratructure.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

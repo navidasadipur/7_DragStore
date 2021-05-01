@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace SpadStore.Web
+namespace drugStore7.Web
 {
     public class RouteConfig
     {

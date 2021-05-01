@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SpadStore.Core.Models;
+using drugStore7.Core.Models;
 
-namespace SpadStore.Infrastructure.Repositories
+namespace drugStore7.Infrastructure.Repositories
 {
     public class OffersRepository : BaseRepository<Offer, MyDbContext>
     {

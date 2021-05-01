@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using SpadStore.Web.Models;
+using drugStore7.Web.Models;
 
-namespace SpadStore.Web
+namespace drugStore7.Web
 {
     public partial class Startup
     {

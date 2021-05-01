@@ -5,11 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
-using SpadStore.Core.Models;
-using SpadStore.Web.Models;
+using drugStore7.Core.Models;
+using drugStore7.Web.Models;
 using Microsoft.AspNet.Identity;
 
-namespace SpadStore.Web.Providers
+namespace drugStore7.Web.Providers
 {
     public class CustomerAuthorize : AuthorizeAttribute
     {

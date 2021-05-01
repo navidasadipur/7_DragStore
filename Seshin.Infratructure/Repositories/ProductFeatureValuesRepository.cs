@@ -1,4 +1,4 @@
-﻿using SpadStore.Core.Models;
+﻿using drugStore7.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpadStore.Infrastructure.Repositories
+namespace drugStore7.Infrastructure.Repositories
 {
     public class ProductFeatureValuesRepository : BaseRepository<ProductFeatureValue, MyDbContext>
     {

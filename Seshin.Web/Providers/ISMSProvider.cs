@@ -1,10 +1,10 @@
-﻿using SpadStore.Core.Models;
+﻿using drugStore7.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace SpadStore.Web.Providers
+namespace drugStore7.Web.Providers
 {
     public interface ISMSProvider
     {

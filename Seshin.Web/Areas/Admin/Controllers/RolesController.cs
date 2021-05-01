@@ -6,13 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using SpadStore.Infrastructure;
+using drugStore7.Infrastructure;
 using Kendo.Mvc.UI;
-using SpadStore.Web.ViewModels;
-using SpadStore.Core.Models;
+using drugStore7.Web.ViewModels;
+using drugStore7.Core.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace SpadStore.Web.Areas.Admin.Controllers
+namespace drugStore7.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class RolesController : Controller

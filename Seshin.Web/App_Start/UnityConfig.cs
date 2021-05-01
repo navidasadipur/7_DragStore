@@ -1,12 +1,12 @@
 using System.Web.Mvc;
-using SpadStore.Infrastructure.Repositories;
-using SpadStore.Web.Areas.Customer.Controllers;
-using SpadStore.Web.Controllers;
+using drugStore7.Infrastructure.Repositories;
+using drugStore7.Web.Areas.Customer.Controllers;
+using drugStore7.Web.Controllers;
 using Unity;
 using Unity.Injection;
 using Unity.Mvc5;
 
-namespace SpadStore.Web
+namespace drugStore7.Web
 {
     public static class UnityConfig
     {

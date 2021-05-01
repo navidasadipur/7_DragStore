@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Net;
 using System.Web.Mvc;
-using SpadStore.Core.Models;
-using SpadStore.Infrastructure.Repositories;
+using drugStore7.Core.Models;
+using drugStore7.Infrastructure.Repositories;
 
-namespace SpadStore.Web.Areas.Admin.Controllers
+namespace drugStore7.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class FaqController : Controller

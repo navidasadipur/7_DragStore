@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpadStore.Core.Models
+namespace drugStore7.Core.Models
 {
     public class GeoDivision : IBaseEntity
     {

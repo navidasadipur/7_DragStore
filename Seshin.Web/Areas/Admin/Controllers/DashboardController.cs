@@ -1,5 +1,5 @@
-﻿using SpadStore.Infrastructure;
-using SpadStore.Infrastructure.Helpers;
+﻿using drugStore7.Infrastructure;
+using drugStore7.Infrastructure.Helpers;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -7,9 +7,9 @@ using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using SpadStore.Web.ViewModels;
+using drugStore7.Web.ViewModels;
 
-namespace SpadStore.Web.Areas.Admin.Controllers
+namespace drugStore7.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class DashboardController : Controller

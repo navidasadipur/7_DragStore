@@ -7,13 +7,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using SpadStore.Core.Models;
-using SpadStore.Infrastructure;
-using SpadStore.Infrastructure.Helpers;
-using SpadStore.Infrastructure.Repositories;
-using SpadStore.Web.ViewModels;
+using drugStore7.Core.Models;
+using drugStore7.Infrastructure;
+using drugStore7.Infrastructure.Helpers;
+using drugStore7.Infrastructure.Repositories;
+using drugStore7.Web.ViewModels;
 
-namespace SpadStore.Web.Areas.Admin.Controllers
+namespace drugStore7.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class ArticlesController : Controller

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace SpadStore.Web.ViewModels
+namespace drugStore7.Web.ViewModels
 {
     public class IndexViewModel
     {

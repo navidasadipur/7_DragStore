@@ -1,4 +1,4 @@
-﻿using SpadStore.Core.Utility;
+﻿using drugStore7.Core.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpadStore.Core.Models
+namespace drugStore7.Core.Models
 {
     public class AdditionalFeature : IBaseEntity
     {

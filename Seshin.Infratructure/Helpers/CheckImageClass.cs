@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 
-namespace SpadStore.Infrastructure.Helpers
+namespace drugStore7.Infrastructure.Helpers
 {
     public static class CheckImageClass
     {

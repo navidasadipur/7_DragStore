@@ -7,7 +7,7 @@ using System.Web;
 using System.Web.Routing;
 
 
-namespace SpadStore.Infrastructure.Helpers
+namespace drugStore7.Infrastructure.Helpers
 {
     public class CheckPermission
     {

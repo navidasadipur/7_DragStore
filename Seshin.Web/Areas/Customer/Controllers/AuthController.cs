@@ -9,13 +9,13 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Newtonsoft.Json;
-using SpadStore.Core.Models;
-using SpadStore.Core.Utility;
-using SpadStore.Infrastructure.Repositories;
-using SpadStore.Web.Providers;
-using SpadStore.Web.ViewModels;
+using drugStore7.Core.Models;
+using drugStore7.Core.Utility;
+using drugStore7.Infrastructure.Repositories;
+using drugStore7.Web.Providers;
+using drugStore7.Web.ViewModels;
 
-namespace SpadStore.Web.Areas.Customer.Controllers
+namespace drugStore7.Web.Areas.Customer.Controllers
 {
     [Authorize]
     public class AuthController : Controller
@@ -163,7 +163,7 @@ namespace SpadStore.Web.Areas.Customer.Controllers
                 user = _userRepo.GetUserByPhoneNumber(model.Phone);
                 if (user != null)
                 {
-                    SpadStore.Web.Models.ApplicationUser appUser = new SpadStore.Web.Models.ApplicationUser();
+                    drugStore7.Web.Models.ApplicationUser appUser = new drugStore7.Web.Models.ApplicationUser();
                     appUser.UserName = user.UserName;
                     appUser.Id = user.Id;
                     await SignInManager.SignInAsync(appUser, true, true);

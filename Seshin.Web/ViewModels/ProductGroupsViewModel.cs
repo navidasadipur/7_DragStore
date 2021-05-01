@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using SpadStore.Core.Models;
+using drugStore7.Core.Models;
 
-namespace SpadStore.Web.ViewModels
+namespace drugStore7.Web.ViewModels
 {
     public class NewProductGroupViewModel
     {

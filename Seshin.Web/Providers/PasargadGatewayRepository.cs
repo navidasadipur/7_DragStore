@@ -1,6 +1,6 @@
-﻿using SpadStore.Core.Models;
-using SpadStore.Infrastructure;
-using SpadStore.Infrastructure.Repositories;
+﻿using drugStore7.Core.Models;
+using drugStore7.Infrastructure;
+using drugStore7.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -12,7 +12,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 
-namespace SpadStore.Web.Providers
+namespace drugStore7.Web.Providers
 {
     public class PasargadGatewayRepository : IBankGatewayRepository
     {
