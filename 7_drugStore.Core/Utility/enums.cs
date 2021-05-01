@@ -18,6 +18,30 @@ namespace drugStore7.Core.Utility
         City = 2,
     }
 
+    public enum StaticContents
+    {
+        Phone = 1005,
+        Map = 2005,
+        Address = 6,
+        WorkingHours = 1008,
+        Email = 2,
+        Youtube = 2007,
+        Instagram = 2012,
+        Twitter = 2013,
+        Pinterest = 2014,
+        Facebook = 2015,
+        BlogImage = 1013,
+        ContactInfo = 1014,
+        companyServices = 3003,
+        CopyRight = 3004,
+        ImplementaitonService = 3005,
+
+        DiscountNews = 5027,
+
+        Logo = 3,
+        BackGroundImage = 4022,
+    }
+
     public enum StaticContentTypes
     {
         Slider = 1,

@@ -10,6 +10,7 @@ using drugStore7.Infrastructure.Repositories;
 using drugStore7.Infratructure.Repositories;
 using drugStore7.Infratructure.Services;
 using drugStore7.Web.ViewModels;
+using SpadCompanyPanel.Infrastructure.Repositories;
 
 namespace drugStore7.Web.Controllers
 {
@@ -24,6 +25,7 @@ namespace drugStore7.Web.Controllers
         private readonly ArticlesRepository _articlesRepo;
         private readonly ContactFormsRepository _contactFormRepo;
         private readonly ProductGroupsRepository _productGroupRepo;
+        private readonly OurTeamRepository _ourTeamRepo;
         private readonly EmailSubscriptionRepository _emailSubscriptionRepo;
 
         public HomeController(StaticContentDetailsRepository staticContentRepo,
@@ -34,7 +36,10 @@ namespace drugStore7.Web.Controllers
             ArticlesRepository articlesRepo,
             DiscountsRepository discountsRepo,
             EmailSubscriptionRepository emailSubscriptionRepo,
-            ContactFormsRepository contactFormRepo, ProductGroupsRepository productGroupRepo)
+            ContactFormsRepository contactFormRepo,
+            ProductGroupsRepository productGroupRepo,
+            OurTeamRepository ourTeamRepo
+            )
         {
             _discountRepo = discountsRepo;
             _staticContentRepo = staticContentRepo;
@@ -45,6 +50,7 @@ namespace drugStore7.Web.Controllers
             _articlesRepo = articlesRepo;
             _contactFormRepo = contactFormRepo;
             _productGroupRepo = productGroupRepo;
+            this._ourTeamRepo = ourTeamRepo;
             _emailSubscriptionRepo = emailSubscriptionRepo;
 
             ViewBag.CallForProductNumber = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Phone);
@@ -192,22 +198,27 @@ namespace drugStore7.Web.Controllers
         {
             return View();
         }
+
         public ActionResult Register()
         {
             return View();
         }
+
         public ActionResult WhishList()
         {
             return View();
         }
+
         public ActionResult Blog()
         {
             return View();
         }
+
         public ActionResult BlogDetails()
         {
             return View();
         }
+
         public ActionResult Guide()
         {
             var guide = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Guide);
@@ -229,19 +240,29 @@ namespace drugStore7.Web.Controllers
 
             return View();
         }
+
         public ActionResult Checkout()
         {
             return View();
         }
+
         public ActionResult Cart()
         {
             return View();
         }
+
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            //var about = _staticContentRepo.GetStaticContentDetail((int)StaticContents.About);
 
-            return View();
+            return PartialView();
+        }
+
+        public ActionResult OurTeamsSection()
+        {
+            var ourTeam = _ourTeamRepo.GetAll();
+
+            return PartialView(ourTeam);
         }
 
         [Route("ContactUs")]
