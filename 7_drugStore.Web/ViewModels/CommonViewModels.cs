@@ -291,4 +291,18 @@ namespace drugStore7.Web.ViewModels
 
         public StaticContentDetail LogoAndButton { get; set; }
     }
+
+    public class SocialViewModel
+    {
+        public string Facebook { get; set; }
+
+        public string Twitter { get; set; }
+
+        public string Instagram { get; set; }
+
+        public string Youtube { get; set; }
+
+        public string Pinterest { get; set; }
+
+    }
 }

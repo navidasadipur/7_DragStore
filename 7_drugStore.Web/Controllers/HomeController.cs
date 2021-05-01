@@ -306,10 +306,25 @@ namespace drugStore7.Web.Controllers
 
             return View(vm);
         }
+
+
+        public ActionResult ContactSocialsSection()
+        {
+            SocialViewModel model = new SocialViewModel();
+
+            //model.Facebook = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Facebook).Link;
+            //model.Twitter = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Twitter).Link;
+            //model.Pinterest = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Pinterest).Link;
+            //model.Instagram = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Instagram).Link;
+
+            return PartialView(model);
+        }
+
         public ActionResult ContactUsForm()
         {
             return PartialView();
         }
+
         [HttpPost]
         public ActionResult ContactUsForm(ContactForm contactForm)
         {
