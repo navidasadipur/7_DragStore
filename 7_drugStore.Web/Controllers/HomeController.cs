@@ -26,6 +26,7 @@ namespace drugStore7.Web.Controllers
         private readonly ContactFormsRepository _contactFormRepo;
         private readonly ProductGroupsRepository _productGroupRepo;
         private readonly OurTeamRepository _ourTeamRepo;
+        private readonly FaqGroupsRepository _faqGroupsRepo;
         private readonly EmailSubscriptionRepository _emailSubscriptionRepo;
 
         public HomeController(
@@ -39,7 +40,8 @@ namespace drugStore7.Web.Controllers
             EmailSubscriptionRepository emailSubscriptionRepo,
             ContactFormsRepository contactFormRepo,
             ProductGroupsRepository productGroupRepo,
-            OurTeamRepository ourTeamRepo
+            OurTeamRepository ourTeamRepo,
+            FaqGroupsRepository faqGroupsRepo
             )
         {
             _discountRepo = discountsRepo;
@@ -52,6 +54,7 @@ namespace drugStore7.Web.Controllers
             _contactFormRepo = contactFormRepo;
             _productGroupRepo = productGroupRepo;
             this._ourTeamRepo = ourTeamRepo;
+            this._faqGroupsRepo = faqGroupsRepo;
             _emailSubscriptionRepo = emailSubscriptionRepo;
 
             ViewBag.CallForProductNumber = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Phone);
@@ -83,12 +86,12 @@ namespace drugStore7.Web.Controllers
             var phone = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Phone);
             var email = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Email);
             var address = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Address);
-            var vm = new ContactUsViewModel()
+            var vm = new FooterViewModel()
             {
-                Map = map.Description,
-                Phone = phone.Title,
-                Email = email.Title,
-                Address = address.Title
+                //Map = map.Description,
+                //Phone = phone.Title,
+                //Email = email.Title,
+                //Address = address.Title
             };
 
             return PartialView(vm);
@@ -206,9 +209,11 @@ namespace drugStore7.Web.Controllers
             return View();
         }
 
-        public ActionResult Blog()
+        public ActionResult Faq()
         {
-            return View();
+            var model = _faqGroupsRepo.GetAllFaqGroupsWithFaqs();
+
+            return View(model);
         }
 
         public ActionResult BlogDetails()

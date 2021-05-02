@@ -47,6 +47,13 @@ namespace drugStore7.Infrastructure.Repositories
             return _context.FaqGroups.Where(fq => fq.IsDeleted == false).ToList();
         }
 
+        public List<FaqGroup> GetAllFaqGroupsWithFaqs()
+        {
+            var allFaqGroups = _context.FaqGroups.Where(fq => fq.IsDeleted == false).Include(fq => fq.Faqs).ToList();
+
+            return allFaqGroups;
+        }
+
 
         //public List<Brand> GetProductGroupBrands(int id)
         //{
