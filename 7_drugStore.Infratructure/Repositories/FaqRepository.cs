@@ -16,5 +16,7 @@ namespace drugStore7.Infrastructure.Repositories
             _context = context;
             _logger = logger;
         }
+
+
     }
 }

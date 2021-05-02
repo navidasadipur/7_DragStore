@@ -21,6 +21,7 @@ namespace drugStore7.Infrastructure
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<RolePermission> RolePermissions { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
+        public DbSet<FaqGroup> FaqGroups { get; set; }
         public DbSet<Faq> Faqs { get; set; }
         public DbSet<Log> Logs { get; set; }
         public DbSet<Brand> Brands { get; set; }

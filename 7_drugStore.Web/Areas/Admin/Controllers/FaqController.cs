@@ -9,17 +9,27 @@ namespace drugStore7.Web.Areas.Admin.Controllers
     [Authorize]
     public class FaqController : Controller
     {
-        private readonly FaqRepository _repo;
-        public FaqController(FaqRepository repo)
+        private readonly FaqRepository _faqRepo;
+        private readonly FaqGroupsRepository _faqGroupsRepo;
+        public FaqController(
+            FaqRepository faqRepo,
+            FaqGroupsRepository FaqGroupsRepo)
         {
-            _repo = repo;
+            _faqRepo = faqRepo;
+            _faqGroupsRepo = FaqGroupsRepo;
         }
-        public ActionResult Index()
+        public ActionResult Index(int faqGroupId)
         {
-            return View(_repo.GetAll());
+            ViewBag.GroupTitle = _faqGroupsRepo.GetFaqGroupTitle(faqGroupId);
+            ViewBag.FaqGroupId = faqGroupId;
+
+            var allFaqs = _faqGroupsRepo.GetAllFaqbyFaqGroupId(faqGroupId);
+
+            return View(allFaqs);
         }
-        public ActionResult Create()
+        public ActionResult Create(int test)
         {
+            ViewBag.FaqGroupId = test;
             return PartialView();
         }
         [HttpPost]
@@ -28,8 +38,8 @@ namespace drugStore7.Web.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                _repo.Add(faq);
-                return RedirectToAction("Index");
+                _faqRepo.Add(faq);
+                return RedirectToAction("Index", new { faqGroupId = faq.FaqGroupId });
             }
 
             return View(faq);
@@ -41,11 +51,13 @@ namespace drugStore7.Web.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Faq faq = _repo.Get(id.Value);
+            Faq faq = _faqRepo.Get(id.Value);
             if (faq == null)
             {
                 return HttpNotFound();
             }
+
+            ViewBag.FaqGroupId = faq.FaqGroupId;
             return PartialView(faq);
         }
 
@@ -55,8 +67,8 @@ namespace drugStore7.Web.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                _repo.Update(faq);
-                return RedirectToAction("Index");
+                _faqRepo.Update(faq);
+                return RedirectToAction("Index", new { faqGroupId = faq.FaqGroupId });
             }
             return View(faq);
         }
@@ -66,7 +78,7 @@ namespace drugStore7.Web.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Faq faq = _repo.Get(id.Value);
+            Faq faq = _faqRepo.Get(id.Value);
             if (faq == null)
             {
                 return HttpNotFound();
@@ -78,8 +90,9 @@ namespace drugStore7.Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            _repo.Delete(id);
-            return RedirectToAction("Index");
+            var faqGroupId = _faqRepo.Get(id).FaqGroupId;
+            _faqRepo.Delete(id);
+            return RedirectToAction("Index", new { faqGroupId = faqGroupId });
         }
     }
 }

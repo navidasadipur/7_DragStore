@@ -204,6 +204,7 @@
     <Compile Include="Areas\Admin\Controllers\DiscountsController.cs" />
     <Compile Include="Areas\Admin\Controllers\EmailSubscriptionController.cs" />
     <Compile Include="Areas\Admin\Controllers\FaqController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FaqGroupController.cs" />
     <Compile Include="Areas\Admin\Controllers\FeaturesController.cs" />
     <Compile Include="Areas\Admin\Controllers\GridController.cs" />
     <Compile Include="Areas\Admin\Controllers\InvoicesController.cs" />
@@ -8439,6 +8440,10 @@
     <Content Include="Areas\Admin\Views\OurTeam\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\OurTeam\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\OurTeam\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\FaqGroup\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\FaqGroup\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\FaqGroup\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\FaqGroup\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

@@ -199,6 +199,14 @@
     <Compile Include="Migrations\202105010848158_ourTeamModelAdded.Designer.cs">
       <DependentUpon>202105010848158_ourTeamModelAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105020508424_FaqGroupAnRelationToFaqAdded.cs" />
+    <Compile Include="Migrations\202105020508424_FaqGroupAnRelationToFaqAdded.Designer.cs">
+      <DependentUpon>202105020508424_FaqGroupAnRelationToFaqAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105020521400_FaqGroupAnRelationToFaqAdded2.cs" />
+    <Compile Include="Migrations\202105020521400_FaqGroupAnRelationToFaqAdded2.Designer.cs">
+      <DependentUpon>202105020521400_FaqGroupAnRelationToFaqAdded2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -225,6 +233,7 @@
     <Compile Include="Repositories\ProductCommentsRepository.cs" />
     <Compile Include="Repositories\ProductFeatureValuesRepository.cs" />
     <Compile Include="Repositories\ProductGalleriesRepository.cs" />
+    <Compile Include="Repositories\FaqGroupsRepository.cs" />
     <Compile Include="Repositories\ProductGroupsRepository.cs" />
     <Compile Include="Repositories\ProductMainFeaturesRepository.cs" />
     <Compile Include="Repositories\ProductsRepository.cs" />
@@ -327,6 +336,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105010848158_ourTeamModelAdded.resx">
       <DependentUpon>202105010848158_ourTeamModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105020508424_FaqGroupAnRelationToFaqAdded.resx">
+      <DependentUpon>202105020508424_FaqGroupAnRelationToFaqAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105020521400_FaqGroupAnRelationToFaqAdded2.resx">
+      <DependentUpon>202105020521400_FaqGroupAnRelationToFaqAdded2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

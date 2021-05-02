@@ -107,6 +107,7 @@
     <Compile Include="Models\ProductComment.cs" />
     <Compile Include="Models\ProductFeatureValue.cs" />
     <Compile Include="Models\ProductGallery.cs" />
+    <Compile Include="Models\FaqGroup.cs" />
     <Compile Include="Models\ProductGroup.cs" />
     <Compile Include="Models\ProductGroupBrand.cs" />
     <Compile Include="Models\ProductGroupFeature.cs" />
