@@ -10,7 +10,7 @@ using drugStore7.Infrastructure.Repositories;
 using drugStore7.Infratructure.Repositories;
 using drugStore7.Infratructure.Services;
 using drugStore7.Web.ViewModels;
-using SpadCompanyPanel.Infrastructure.Repositories;
+using drugStore7.Infrastructure.Repositories;
 
 namespace drugStore7.Web.Controllers
 {
@@ -28,6 +28,7 @@ namespace drugStore7.Web.Controllers
         private readonly OurTeamRepository _ourTeamRepo;
         private readonly FaqGroupsRepository _faqGroupsRepo;
         private readonly EmailSubscriptionRepository _emailSubscriptionRepo;
+        private readonly CertificatesRepository _certificatesRepo;
 
         public HomeController(
             StaticContentDetailsRepository staticContentRepo,
@@ -41,7 +42,8 @@ namespace drugStore7.Web.Controllers
             ContactFormsRepository contactFormRepo,
             ProductGroupsRepository productGroupRepo,
             OurTeamRepository ourTeamRepo,
-            FaqGroupsRepository faqGroupsRepo
+            FaqGroupsRepository faqGroupsRepo,
+            CertificatesRepository certificatesRepository
             )
         {
             _discountRepo = discountsRepo;
@@ -56,6 +58,7 @@ namespace drugStore7.Web.Controllers
             this._ourTeamRepo = ourTeamRepo;
             this._faqGroupsRepo = faqGroupsRepo;
             _emailSubscriptionRepo = emailSubscriptionRepo;
+            _certificatesRepo = certificatesRepository;
 
             ViewBag.CallForProductNumber = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Phone);
         }
@@ -209,6 +212,7 @@ namespace drugStore7.Web.Controllers
             return View();
         }
 
+        [Route("Faq")]
         public ActionResult Faq()
         {
             var model = _faqGroupsRepo.GetAllFaqGroupsWithFaqs();
@@ -253,6 +257,7 @@ namespace drugStore7.Web.Controllers
             return View();
         }
 
+        [Route("About")]
         public ActionResult About()
         {
             //var about = _staticContentRepo.GetStaticContentDetail((int)StaticContents.About);
@@ -419,6 +424,13 @@ namespace drugStore7.Web.Controllers
             ViewBag.Added = isValid;
 
             return View();
+        }
+
+        [Route("Certificates")]
+        public ActionResult Certificates()
+        {
+            var certificates = _certificatesRepo.GetAll();
+            return View(certificates);
         }
     }
 }

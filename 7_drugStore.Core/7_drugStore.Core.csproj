@@ -83,6 +83,7 @@
     <Compile Include="Models\ArticleHeadLine.cs" />
     <Compile Include="Models\ArticleTag.cs" />
     <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\Certificate.cs" />
     <Compile Include="Models\ContactForm.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Discount.cs" />

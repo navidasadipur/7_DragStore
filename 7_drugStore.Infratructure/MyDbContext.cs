@@ -54,6 +54,7 @@ namespace drugStore7.Infrastructure
         public DbSet<EmailSubscription> EmailSubscriptions { get; set; }
         public DbSet<SMSLog> SMSLogs { get; set; }
         public DbSet<OurTeam> OurTeams { get; set; }
+        public DbSet<Certificate> Certificates { get; set; }
 
     }
 }
