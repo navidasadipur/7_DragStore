@@ -28,10 +28,12 @@ namespace drugStore7.Web.Controllers
         private readonly FaqGroupsRepository _faqGroupsRepo;
         private readonly EmailSubscriptionRepository _emailSubscriptionRepo;
         private readonly CertificatesRepository _certificatesRepo;
+        private readonly ProductsRepository _productsRepo;
 
         public HomeController(
             StaticContentDetailsRepository staticContentRepo,
             OffersRepository offersRepo, 
+            ProductsRepository productsRepo,
             ProductService productService,
             TestimonialsRepository testimonialRepo, 
             PartnersRepository partnersRepo,
@@ -58,6 +60,7 @@ namespace drugStore7.Web.Controllers
             this._faqGroupsRepo = faqGroupsRepo;
             _emailSubscriptionRepo = emailSubscriptionRepo;
             _certificatesRepo = certificatesRepository;
+            _productsRepo = productsRepo;
         }
 
         public ActionResult Index()
@@ -444,6 +447,14 @@ namespace drugStore7.Web.Controllers
         {
             var certificates = _certificatesRepo.GetAll();
             return View(certificates);
+        }
+
+        [Route("Gallery")]
+        public ActionResult Gallery()
+        {
+            var model = _productsRepo.GetAllProductsWithGalleries();
+
+            return View(model);
         }
     }
 }

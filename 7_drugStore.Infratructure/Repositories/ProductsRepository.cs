@@ -190,5 +190,17 @@ namespace drugStore7.Infrastructure.Repositories
 
         }
 
+        public List<Product> GetAllProductsWithGalleries()
+        {
+            var allProducts = _context.Products.Where(p => p.IsDeleted == false)
+                                               .Include(a => a.ProductGroup).OrderByDescending(a => a.InsertDate).ToList();
+
+            foreach (var product in allProducts)
+            {
+                product.ProductGalleries = _context.ProductGalleries.Where(pg => pg.IsDeleted == false && pg.ProductId == product.Id).ToList();
+            }
+
+            return allProducts;            
+        }
     }
 }
