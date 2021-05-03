@@ -10,7 +10,6 @@ using drugStore7.Infrastructure.Repositories;
 using drugStore7.Infratructure.Repositories;
 using drugStore7.Infratructure.Services;
 using drugStore7.Web.ViewModels;
-using drugStore7.Infrastructure.Repositories;
 
 namespace drugStore7.Web.Controllers
 {
@@ -152,7 +151,6 @@ namespace drugStore7.Web.Controllers
 
             return PartialView(vm);
         }
-
 
         public ActionResult LatestArticlesSection()
         {

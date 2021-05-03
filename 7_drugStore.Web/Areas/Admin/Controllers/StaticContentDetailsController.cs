@@ -58,6 +58,8 @@ namespace drugStore7.Web.Areas.Admin.Controllers
                         image = new ImageResizer(1413, 600, true);
                     if(staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.PageBanner)
                         image = new ImageResizer(1450, 250, true);
+                    if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.about)
+                        image = new ImageResizer(1450, 600, true);
 
                     image.Resize(Server.MapPath("/Files/StaticContentImages/Temp/" + newFileName),
                         Server.MapPath("/Files/StaticContentImages/Image/" + newFileName));
@@ -115,6 +117,8 @@ namespace drugStore7.Web.Areas.Admin.Controllers
                         image = new ImageResizer(1413, 600, true);
                     if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.PageBanner)
                         image = new ImageResizer(1450, 250, true);
+                    if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.about)
+                        image = new ImageResizer(1450, 600, true);
 
                     image.Resize(Server.MapPath("/Files/StaticContentImages/Temp/" + newFileName),
                         Server.MapPath("/Files/StaticContentImages/Image/" + newFileName));
