@@ -9,53 +9,15 @@
             </div><!-- End .brands-text -->
             <div class="brands-display">
                 <div class="row justify-content-center">
-                    <div class="col-6 col-sm-4 col-md-3">
-                        <a href="#" class="brand">
-                            <img src="/Content/client/assets/images/brands/1.png" alt="نام برند">
-                        </a>
-                    </div><!-- End .col-md-3 -->
-
-                    <div class="col-6 col-sm-4 col-md-3">
-                        <a href="#" class="brand">
-                            <img src="/Content/client/assets/images/brands/2.png" alt="نام برند">
-                        </a>
-                    </div><!-- End .col-md-3 -->
-
-                    <div class="col-6 col-sm-4 col-md-3">
-                        <a href="#" class="brand">
-                            <img src="/Content/client/assets/images/brands/3.png" alt="نام برند">
-                        </a>
-                    </div><!-- End .col-md-3 -->
-
-                    <div class="col-6 col-sm-4 col-md-3">
-                        <a href="#" class="brand">
-                            <img src="/Content/client/assets/images/brands/7.png" alt="نام برند">
-                        </a>
-                    </div><!-- End .col-md-3 -->
-
-                    <div class="col-6 col-sm-4 col-md-3">
-                        <a href="#" class="brand">
-                            <img src="/Content/client/assets/images/brands/4.png" alt="نام برند">
-                        </a>
-                    </div><!-- End .col-md-3 -->
-
-                    <div class="col-6 col-sm-4 col-md-3">
-                        <a href="#" class="brand">
-                            <img src="/Content/client/assets/images/brands/5.png" alt="نام برند">
-                        </a>
-                    </div><!-- End .col-md-3 -->
-
-                    <div class="col-6 col-sm-4 col-md-3">
-                        <a href="#" class="brand">
-                            <img src="/Content/client/assets/images/brands/6.png" alt="نام برند">
-                        </a>
-                    </div><!-- End .col-md-3 -->
-
-                    <div class="col-6 col-sm-4 col-md-3">
-                        <a href="#" class="brand">
-                            <img src="/Content/client/assets/images/brands/9.png" alt="نام برند">
-                        </a>
-                    </div><!-- End .col-md-3 -->
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-6 col-sm-4 col-md-3">
+                            <a href="#" class="brand">
+                                <img src="/Files/PartnersImages/@item.Image" alt="نام برند">
+                            </a>
+                        </div><!-- End .col-md-3 -->
+                    }
+                    
                 </div><!-- End .row -->
             </div><!-- End .brands-display -->
         </div><!-- End .col-lg-10 offset-lg-1 -->
