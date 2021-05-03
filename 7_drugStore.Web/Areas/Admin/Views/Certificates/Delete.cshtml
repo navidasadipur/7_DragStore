@@ -1,23 +1,19 @@
-﻿@model Seshin.Core.Models.Customer
-
-@{
-    ViewBag.Title = "Delete";
-}
+﻿@model drugStore7.Core.Models.Certificate
 <h4 class="card-label">
     آیا مطمئن هستید که می خواهید این آیتم را حذف کنید؟
 </h4>
 <dl class="row" style="padding-top:10px">
     <dt class="col-sm-4">
-        @Html.DisplayNameFor(model => model.User.FirstName)
+        @Html.DisplayNameFor(model => model.Title)
     </dt>
     <dd class="col-sm-8">
-        @Html.DisplayFor(model => model.User.FirstName)
+        @Html.DisplayFor(model => model.Title)
     </dd>
     <dt class="col-sm-4">
-        @Html.DisplayNameFor(model => model.User.LastName)
+        @Html.DisplayNameFor(model => model.Image)
     </dt>
     <dd class="col-sm-8">
-        @Html.DisplayFor(model => model.User.LastName)
+        <img src="~/Files/CertificatesImages/@Model.Image" style="height: 50px" alt="@Model.Title"/>
     </dd>
 </dl>
 <div style="float:left">
@@ -27,4 +23,3 @@
         <input type="submit" value="حذف" class="btn btn-danger mr-2" />
     }
 </div>
-

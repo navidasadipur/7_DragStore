@@ -2,7 +2,7 @@
 using System.Net;
 using System.Web.Mvc;
 using drugStore7.Core.Models;
-using SpadCompanyPanel.Infrastructure.Repositories;
+using drugStore7.Infrastructure.Repositories;
 using System.Web;
 using System.IO;
 using drugStore7.Infrastructure.Helpers;

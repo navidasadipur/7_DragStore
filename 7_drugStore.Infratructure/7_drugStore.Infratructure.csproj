@@ -207,6 +207,10 @@
     <Compile Include="Migrations\202105020521400_FaqGroupAnRelationToFaqAdded2.Designer.cs">
       <DependentUpon>202105020521400_FaqGroupAnRelationToFaqAdded2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105021223006_cetificatesModelAdded.cs" />
+    <Compile Include="Migrations\202105021223006_cetificatesModelAdded.Designer.cs">
+      <DependentUpon>202105021223006_cetificatesModelAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -216,6 +220,7 @@
     <Compile Include="Repositories\ArticlesRepositoriy.cs" />
     <Compile Include="Repositories\AuthRepsitory.cs" />
     <Compile Include="Repositories\BrandsRepository.cs" />
+    <Compile Include="Repositories\CertificatesRepository.cs" />
     <Compile Include="Repositories\ContactFormsRepository.cs" />
     <Compile Include="Repositories\CustomersRepository.cs" />
     <Compile Include="Repositories\DiscountsRepository.cs" />
@@ -342,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105020521400_FaqGroupAnRelationToFaqAdded2.resx">
       <DependentUpon>202105020521400_FaqGroupAnRelationToFaqAdded2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105021223006_cetificatesModelAdded.resx">
+      <DependentUpon>202105021223006_cetificatesModelAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

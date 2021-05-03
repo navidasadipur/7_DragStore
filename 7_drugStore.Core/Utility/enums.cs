@@ -20,6 +20,8 @@ namespace drugStore7.Core.Utility
 
     public enum StaticContents
     {
+        AboutDescription = 15,
+        firstImageAboutPage = 16,
         Phone = 1005,
         Map = 2005,
         Address = 6,

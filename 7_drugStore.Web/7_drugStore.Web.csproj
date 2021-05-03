@@ -198,6 +198,7 @@
     <Compile Include="Areas\Admin\Controllers\ArticleHeadLinesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ArticlesController.cs" />
     <Compile Include="Areas\Admin\Controllers\BrandsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CertificatesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContactFormController.cs" />
     <Compile Include="Areas\Admin\Controllers\CustomersController.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
@@ -8308,18 +8309,8 @@
     <Content Include="Areas\Admin\Views\Partners\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Partners\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ContactForm\View.cshtml" />
-    <Content Include="Areas\Customer\Views\web.config" />
-    <Content Include="Areas\Customer\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Customer\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Customer\Views\Dashboard\Index.cshtml" />
-    <Content Include="Areas\Customer\Views\Auth\Login.cshtml" />
-    <Content Include="Areas\Customer\Views\Auth\Register.cshtml" />
-    <Content Include="Areas\Customer\Views\Dashboard\EditMyProfile.cshtml" />
-    <Content Include="Areas\Customer\Views\Dashboard\ResetMyPassword.cshtml" />
-    <Content Include="Areas\Customer\Views\Dashboard\Invoices.cshtml" />
     <Content Include="Areas\Admin\Views\EmailSubscription\Index.cshtml" />
     <Content Include="Areas\Admin\Views\EmailSubscription\Delete.cshtml" />
-    <Content Include="Areas\Customer\Views\Auth\AccountLogin.cshtml" />
     <Content Include="Content\client\.idea\7_drug_store.iml" />
     <Content Include="Content\client\assets\fonts\dana-fanum-regular.woff" />
     <Content Include="Content\client\assets\fonts\dana-fanum-regular.woff2" />
@@ -8444,6 +8435,20 @@
     <Content Include="Areas\Admin\Views\FaqGroup\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\FaqGroup\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\FaqGroup\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Certificates\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Certificates\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Certificates\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Certificates\Index.cshtml" />
+    <Content Include="Areas\Customer\Views\Auth\AccountLogin.cshtml" />
+    <Content Include="Areas\Customer\Views\Auth\Login.cshtml" />
+    <Content Include="Areas\Customer\Views\Auth\Register.cshtml" />
+    <Content Include="Areas\Customer\Views\Dashboard\EditMyProfile.cshtml" />
+    <Content Include="Areas\Customer\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Customer\Views\Dashboard\Invoices.cshtml" />
+    <Content Include="Areas\Customer\Views\Dashboard\ResetMyPassword.cshtml" />
+    <Content Include="Areas\Customer\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Customer\Views\web.config" />
+    <Content Include="Areas\Customer\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -10661,6 +10666,7 @@
     <Content Include="Views\Home\OurTeamsSection.cshtml" />
     <Content Include="Views\Home\AboutOurPropertiesSection.cshtml" />
     <Content Include="Views\Home\ContactSocialsSection.cshtml" />
+    <Content Include="Views\Home\Certificates.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
