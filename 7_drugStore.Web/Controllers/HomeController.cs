@@ -215,6 +215,11 @@ namespace drugStore7.Web.Controllers
         {
             var model = _faqGroupsRepo.GetAllFaqGroupsWithFaqs();
 
+            ViewBag.BanerTitle = _staticContentRepo.GetStaticContentDetail(3).Title;
+            ViewBag.ShortDescription = _staticContentRepo.GetStaticContentDetail(3).ShortDescription;
+            ViewBag.Link = _staticContentRepo.GetStaticContentDetail(3).Link;
+            ViewBag.Image = _staticContentRepo.GetStaticContentDetail(3).Image;
+
             return View(model);
         }
 
