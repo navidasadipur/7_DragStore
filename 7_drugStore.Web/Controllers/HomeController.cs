@@ -342,7 +342,9 @@ namespace drugStore7.Web.Controllers
 
         public ActionResult ContactUsForm()
         {
-            return PartialView();
+            var model = new ContactForm();
+
+            return PartialView(model);
         }
 
         [HttpPost]
@@ -353,13 +355,14 @@ namespace drugStore7.Web.Controllers
                 _contactFormRepo.Add(contactForm);
                 return RedirectToAction("ContactUsSummary");
             }
-            return View(contactForm);
+            return RedirectToAction("Contact");
         }
 
         public ActionResult ContactUsSummary()
         {
             return View();
         }
+
         public ActionResult UploadImage(HttpPostedFileBase upload, string CKEditorFuncNum, string CKEditor, string langCode)
         {
             string vImagePath = String.Empty;
