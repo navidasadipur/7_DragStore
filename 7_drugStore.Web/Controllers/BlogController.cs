@@ -22,8 +22,6 @@ namespace drugStore7.Web.Controllers
             _articlesRepo = articlesRepo;
             _articleCategoriesRepo = articleCategoriesRepo;
             _staticContentRepo = staticContentDetailsRepo;
-
-            ViewBag.CallForProductNumber = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Phone);
         }
         // GET: Blog
         public ActionResult Index(int pageNumber = 1, string searchString = null, int? category = null)

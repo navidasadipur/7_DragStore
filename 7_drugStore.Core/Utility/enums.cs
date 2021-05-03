@@ -22,11 +22,7 @@ namespace drugStore7.Core.Utility
     {
         AboutDescription = 15,
         firstImageAboutPage = 16,
-        Phone = 1005,
-        Map = 2005,
-        Address = 6,
         WorkingHours = 1008,
-        Email = 2,
         Youtube = 2007,
         Instagram = 2012,
         Twitter = 2013,
@@ -37,6 +33,11 @@ namespace drugStore7.Core.Utility
         companyServices = 3003,
         CopyRight = 3004,
         ImplementaitonService = 3005,
+
+        Address = 5,
+        Email = 6,
+        Phone = 7,
+        ContactUsMap = 4,
 
         DiscountNews = 5027,
 
@@ -50,10 +51,8 @@ namespace drugStore7.Core.Utility
         AboutProperties,
 
         Slider = 1,
-        ContactUsMap = 2,
-        Address = 6,
-        Email = 7,
-        Phone = 8,
+        Contact = 2,
+
         Guide = 9,
         Popup = 11,
         PageBanner=12

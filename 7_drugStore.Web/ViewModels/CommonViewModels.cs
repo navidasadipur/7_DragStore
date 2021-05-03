@@ -51,10 +51,10 @@ namespace drugStore7.Web.ViewModels
     }
     public class ContactUsViewModel
     {
-        public string Map { get; set; }
-        public string Address { get; set; }
-        public string Email { get; set; }
-        public string Phone { get; set; }
+        public StaticContentDetail Map { get; set; }
+        public StaticContentDetail Address { get; set; }
+        public StaticContentDetail Email { get; set; }
+        public StaticContentDetail Phone { get; set; }
     }
 
     public class CartModel

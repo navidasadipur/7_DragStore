@@ -69,8 +69,6 @@ namespace drugStore7.Web.Controllers
             _staticContentRepo = staticContentDetailsRepository;
             _invoicesRepository = invoicesRepository;
             _smsLogRepo = smsLogRepository;
-
-            ViewBag.CallForProductNumber = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Phone);
         }
         // GET: Products
         [Route("Shop/")]

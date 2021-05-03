@@ -58,8 +58,6 @@ namespace drugStore7.Web.Controllers
             this._faqGroupsRepo = faqGroupsRepo;
             _emailSubscriptionRepo = emailSubscriptionRepo;
             _certificatesRepo = certificatesRepository;
-
-            ViewBag.CallForProductNumber = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Phone);
         }
 
         public ActionResult Index()
@@ -84,10 +82,10 @@ namespace drugStore7.Web.Controllers
 
         public ActionResult FooterSection()
         {
-            var map = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.ContactUsMap);
-            var phone = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Phone);
-            var email = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Email);
-            var address = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Address);
+            //var map = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.ContactUsMap);
+            //var phone = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Phone);
+            //var email = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Email);
+            //var address = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Address);
             var vm = new FooterViewModel()
             {
                 //Map = map.Description,
@@ -301,16 +299,16 @@ namespace drugStore7.Web.Controllers
         [Route("ContactUs")]
         public ActionResult Contact()
         {
-            var map = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.ContactUsMap);
-            var phone = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Phone);
-            var email = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Email);
-            var address = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Address);
+            var map = _staticContentRepo.GetStaticContentDetail((int)StaticContents.ContactUsMap);
+            var phone = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Phone);
+            var email = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Email);
+            var address = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Address);
             var vm = new ContactUsViewModel()
             { 
-                Map = map.Description,
-                Phone = phone.Title,
-                Email = email.Title,
-                Address = address.Title
+                Map = map,
+                Phone = phone,
+                Email = email,
+                Address = address
             };
 
             var banner = "";
