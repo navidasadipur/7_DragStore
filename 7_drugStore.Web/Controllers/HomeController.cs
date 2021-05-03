@@ -274,9 +274,9 @@ namespace drugStore7.Web.Controllers
 
         public ActionResult AboutOurPropertiesSection()
         {
-            //var model = _staticContentRepo.GetContentByTypeId();
+            var model = _staticContentRepo.GetContentByTypeId((int)StaticContentTypes.AboutProperties);
 
-            return PartialView(/*ourTeam*/);
+            return PartialView(model);
         }
         
 

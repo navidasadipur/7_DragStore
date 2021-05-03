@@ -46,7 +46,8 @@ namespace drugStore7.Core.Utility
 
     public enum StaticContentTypes
     {
-        about = 13,
+        About = 13,
+        AboutProperties,
 
         Slider = 1,
         ContactUsMap = 2,

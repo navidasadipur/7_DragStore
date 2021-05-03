@@ -211,6 +211,10 @@
     <Compile Include="Migrations\202105021223006_cetificatesModelAdded.Designer.cs">
       <DependentUpon>202105021223006_cetificatesModelAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105030548321_AllowHtmlAttributeAddedToShortDescriptionOfStatic.cs" />
+    <Compile Include="Migrations\202105030548321_AllowHtmlAttributeAddedToShortDescriptionOfStatic.Designer.cs">
+      <DependentUpon>202105030548321_AllowHtmlAttributeAddedToShortDescriptionOfStatic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -350,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105021223006_cetificatesModelAdded.resx">
       <DependentUpon>202105021223006_cetificatesModelAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105030548321_AllowHtmlAttributeAddedToShortDescriptionOfStatic.resx">
+      <DependentUpon>202105030548321_AllowHtmlAttributeAddedToShortDescriptionOfStatic.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
