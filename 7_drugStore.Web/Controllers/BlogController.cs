@@ -15,19 +15,26 @@ namespace drugStore7.Web.Controllers
         private readonly ArticlesRepository _articlesRepo;
         private readonly ArticleCategoriesRepository _articleCategoriesRepo;
         private readonly StaticContentDetailsRepository _staticContentRepo;
-        public BlogController(ArticlesRepository articlesRepo,
+        private readonly ArticleTagsRepository _articleTagsRepo;
+
+        public BlogController(
+            ArticlesRepository articlesRepo,
             ArticleCategoriesRepository articleCategoriesRepo,
-            StaticContentDetailsRepository staticContentDetailsRepo)
+            StaticContentDetailsRepository staticContentDetailsRepo,
+            ArticleTagsRepository articleTagsRepo
+            )
         {
             _articlesRepo = articlesRepo;
             _articleCategoriesRepo = articleCategoriesRepo;
             _staticContentRepo = staticContentDetailsRepo;
+            _articleCategoriesRepo = articleCategoriesRepo;
+            _articleTagsRepo = articleTagsRepo;
         }
         // GET: Blog
         public ActionResult Index(int pageNumber = 1, string searchString = null, int? category = null)
         {
             var articles = new List<Article>();
-            var take = 3;
+            var take = 4;
             var skip = pageNumber * take - take;
             var count = 0;
             if (category != null)
@@ -107,6 +114,18 @@ namespace drugStore7.Web.Controllers
             var model = _staticContentRepo.GetStaticContentDetail((int)StaticContents.BlogAd);
 
             return PartialView(model);
+        }
+
+        public ActionResult TagsSection()
+        {
+            //SocialViewModel model = new SocialViewModel();
+
+            //model.Instagram = _staticContentDetailsRepo.GetStaticContentDetail(1009).Link;
+            //model.Aparat = _staticContentDetailsRepo.GetStaticContentDetail(1012).Link;
+
+            var tags = _articleTagsRepo.GetAll();
+
+            return PartialView(tags);
         }
 
         [Route("Blog/ArticleDetails/{id}/{title}")]
