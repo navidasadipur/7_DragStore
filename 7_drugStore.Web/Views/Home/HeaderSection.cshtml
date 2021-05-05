@@ -1,6 +1,7 @@
-﻿@using drugStore7.Core.Models
+﻿@model drugStore7.Core.Models.Product
+@using drugStore7.Core.Models
 @{
-    var mainProductGroups = ViewBag.MainProductGroups as List<ProductGroup>;
+//var mainProductGroups = ViewBag.MainProductGroups as List<ProductGroup>;
 }
     @*<header id="header">
         <div class="header-top-row">
@@ -305,7 +306,7 @@
                         </button>
 
                         <a href="~/home" class="logo">
-                            <img src="/Content/client/pic/Logo_drug_store.png" alt="Molla Logo" width="82" height="25">
+                            <img src="/Files/StaticContentImages/Image/@ViewBag.LogoImage" alt="Molla Logo" width="82" height="25">
                         </a>
                     </div><!-- End .header-left -->
 

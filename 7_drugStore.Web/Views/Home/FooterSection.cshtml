@@ -8,19 +8,17 @@
             <div class="row">
                 <div class="col-sm-12 col-lg-6">
                     <div class="widget widget-about">
-                        <img src="/Content/client/pic/Logo_drug_store.png" class="footer-logo mb-0"
+                        <img src="/Files/StaticContentImages/Image/@Model.Logo.Image" class="footer-logo mb-0"
                              alt="Footer Logo" width="82" height="25">
                         <p>
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی
-                            نامفهوم. لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با
-                            تولید سادگی نامفهوم.
+                            @Html.Raw(Model.Logo.ShortDescription)
                         </p>
 
                         <div class="widget-about-info">
                             <div class="row">
                                 <div class="col-sm-6 col-md-4">
                                     <span class="widget-about-title">سوالی دارید؟ 7روز هفته/24ساعته</span>
-                                    <a href="tel:02126473569">021-26473569</a>
+                                    <a href="tel:@Model.Phone.ShortDescription">@Model.Phone.ShortDescription</a>
                                 </div><!-- End .col-sm-6 -->
                             </div><!-- End .row -->
                         </div><!-- End .widget-about-info -->
@@ -47,19 +45,19 @@
                         <h4 class="widget-title">شبکه های اجتماعی</h4><!-- End .widget-title -->
 
                         <div class="social-icons social-icons-color">
-                            <a href="#" class="social-icon social-facebook" title="فیسبوک" target="_blank">
+                            <a href="@Model.Facebook.Link" class="social-icon social-facebook" title="@Model.Facebook.Title" target="_blank">
                                 <i class="icon-facebook-f"></i>
                             </a>
-                            <a href="#" class="social-icon social-twitter" title="توییتر" target="_blank">
+                            <a href="@Model.Twitter.Link" class="social-icon social-twitter" title="@Model.Twitter.Title" target="_blank">
                                 <i class="icon-twitter"></i>
                             </a>
-                            <a href="#" class="social-icon social-instagram" title="اینستاگرام" target="_blank">
+                            <a href="@Model.Instagram.Link" class="social-icon social-instagram" title="@Model.Instagram.Title" target="_blank">
                                 <i class="icon-instagram"></i>
                             </a>
-                            <a href="#" class="social-icon social-youtube" title="یوتیوب" target="_blank">
+                            <a href="@Model.Youtube.Link" class="social-icon social-youtube" title="@Model.Youtube.Title" target="_blank">
                                 <i class="icon-youtube"></i>
                             </a>
-                            <a href="#" class="social-icon social-pinterest" title="پینترست" target="_blank">
+                            <a href="@Model.Pinterest.Link" class="social-icon social-pinterest" title="@Model.Pinterest.Title" target="_blank">
                                 <i class="icon-pinterest"></i>
                             </a>
                         </div><!-- End .soial-icons -->
@@ -72,7 +70,7 @@
 
     <div class="footer-bottom">
         <div class="container">
-            <p class="footer-copyright text-white">© طراحی شده توسط <a href="https://www.spad.co/">اسپاد</a></p>
+            <p class="footer-copyright text-white">@Html.Raw(Model.Logo.Description)</p>
             <!-- End .footer-copyright -->
 
 
