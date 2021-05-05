@@ -74,11 +74,16 @@ namespace drugStore7.Web.Controllers
         public ActionResult HeaderSection()
         {
             
-            var mainProductGroups = _productGroupRepo.GetChildrenProductGroups();
-            ViewBag.MainProductGroups = mainProductGroups;
+            var allMainGroups = _productGroupRepo.GetMainProductGroups();
+
+            foreach (var group in allMainGroups)
+            {
+                group.Children = _productGroupRepo.GetChildrenProductGroups(group.Id);
+            }
 
             ViewBag.LogoImage = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Logo).Image;
-            return PartialView();
+
+            return PartialView(allMainGroups);
         }
 
         public ActionResult FooterTopSection()

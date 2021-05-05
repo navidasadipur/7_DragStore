@@ -171,5 +171,14 @@ namespace drugStore7.Infrastructure.Repositories
                 groups = _context.ProductGroups.Where(p => p.IsDeleted == false && p.ParentId == parentId).Include(p => p.Children).ToList();
             return groups;
         }
+
+        public List<ProductGroup> GetMainProductGroups()
+        {
+            var groups = new List<ProductGroup>();
+
+            groups = _context.ProductGroups.Where(p => p.IsDeleted == false && p.ParentId == null).Include(p => p.Children).ToList();
+
+            return groups;
+        }
     }
 }
