@@ -77,8 +77,20 @@ namespace drugStore7.Web.Controllers
         }
         public ActionResult ArticleCategoriesSection()
         {
-            var categories = _articleCategoriesRepo.GetAll();
-            return PartialView(categories);
+            var categories = _articlesRepo.GetArticleCategories();
+
+            var articleCategoriesVm = new List<ArticleCategoriesViewModel>();
+
+            foreach (var item in categories)
+            {
+                var vm = new ArticleCategoriesViewModel();
+                vm.Id = item.Id;
+                vm.Title = item.Title;
+                vm.ArticleCount = _articlesRepo.GetArticlesCount(item.Id);
+                articleCategoriesVm.Add(vm);
+            }
+
+            return PartialView(articleCategoriesVm);
         }
         public ActionResult TopArticlesSection(int take)
         {
@@ -89,6 +101,14 @@ namespace drugStore7.Web.Controllers
 
             return PartialView(vm);
         }
+
+        public ActionResult AdBlogSection()
+        {
+            var model = _staticContentRepo.GetStaticContentDetail((int)StaticContents.BlogAd);
+
+            return PartialView(model);
+        }
+
         [Route("Blog/ArticleDetails/{id}/{title}")]
         [Route("Blog/Article/{id}/{title}")]
 

@@ -10669,6 +10669,7 @@
     <Content Include="Views\Home\ContactSocialsSection.cshtml" />
     <Content Include="Views\Home\Certificates.cshtml" />
     <Content Include="Views\Home\Gallery.cshtml" />
+    <Content Include="Views\Blog\AdBlogSection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -43,6 +43,8 @@ namespace drugStore7.Core.Utility
 
         Logo = 14,
         BackGroundImage = 4022,
+
+        BlogAd = 32,
     }
 
     public enum StaticContentTypes

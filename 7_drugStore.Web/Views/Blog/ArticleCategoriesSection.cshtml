@@ -1,12 +1,13 @@
-﻿@model List<drugStore7.Core.Models.ArticleCategory>
-<div class="sidebar-category sidebar-default">
-    <div class="category-content">
-        <h2 class="cat-title">دسته بندی ها</h2>
-        <ul class="pl-0 mb-0">
-            @foreach (var item in Model)
-            {
-                <li><a href="/Blog?category=@item.Id">- @item.Title</a></li>
-            }
-        </ul>
-    </div>
-</div>
+﻿@model List<drugStore7.Web.ViewModels.ArticleCategoriesViewModel>
+
+<div class="widget widget-cats">
+    <h3 class="widget-title text-dark">دسته بندی ها</h3><!-- End .widget-title -->
+
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li><a href="/Blog?category=@item.Id">@item.Title<span>@item.ArticleCount</span></a></li>
+        }
+    </ul>
+</div><!-- End .widget -->
+

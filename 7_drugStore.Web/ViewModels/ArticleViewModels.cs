@@ -151,4 +151,11 @@ namespace drugStore7.Web.ViewModels
         public string Message { get; set; }
         public string AddedDate { get; set; }
     }
+
+    public class ArticleCategoriesViewModel
+    {
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public int ArticleCount { get; set; }
+    }
 }
