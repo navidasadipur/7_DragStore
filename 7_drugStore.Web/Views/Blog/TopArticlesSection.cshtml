@@ -1,6 +1,6 @@
 ﻿@model List<drugStore7.Web.ViewModels.LatestArticlesViewModel>
 
-<div class="sidebar-default">
+@*<div class="sidebar-default">
     <div class="category-content">
         <h2 class="cat-title">مقاله های محبوب</h2>
         <div class="recent-post">
@@ -16,5 +16,26 @@
             }
         </div>
     </div>
-</div>
+</div>*@
 
+<div class="widget">
+    <h3 class="widget-title">آخرین اخبار</h3><!-- End .widget-title -->
+
+    <ul class="posts-list">
+        @foreach (var item in Model)
+        {
+            <li>
+                <figure>
+                    <a href="/Blog/Article/@item.Id/@item.Title">
+                        <img src="~/Files/ArticleImages/Thumb/@item.Image" alt="@item.Title">
+                    </a>
+                </figure>
+
+                <div>
+                    <span>@item.PersianDate</span>
+                    <h4><a href="/Blog/Article/@item.Id/@item.Title">@item.Title</a></h4>
+                </div>
+            </li>
+        }
+    </ul><!-- End .posts-list -->
+</div><!-- End .widget -->

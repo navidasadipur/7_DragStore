@@ -205,12 +205,11 @@ namespace drugStore7.Web.ViewModels
     {
         public NavbarViewModel()
         {
-            ProductParentGroups = new List<ProductGroup>();
-            ProductChildGroups = new List<ProductGroup>();
+            MainGroups = new List<ProductGroup>();
+            childGroups = new List<ProductGroup>();
         }
-        public List<ProductGroup> ProductParentGroups { get; set; }
-        public List<ProductGroup> ProductChildGroups { get; set; }
-        public List<Product> Products { get; set; }
+        public List<ProductGroup> MainGroups { get; set; }
+        public List<ProductGroup> childGroups { get; set; }
     }
 
     public class AboutViewModel
@@ -225,16 +224,15 @@ namespace drugStore7.Web.ViewModels
     {
         public StaticContentDetail Phone { get; set; }
         //public StaticContentDetail Email { get; set; }
-        public StaticContentDetail Address { get; set; }
+        //public StaticContentDetail Address { get; set; }
         public StaticContentDetail Youtube { get; set; }
         public StaticContentDetail Instagram { get; set; }
         public StaticContentDetail Twitter { get; set; }
         public StaticContentDetail Facebook { get; set; }
         public StaticContentDetail Pinterest { get; set; }
-        public StaticContentDetail SiteTitle { get; set; }
-        public StaticContentDetail CopyRightShortDescrioption { get; set; }
-        public StaticContentDetail ImplementationShortDescription { get; set; }
-        public StaticContentDetail CompanyServices { get; set; }
+        public StaticContentDetail Logo { get; set; }
+        //public StaticContentDetail ImplementationShortDescription { get; set; }
+        //public StaticContentDetail CompanyServices { get; set; }
     }
     //public class ContactUsViewModel
     //{

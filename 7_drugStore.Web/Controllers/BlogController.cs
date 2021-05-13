@@ -15,19 +15,26 @@ namespace drugStore7.Web.Controllers
         private readonly ArticlesRepository _articlesRepo;
         private readonly ArticleCategoriesRepository _articleCategoriesRepo;
         private readonly StaticContentDetailsRepository _staticContentRepo;
-        public BlogController(ArticlesRepository articlesRepo,
+        private readonly ArticleTagsRepository _articleTagsRepo;
+
+        public BlogController(
+            ArticlesRepository articlesRepo,
             ArticleCategoriesRepository articleCategoriesRepo,
-            StaticContentDetailsRepository staticContentDetailsRepo)
+            StaticContentDetailsRepository staticContentDetailsRepo,
+            ArticleTagsRepository articleTagsRepo
+            )
         {
             _articlesRepo = articlesRepo;
             _articleCategoriesRepo = articleCategoriesRepo;
             _staticContentRepo = staticContentDetailsRepo;
+            _articleCategoriesRepo = articleCategoriesRepo;
+            _articleTagsRepo = articleTagsRepo;
         }
         // GET: Blog
         public ActionResult Index(int pageNumber = 1, string searchString = null, int? category = null)
         {
             var articles = new List<Article>();
-            var take = 3;
+            var take = 4;
             var skip = pageNumber * take - take;
             var count = 0;
             if (category != null)
@@ -77,8 +84,20 @@ namespace drugStore7.Web.Controllers
         }
         public ActionResult ArticleCategoriesSection()
         {
-            var categories = _articleCategoriesRepo.GetAll();
-            return PartialView(categories);
+            var categories = _articlesRepo.GetArticleCategories();
+
+            var articleCategoriesVm = new List<ArticleCategoriesViewModel>();
+
+            foreach (var item in categories)
+            {
+                var vm = new ArticleCategoriesViewModel();
+                vm.Id = item.Id;
+                vm.Title = item.Title;
+                vm.ArticleCount = _articlesRepo.GetArticlesCount(item.Id);
+                articleCategoriesVm.Add(vm);
+            }
+
+            return PartialView(articleCategoriesVm);
         }
         public ActionResult TopArticlesSection(int take)
         {
@@ -89,6 +108,26 @@ namespace drugStore7.Web.Controllers
 
             return PartialView(vm);
         }
+
+        public ActionResult AdBlogSection()
+        {
+            var model = _staticContentRepo.GetStaticContentDetail((int)StaticContents.BlogAd);
+
+            return PartialView(model);
+        }
+
+        public ActionResult TagsSection()
+        {
+            //SocialViewModel model = new SocialViewModel();
+
+            //model.Instagram = _staticContentDetailsRepo.GetStaticContentDetail(1009).Link;
+            //model.Aparat = _staticContentDetailsRepo.GetStaticContentDetail(1012).Link;
+
+            var tags = _articleTagsRepo.GetAll();
+
+            return PartialView(tags);
+        }
+
         [Route("Blog/ArticleDetails/{id}/{title}")]
         [Route("Blog/Article/{id}/{title}")]
 

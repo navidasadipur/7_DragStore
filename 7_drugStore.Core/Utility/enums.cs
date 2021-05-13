@@ -23,11 +23,11 @@ namespace drugStore7.Core.Utility
         AboutDescription = 15,
         firstImageAboutPage = 16,
         WorkingHours = 1008,
-        Youtube = 2007,
-        Instagram = 2012,
-        Twitter = 2013,
-        Pinterest = 2014,
-        Facebook = 2015,
+        Youtube = 29,
+        Instagram = 28,
+        Twitter = 27,
+        Pinterest = 30,
+        Facebook = 26,
         BlogImage = 1013,
         ContactInfo = 1014,
         companyServices = 3003,
@@ -41,12 +41,15 @@ namespace drugStore7.Core.Utility
 
         DiscountNews = 5027,
 
-        Logo = 3,
+        Logo = 14,
         BackGroundImage = 4022,
+
+        BlogAd = 32,
     }
 
     public enum StaticContentTypes
     {
+        HeaderFooter = 9,
         About = 13,
         AboutProperties,
 

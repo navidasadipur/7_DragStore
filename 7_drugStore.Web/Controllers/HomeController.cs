@@ -73,9 +73,17 @@ namespace drugStore7.Web.Controllers
 
         public ActionResult HeaderSection()
         {
-            var Groups = _productGroupRepo.GetProductGroups();
-            ViewBag.MainProductGroups = Groups;
-            return PartialView();
+            
+            var allMainGroups = _productGroupRepo.GetMainProductGroups();
+
+            foreach (var group in allMainGroups)
+            {
+                group.Children = _productGroupRepo.GetChildrenProductGroups(group.Id);
+            }
+
+            ViewBag.LogoImage = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Logo).Image;
+
+            return PartialView(allMainGroups);
         }
 
         public ActionResult FooterTopSection()
@@ -85,16 +93,15 @@ namespace drugStore7.Web.Controllers
 
         public ActionResult FooterSection()
         {
-            //var map = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.ContactUsMap);
-            //var phone = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Phone);
-            //var email = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Email);
-            //var address = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Address);
             var vm = new FooterViewModel()
             {
-                //Map = map.Description,
-                //Phone = phone.Title,
-                //Email = email.Title,
-                //Address = address.Title
+                Phone = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Phone),
+                Logo = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Logo),
+                Facebook = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Facebook),
+                Twitter = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Twitter),
+                Instagram = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Instagram),
+                Youtube = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Youtube),
+                Pinterest = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Pinterest),
             };
 
             return PartialView(vm);
