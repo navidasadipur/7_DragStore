@@ -1,4 +1,5 @@
-﻿@using drugStore7.Core.Models
+﻿@model drugStore7.Web.ViewModels.NavbarViewModel  
+@using drugStore7.Core.Models
 @{
     var mainProductGroups = ViewBag.MainProductGroups as List<ProductGroup>;
 }
@@ -327,6 +328,111 @@
                                         <li><a href="/cart">سبد خرید</a></li>
                                     </ul>
                                 </li>
+                                @foreach (var group in Model.ProductParentGroups)
+                                {
+                                    <li>
+
+                                        <a href="#" class="sf-with-ul">@group.Title</a>
+
+                                        <ul>
+                                            <li>
+                                                <a href="productlist.html" class="sf-with-ul">بهداشت دهان و دندان</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="productlist.html">ارتودنسی</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="productlist.html">چسب دندان</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html" class="sf-with-ul">محصولات آفتاب</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="productlist.html">ضد آفتاب بی رنگ</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="productlist.html">ضد آفتاب رنگی</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="productlist.html">ضد آفتاب</a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="productlist.html">افتر سان</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="productlist.html">برنزه کننده</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html" class="sf-with-ul">مرطوب کننده</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="productlist.html">مرطوب کننده بدن</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="productlist.html">مرطوب کننده پا</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="productlist.html">مرطوب کننده دست</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html" class="sf-with-ul">پاکسازی پوست</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="productlist.html">بدن</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="productlist.html">صورت</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="productlist.html">دور چشم</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html" class="sf-with-ul">ضد چروک</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="productlist.html">دور چشم و لب</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="productlist.html">صورت</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html" class="sf-with-ul">ضد لک</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="productlist.html">ضد لک صورت</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="productlist.html" class="sf-with-ul">مراقبت از مو</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="productlist.html">اسپری</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="productlist.html">حالت دهنده مو</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="productlist.html">رنگ مو ، ابرو و مژه</a>
+                                                    </li>
+                                                    <li>
+                                                </ul>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                }
                                 <li>
 
                                     <a href="#" class="sf-with-ul">آرایشی و بهداشتی </a>

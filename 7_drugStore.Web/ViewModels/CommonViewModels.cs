@@ -205,9 +205,11 @@ namespace drugStore7.Web.ViewModels
     {
         public NavbarViewModel()
         {
-            ProductCategories = new List<ProductGroup>();
+            ProductParentGroups = new List<ProductGroup>();
+            ProductChildGroups = new List<ProductGroup>();
         }
-        public List<ProductGroup> ProductCategories { get; set; }
+        public List<ProductGroup> ProductParentGroups { get; set; }
+        public List<ProductGroup> ProductChildGroups { get; set; }
         public List<Product> Products { get; set; }
     }
 
