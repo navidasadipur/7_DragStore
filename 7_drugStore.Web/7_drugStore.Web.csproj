@@ -10672,6 +10672,7 @@
     <Content Include="Views\Blog\AdBlogSection.cshtml" />
     <Content Include="Views\Blog\TagsSection.cshtml" />
     <Content Include="Views\Blog\SocialsSection.cshtml" />
+    <Content Include="Views\Blog\RelatedBlogsSection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

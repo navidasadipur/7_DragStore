@@ -87,6 +87,10 @@ namespace drugStore7.Web.ViewModels
             this.ShortDescription = article.ShortDescription;
             this.Author = $"{article.User.FirstName} {article.User.LastName}";
             this.PersianDate = article.AddedDate != null ? new PersianDateTime(article.AddedDate.Value).ToString("dddd d MMMM yyyy") : "-";
+            if (article.ArticleCategory != null)
+            {
+                this.Category = article.ArticleCategory;
+            }
         }
         public int Id { get; set; }
         public string Title { get; set; }
@@ -94,6 +98,7 @@ namespace drugStore7.Web.ViewModels
         public string ShortDescription { get; set; }
         public string Author { get; set; }
         public string PersianDate { get; set; }
+        public ArticleCategory Category { get; set; }
     }
     public class ArticleDetailsViewModel
     {
@@ -104,6 +109,7 @@ namespace drugStore7.Web.ViewModels
         public ArticleDetailsViewModel(Article article)
         {
             this.Id = article.Id;
+            this.CategoryId = article.ArticleCategoryId.Value;
             this.Title = article.Title;
             this.Image = article.Image;
             this.ShortDescription = article.ShortDescription;
@@ -114,6 +120,7 @@ namespace drugStore7.Web.ViewModels
             this.PersianDate = article.AddedDate != null ? new PersianDateTime(article.AddedDate.Value).ToString("dddd d MMMM yyyy") : "-";
         }
         public int Id { get; set; }
+        public int CategoryId { get; set; }
         public string Title { get; set; }
         public string Image { get; set; }
         public string ShortDescription { get; set; }

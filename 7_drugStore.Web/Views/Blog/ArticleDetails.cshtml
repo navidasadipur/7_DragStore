@@ -368,7 +368,7 @@
                                     </div><!-- End .entry-tags -->
                                 </div><!-- End .col -->
 
-                                @Html.Action("SocialsSection","Blog")
+                                @Html.Action("SocialsSection", "Blog")
                                 <!-- End .col-auto -->
 
                             </div><!-- End .entry-footer row no-gutters -->
@@ -416,129 +416,8 @@
                         </a>
                     </nav><!-- End .pager-nav -->
 
-                    <div class="related-posts">
-                        <h3 class="title">پست های مرتبط</h3><!-- End .title -->
-
-                        <div class="owl-carousel owl-simple" data-toggle="owl" data-owl-options='{
-                                        "nav": false,
-                                        "dots": true,
-                                        "margin": 20,
-                                        "loop": false,
-                                        "rtl": true,
-                            "responsive": {
-                                            "0": {
-                                                "items":1
-                                            },
-                                            "480": {
-                                                "items":2
-                                            },
-                                            "768": {
-                                                "items":3
-                                            }
-                                        }
-                                    }'>
-                            <article class="entry entry-grid">
-                                <figure class="entry-media">
-                                    <a href="single.html">
-                                        <img src="/Content/client/assets/images/medicine_images/blog-detail/Untitled-4.jpg"
-                                             alt="توضیحات عکس">
-                                    </a>
-                                </figure><!-- End .entry-media -->
-
-                                <div class="entry-body">
-                                    <div class="entry-meta justify-content-start">
-                                        <a href="#">22 فروردین 1399</a>
-                                        <span class="meta-separator">|</span>
-                                        <a href="#">2 دیدگاه</a>
-                                    </div><!-- End .entry-meta -->
-
-                                    <h2 class="entry-title">
-                                        <a href="single.html">لورم ایپسوم متن ساختگی با تولید سادگی</a>
-                                    </h2><!-- End .entry-title -->
-
-                                    <div class="entry-cats">
-                                        <a href="#">بهداشت</a>،
-                                        <a href="#">فروشگاه</a>
-                                    </div><!-- End .entry-cats -->
-                                </div><!-- End .entry-body -->
-                            </article><!-- End .entry -->
-
-                            <article class="entry entry-grid">
-                                <figure class="entry-media">
-                                    <a href="single.html">
-                                        <img src="/Content/client/assets/images/medicine_images/blog-detail/Untitled-5.jpg"
-                                             alt="توضیحات عکس">
-                                    </a>
-                                </figure><!-- End .entry-media -->
-
-                                <div class="entry-body">
-                                    <div class="entry-meta justify-content-start">
-                                        <a href="#">21 فروردین 1399</a>
-                                        <span class="meta-separator">|</span>
-                                        <a href="#">0 دیدگاه</a>
-                                    </div><!-- End .entry-meta -->
-
-                                    <h2 class="entry-title">
-                                        <a href="single.html">لورم ایپسوم متن ساختگی</a>
-                                    </h2><!-- End .entry-title -->
-
-                                    <div class="entry-cats">
-                                        <a href="#">بهداشت</a>
-                                    </div><!-- End .entry-cats -->
-                                </div><!-- End .entry-body -->
-                            </article><!-- End .entry -->
-
-                            <article class="entry entry-grid">
-                                <figure class="entry-media">
-                                    <a href="single.html">
-                                        <img src="/Content/client/assets/images/medicine_images/blog-detail/Untitled-6.jpg"
-                                             alt="توضیحات عکس">
-                                    </a>
-                                </figure><!-- End .entry-media -->
-
-                                <div class="entry-body">
-                                    <div class="entry-meta justify-content-start">
-                                        <a href="#">18 فروردین 1399</a>
-                                        <span class="meta-separator">|</span>
-                                        <a href="#">3 دیدگاه</a>
-                                    </div><!-- End .entry-meta -->
-
-                                    <h2 class="entry-title">
-                                        <a href="single.html">لورم ایپسوم متن ساختگی.</a>
-                                    </h2><!-- End .entry-title -->
-
-                                    <div class="entry-cats">
-                                        <a href="#">مکمل ورزشی</a>،
-                                        <a href="#">بهداشت</a>
-                                    </div><!-- End .entry-cats -->
-                                </div><!-- End .entry-body -->
-                            </article><!-- End .entry -->
-
-                            <article class="entry entry-grid">
-                                <figure class="entry-media">
-                                    <a href="single.html">
-                                        <img src="/Content/client/assets/images/blog/grid/3cols/post-4.jpg" alt="توضیحات عکس">
-                                    </a>
-                                </figure><!-- End .entry-media -->
-
-                                <div class="entry-body">
-                                    <div class="entry-meta justify-content-start">
-                                        <a href="#">15 فروردین 1399</a>
-                                        <span class="meta-separator">|</span>
-                                        <a href="#">4 دیدگاه</a>
-                                    </div><!-- End .entry-meta -->
-
-                                    <h2 class="entry-title">
-                                        <a href="single.html">لورم ایپسوم متن ساختگی</a>
-                                    </h2><!-- End .entry-title -->
-
-                                    <div class="entry-cats">
-                                        <a href="#">آرایشی بهداشتی</a>
-                                    </div><!-- End .entry-cats -->
-                                </div><!-- End .entry-body -->
-                            </article><!-- End .entry -->
-                        </div><!-- End .owl-carousel -->
-                    </div><!-- End .related-posts -->
+                    @Html.Action("RelatedBlogsSection", "Blog", new { categoryId=Model.CategoryId, take=4 })
+                    <!-- End .related-posts -->
 
                     <div class="comments">
                         <h3 class="title">3 دیدگاه</h3><!-- End .title -->

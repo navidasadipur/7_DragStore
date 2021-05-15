@@ -221,7 +221,7 @@
     <Compile Include="Repositories\ArticleCategoriesRepository.cs" />
     <Compile Include="Repositories\ArticleCommentsRepository.cs" />
     <Compile Include="Repositories\ArticleHeadLinesRepository.cs" />
-    <Compile Include="Repositories\ArticlesRepositoriy.cs" />
+    <Compile Include="Repositories\ArticlesRepository.cs" />
     <Compile Include="Repositories\ArticleTagsRepository.cs" />
     <Compile Include="Repositories\AuthRepsitory.cs" />
     <Compile Include="Repositories\BrandsRepository.cs" />

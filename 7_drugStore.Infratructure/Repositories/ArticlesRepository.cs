@@ -136,6 +136,11 @@ namespace drugStore7.Infrastructure.Repositories
             return _context.ArticleHeadLines.Where(c => c.IsDeleted == false && c.ArticleId == articleId).ToList();
         }
 
+        public List<Article> GetArticlesByCategoryId(int categoryId)
+        {
+            return _context.Articles.Where(a => a.ArticleCategoryId == categoryId && a.IsDeleted == false).Include(a => a.User).Include(a => a.ArticleCategory).OrderBy(a => a.InsertDate).ToList();
+        }
+
         public void UpdateArticleViewCount(int articleId)
         {
             var article = _context.Articles.Find(articleId);
@@ -148,6 +153,8 @@ namespace drugStore7.Infrastructure.Repositories
             _context.ArticleComments.Add(comment);
             _context.SaveChanges();
         }
+
+
         //public Article DeleteArticle(int articleId)
         //{
         //    var article = _context.Articles.Find(articleId);

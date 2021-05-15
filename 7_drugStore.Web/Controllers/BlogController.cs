@@ -194,5 +194,28 @@ namespace drugStore7.Web.Controllers
 
             return PartialView(model);
         }
+
+        public ActionResult RelatedBlogsSection(int? categoryId, int take)
+        {
+            var relatedArticles = new List<LatestArticlesViewModel>();
+
+            var takedArticles = new List<Article>();
+
+            if (categoryId != null)
+            {
+                var articles = _articlesRepo.GetArticlesByCategoryId(categoryId.Value).OrderByDescending(b => b.InsertDate).ToList();
+
+                takedArticles = articles.GetRange(0, take);
+            }
+
+            foreach (var blog in takedArticles)
+            {
+                var vm = new LatestArticlesViewModel(blog);
+
+                relatedArticles.Add(vm);
+            }
+
+            return PartialView(relatedArticles);
+        }
     }
 }
