@@ -297,15 +297,17 @@ namespace drugStore7.Web.ViewModels
 
     public class SocialViewModel
     {
-        public string Facebook { get; set; }
+        public StaticContentDetail Facebook { get; set; }
 
-        public string Twitter { get; set; }
+        public StaticContentDetail Twitter { get; set; }
 
-        public string Instagram { get; set; }
+        public StaticContentDetail Instagram { get; set; }
 
-        public string Youtube { get; set; }
+        public StaticContentDetail Youtube { get; set; }
 
-        public string Pinterest { get; set; }
+        public StaticContentDetail Pinterest { get; set; }
+
+        public StaticContentDetail Linkedin { get; set; }
 
     }
 }

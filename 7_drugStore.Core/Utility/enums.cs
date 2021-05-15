@@ -28,6 +28,7 @@ namespace drugStore7.Core.Utility
         Twitter = 27,
         Pinterest = 30,
         Facebook = 26,
+        linkedin = 33,
         BlogImage = 1013,
         ContactInfo = 1014,
         companyServices = 3003,

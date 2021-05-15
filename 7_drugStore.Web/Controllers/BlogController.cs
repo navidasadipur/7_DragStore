@@ -182,5 +182,17 @@ namespace drugStore7.Web.Controllers
             }
             return RedirectToAction("ArticleDetails", new { id = form.ArticleId });
         }
+
+        public ActionResult SocialsSection()
+        {
+            SocialViewModel model = new SocialViewModel();
+
+            model.Facebook = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Facebook);
+            model.Twitter = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Twitter);
+            model.Pinterest = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Pinterest);
+            model.Linkedin = _staticContentRepo.GetStaticContentDetail((int)StaticContents.linkedin);
+
+            return PartialView(model);
+        }
     }
 }
