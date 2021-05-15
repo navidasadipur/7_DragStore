@@ -223,9 +223,9 @@
     <nav aria-label="breadcrumb" class="breadcrumb-nav mb-3">
         <div class="container">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index-1.html">خانه</a></li>
-                <li class="breadcrumb-item"><a href="#">اخبار</a></li>
-                <li class="breadcrumb-item active" aria-current="page">خبر</li>
+                <li class="breadcrumb-item"><a href="~/home">خانه</a></li>
+                <li class="breadcrumb-item"><a href="~/Blog">اخبار</a></li>
+                <li class="breadcrumb-item active" aria-current="page"> @Model.Title</li>
             </ol>
         </div><!-- End .container -->
     </nav><!-- End .breadcrumb-nav -->
@@ -236,45 +236,39 @@
                 <div class="col-lg-9">
                     <article class="entry single-entry">
                         <figure class="entry-media">
-                            <img src="/Content/client/assets/images/medicine_images/blog-detail/Untitled-1.jpg"
-                                 alt="توضیحات عکس">
+                            <img src="/Files/ArticleImages/Image/@Model.Image"
+                                 alt="@Model.Title">
                         </figure><!-- End .entry-media -->
 
                         <div class="entry-body">
                             <div class="entry-meta">
                                 <span class="entry-author">
-                                    نویسنده : <a href="#">مدیر سایت</a>
+                                    نویسنده : <a href="#">@Model.Author</a>
                                 </span>
                                 <span class="meta-separator">|</span>
-                                <a href="#">22 فروردین 1399</a>
+                                <a href="#">@Model.PersianDate</a>
                                 <span class="meta-separator">|</span>
-                                <a href="#">2 دیدگاه</a>
+                                <a href="#">@Model.ArticleComments.Count() دیدگاه</a>
                             </div><!-- End .entry-meta -->
 
                             <h2 class="entry-title">
-                                لورم ایپسوم متن ساختگی با تولید سادگی
+                                @Model.Title
                             </h2><!-- End .entry-title -->
 
                             <div class="entry-cats">
-                                <a href="#">بهداشت</a>،
-                                <a href="#">فروشگاه</a>
+                                <a href="#">بهداشت</a>@*،
+                                <a href="#">فروشگاه</a>*@
                             </div><!-- End .entry-cats -->
 
                             <div class="entry-content editor-content">
+                                
                                 <p>
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید
-                                    سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوملورم ایپسوم متن
-                                    ساختگی با تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی
-                                    نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
+                                    @Model.ShortDescription
                                 </p>
 
                                 <p>
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید
-                                    سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوملورم ایپسوم متن
-                                    ساختگی با تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                    <a href="#">لورم ایپسوم</a>، لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید
-                                    سادگی نامفهوم
+                                    @Model.Description
+
                                 </p>
 
                                 <div class="pb-1"></div><!-- End .mb-1 -->
