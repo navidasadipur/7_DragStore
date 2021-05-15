@@ -250,7 +250,7 @@
                             @{
                                 if (ViewBag.CurrentPage > 1)
                                 {
-                                    <li class="page-item disabled">
+                                    <li class="page-item">
                                         <a class="page-link page-link-prev" href="/Blog?pageNumber=@(ViewBag.CurrentPage - 1)@(ViewBag.CategoryId != null ? $"&Category={ViewBag.CategoryId}" : null)@(ViewBag.SearchString != null ? $"&searchString={ViewBag.SearchString}" : null)"
                                            aria-label="Previous" tabindex="-1"
                                            aria-disabled="true">
