@@ -1,38 +1,144 @@
 ﻿@model drugStore7.Web.ViewModels.WishListModel
-<table class="table border mb-0">
+@*<table class="table border mb-0">
     <thead>
-    <tr>
-        <th>تصویر</th>
-        <th>نام محصول</th>
-        <th>حذف</th>
-    </tr>
+        <tr>
+            <th>تصویر</th>
+            <th>نام محصول</th>
+            <th>حذف</th>
+        </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model.WishListItems)
-    {
+        @if (Model.WishListItems != null)
+        {
+            foreach (var item in Model.WishListItems)
+            {
+                <tr>
+                    <td>
+                        <a href="/Shop/Product/@item.Id">
+                            <div class="product-image">
+                                <img alt="@item.ProductName" src="/Files/ProductImages/Thumb/@item.Image">
+                            </div>
+                        </a>
+                    </td>
+                    <td>
+                        <div class="product-title">
+                            <a href="product-page.html">@item.ProductName</a>
+                        </div>
+                    </td>
+
+
+
+                    <td>
+                        <a href="javascript:void(0)" class="btn small btn-color" onclick="removeFromWishList(@item.Id)">
+                            <i title="Remove Item From Cart" data-id="100" class="fa fa-trash cart-remove-item"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>*@
+
+
+<table class="table table-wishlist table-mobile">
+    <thead>
         <tr>
-            <td>
-                <a href="/Shop/Product/@item.Id">
-                    <div class="product-image">
-                        <img alt="@item.ProductName" src="/Files/ProductImages/Thumb/@item.Image">
-                    </div>
-                </a>
+            <th>محصول</th>
+            <th>قیمت</th>
+            <th>وضعیت محصول</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td class="product-col">
+                <div class="product">
+                    <figure class="product-media">
+                        <a href="#">
+                            <img width="60px" height="60px" src="/Content/client/pic/p2.jpg" alt="تصویر محصول">
+                        </a>
+                    </figure>
+
+                    <h3 class="product-title">
+                        <a href="#">محصول</a>
+                    </h3><!-- End .product-title -->
+                </div><!-- End .product -->
             </td>
-            <td>
-                <div class="product-title">
-                    <a href="product-page.html">@item.ProductName</a>
+            <td class="price-col">84,000 تومان</td>
+            <td class="stock-col"><span class="in-stock">موجود</span></td>
+            <td class="action-col">
+                <div class="dropdown">
+                    <button class="btn btn-block btn-outline-primary-2" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        <i class="icon-list-alt"></i>انتخاب گزینه ها
+                    </button>
+
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">گزینه 1</a>
+                        <a class="dropdown-item" href="#">گزینه 2</a>
+                        <a class="dropdown-item" href="#">گزینه 3</a>
+                    </div>
                 </div>
             </td>
-
-
-
-            <td>
-                <a href="javascript:void(0)" class="btn small btn-color" onclick="removeFromWishList(@item.Id)">
-                    <i title="Remove Item From Cart" data-id="100" class="fa fa-trash cart-remove-item"></i>
-                </a>
+            <td class="remove-col text-left">
+                <button class="btn-remove">
+                    <i class="icon-close"></i>
+                </button>
             </td>
         </tr>
-    }
-    </tbody>
-</table>
+        <tr>
+            <td class="product-col">
+                <div class="product">
+                    <figure class="product-media">
+                        <a href="#">
+                            <img width="60px" height="60px" src="/Content/client/pic/p4.jpg" alt="تصویر محصول">
+                        </a>
+                    </figure>
 
+                    <h3 class="product-title">
+                        <a href="#">محصول</a>
+                    </h3><!-- End .product-title -->
+                </div><!-- End .product -->
+            </td>
+            <td class="price-col">76,000 تومان</td>
+            <td class="stock-col"><span class="in-stock">موجود</span></td>
+            <td class="action-col">
+                <button class="btn btn-block btn-outline-primary-2">
+                    <i class="icon-cart-plus"></i>افزودن به سبد خرید
+                </button>
+            </td>
+            <td class="remove-col text-left">
+                <button class="btn-remove">
+                    <i class="icon-close"></i>
+                </button>
+            </td>
+        </tr>
+        <tr>
+            <td class="product-col">
+                <div class="product">
+                    <figure class="product-media">
+                        <a href="#">
+                            <img width="60px" height="60px" src="/Content/client/pic/p8.jpg" alt="تصویر محصول">
+                        </a>
+                    </figure>
+
+                    <h3 class="product-title">
+                        <a href="#">محصول</a>
+                    </h3><!-- End .product-title -->
+                </div><!-- End .product -->
+            </td>
+            <td class="price-col">52,000 تومان</td>
+            <td class="stock-col"><span class="out-of-stock">ناموجود</span></td>
+            <td class="action-col">
+                <button class="btn btn-block btn-outline-primary-2 disabled">ناموجود</button>
+            </td>
+            <td class="remove-col text-left">
+                <button class="btn-remove">
+                    <i class="icon-close"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table><!-- End .table table-wishlist -->

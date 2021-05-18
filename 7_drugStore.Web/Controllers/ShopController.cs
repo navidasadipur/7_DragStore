@@ -967,5 +967,18 @@ namespace drugStore7.Web.Controllers
             return Newtonsoft.Json.JsonConvert.SerializeObject(discountCodeResponse);
 
         }
+
+        public ActionResult SocialsSection()
+        {
+            SocialViewModel model = new SocialViewModel();
+
+            model.Facebook = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Facebook);
+            model.Twitter = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Twitter);
+            model.Pinterest = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Pinterest);
+            model.Youtube = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Youtube);
+            model.Instagram = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Instagram);
+
+            return PartialView(model);
+        }
     }
 }
