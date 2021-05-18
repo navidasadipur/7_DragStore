@@ -5,12 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using drugStore7.Core.Models;
-using drugStore7.Core.Utility;
-using drugStore7.Infrastructure.Repositories;
-using drugStore7.Web.ViewModels;
+using OriginalHolding.Core.Models;
+using OriginalHolding.Core.Utility;
+using OriginalHolding.Infrastructure.Repositories;
+using OriginalHolding.Web.ViewModels;
 
-namespace drugStore7.Web.Areas.Customer.Controllers
+namespace OriginalHolding.Web.Areas.Customer.Controllers
 {
     [Authorize(Roles = "Customer")]
     public class DashboardController : Controller
@@ -79,6 +79,7 @@ namespace drugStore7.Web.Areas.Customer.Controllers
                 #region Check for duplicate username or email
 
                 if (form.UserName != null)
+
                 {
                     if (_usersRepo.UserNameExists(form.UserName, form.UserId))
                     {

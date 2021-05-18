@@ -257,19 +257,17 @@
 
                             <div class="entry-cats">
                                 <a href="#">بهداشت</a>@*،
-                                <a href="#">فروشگاه</a>*@
+                                    <a href="#">فروشگاه</a>*@
                             </div><!-- End .entry-cats -->
 
                             <div class="entry-content editor-content">
-                                
-                                <p>
-                                    @Model.ShortDescription
-                                </p>
 
                                 <p>
-                                    @Model.Description
-
+                                    @Html.Raw(Model.ShortDescription)
                                 </p>
+
+                                    @Html.Raw(Model.Description)
+
 
                                 <div class="pb-1"></div><!-- End .mb-1 -->
 
@@ -410,7 +408,7 @@
                         </a>
                     </nav><!-- End .pager-nav -->
 
-                    @Html.Action("RelatedBlogsSection", "Blog", new { categoryId=Model.CategoryId, take=4 })
+                    @Html.Action("RelatedBlogsSection", "Blog", new { categoryId = Model.CategoryId, take = 4 })
                     <!-- End .related-posts -->
 
                     <div class="comments">
@@ -564,18 +562,17 @@
 
                         @Html.Action("TagsSection", "Blog")
                         <!-- End .widget -->
-
                         @*<div class="widget widget-text">
-            <h3 class="widget-title">درباره بخش اخبار</h3><!-- End .widget-title -->
+                                <h3 class="widget-title">درباره بخش اخبار</h3><!-- End .widget-title -->
 
-            <div class="widget-text-content">
-                <p>
-                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم، لورم ایپسوم متن ساختگی با
-                    تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با لورم ایپسوم متن ساختگی با
-                    تولید سادگی نامفهوم
-                </p>
-            </div><!-- End .widget-text-content -->
-        </div><!-- End .widget -->*@
+                                <div class="widget-text-content">
+                                    <p>
+                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم، لورم ایپسوم متن ساختگی با
+                                        تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با لورم ایپسوم متن ساختگی با
+                                        تولید سادگی نامفهوم
+                                    </p>
+                                </div><!-- End .widget-text-content -->
+                            </div><!-- End .widget -->*@
                     </div><!-- End .sidebar -->
                 </aside><!-- End .col-lg-3 -->
             </div><!-- End .row -->

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -8,14 +7,13 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Newtonsoft.Json;
-using drugStore7.Core.Models;
-using drugStore7.Core.Utility;
-using drugStore7.Infrastructure.Repositories;
-using drugStore7.Web.Providers;
-using drugStore7.Web.ViewModels;
+using OriginalHolding.Core.Models;
+using OriginalHolding.Core.Utility;
+using OriginalHolding.Infrastructure.Repositories;
+using OriginalHolding.Web.Controllers;
+using OriginalHolding.Web.ViewModels;
 
-namespace drugStore7.Web.Areas.Customer.Controllers
+namespace OriginalHolding.Web.Areas.Customer.Controllers
 {
     [Authorize]
     public class AuthController : Controller
@@ -23,27 +21,16 @@ namespace drugStore7.Web.Areas.Customer.Controllers
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
         private UsersRepository _userRepo;
-        private SMSLogRepository _smsLogRepo;
 
         public AuthController()
         {
-            if (_smsLogRepo == null)
-                _smsLogRepo = new SMSLogRepository(new Infrastructure.MyDbContext(), new LogsRepository(new Infrastructure.MyDbContext()));
-            if (_userRepo == null)
-                _userRepo = new UsersRepository();
         }
 
-        public AuthController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, UsersRepository userRepo, SMSLogRepository smsLogRepository)
+        public AuthController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, UsersRepository userRepo) 
         {
             UserManager = userManager;
             SignInManager = signInManager;
             UserRepo = userRepo;
-            _smsLogRepo = smsLogRepository;
-
-            if (_smsLogRepo == null)
-                _smsLogRepo = new SMSLogRepository(new Infrastructure.MyDbContext(), new LogsRepository(new Infrastructure.MyDbContext()));
-            if(_userRepo == null)
-                _userRepo = new UsersRepository();
         }
         public UsersRepository UserRepo
         {
@@ -80,132 +67,6 @@ namespace drugStore7.Web.Areas.Customer.Controllers
             }
         }
 
-        [HttpGet]
-        [AllowAnonymous]
-        public string SendCode(string phone="")
-        {
-            if(string.IsNullOrEmpty(phone))
-            {
-                return "invalid";
-            }
-
-            string code = GenerateConfirmCode();
-
-            // check if this phone number exists
-            var phoneNumberExists = _userRepo.PhoneNumberExists(phone);
-            var user = new User { UserName = phone, PhoneNumber = phone, FirstName = "", LastName = "", VerificationCode = code };
-            if (!phoneNumberExists)
-            {
-                // add a new user
-                UserRepo.CreateUser(user, code);
-
-                if (user.Id != null)
-                {
-                    // Add Customer Role
-                    UserRepo.AddUserRole(user.Id, StaticVariables.CustomerRoleId);
-
-                    // Add Customer
-                    var customer = new Core.Models.Customer()
-                    {
-                        UserId = user.Id,
-                        IsDeleted = false
-                    };
-                    UserRepo.AddCustomer(customer);
-                }
-            }
-            else
-            {
-                _userRepo.UpdateVerificationCode(user, code);
-            }
-
-            // generate a code and send by sms
-
-            SMSLog smsLog = new SMSLog();
-            smsLog.ReceiverMobileNo = phone;
-            smsLog.MessageBody = "گالری سه شین\n";
-            smsLog.MessageBody += "کد تایید: " + code;
-            smsLog.SendDateTime = DateTime.Now;
-            smsLog.IsFlash = false;
-            smsLog.PatternCode = "";
-            smsLog.LineNumber = ConfigurationManager.AppSettings.Get("LineNumber");
-
-
-
-            SMSDotIrProvider sMSDotIrProvider = new SMSDotIrProvider();
-            sMSDotIrProvider.SendSMS(ref smsLog);
-
-            _smsLogRepo.Add(smsLog);
-
-            return "ok";
-        }
-
-        [AllowAnonymous]
-        public ActionResult AccountLogin(string returnUrl)
-        {
-            ViewBag.ReturnUrl = returnUrl;
-            return View();
-        }
-
-
-        [HttpPost]
-        [AllowAnonymous]
-        public async Task<string> AccountLogin(LoginRegisterModel model, string returnUrl)
-        {
-            if (!ModelState.IsValid)
-            {
-                return JsonConvert.SerializeObject("invalid");
-            }
-
-            var user = new User { PhoneNumber = model.Phone, VerificationCode = model.ConfirmCode };
-            var res = _userRepo.CheckVerificationCode(user);
-            if(res)
-            {
-                user = _userRepo.GetUserByPhoneNumber(model.Phone);
-                if (user != null)
-                {
-                    drugStore7.Web.Models.ApplicationUser appUser = new drugStore7.Web.Models.ApplicationUser();
-                    appUser.UserName = user.UserName;
-                    appUser.Id = user.Id;
-                    await SignInManager.SignInAsync(appUser, true, true);
-                    return JsonConvert.SerializeObject("ok"); // Or use returnUrl
-                }
-                else
-                {
-                    ModelState.AddModelError("", "کد تایید وارد شده صحیح نیست.");
-                    return JsonConvert.SerializeObject("invalid code");
-                }
-            }
-            else
-            {
-                ModelState.AddModelError("", "کد تایید وارد شده صحیح نیست.");
-                return JsonConvert.SerializeObject("invalid code");
-            }
-
-            
-        }
-
-        [AllowAnonymous]
-        public ActionResult Confirm()
-        {
-            return View();
-        }
-
-        [AllowAnonymous]
-        [ValidateAntiForgeryToken]
-        public ActionResult Confirm(ConfirmPhoneModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
-
-
-
-            return View();
-        }
-
-
-
         //
         // GET: /Auth/Login
         [AllowAnonymous]
@@ -213,6 +74,16 @@ namespace drugStore7.Web.Areas.Customer.Controllers
         {
             ViewBag.ReturnUrl = returnUrl;
             return View();
+        }
+        [AllowAnonymous]
+        public ActionResult LoginPartial()
+        {
+            return PartialView();
+        }
+        [AllowAnonymous]
+        public ActionResult RegisterPartial()
+        {
+            return PartialView();
         }
         [AllowAnonymous]
         public ActionResult AccessDenied(string returnUrl = null)
@@ -239,7 +110,8 @@ namespace drugStore7.Web.Areas.Customer.Controllers
             var user = UserManager.FindByName(model.UserName);
             if (user == null)
             {
-                ModelState.AddModelError("", "نام کاربری وارد شده صحیح نیست.");
+                ViewBag.LoginError = "نام کاربری وارد شده صحیح نیست.";
+                //ModelState.AddModelError(string.Empty, "نام کاربری وارد شده صحیح نیست.");
                 return View(model);
             }
 
@@ -247,19 +119,15 @@ namespace drugStore7.Web.Areas.Customer.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
-                    {
-                        if (!string.IsNullOrEmpty(returnUrl))
-                            return RedirectToLocal(returnUrl); // Or use returnUrl
-
-                        return RedirectToLocal("/Customer/Dashboard"); // Or use returnUrl
-                    }
+                    return RedirectToLocal("/Customer/Dashboard"); // Or use returnUrl
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "نام کاربری وارد شده صحیح نیست.");
+                    ViewBag.LoginError = "نام کاربری یا رمز عبور وارد شده صحیح نیست.";
+                    //ModelState.AddModelError("", "نام کاربری وارد شده صحیح نیست.");
                     return View(model);
             }
         }
@@ -284,19 +152,20 @@ namespace drugStore7.Web.Areas.Customer.Controllers
                 #region Check for duplicate username or email
                 if (UserRepo.UserNameExists(model.UserName))
                 {
-                    ModelState.AddModelError("", "نام کاربری قبلا ثبت شده");
+                    ViewBag.RegisterError = "نام کاربری قبلا ثبت شده.";
+                    //ModelState.AddModelError("", "نام کاربری قبلا ثبت شده");
                     return View(model);
                 }
-                if (UserRepo.EmailExists(model.Mobile))
+                if (UserRepo.EmailExists(model.Email))
                 {
-                    ModelState.AddModelError("", "شماره موبایل قبلا ثبت شده");
+                    ViewBag.RegisterError = "ایمیل قبلا ثبت شده.";
+                    //ModelState.AddModelError("", "ایمیل قبلا ثبت شده");
                     return View(model);
                 }
                 #endregion
 
-                var user = new User { UserName = model.UserName, PhoneNumber = model.Mobile, FirstName = model.FirstName, LastName = model.LastName };
-                var password = GeneratePassword();
-                UserRepo.CreateUser(user, password);
+                var user = new User { UserName = model.UserName, Email = model.Email, FirstName = model.FirstName, LastName = model.LastName };
+                UserRepo.CreateUser(user, model.Password);
                 if (user.Id != null)
                 {
                     // Add Customer Role
@@ -306,7 +175,8 @@ namespace drugStore7.Web.Areas.Customer.Controllers
                     var customer = new Core.Models.Customer()
                     {
                         UserId = user.Id,
-                        IsDeleted = false
+                        IsDeleted = false,
+                        InsertDate = DateTime.Now
                     };
                     UserRepo.AddCustomer(customer);
                     //await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
@@ -314,25 +184,8 @@ namespace drugStore7.Web.Areas.Customer.Controllers
                     // For more information on how to enable Auth confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("https://www.youtube.com/watch?v=5XA4Z-SOif8", "Auth", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    // var callbackUrl = Url.Action("ConfirmEmail", "Auth", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your Auth", "Please confirm your Auth by clicking <a href=\"" + callbackUrl + "\">here</a>");
-
-                    SMSLog smsLog = new SMSLog();
-                    smsLog.ReceiverMobileNo = model.Mobile;
-                    smsLog.MessageBody = "گالری سه شین\n";
-                    smsLog.MessageBody += "پسورد شما: "+ password;
-                    smsLog.MessageBody += "\nدر صورت تمایل می توانید از پنل کاربری پسورد خود را تغییر دهید";
-                    smsLog.SendDateTime = DateTime.Now;
-                    smsLog.IsFlash = false;
-                    smsLog.PatternCode = "";
-                    smsLog.LineNumber = ConfigurationManager.AppSettings.Get("LineNumber");
-
-
-
-                    SMSDotIrProvider sMSDotIrProvider = new SMSDotIrProvider();
-                    sMSDotIrProvider.SendSMS(ref smsLog);
-
-                    _smsLogRepo.Add(smsLog);
 
                     return RedirectToAction("Login", "Auth");
                 }
@@ -371,34 +224,6 @@ namespace drugStore7.Web.Areas.Customer.Controllers
         }
 
         #region Helpers
-        private string GeneratePassword()
-        {
-            string password = "";
-
-            var bytes = Guid.NewGuid().ToByteArray();
-
-            password = BitConverter.ToString(bytes).Replace("-", "").Substring(0,6).ToLower();
-
-            return password;
-        }
-
-        private string GenerateConfirmCode(int length=6)
-        {
-            string code = "";
-
-            var bytes = Guid.NewGuid().ToByteArray();
-
-            foreach (var number in bytes)
-            {
-                if (code.Length >= length)
-                    break;
-
-                code += (number % 10).ToString();
-            }
-
-            return code;
-        }
-
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 

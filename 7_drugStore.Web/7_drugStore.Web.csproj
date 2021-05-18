@@ -8440,9 +8440,10 @@
     <Content Include="Areas\Admin\Views\Certificates\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\Certificates\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Certificates\Index.cshtml" />
-    <Content Include="Areas\Customer\Views\Auth\AccountLogin.cshtml" />
     <Content Include="Areas\Customer\Views\Auth\Login.cshtml" />
+    <Content Include="Areas\Customer\Views\Auth\LoginPartial.cshtml" />
     <Content Include="Areas\Customer\Views\Auth\Register.cshtml" />
+    <Content Include="Areas\Customer\Views\Auth\RegisterPartial.cshtml" />
     <Content Include="Areas\Customer\Views\Dashboard\EditMyProfile.cshtml" />
     <Content Include="Areas\Customer\Views\Dashboard\Index.cshtml" />
     <Content Include="Areas\Customer\Views\Dashboard\Invoices.cshtml" />
