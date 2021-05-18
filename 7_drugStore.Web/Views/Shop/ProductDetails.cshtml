@@ -76,7 +76,12 @@
 
                                         <p>
                                             @{
-                                                var descParts = Model.Product.ShortDescription.Split('\n');
+                                                var descParts = new List<string>();
+
+                                                if (Model.Product.ShortDescription != null)
+                                                {
+                                                    descParts = Model.Product.ShortDescription.Split('\n').ToList();
+                                                }
                                             }
                                             <ul class="product-des-ul mb-40">
                                                 @foreach (var desc in descParts)
