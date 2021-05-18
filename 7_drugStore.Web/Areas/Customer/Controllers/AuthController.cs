@@ -7,13 +7,13 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using OriginalHolding.Core.Models;
-using OriginalHolding.Core.Utility;
-using OriginalHolding.Infrastructure.Repositories;
-using OriginalHolding.Web.Controllers;
-using OriginalHolding.Web.ViewModels;
+using drugStore7.Core.Models;
+using drugStore7.Core.Utility;
+using drugStore7.Infrastructure.Repositories;
+using drugStore7.Web.Controllers;
+using drugStore7.Web.ViewModels;
 
-namespace OriginalHolding.Web.Areas.Customer.Controllers
+namespace drugStore7.Web.Areas.Customer.Controllers
 {
     [Authorize]
     public class AuthController : Controller

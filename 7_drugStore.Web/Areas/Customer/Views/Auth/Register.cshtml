@@ -1,11 +1,11 @@
-﻿@model OriginalHolding.Web.ViewModels.RegisterCustomerViewModel
+﻿@model drugStore7.Web.ViewModels.RegisterCustomerViewModel
 @{
     ViewBag.Title = "ثبت نام";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-<!-- breadcrumb area start -->
+@*<!-- breadcrumb area start -->
 <section class="breadcrumb-area breadcrumb-bg extra">
     <div class="container">
         <div class="row">
@@ -107,7 +107,96 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
+
+
+<main class="main">
+    <nav aria-label="breadcrumb" class="breadcrumb-nav border-0 mb-0">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="~/home">خانه</a></li>
+                <li class="breadcrumb-item"><a href="#">صفحات</a></li>
+                <li class="breadcrumb-item active" aria-current="page"> ثبت نام</li>
+            </ol>
+        </div><!-- End .container -->
+    </nav><!-- End .breadcrumb-nav -->
+
+    <div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17"
+         style="background-image: url(/Content/client/pic/bgmedi2.jpg)">
+        <div class="container">
+            @if (!string.IsNullOrEmpty(ViewBag.LoginError))
+            {
+                <div class="container margin-top-50">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="alert alert-warning">
+                                <span class="text-danger">@ViewBag.LoginError</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="form-box">
+
+                <div class="tab-pane ade show active" id="register-2" role="tabpanel"
+                     aria-labelledby="register-tab-2">
+                    @using (Html.BeginForm("Register", "Auth", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @id = "form", @class = "login-form", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <label for="register-email-2">آدرس ایمیل شما *</label>
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "ایمیل خود را وارد کنید", autocomplete = "off", @type = "email" })
+                            @Html.ValidationMessageFor(m => m.Email, "")
+                            @*<input type="email" class="form-control" id="register-email-2"
+                name="register-email" required>*@
+                        </div><!-- End .form-group -->
+
+                        <div class="form-group">
+                            <label for="register-password-2">رمز عبور *</label>
+                            @Html.TextBoxFor(m => m.Password, new { @class = "form-control", @placeholder = "رمز عبور خود را وارد کنید", @type = "Password", autocomplete = "off" })
+                            @Html.ValidationMessageFor(m => m.Password, "")
+                            @*<input type="password" class="form-control" id="register-password-2"
+                name="register-password" required>*@
+                        </div><!-- End .form-group -->
+
+                        <div class="form-group">
+                            <label for="register-password-2">تکرار رمز عبور *</label>
+                            @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control", @placeholder = "تکرار رمز عبور خود را وارد کنید", @type = "Password", autocomplete = "off" })
+                            @Html.ValidationMessageFor(m => m.ConfirmPassword, "")
+                            @*<input type="password" class="form-control" id="register-password-2"
+                name="register-password" required>*@
+                        </div><!-- End .form-group -->
+
+                        <div class="form-footer">
+                            <button type="submit" class="btn btn-outline-primary-2 ml-3">
+                                <span>ثبت نام</span>
+                                <i class="icon-long-arrow-left"></i>
+                            </button>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input"
+                                       id="register-policy-2" required>
+                                <label class="custom-control-label" for="register-policy-2">
+                                    من با <a href="#" class="text-dark">قوانین و مقررات</a> موافقم *
+                                </label>
+                            </div><!-- End .custom-checkbox -->
+                        </div><!-- End .form-footer -->
+
+                        <br>
+                        <br>
+
+                        <div class="form-footer">
+                            <a class="btn btn-outline-primary-2 ml-12 col-12" href="/Customer/Auth/Login">
+                                ورود
+                            </a>
+                        </div><!-- End .form-footer -->
+                    }
+                </div><!-- .End .tab-pane -->
+            </div><!-- End .form-box -->
+        </div><!-- End .container -->
+    </div><!-- End .login-page section-bg -->
+</main><!-- End .main -->
+
+
 
 <style>
     .field-validation-error span {
