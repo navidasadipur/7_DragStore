@@ -769,9 +769,20 @@
                     <div class="col-md-6">
                         <div class="product-gallery product-gallery-vertical">
                             <div class="row">
+                                @*@{
+                                    var galleryPlusImage = new List<string>();
+                                    galleryPlusImage.Add(Model.Product.Image);
+                                    if (Model.ProductGalleries != null)
+                                    {
+                                        foreach (var item in Model.ProductGalleries)
+                                        {
+                                            galleryPlusImage.Add(item.Image);
+                                        }
+                                    }
+                                }*@
                                 <figure class="product-main-image">
-                                    <img id="product-zoom" src="/Content/client/pic/p12.jpg" data-zoom-image="/Content/client/pic/p12.jpg"
-                                         alt="تصویر محصول">
+                                    <img id="product-zoom" src="/Files/ProductImages/Image/@Model.Product.Image" data-zoom-image="/Files/ProductImages/Image/@Model.Product.Image"
+                                         alt="@Model.Product.ShortTitle">
 
                                     <a href="#" id="btn-product-gallery" class="btn-product-gallery">
                                         <i class="icon-arrows"></i>
@@ -779,32 +790,21 @@
                                 </figure><!-- End .product-main-image -->
 
                                 <div id="product-zoom-gallery" class="product-image-gallery">
+                                    <a class="product-gallery-item active" href="#" data-image="/Files/ProductImages/Image/@Model.Product.Image"
+                                       data-zoom-image="/Files/ProductImages/Image/@Model.Product.Image">
+                                        <img src="/Files/ProductImages/Image/@Model.Product.Image" alt="@Model.Product.ShortTitle">
+                                    </a>
                                     @foreach (var item in Model.ProductGalleries)
                                     {
                                         <a class="product-gallery-item active" href="#" data-image="/Files/ProductImages/ProductGallery/@item.Image"
                                            data-zoom-image="/Files/ProductImages/ProductGallery/@item.Image">
-                                            <img src="/Files/ProductImages/ProductGallery/@item.Image" alt="توضیحات تصویر">
+                                            <img src="/Files/ProductImages/ProductGallery/@item.Image" alt="">
                                         </a>
                                         @*<li><img src="/Files/ProductImages/ProductGallery/@item.Image" alt="@item.Title" /></li>*@
                                     }
                                     @*<a class="product-gallery-item active" href="#" data-image="/Content/client/pic/p12.jpg"
-                                       data-zoom-image="/Content/client/pic/p12.jpg">
-                                        <img src="/Content/client/pic/p12.jpg" alt="توضیحات تصویر">
-                                    </a>
-
-                                    <a class="product-gallery-item" href="#" data-image="/Content/client/pic/p5.jpg"
-                                       data-zoom-image="/Content/client/pic/p5.jpg">
-                                        <img src="/Content/client/pic/p5.jpg" alt="توضیحات تصویر">
-                                    </a>
-
-                                    <a class="product-gallery-item" href="#" data-image="/Content/client/pic/p7.jpg"
-                                       data-zoom-image="/Content/client/pic/p7.jpg">
-                                        <img src="/Content/client/pic/p7.jpg" alt="توضیحات تصویر">
-                                    </a>
-
-                                    <a class="product-gallery-item" href="#" data-image="/Content/client/pic/p9.jpg"
-                                       data-zoom-image="/Content/client/pic/p9.jpg">
-                                        <img src="/Content/client/pic/p9.jpg" alt="product back">
+                                        data-zoom-image="/Content/client/pic/p12.jpg">
+                                         <img src="/Content/client/pic/p12.jpg" alt="توضیحات تصویر">
                                     </a>*@
                                 </div><!-- End .product-image-gallery -->
                             </div><!-- End .row -->
@@ -813,7 +813,7 @@
 
                     <div class="col-md-6">
                         <div class="product-details">
-                            <h1 class="product-title">قرص ژلوفن</h1>
+                            <h1 class="product-title">@Model.Product.Title</h1>
                             <!-- End .product-title -->
 
                             <div class="ratings-container">

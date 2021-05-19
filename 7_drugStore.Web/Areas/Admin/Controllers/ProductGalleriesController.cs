@@ -44,7 +44,7 @@ namespace drugStore7.Web.Areas.Admin.Controllers
                     var newFileName = Guid.NewGuid() + Path.GetExtension(Image.FileName);
                     Image.SaveAs(Server.MapPath("/Files/ProductImages/Temp/" + newFileName));
                     // Resize Image
-                    ImageResizer image = new ImageResizer(750, 900, true);
+                    ImageResizer image = new ImageResizer(1200, 800, true);
                     image.Resize(Server.MapPath("/Files/ProductImages/Temp/" + newFileName),
                         Server.MapPath("/Files/ProductImages/ProductGallery/" + newFileName));
 
@@ -90,7 +90,7 @@ namespace drugStore7.Web.Areas.Admin.Controllers
                     var newFileName = Guid.NewGuid() + Path.GetExtension(Image.FileName);
                     Image.SaveAs(Server.MapPath("/Files/ProductImages/Temp/" + newFileName));
                     // Resize Image
-                    ImageResizer image = new ImageResizer(750, 900, true);
+                    ImageResizer image = new ImageResizer(1200, 800, true);
                     image.Resize(Server.MapPath("/Files/ProductImages/Temp/" + newFileName),
                         Server.MapPath("//Files/ProductImages/ProductGallery/" + newFileName));
 

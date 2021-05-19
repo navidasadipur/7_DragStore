@@ -980,5 +980,15 @@ namespace drugStore7.Web.Controllers
 
             return PartialView(model);
         }
+
+        //public ActionResult ProductGallerySection(int productId)
+        //{
+        //    var model = new GalleryViewModel();
+
+        //    model.GalleryImages = _productGalleryRepo.GetProductGalleries(productId);
+        //    model.Image = _productsRepo.GetProduct(productId).Image;
+
+        //    return PartialView(model);
+        //}
     }
 }

@@ -310,4 +310,15 @@ namespace drugStore7.Web.ViewModels
         public StaticContentDetail Linkedin { get; set; }
 
     }
+
+    //public class GalleryViewModel
+    //{
+    //    public GalleryViewModel()
+    //    {
+    //        GalleryImages = new List<ProductGallery>();
+    //    }
+
+    //    public string Image { get; set; }
+    //    public List<ProductGallery> GalleryImages { get; set; }
+    //}
 }
