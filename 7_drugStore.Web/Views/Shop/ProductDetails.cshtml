@@ -5,7 +5,7 @@
 }
 
 <!-- Product detail contant start -->
-@*<input type="hidden" name="mainFeatureId" id="mainFeatureId" value="@Model.ProductMainFeatures.FirstOrDefault().Id" />
+<input type="hidden" name="mainFeatureId" id="mainFeatureId" value="@Model.ProductMainFeatures.FirstOrDefault().Id" />
 <div class="contant">
     <div id="banner-part" class="banner inner-banner" style="background-image:url(/Files/ProductGroupImages/Image/@ViewBag.Banner)">
         <div class="container">
@@ -817,24 +817,47 @@
                             <!-- End .product-title -->
 
                             <div class="ratings-container">
-                                <div class="ratings">
-                                    <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
-                                </div><!-- End .ratings -->
+                                @{
+                                    var rate = (Model.Product.Rate < 6 ? Model.Product.Rate : 5);
+                                    rate = (rate > 0 ? rate : 0);
+                                    var ratingPercentage = Model.Product.Rate * 100 / 5;
+                                    <div class="ratings">
+                                        <div class="ratings-val" style="width: @ratingPercentage%;"></div><!-- End .ratings-val -->
+                                    </div><!-- End .ratings -->
+                                }
+
                                 <a class="ratings-text" href="#product-review-link" id="review-link">
-                                    ( 2 نظر
+                                    ( @Model.ProductComments.Count نظر
                                     )
                                 </a>
                             </div><!-- End .rating-container -->
 
-                            <div class="product-price">
-                                84,000 تومان
-                            </div><!-- End .product-price -->
+                            @if (Model.PriceAfterDiscount < Model.Price)
+                            {
+                                <span class="product-price"><span id="productPriceAfterDiscount">@Model.PriceAfterDiscount.ToString("##,###")</span> تومان</span>
+                                <del class="price old-price"><span id="productPrice">@Model.Price.ToString("##,###")</span> تومان</del>
+                            }
+                            else
+                            {
+                                <span class="product-price"><span id="productPrice">@Model.Price.ToString("##,###")</span> تومان</span>
+                            }
 
                             <div class="product-content">
                                 <p>
-                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید
-                                    سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن
-                                    ساختگی با تولید سادگی نامفهوم
+                                    @{
+                                        var descParts = new List<string>();
+
+                                        if (Model.Product.ShortDescription != null)
+                                        {
+                                            descParts = Model.Product.ShortDescription.Split('\n').ToList();
+                                        }
+                                    }
+                                    <ul class="product-desc-content rtl">
+                                        @foreach (var desc in descParts)
+                                        {
+                                            <li>@desc</li>
+                                        }
+                                    </ul>
                                 </p>
                             </div><!-- End .product-content -->
 
@@ -879,9 +902,9 @@
                             <div class="product-details-footer">
                                 <div class="product-cat text-center">
                                     <span>دسته بندی : </span>
-                                    <a href="#">سرد درد</a>،
-                                    <a href="#">مسکن</a>،
-                                    <a href="#">قرص</a>
+                                    @*<a href="#">سرد درد</a>،
+                                    <a href="#">مسکن</a>،*@
+                                    <a href="#">@Model.Product.ProductGroup.Title</a>
                                 </div><!-- End .product-cat -->
 
 
