@@ -1,6 +1,6 @@
 ﻿@model drugStore7.Web.ViewModels.ProductListViewModel
 
-<div class="contant">
+<!--<div class="contant">
     <div id="banner-part" class="banner inner-banner" style="background-image:url(@ViewBag.Banner)">
         <div class="container">
             <div class="bread-crumb-main">
@@ -166,7 +166,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
 
 
 
@@ -195,21 +195,42 @@
             <div class="row">
                 <div class="col-lg-9">
                     <div class="toolbox">
-                        <div class="toolbox-left">
-                            <div class="toolbox-info">
-                                نمایش <span>9 از 56</span> محصول
-                            </div><!-- End .toolbox-info -->
+                        <div class="toolbox-left row">
+                            @*<div class="">*@
+                            <div class="col-6">
+
+                            </div>
+                            <div class="select-item col-3">
+                                <select onchange="GetGrid()" name="take" id="take" class="form-control">
+                                    <option value="27" selected="selected">27 محصول</option>
+                                    <option value="15">15 محصول</option>
+                                    <option value="9">9 محصول</option>
+                                </select>
+
+                            </div>
+                            <div class="select-item col-3">
+                                <span>در هر صفحه</span>
+                            </div>
+                            @*نمایش <span>9 از 56</span> محصول*@
+                            @*</div> End .toolbox-info*@
                         </div><!-- End .toolbox-left -->
 
                         <div class="toolbox-right">
                             <div class="toolbox-sort">
                                 <label for="sortby">مرتب سازی براساس : </label>
                                 <div class="select-custom">
-                                    <select name="sortby" id="sortby" class="form-control">
-                                        <option value="popularity" selected="selected">بیشترین خرید</option>
-                                        <option value="rating">بیشترین امتیاز</option>
-                                        <option value="date">تاریخ</option>
+                                    <select onchange="GetGrid()" name="sort" id="sort" class="form-control">
+                                        <option value="date" selected="selected">تاریخ ثبت</option>
+                                        <option value="name">اسم محصول</option>
+                                        <option value="price-high-to-low">قیمت از زیاد به کم</option>
+                                        <option value="price-low-to-high">قیمت از کم به زیاد</option>
+                                        <option value="sale">پر فروش ها</option>
                                     </select>
+                                    @*<select name="sortby" id="sortby" class="form-control">
+                                            <option value="popularity" selected="selected">بیشترین خرید</option>
+                                            <option value="rating">بیشترین امتیاز</option>
+                                            <option value="date">تاریخ</option>
+                                        </select>*@
                                 </div>
                             </div><!-- End .toolbox-sort -->
 
@@ -217,14 +238,7 @@
                     </div><!-- End .toolbox -->
 
 
-
-
-
                     <div id="grid"></div>
-
-
-
-
 
 
 
@@ -264,16 +278,16 @@
                                         if (item.Children.Count > 0)
                                         {
                                             <div class="collapse" id="category-@item.Id">
-                                                        <ul class="category-collaps">
-                                                            @foreach (var subItem in item.Children)
-                                                            {
-                                                                if (subItem.IsDeleted)
-                                                                {
-                                                                    continue;
-                                                                }
-                                                                <li><a href="/Shop/ProductList/@subItem.Id">@subItem.Title</a></li>
-                                                            }
-                                                        </ul>
+                                                <ul class="category-collaps">
+                                                    @foreach (var subItem in item.Children)
+                                                    {
+                                                        if (subItem.IsDeleted)
+                                                        {
+                                                            continue;
+                                                        }
+                                                        <li><a href="/Shop/ProductList/@subItem.Id">@subItem.Title</a></li>
+                                                    }
+                                                </ul>
                                             </div>
                                         }
                                         @*<li><a href="product.html">قرص استامینوقن</a></li>
@@ -355,67 +369,23 @@
                             <div class="collapse show" id="widget-4">
                                 <div class="widget-body">
                                     <div class="filter-items">
-                                        <div class="filter-item">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                       id="brand-1">
-                                                <label class="custom-control-label" for="brand-1">Next</label>
-                                            </div><!-- End .custom-checkbox -->
-                                        </div><!-- End .filter-item -->
-
-                                        <div class="filter-item">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                       id="brand-2">
-                                                <label class="custom-control-label" for="brand-2">
-                                                    River
-                                                    Island
-                                                </label>
-                                            </div><!-- End .custom-checkbox -->
-                                        </div><!-- End .filter-item -->
-
-                                        <div class="filter-item">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                       id="brand-3">
-                                                <label class="custom-control-label" for="brand-3">Geox</label>
-                                            </div><!-- End .custom-checkbox -->
-                                        </div><!-- End .filter-item -->
-
-                                        <div class="filter-item">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                       id="brand-4">
-                                                <label class="custom-control-label" for="brand-4">
-                                                    New
-                                                    Balance
-                                                </label>
-                                            </div><!-- End .custom-checkbox -->
-                                        </div><!-- End .filter-item -->
-
-                                        <div class="filter-item">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                       id="brand-5">
-                                                <label class="custom-control-label" for="brand-5">UGG</label>
-                                            </div><!-- End .custom-checkbox -->
-                                        </div><!-- End .filter-item -->
-
-                                        <div class="filter-item">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                       id="brand-6">
-                                                <label class="custom-control-label" for="brand-6">F&F</label>
-                                            </div><!-- End .custom-checkbox -->
-                                        </div><!-- End .filter-item -->
-
-                                        <div class="filter-item">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input"
-                                                       id="brand-7">
-                                                <label class="custom-control-label" for="brand-7">Nike</label>
-                                            </div><!-- End .custom-checkbox -->
-                                        </div><!-- End .filter-item -->
+                                        @foreach (var brand in Model.Brands)
+                                        {
+                                            <div class="filter-item">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                           id="brand-@brand.Id">
+                                                    <label class="custom-control-label" for="brand-@brand.Id">@brand.Name</label>
+                                                </div><!-- End .custom-checkbox -->
+                                            </div><!-- End .filter-item -->
+                                        }
+                                        @*<div class="filter-item">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input"
+                                                           id="brand-1">
+                                                    <label class="custom-control-label" for="brand-1">Next</label>
+                                                </div><!-- End .custom-checkbox -->
+                                            </div><!-- End .filter-item -->*@
 
                                     </div><!-- End .filter-items -->
                                 </div><!-- End .widget-body -->
