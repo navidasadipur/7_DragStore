@@ -2,7 +2,9 @@
 @{
     ViewBag.Title = $"مقاله {Model.Title}";
 }
-<div class="contant">
+
+
+@*<div class="contant">
     <div id="banner-part" class="banner inner-banner" style="background-image:url(@ViewBag.Banner)">
         <div class="container">
             <div class="bread-crumb-main">
@@ -67,7 +69,7 @@
                                             <div class="small-title mb-0">عطر مردانه</div>
                                             <span><a href="#">عطر و ادکلن</a></span>
                                             <span><a href="#">ادکلن</a></span>
-                                        </div>*@
+                                        </div>*@@*
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="line"></div>
@@ -92,7 +94,7 @@
                                                     <a href="#" title="Follow on linkedin">
                                                         <i class="fa  fa-linkedin"></i>
                                                     </a>
-                                                </div>*@
+                                                </div>*@@*
                                         </div>
                                     </div>
                                 </div>
@@ -129,7 +131,7 @@
                                                             <p>
                                                                 @childComment.Message
                                                             </p>
-                                                            @*<a href="#" class="reply-btn btn btn-color small">پاسخ</a>*@
+                                                            @*<a href="#" class="reply-btn btn btn-color small">پاسخ</a>*@@*
                                                         </div>
                                                         <div class="clearfix"></div>
                                                     </li>
@@ -208,7 +210,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
 
 
 
@@ -243,7 +245,7 @@
                         <div class="entry-body">
                             <div class="entry-meta">
                                 <span class="entry-author">
-                                    نویسنده : <a href="#">@Model.Author</a>
+                                    نویسنده: <a href="#">@Model.Author</a>
                                 </span>
                                 <span class="meta-separator">|</span>
                                 <a href="#">@Model.PersianDate</a>
@@ -449,19 +451,15 @@
                                         </figure>
 
                                         <div class="comment-body">
-                                            <a href="#" class="comment-reply">پاسخ</a>
+                                            @*<a href="#" class="comment-reply">پاسخ</a>*@
                                             <div class="comment-user">
-                                                <h4><a href="#">کاربر 3</a></h4>
-                                                <span class="comment-date">9 فروردین 1399 - 2:19 بعدازظهر</span>
+                                                <p>نام: @comment.Name</p>
+                                                <span class="comment-date">@comment.AddedDate</span>
                                             </div> <!-- End .comment-user -->
 
                                             <div class="comment-content">
                                                 <p>
-                                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن
-                                                    ساختگی با تولید سادگی نامفهوم
-                                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن
-                                                    ساختگی با تولید سادگی نامفهوم
+                                                    @comment.Message
                                                 </p>
                                             </div><!-- End .comment-content -->
                                         </div><!-- End .comment-body -->
@@ -523,7 +521,7 @@
                     </div><!-- End .comment -->
                 </li>
             </ul>
-        </li>*@
+        </li>
 
                             <li>
                                 <div class="comment">
@@ -551,7 +549,7 @@
                                         </div><!-- End .comment-content -->
                                     </div><!-- End .comment-body -->
                                 </div><!-- End .comment -->
-                            </li>
+                            </li>*@
                         </ul>
                     </div><!-- End .comments -->
                     <div class="reply">
@@ -563,21 +561,23 @@
                             </p>
                         </div><!-- End .heading -->
 
-                        <form action="#">
-                            <label for="reply-message" class="sr-only">دیدگاه</label>
-                            <textarea name="reply-message" id="reply-message" cols="30" rows="4"
+                        @using (Html.BeginForm("PostComment", "Blog", FormMethod.Post, new { id = "commentform" }))
+                        {
+                            <input type="hidden" id="ArticleId" name="ArticleId" value="@Model.Id">
+                            <label for="Message" class="sr-only">دیدگاه</label>
+                            <textarea name="Message" id="Message" cols="30" rows="4"
                                       class="form-control" required placeholder="دیدگاه شما *"></textarea>
 
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="reply-name" class="sr-only">نام</label>
-                                    <input type="text" class="form-control" id="reply-name" name="reply-name"
+                                    <label for="Name" class="sr-only">نام</label>
+                                    <input type="text" class="form-control" id="Name" name="Name"
                                            required placeholder="نام شما *">
                                 </div><!-- End .col-md-6 -->
 
                                 <div class="col-md-6">
-                                    <label for="reply-email" class="sr-only">ایمیل</label>
-                                    <input type="email" class="form-control" id="reply-email" name="reply-email"
+                                    <label for="Email" class="sr-only">ایمیل</label>
+                                    <input type="email" class="form-control" id="Email" name="Email"
                                            required placeholder="ایمیل شما *">
                                 </div><!-- End .col-md-6 -->
                             </div><!-- End .row -->
@@ -586,8 +586,8 @@
                                 <span>ارسال دیدگاه</span>
                                 <i class="icon-long-arrow-left"></i>
                             </button>
-                        </form>
-                    </div><!-- End .reply -->
+                        }
+                        </div><!-- End .reply -->
                 </div><!-- End .col-lg-9 -->
 
                 <aside class="col-lg-3">
