@@ -37,19 +37,19 @@ namespace drugStore7.Web.ViewModels
     }
     public class RegisterCustomerViewModel
     {
-        [Display(Name = "نام")]
-        [Required(ErrorMessage = "{0} را وارد کنید")]
-        public string FirstName { get; set; }
-        [Display(Name = "نام خانوادگی")]
-        [Required(ErrorMessage = "{0} را وارد کنید")]
-        public string LastName { get; set; }
+        //[Display(Name = "نام")]
+        //[Required(ErrorMessage = "{0} را وارد کنید")]
+        //public string FirstName { get; set; }
+        //[Display(Name = "نام خانوادگی")]
+        //[Required(ErrorMessage = "{0} را وارد کنید")]
+        //public string LastName { get; set; }
+        //[Display(Name = "شماره موبایل")]
+        //[Required(ErrorMessage = "{0} را وارد کنید")]
+        //[Phone(ErrorMessage = "شماره موبایل وارد شده معتبر نیست")]
+        //public string Mobile { get; set; }
         [Display(Name = "نام کاربری")]
         [Required(ErrorMessage = "{0} را وارد کنید")]
         public string UserName { get; set; }
-        [Display(Name = "شماره موبایل")]
-        [Required(ErrorMessage = "{0} را وارد کنید")]
-        [Phone(ErrorMessage = "شماره موبایل وارد شده معتبر نیست")]
-        public string Mobile { get; set; }
         [Display(Name = "ایمیل")]
         [Required(ErrorMessage = "{0} را وارد کنید")]
         [EmailAddress(ErrorMessage = "ایمیل وارد شده معتبر نیست")]

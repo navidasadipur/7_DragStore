@@ -438,61 +438,92 @@
                         <h3 class="title">3 دیدگاه</h3><!-- End .title -->
 
                         <ul>
-                            <li>
-                                <div class="comment">
-                                    <figure class="comment-media">
-                                        <a href="#">
-                                            <img src="/Content/client/assets/images/blog/comments/1.jpg" alt="User name">
-                                        </a>
-                                    </figure>
+                            @foreach (var comment in Model.ArticleComments)
+                            {
+                                <li>
+                                    <div class="comment">
+                                        <figure class="comment-media">
+                                            <a href="#">
+                                                <img src="/Content/client/assets/images/blog/comments/3.jpg" alt="User name">
+                                            </a>
+                                        </figure>
 
-                                    <div class="comment-body">
-                                        <a href="#" class="comment-reply">پاسخ</a>
-                                        <div class="comment-user">
-                                            <h4><a href="#">کاربر 1</a></h4>
-                                            <span class="comment-date">9 فروردین 1399 - 2:19 بعدازظهر</span>
-                                        </div> <!-- End .comment-user -->
+                                        <div class="comment-body">
+                                            <a href="#" class="comment-reply">پاسخ</a>
+                                            <div class="comment-user">
+                                                <h4><a href="#">کاربر 3</a></h4>
+                                                <span class="comment-date">9 فروردین 1399 - 2:19 بعدازظهر</span>
+                                            </div> <!-- End .comment-user -->
 
-                                        <div class="comment-content">
-                                            <p>
-                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم، لورم
-                                                ایپسوم متن
-                                                ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با
-                                                تولید
-                                                سادگی نامفهوم.
-                                            </p>
-                                        </div><!-- End .comment-content -->
-                                    </div><!-- End .comment-body -->
-                                </div><!-- End .comment -->
+                                            <div class="comment-content">
+                                                <p>
+                                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن
+                                                    ساختگی با تولید سادگی نامفهوم
+                                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
+                                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن
+                                                    ساختگی با تولید سادگی نامفهوم
+                                                </p>
+                                            </div><!-- End .comment-content -->
+                                        </div><!-- End .comment-body -->
+                                    </div><!-- End .comment -->
+                                </li>
+                            }
 
-                                <ul>
-                                    <li>
-                                        <div class="comment">
-                                            <figure class="comment-media">
-                                                <a href="#">
-                                                    <img src="/Content/client/assets/images/blog/comments/2.jpg"
-                                                         alt="User name">
-                                                </a>
-                                            </figure>
+                            @*<li>
+            <div class="comment">
+                <figure class="comment-media">
+                    <a href="#">
+                        <img src="/Content/client/assets/images/blog/comments/1.jpg" alt="User name">
+                    </a>
+                </figure>
 
-                                            <div class="comment-body">
-                                                <a href="#" class="comment-reply">پاسخ</a>
-                                                <div class="comment-user">
-                                                    <h4><a href="#">کاربر 2</a></h4>
-                                                    <span class="comment-date">
-                                                        9 فروردین 1399 - 2:19
-                                                        بعدازظهر
-                                                    </span>
-                                                </div><!-- End .comment-user -->
+                <div class="comment-body">
+                    <a href="#" class="comment-reply">پاسخ</a>
+                    <div class="comment-user">
+                        <h4><a href="#">کاربر 1</a></h4>
+                        <span class="comment-date">9 فروردین 1399 - 2:19 بعدازظهر</span>
+                    </div> <!-- End .comment-user -->
 
-                                                <div class="comment-content">
-                                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</p>
-                                                </div><!-- End .comment-content -->
-                                            </div><!-- End .comment-body -->
-                                        </div><!-- End .comment -->
-                                    </li>
-                                </ul>
-                            </li>
+                    <div class="comment-content">
+                        <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم، لورم
+                            ایپسوم متن
+                            ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با
+                            تولید
+                            سادگی نامفهوم.
+                        </p>
+                    </div><!-- End .comment-content -->
+                </div><!-- End .comment-body -->
+            </div><!-- End .comment -->
+
+            <ul>
+                <li>
+                    <div class="comment">
+                        <figure class="comment-media">
+                            <a href="#">
+                                <img src="/Content/client/assets/images/blog/comments/2.jpg"
+                                     alt="User name">
+                            </a>
+                        </figure>
+
+                        <div class="comment-body">
+                            <a href="#" class="comment-reply">پاسخ</a>
+                            <div class="comment-user">
+                                <h4><a href="#">کاربر 2</a></h4>
+                                <span class="comment-date">
+                                    9 فروردین 1399 - 2:19
+                                    بعدازظهر
+                                </span>
+                            </div><!-- End .comment-user -->
+
+                            <div class="comment-content">
+                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.</p>
+                            </div><!-- End .comment-content -->
+                        </div><!-- End .comment-body -->
+                    </div><!-- End .comment -->
+                </li>
+            </ul>
+        </li>*@
 
                             <li>
                                 <div class="comment">
