@@ -266,7 +266,7 @@ namespace drugStore7.Web.Controllers
                 var comment = new ProductComment()
                 {
                     ProductId = form.ProductId.Value,
-                    ParentId = form.ParentId,
+                    //ParentId = form.ParentId,
                     Name = form.Name,
                     Email = form.Email,
                     Message = form.Message,
