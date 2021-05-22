@@ -148,6 +148,32 @@ namespace drugStore7.Web.Controllers
             var articleHeadlines = _articlesRepo.GetArticleHeadlines(id);
             articleDetailsVm.HeadLines = articleHeadlines;
 
+            //get next article
+            Article nextArticle = null;
+            var nextId = id;
+
+            var latestArticle = _articlesRepo.GetLatestArticles(1).FirstOrDefault();
+
+            while (nextArticle == null && nextId < latestArticle.Id)
+            {
+                nextId++;
+                nextArticle = _articlesRepo.GetArticle(nextId);
+            }
+
+            articleDetailsVm.Next = nextArticle;
+
+            //get previous article
+            Article previousArticle = null;
+            var previousId = id;
+
+            while (previousArticle == null && previousId > 1)
+            {
+                previousId--;
+                previousArticle = _articlesRepo.GetArticle(previousId);
+            }
+
+            articleDetailsVm.Previous = previousArticle;
+
             var banner = "";
             try
             {
@@ -205,7 +231,15 @@ namespace drugStore7.Web.Controllers
             {
                 var articles = _articlesRepo.GetArticlesByCategoryId(categoryId.Value).OrderByDescending(b => b.InsertDate).ToList();
 
-                takedArticles = articles.GetRange(0, take);
+                if (articles.Count() < take)
+                {
+                    takedArticles = articles;
+                }
+                else
+                {
+                    takedArticles = articles.GetRange(0, take);
+                }
+
             }
 
             foreach (var blog in takedArticles)

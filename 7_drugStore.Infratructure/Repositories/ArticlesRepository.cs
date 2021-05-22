@@ -84,7 +84,7 @@ namespace drugStore7.Infrastructure.Repositories
 
         public List<Article> GetLatestArticles(int take)
         {
-            return _context.Articles.Where(a => a.IsDeleted == false).Include(a => a.User).Take(take).ToList();
+            return _context.Articles.Where(a => a.IsDeleted == false).Include(a => a.User).OrderByDescending(a => a.Id).Take(take).ToList();
         }
         public List<Article> GetTopArticles(int take)
         {

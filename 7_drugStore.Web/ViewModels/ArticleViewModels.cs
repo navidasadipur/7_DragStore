@@ -133,6 +133,9 @@ namespace drugStore7.Web.ViewModels
         public List<ArticleTag> Tags { get; set; }
         public List<ArticleCommentViewModel> ArticleComments { get; set; }
         public CommentFormViewModel CommentForm { get; set; }
+
+        public Article Next { get; set; }
+        public Article Previous { get; set; }
     }
 
     public class ArticleCommentViewModel
