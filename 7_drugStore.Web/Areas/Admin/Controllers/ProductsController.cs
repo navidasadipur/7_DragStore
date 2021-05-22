@@ -184,7 +184,7 @@ namespace drugStore7.Web.Areas.Admin.Controllers
                 image.Resize(Server.MapPath("/Files/ProductImages/Temp/" + newFileName),
                     Server.MapPath("/Files/ProductImages/Image/" + newFileName));
 
-                ImageResizer thumb = new ImageResizer(200, 200, true);
+                ImageResizer thumb = new ImageResizer(300, 300, true);
                 thumb.Resize(Server.MapPath("/Files/ProductImages/Temp/" + newFileName),
                     Server.MapPath("/Files/ProductImages/Thumb/" + newFileName));
 
