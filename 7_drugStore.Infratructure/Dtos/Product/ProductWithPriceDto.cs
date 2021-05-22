@@ -22,5 +22,6 @@ namespace drugStore7.Infratructure.Dtos.Product
         public long PriceAfterDiscount { get; set; }
         public long DiscountAmount { get; set; }
         public DiscountType DiscountType { get; set; }
+        public int Rate { get; set; }
     }
 }

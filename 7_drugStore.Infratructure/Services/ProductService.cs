@@ -250,7 +250,8 @@ namespace drugStore7.Infratructure.Services
                     ShortTitle = product.ShortTitle,
                     Image = product.Image,
                     Price = price,
-                    PriceAfterDiscount = priceAfterDiscount
+                    PriceAfterDiscount = priceAfterDiscount,
+                    Rate = product.Rate,
                 };
                 productsDto.Add(productDto);
             }

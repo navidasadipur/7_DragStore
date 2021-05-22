@@ -855,7 +855,10 @@
                                     <ul class="product-desc-content rtl">
                                         @foreach (var desc in descParts)
                                         {
-                                            <li>@desc</li>
+                                            if (!string.IsNullOrWhiteSpace(desc))
+                                            {
+                                                <li>@desc</li>
+                                            }
                                         }
                                     </ul>
                                 </p>
@@ -933,7 +936,7 @@
                     <li class="nav-item">
                         <a class="nav-link" id="product-review-link" data-toggle="tab"
                            href="#product-review-tab" role="tab" aria-controls="product-review-tab"
-                           aria-selected="false">نظرات (2)</a>
+                           aria-selected="false">نظرات (@Model.ProductComments.Count)</a>
                     </li>
                 </ul>
                 <div class="tab-content">
@@ -963,30 +966,42 @@
                             <p>تک سایز</p>
                         </div><!-- End .product-desc-content -->
                     </div><!-- .End .tab-pane -->
-                    <div class="tab-pane fade" id="brand" role="tabpanel"
-                         aria-labelledby="brand">
-                        <div class="product-desc-content">
-                            <h3>درباره برند</h3>
-                            <p>
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید
-                                سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوملورم ایپسوم متن
-                                ساختگی با تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوملورم
-                                ایپسوم متن ساختگی با تولید سادگی نامفهوم.
-                            </p>
-
-                            <h3>اطلاعات بیشتر</h3>
-                            <ul>
-                                <li>بهترین قیمت</li>
-                                <li>بهترین کیفیت</li>
-                                <li>بالاترین کیفیت</li>
-                            </ul>
-
-                        </div><!-- End .product-desc-content -->
-                    </div><!-- .End .tab-pane -->
+                    @Html.Action("ProductDetailsBrandSection", "Shop", new { productId = Model.Product.Id})
                     <div class="tab-pane fade" id="product-review-tab" role="tabpanel"
                          aria-labelledby="product-review-link">
                         <div class="reviews">
-                            <h3>نظر (2)</h3>
+                            <h3>نظر (@Model.ProductComments.Count)</h3>
+                            @if (Model.ProductComments.Count() != 0)
+                                {
+                                    var todayDate = new DateTime();
+                                    foreach (var comment in Model.ProductComments)
+                                    {
+                                    <div class="review">
+                                        <div class="row no-gutters">
+                                            <div class="col-auto">
+                                                <h4><a class="text-dark" href="#">@comment.Name</a></h4>
+                                                <div class="ratings-container">
+                                                    @*<div class="ratings">
+                                                        <div class="ratings-val" style="width: 80%;"></div>
+                                                        <!-- End .ratings-val -->
+                                                    </div><!-- End .ratings -->*@
+                                                </div><!-- End .rating-container -->
+                                                <span class="review-date">@comment.AddedDate</span>
+                                            </div><!-- End .col -->
+                                            <div class="col-12">
+                                                <div class="review-content">
+                                                    <p>
+                                                        @comment.Message
+                                                    </p>
+                                                </div><!-- End .review-content -->
+
+
+                                            </div><!-- End .col-auto -->
+                                        </div><!-- End .row -->
+                                    </div><!-- End .review -->
+                                }
+                            }
+
                             <div class="review">
                                 <div class="row no-gutters">
                                     <div class="col-auto">
@@ -1046,263 +1061,7 @@
                 </div><!-- End .tab-content -->
             </div><!-- End .product-details-tab -->
 
-            <h2 class="title text-center mb-4">محصولاتی که شاید بپسندید</h2><!-- End .title text-center -->
-
-            <div class="owl-carousel owl-simple carousel-equal-height carousel-with-shadow" data-toggle="owl"
-                 data-owl-options='{
-                            "nav": false,
-                            "dots": true,
-                            "margin": 20,
-                            "loop": false,
-                            "rtl": true,
-                            "responsive": {
-                                "0": {
-                                    "items":1
-                                },
-                                "480": {
-                                    "items":2
-                                },
-                                "768": {
-                                    "items":3
-                                },
-                                "992": {
-                                    "items":4
-                                },
-                                "1200": {
-                                    "items":4,
-                                    "nav": true,
-                                    "dots": false
-                                }
-                            }
-                        }'>
-                <div class="product product-7 text-center">
-                    <figure class="product-media">
-                        <span class="product-label label-new">جدید</span>
-                        <a href="product.html">
-                            <img width="300px" height="300px" src="/Content/client/pic/p4.jpg" alt="تصویر محصول"
-                                 class="product-image">
-                        </a>
-
-                        <div class="product-action-vertical">
-                            <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
-                                <span>
-                                    افزودن به
-                                    لیست علاقه مندی
-                                </span>
-                            </a>
-                            <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
-                               title="مشاهده سریع"><span>مشاهده سریع</span></a>
-                            <a href="#" class="btn-product-icon btn-compare" title="مقایسه">
-                                <span>
-                                    لیست
-                                    مقایسه
-                                </span>
-                            </a>
-                        </div><!-- End .product-action-vertical -->
-
-                        <div class="product-action">
-                            <a href="#" class="btn-product btn-cart"><span>افزودن به سبد خرید</span></a>
-                        </div><!-- End .product-action -->
-                    </figure><!-- End .product-media -->
-
-                    <div class="product-body">
-                        <h3 class="product-title text-center"><a href="product.html">محصول</a></h3>
-                        <!-- End .product-title -->
-                        <div class="product-price">
-                            60,000 تومان
-                        </div><!-- End .product-price -->
-                        <div class="ratings-container">
-                            <div class="ratings">
-                                <div class="ratings-val" style="width: 20%;"></div><!-- End .ratings-val -->
-                            </div><!-- End .ratings -->
-                            <span class="ratings-text">( 2 دیدگاه )</span>
-                        </div><!-- End .rating-container -->
-
-                    </div><!-- End .product-body -->
-                </div><!-- End .product -->
-
-                <div class="product product-7 text-center">
-                    <figure class="product-media">
-                        <span class="product-label label-out">ناموجود</span>
-                        <a href="product.html">
-                            <img width="300px" height="300px" src="/Content/client/pic/p5.jpg" alt="تصویر محصول"
-                                 class="product-image">
-                        </a>
-
-                        <div class="product-action-vertical">
-                            <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
-                                <span>
-                                    افزودن به
-                                    لیست علاقه مندی
-                                </span>
-                            </a>
-                            <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
-                               title="مشاهده سریع"><span>مشاهده سریع</span></a>
-                            <a href="#" class="btn-product-icon btn-compare" title="مقایسه">
-                                <span>
-                                    لیست
-                                    مقایسه
-                                </span>
-                            </a>
-                        </div><!-- End .product-action-vertical -->
-
-                        <div class="product-action">
-                            <a href="#" class="btn-product btn-cart"><span>افزودن به سبد خرید</span></a>
-                        </div><!-- End .product-action -->
-                    </figure><!-- End .product-media -->
-
-                    <div class="product-body">
-                        <h3 class="product-title text-center"><a href="product.html">محصول</a></h3>
-                        <!-- End .product-title -->
-                        <div class="product-price">
-                            <span class="out-price">120,000 تومان</span>
-                        </div><!-- End .product-price -->
-                        <div class="ratings-container">
-                            <div class="ratings">
-                                <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
-                            </div><!-- End .ratings -->
-                            <span class="ratings-text">( 6 دیدگاه )</span>
-                        </div><!-- End .rating-container -->
-                    </div><!-- End .product-body -->
-                </div><!-- End .product -->
-
-                <div class="product product-7 text-center">
-                    <figure class="product-media">
-                        <span class="product-label label-top">برتر</span>
-                        <a href="product.html">
-                            <img width="300px" height="300px" src="/Content/client/pic/p8.jpg" alt="تصویر محصول"
-                                 class="product-image">
-                        </a>
-
-                        <div class="product-action-vertical">
-                            <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
-                                <span>
-                                    افزودن به
-                                    لیست علاقه مندی
-                                </span>
-                            </a>
-                            <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
-                               title="مشاهده سریع"><span>مشاهده سریع</span></a>
-                            <a href="#" class="btn-product-icon btn-compare" title="مقایسه">
-                                <span>
-                                    لیست
-                                    مقایسه
-                                </span>
-                            </a>
-                        </div><!-- End .product-action-vertical -->
-
-                        <div class="product-action">
-                            <a href="#" class="btn-product btn-cart"><span>افزودن به سبد خرید</span></a>
-                        </div><!-- End .product-action -->
-                    </figure><!-- End .product-media -->
-
-                    <div class="product-body">
-                        <h3 class="product-title text-center">
-                            <a href="product.html">محصول</a>
-                        </h3><!-- End .product-title -->
-                        <div class="product-price">
-                            110,000 تومان
-                        </div><!-- End .product-price -->
-                        <div class="ratings-container">
-                            <div class="ratings">
-                                <div class="ratings-val" style="width: 80%;"></div><!-- End .ratings-val -->
-                            </div><!-- End .ratings -->
-                            <span class="ratings-text">( 1 دیدگاه )</span>
-                        </div><!-- End .rating-container -->
-
-
-                    </div><!-- End .product-body -->
-                </div><!-- End .product -->
-
-                <div class="product product-7 text-center">
-                    <figure class="product-media">
-                        <a href="product.html">
-                            <img width="300px" height="300px" src="/Content/client/pic/p11.jpg" alt="تصویر محصول"
-                                 class="product-image">
-                        </a>
-
-                        <div class="product-action-vertical">
-                            <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
-                                <span>
-                                    افزودن به
-                                    لیست علاقه مندی
-                                </span>
-                            </a>
-                            <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
-                               title="مشاهده سریع"><span>مشاهده سریع</span></a>
-                            <a href="#" class="btn-product-icon btn-compare" title="مقایسه">
-                                <span>
-                                    لیست
-                                    مقایسه
-                                </span>
-                            </a>
-                        </div><!-- End .product-action-vertical -->
-
-                        <div class="product-action">
-                            <a href="#" class="btn-product btn-cart"><span>افزودن به سبد خرید</span></a>
-                        </div><!-- End .product-action -->
-                    </figure><!-- End .product-media -->
-
-                    <div class="product-body">
-                        <h3 class="product-title text-center"><a href="product.html">محصول</a></h3>
-                        <!-- End .product-title -->
-                        <div class="product-price">
-                            56,000 تومان
-                        </div><!-- End .product-price -->
-                        <div class="ratings-container">
-                            <div class="ratings">
-                                <div class="ratings-val" style="width: 0%;"></div><!-- End .ratings-val -->
-                            </div><!-- End .ratings -->
-                            <span class="ratings-text">( 0 دیدگاه )</span>
-                        </div><!-- End .rating-container -->
-                    </div><!-- End .product-body -->
-                </div><!-- End .product -->
-
-                <div class="product product-7 text-center">
-                    <figure class="product-media">
-                        <a href="product.html">
-                            <img width="300px" height="300px" src="/Content/client/pic/p12.jpg" alt="تصویر محصول"
-                                 class="product-image">
-                        </a>
-
-                        <div class="product-action-vertical">
-                            <a href="#" class="btn-product-icon btn-wishlist btn-expandable">
-                                <span>
-                                    افزودن به
-                                    لیست علاقه مندی
-                                </span>
-                            </a>
-                            <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
-                               title="مشاهده سریع"><span>مشاهده سریع</span></a>
-                            <a href="#" class="btn-product-icon btn-compare" title="مقایسه">
-                                <span>
-                                    لیست
-                                    مقایسه
-                                </span>
-                            </a>
-                        </div><!-- End .product-action-vertical -->
-
-                        <div class="product-action">
-                            <a href="#" class="btn-product btn-cart"><span>افزودن به سبد خرید</span></a>
-                        </div><!-- End .product-action -->
-                    </figure><!-- End .product-media -->
-
-                    <div class="product-body">
-                        <h3 class="product-title text-center">
-                            <a href="product.html">محصول</a>
-                        </h3><!-- End .product-title -->
-                        <div class="product-price">
-                            76,000 تومان
-                        </div><!-- End .product-price -->
-                        <div class="ratings-container">
-                            <div class="ratings">
-                                <div class="ratings-val" style="width: 20%;"></div><!-- End .ratings-val -->
-                            </div><!-- End .ratings -->
-                            <span class="ratings-text">( 2 دیدگاه )</span>
-                        </div><!-- End .rating-container -->
-                    </div><!-- End .product-body -->
-                </div><!-- End .product -->
-            </div><!-- End .owl-carousel -->
+            @Html.Action("RelatedProductsSection", "Shop", new { productId = Model.Product.Id, take = 6 } )
             <!--Comments-->
             <div class="reply">
                 <div class="heading">

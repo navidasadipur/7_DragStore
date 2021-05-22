@@ -1014,5 +1014,39 @@ namespace drugStore7.Web.Controllers
 
             return PartialView(vm);
         }
+
+        public ActionResult ProductDetailsBrandSection(int productId)
+        {
+            var product = _productsRepo.GetProduct(productId);
+            //var productGallery = _productGalleryRepo.GetProductGalleries(productId);
+            //var productMainFeatures = _productMainFeaturesRepo.GetProductMainFeatures(productId);
+            //var productFeatureValues = _productFeatureValueRepo.GetProductFeatures(productId);
+            //var price = _productService.GetProductPrice(product);
+            //var priceAfterDiscount = _productService.GetProductPriceAfterDiscount(product);
+            var productComments = _productCommentsRepository.GetProductComments(productId);
+            var productCommentsVm = new List<ProductCommentViewModel>();
+
+            foreach (var item in productComments)
+                productCommentsVm.Add(new ProductCommentViewModel(item));
+
+            var banner = "";
+            if (product.ProductGroupId != null)
+                banner = _productGroupRepo.GetProductGroup(product.ProductGroupId.Value).Image;
+
+            ViewBag.Banner = banner;
+
+            var vm = new ProductDetailsViewModel()
+            {
+                Product = product,
+                //ProductGalleries = productGallery,
+                //ProductMainFeatures = productMainFeatures,
+                //ProductFeatureValues = productFeatureValues,
+                //Price = price,
+                //PriceAfterDiscount = priceAfterDiscount,
+                //ProductComments = productCommentsVm
+            };
+
+            return PartialView(vm);
+        }
     }
 }
