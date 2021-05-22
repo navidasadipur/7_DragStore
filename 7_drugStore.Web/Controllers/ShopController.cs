@@ -981,14 +981,38 @@ namespace drugStore7.Web.Controllers
             return PartialView(model);
         }
 
-        //public ActionResult ProductGallerySection(int productId)
-        //{
-        //    var model = new GalleryViewModel();
+        public ActionResult ProductDetailsDescrioptinSection(int productId)
+        {
+            var product = _productsRepo.GetProduct(productId);
+            //var productGallery = _productGalleryRepo.GetProductGalleries(productId);
+            //var productMainFeatures = _productMainFeaturesRepo.GetProductMainFeatures(productId);
+            //var productFeatureValues = _productFeatureValueRepo.GetProductFeatures(productId);
+            //var price = _productService.GetProductPrice(product);
+            //var priceAfterDiscount = _productService.GetProductPriceAfterDiscount(product);
+            var productComments = _productCommentsRepository.GetProductComments(productId);
+            var productCommentsVm = new List<ProductCommentViewModel>();
 
-        //    model.GalleryImages = _productGalleryRepo.GetProductGalleries(productId);
-        //    model.Image = _productsRepo.GetProduct(productId).Image;
+            foreach (var item in productComments)
+                productCommentsVm.Add(new ProductCommentViewModel(item));
 
-        //    return PartialView(model);
-        //}
+            var banner = "";
+            if (product.ProductGroupId != null)
+                banner = _productGroupRepo.GetProductGroup(product.ProductGroupId.Value).Image;
+
+            ViewBag.Banner = banner;
+
+            var vm = new ProductDetailsViewModel()
+            {
+                Product = product,
+                //ProductGalleries = productGallery,
+                //ProductMainFeatures = productMainFeatures,
+                //ProductFeatureValues = productFeatureValues,
+                //Price = price,
+                //PriceAfterDiscount = priceAfterDiscount,
+                //ProductComments = productCommentsVm
+            };
+
+            return PartialView(vm);
+        }
     }
 }
