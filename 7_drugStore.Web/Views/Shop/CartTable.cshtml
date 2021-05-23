@@ -1,4 +1,6 @@
 ﻿@model drugStore7.Web.ViewModels.CartModel
+
+
 @*<div class="container">
     <div class="cart-item-table commun-table">
         <div class="table-responsive">
@@ -128,65 +130,76 @@
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td class="product-col">
-                            <div class="product">
-                                <figure class="product-media">
-                                    <a href="#">
-                                        <img width="60px" height="60px" src="/content/client/pic/p2.jpg"
-                                             alt="تصویر محصول">
-                                    </a>
-                                </figure>
+                    @foreach (var item in Model.CartItems)
+                    {
+                        <tr>
+                            <td class="product-col">
+                                <div class="product">
+                                    <figure class="product-media">
+                                        <a href="#">
+                                            <img width="60px" height="60px" src="/Files/ProductImages/Thumb/@item.Image"
+                                                 alt="@item.ProductName">
+                                        </a>
+                                    </figure>
 
-                                <h3 class="product-title">
-                                    <a href="#">قرص ژلوفن</a>
-                                </h3><!-- End .product-title -->
-                            </div><!-- End .product -->
-                        </td>
-                        <td class="price-col">84,000</td>
-                        <td class="quantity-col">
-                            <div class="cart-product-quantity">
-                                <input type="number" class="form-control" value="1" min="1" max="10"
-                                       step="1" data-decimals="0" required>
-                            </div><!-- End .cart-product-quantity -->
-                        </td>
-                        <td class="total-col">84,000</td>
-                        <td class="remove-col">
-                            <button class="btn-remove">
-                                <i class="icon-close"></i>
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="product-col">
-                            <div class="product">
-                                <figure class="product-media">
-                                    <a href="#">
-                                        <img width="60px" height="60px" src="/content/client/pic/p7.jpg"
-                                             alt="تصویر محصول">
-                                    </a>
-                                </figure>
+                                    <h3 class="product-title">
+                                        <a href="/Shop/Product/@item.Id">@item.ProductName</a>
+                                    </h3><!-- End .product-title -->
+                                </div><!-- End .product -->
+                            </td>
+                            <td class="price-col">@item.Price.ToString("##,###") تومان</td>
+                            <td class="quantity-col">
+                                @*<div class="cart-product-quantity">
+                                    <input type="number" class="form-control" value="1" min="1" max="10"
+                                           step="1" data-decimals="0" required>
 
-                                <h3 class="product-title">
-                                    <a href="#">قرص آمواکسید</a>
-                                </h3><!-- End .product-title -->
-                            </div><!-- End .product -->
-                        </td>
-                        <td class="price-col">76,000</td>
-                        <td class="quantity-col">
-                            <div class="cart-product-quantity">
-                                <input type="number" class="form-control" value="2" min="1" max="10"
-                                       step="1" data-decimals="0" required>
-                            </div><!-- End .cart-product-quantity -->
-                        </td>
-                        <td class="total-col">152,000</td>
-                        <td class="remove-col">
-                            <button class="btn-remove">
-                                <i class="icon-close"></i>
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
+                                </div> End .cart-product-quantity*@ 
+                                <div class="input-box">
+                                    <span class="custom-qty" style="justify-content: space-around">
+                                        <a href="javascript:void(0)" onclick="AddToCart(@item.Id,@item.MainFeatureId)" style="color: #F22A59; margin: 0 15px; font-size: 1.4rem">+</a>
+                                        <span style="font-size: 1.5rem">@item.Quantity</span>
+                                        <a href="javascript:void(0)" onclick="RemoveFromCart(@item.Id,@item.MainFeatureId, 'false')" style="color: #F22A59; margin: 0 15px; font-size: 2rem">-</a>
+                                    </span>
+                                </div>
+                            </td>
+                            <td class="total-col">@{ var totalOneProduct = item.Quantity * item.Price;} @totalOneProduct.ToString("##,###") تومان</td>
+                            <td class="remove-col">
+                                <button class="btn-remove">
+                                    <i class="icon-close"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                        @*<tr>
+                            <td class="product-col">
+                                <div class="product">
+                                    <figure class="product-media">
+                                        <a href="#">
+                                            <img width="60px" height="60px" src="/content/client/pic/p7.jpg"
+                                                 alt="تصویر محصول">
+                                        </a>
+                                    </figure>
+
+                                    <h3 class="product-title">
+                                        <a href="#">قرص آمواکسید</a>
+                                    </h3><!-- End .product-title -->
+                                </div><!-- End .product -->
+                            </td>
+                            <td class="price-col">76,000</td>
+                            <td class="quantity-col">
+                                <div class="cart-product-quantity">
+                                    <input type="number" class="form-control" value="2" min="1" max="10"
+                                           step="1" data-decimals="0" required>
+                                </div><!-- End .cart-product-quantity -->
+                            </td>
+                            <td class="total-col">152,000</td>
+                            <td class="remove-col">
+                                <button class="btn-remove">
+                                    <i class="icon-close"></i>
+                                </button>
+                            </td>
+                        </tr>*@
+                    </tbody>
             </table><!-- End .table table-wishlist -->
 
             <div class="cart-bottom">
@@ -216,7 +229,7 @@
                     <tbody>
                         <tr class="summary-subtotal">
                             <td>جمع کل سبد خرید : </td>
-                            <td class="text-left">236,000 تومان</td>
+                            <td class="text-left">@Model.TotalPrice.ToString("##,###") تومان</td>
                         </tr><!-- End .summary-subtotal -->
                         <tr class="summary-shipping">
                             <td>شیوه ارسال : </td>
@@ -274,13 +287,13 @@
                     </tbody>
                 </table><!-- End .table table-summary -->
 
-                <a href="checkout.html" class="btn btn-outline-primary-2 btn-order btn-block">
+                <a href="/Shop/Checkout" class="btn btn-outline-primary-2 btn-order btn-block">
                     رفتن
                     به صفحه پرداخت
                 </a>
             </div><!-- End .summary -->
 
-            <a href="product.html" class="btn btn-outline-dark-2 btn-block mb-3">
+            <a href="/Shop" class="btn btn-outline-dark-2 btn-block mb-3">
                 <span>
                     ادامه
                     خرید
