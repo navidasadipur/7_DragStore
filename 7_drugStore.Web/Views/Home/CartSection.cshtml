@@ -1,31 +1,31 @@
 ﻿@model drugStore7.Web.ViewModels.CartModel
 
-<a href="#" class="buy">
-    <span>
-        @if (Model.CartItems != null && Model.CartItems.Any())
-        {
-            <small class="cart-notification">@Model.CartItems.Count</small>
-        }
-    </span>
-    @*@{
-            var count = 0;
-            long price = 0;
-            if (Model.CartItems != null && Model.CartItems.Any())
-            {
-                count = Model.CartItems.Count;
-                price = Model.TotalPrice;
-            }
+@*<a href="#" class="buy">
+     <span>
+         @if (Model.CartItems != null && Model.CartItems.Any())
+         {
+             <small class="cart-notification">@Model.CartItems.Count</small>
+         }
+     </span>
+    @{
+             var count = 0;
+             long price = 0;
+             if (Model.CartItems != null && Model.CartItems.Any())
+             {
+                 count = Model.CartItems.Count;
+                 price = Model.TotalPrice;
+             }
 
-            var strPrice = price.ToString("##,###");
-            if (string.IsNullOrEmpty(strPrice))
-            {
-                strPrice = "0";
-            }
-        }
-        <small class="header-small">@count - @strPrice تومان</small>*@
+             var strPrice = price.ToString("##,###");
+             if (string.IsNullOrEmpty(strPrice))
+             {
+                 strPrice = "0";
+             }
+         }
+         <small class="header-small">@count - @strPrice تومان</small>
 </a>
 
-@*<div class="cart-dropdown header-link-dropdown">
+<div class="cart-dropdown header-link-dropdown">
         @if (Model.CartItems != null && Model.CartItems.Any())
         {
             <ul class="cart-list link-dropdown-list">
@@ -80,26 +80,33 @@
 <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown"
    aria-haspopup="true" aria-expanded="false" data-display="static">
     <i class="icon-shopping-cart"></i>
+    @{
+                    /**/
+
+                    var count = 0;
+                    long price = 0;
+                    if (Model.CartItems != null && Model.CartItems.Any())
+                    {
+                        foreach (var item in Model.CartItems)
+                        {
+                            count += item.Quantity;
+                        }
+
+                        price = Model.TotalPrice;
+                    }
+
+                    var strPrice = price.ToString("##,###");
+                    if (string.IsNullOrEmpty(strPrice))
+                    {
+                        strPrice = "0";
+                    }
+    }
     @if (Model.CartItems != null && Model.CartItems.Any())
     {
-        <span class="cart-count">@Model.CartItems.Count</span>
-    }
-    @{
-        var count = 0;
-        long price = 0;
-        if (Model.CartItems != null && Model.CartItems.Any())
-        {
-            count = Model.CartItems.Count;
-            price = Model.TotalPrice;
-        }
+        <span class="cart-count">@count</span>
 
-        var strPrice = price.ToString("##,###");
-        if (string.IsNullOrEmpty(strPrice))
-        {
-            strPrice = "0";
-        }
+        <span class="cart-txt">@strPrice تومان</span>
     }
-    <span class="cart-txt">@strPrice تومان</span>
 </a>
 
 
