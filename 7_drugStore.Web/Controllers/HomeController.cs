@@ -83,6 +83,8 @@ namespace drugStore7.Web.Controllers
 
             ViewBag.LogoImage = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Logo).Image;
 
+            ViewBag.WishListCount = 5;
+
             return PartialView(allMainGroups);
         }
 

@@ -3,6 +3,8 @@
 @{
     //var mainProductGroups = ViewBag.MainProductGroups as List<ProductGroup>;
 }
+
+
 @*<header id="header">
         <div class="header-top-row">
             <div class="top-row-container position-r">
@@ -383,9 +385,9 @@
                                                                 </form>
                                                             </div><!-- End .header-search -->
 
-                                                            <a href="wishlist.html" class="wishlist-link">
+                                                            <a href="shop/wishlist" class="wishlist-link">
                                                                 <i class="icon-heart-o"></i>
-                                                                <span class="wishlist-count">3</span>
+                                                                <span class="wishlist-count">@ViewBag.WishListCount</span>
                                                             </a>
 
                                                             <div class="dropdown cart-dropdown" id="cartSection">
