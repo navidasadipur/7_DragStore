@@ -595,13 +595,15 @@
                         <div class="widget widget-search">
                             <h3 class="widget-title">جستجو</h3><!-- End .widget-title -->
 
-                            <form action="#">
+                            <form method="get" action="/Blog" id="form">
                                 <label for="ws" class="sr-only">جستجوی اخبار</label>
-                                <input type="search" class="form-control" name="ws" id="ws"
+                                <input type="search" class="form-control" name="searchString" id="ws" title="searchString"
                                        placeholder="جستجوی خبر مورد نظر" required>
                                 <button type="submit" class="btn">
                                     <i class="icon-search"></i><span class="sr-only">جستجو</span>
                                 </button>
+                                @*<a href="#" onclick="$('#form').submit()">*@
+                                </a>
                             </form>
                         </div><!-- End .widget -->
 

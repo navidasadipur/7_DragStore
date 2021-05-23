@@ -101,9 +101,9 @@
 
 
 <main class="main">
-    <div class="page-header text-center" style="background-image: url('Content/client/assets/images/page-header-bg-0.jpg')">
+    <div class="page-header text-center" style="background-image: url('/Content/client/assets/images/page-header-bg-0.jpg')">
         <div class="container">
-            <h1 class="page-title">وبلاگ</h1>
+            <h1 class="page-title">@ViewBag.Title</h1>
         </div><!-- End .container -->
     </div><!-- End .page-header -->
     <nav aria-label="breadcrumb" class="breadcrumb-nav mb-3">
@@ -111,7 +111,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/home">خانه</a></li>
                 <li class="breadcrumb-item"><a href="#">اخبار</a></li>
-                <li class="breadcrumb-item active" aria-current="page">لیست</li>
+                <li class="breadcrumb-item active" aria-current="page">@ViewBag.Title</li>
             </ol>
         </div><!-- End .container -->
     </nav><!-- End .breadcrumb-nav -->
@@ -277,34 +277,6 @@
                                     </li>
                                 }
 
-                                @*@{
-            if (ViewBag.CurrentPage > 1)
-            {
-                <li class="page-item prev">
-                    <a class="page-link"
-                       href="/Blog?pageNumber=@(ViewBag.CurrentPage - 1)@(ViewBag.CategoryId != null ? $"&category={ViewBag.CategoryId}" : null)@(ViewBag.SearchString != null ? $"&searchString={ViewBag.SearchString}" : null)">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-                </li>
-            }
-            for (int i = 1; i <= ViewBag.PageCount; i++)
-            {
-                <li class="page-item">
-                    <a class="page-link @(i == ViewBag.CurrentPage ? "active" : null)"
-                       href="/Blog?pageNumber=@i@(ViewBag.CategoryId != null ? $"&category={ViewBag.CategoryId}" : null)@(ViewBag.SearchString != null ? $"&searchString={ViewBag.SearchString}" : null)">
-                        @i
-                    </a>
-                </li>
-            }
-            if (ViewBag.CurrentPage < ViewBag.PageCount)
-            {
-                <li class="page-item next">
-                    <a class="page-link"
-                       href="/Blog?pageNumber=@(ViewBag.CurrentPage + 1)@(ViewBag.CategoryId != null ? $"&category={ViewBag.CategoryId}" : null)@(ViewBag.SearchString != null ? $"&searchString={ViewBag.SearchString}" : null)">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                </li>
-            }*@
                             }
                         </ul>
                         </nav>

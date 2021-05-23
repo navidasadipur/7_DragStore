@@ -100,11 +100,43 @@ namespace drugStore7.Infrastructure.Repositories
         {
             return _context.Articles.Where(a => a.IsDeleted == false && a.ArticleCategoryId == categoryId).Include(a => a.User).OrderByDescending(a => a.AddedDate).Skip(skip).Take(take).ToList();
         }
+
         public List<Article> GetArticlesList(int skip, int take, string searchString)
         {
-            return _context.Articles
-                .Where(a => a.IsDeleted == false && (a.Title.Trim().ToLower().Contains(searchString.Trim().ToLower()) || a.ShortDescription.Trim().ToLower().Contains(searchString.Trim().ToLower())))
+            var searchedArticles = new List<Article>();
+
+            var trimedSearchString = searchString.Trim().ToLower();
+
+            var articles = _context.Articles
+                    .Where(a => a.IsDeleted == false && (
+                           a.Title.Trim().ToLower().Contains(trimedSearchString) 
+                        || a.ShortDescription != null && a.ShortDescription.Trim().ToLower().Contains(trimedSearchString) 
+                        || a.Description != null && a.Description.Trim().ToLower().Contains(trimedSearchString)
+                     ))
                 .Include(a => a.User).OrderByDescending(a => a.AddedDate).Skip(skip).Take(take).ToList();
+
+            var tags = _context.ArticleTags
+                    .Where(t => t.IsDeleted == false && (
+                           t.Title != null && t.Title.ToLower().Trim().Contains(trimedSearchString)
+                   ))
+                   .OrderByDescending(t => t.InsertDate).Skip(skip).Take(take).ToList();
+
+            foreach (var tag in tags)
+            {
+                searchedArticles.Add(GetArticle(tag.ArticleId));
+            }
+
+            foreach (var article in articles)
+            {
+                if (!searchedArticles.Contains(article))
+                {
+                    searchedArticles.Add(article);
+                }
+            }
+
+            //|| a.ArticleTags != null && a.ArticleTags.Any(t => t.Title != null && t.Title.ToLower().Trim().Contains(trimedSearchString)
+
+            return searchedArticles;
         }
         #endregion
         #region Get Count
