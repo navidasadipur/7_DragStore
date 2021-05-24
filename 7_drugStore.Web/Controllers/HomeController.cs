@@ -503,5 +503,12 @@ namespace drugStore7.Web.Controllers
 
             return View(model);
         }
+
+        public ActionResult ServicesSection()
+        {
+            var model = _staticContentRepo.GetContentByTypeId((int)StaticContentTypes.OurServices);
+
+            return PartialView(model);
+        }
     }
 }

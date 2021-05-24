@@ -59,7 +59,8 @@ namespace drugStore7.Core.Utility
 
         Guide = 9,
         Popup = 11,
-        PageBanner=12
+        PageBanner = 12,
+        OurServices = 3,
     }
 
     public enum PaymentStatus

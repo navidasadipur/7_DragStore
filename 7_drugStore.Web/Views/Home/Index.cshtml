@@ -1316,63 +1316,7 @@
             </div>
         </div>
 
-        <div class="container service">
-            <div class="row">
-                <div class="col-sm-6 col-lg-3">
-                    <div class="icon-box icon-box-side">
-                        <span class="icon-box-icon text-dark">
-                            <i class="icon-rocket"></i>
-                        </span>
-
-                        <div class="icon-box-content">
-                            <h3 class="icon-box-title">ارسال رایگان</h3><!-- End .icon-box-title -->
-                            <p>سفارشات بالای 50هزار تومان</p>
-                        </div><!-- End .icon-box-content -->
-                    </div><!-- End .icon-box -->
-                </div><!-- End .col-sm-6 col-lg-4 -->
-
-                <div class="col-sm-6 col-lg-3">
-                    <div class="icon-box icon-box-side">
-                        <span class="icon-box-icon text-dark">
-                            <i class="icon-rotate-left"></i>
-                        </span>
-
-                        <div class="icon-box-content">
-                            <h3 class="icon-box-title">بازگشت رایگان</h3><!-- End .icon-box-title -->
-                            <p>به مدت 30 روز</p>
-                        </div><!-- End .icon-box-content -->
-                    </div><!-- End .icon-box -->
-                </div><!-- End .col-sm-6 col-lg-4 -->
-
-                <div class="col-sm-6 col-lg-3">
-                    <div class="icon-box icon-box-side">
-                        <span class="icon-box-icon text-dark">
-                            <i class="icon-info-circle"></i>
-                        </span>
-
-                        <div class="icon-box-content">
-                            <h3 class="icon-box-title">دریافت کد تخفیف 20% </h3>
-                            <!-- End .icon-box-title -->
-                            <p>کافیست ثبت نام کنید</p>
-                        </div><!-- End .icon-box-content -->
-                    </div><!-- End .icon-box -->
-                </div><!-- End .col-sm-6 col-lg-4 -->
-
-                <div class="col-sm-6 col-lg-3">
-                    <div class="icon-box icon-box-side">
-                        <span class="icon-box-icon text-dark">
-                            <i class="icon-life-ring"></i>
-                        </span>
-
-                        <div class="icon-box-content">
-                            <h3 class="icon-box-title">پشتیبانی ما</h3><!-- End .icon-box-title -->
-                            <p>خدمات 24 ساعته/7 روز هفته</p>
-                        </div><!-- End .icon-box-content -->
-                    </div><!-- End .icon-box -->
-                </div><!-- End .col-sm-6 col-lg-4 -->
-
-            </div>
-        </div>
+        @Html.Action("ServicesSection", "Home")
 
         @Html.Action("HighRateProductsSection", "Home", new { take = 5})
 
