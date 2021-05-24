@@ -88,6 +88,23 @@ namespace drugStore7.Web.Controllers
             return PartialView(allMainGroups);
         }
 
+        public ActionResult MobileHeaderSection()
+        {
+
+            var allMainGroups = _productGroupRepo.GetMainProductGroups();
+
+            foreach (var group in allMainGroups)
+            {
+                group.Children = _productGroupRepo.GetChildrenProductGroups(group.Id);
+            }
+
+            ViewBag.LogoImage = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Logo).Image;
+
+            ViewBag.WishListCount = 5;
+
+            return PartialView(allMainGroups);
+        }
+
         public ActionResult FooterTopSection()
         {
             return PartialView();

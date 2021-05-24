@@ -10678,6 +10678,7 @@
     <Content Include="Views\Shop\ProductGallerySection.cshtml" />
     <Content Include="Views\Shop\ProductDetailsDescrioptinSection.cshtml" />
     <Content Include="Views\Shop\ProductDetailsBrandSection.cshtml" />
+    <Content Include="Views\Home\MobileHeaderSection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
