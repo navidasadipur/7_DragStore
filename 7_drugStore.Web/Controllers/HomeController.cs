@@ -179,13 +179,21 @@ namespace drugStore7.Web.Controllers
             return PartialView(vm);
         }
 
-        public ActionResult LatestArticlesSection()
+        public ActionResult LatestArticlesSection(int take)
         {
-            var articles = _articlesRepo.GetLatestArticles(3);
-            var vm = articles.Select(item => new LatestArticlesViewModel(item)).ToList();
+            //var articles = _articlesRepo.GetLatestArticles(3);
+            //var vm = articles.Select(item => new LatestArticlesViewModel(item)).ToList();
+
+            //return PartialView(vm);
+
+            var vm = new List<LatestArticlesViewModel>();
+            var articles = _articlesRepo.GetTopArticles(take);
+            foreach (var item in articles)
+                vm.Add(new LatestArticlesViewModel(item));
 
             return PartialView(vm);
         }
+
 
         public ActionResult DiscountSection()
         {
