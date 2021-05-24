@@ -80,6 +80,8 @@ namespace drugStore7.Web.Controllers
 
             ViewBag.banner = banner;
 
+            ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
+
             return View(vm);
         }
         public ActionResult ArticleCategoriesSection()
@@ -186,6 +188,8 @@ namespace drugStore7.Web.Controllers
             }
 
             ViewBag.banner = banner;
+
+            ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
 
             return View(articleDetailsVm);
         }

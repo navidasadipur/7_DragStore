@@ -10622,7 +10622,6 @@
     <Content Include="Views\Home\WhishList.cshtml" />
     <Content Include="Views\Home\Faq.cshtml" />
     <Content Include="Views\Home\Guide.cshtml" />
-    <Content Include="Views\Home\BlogDetails.cshtml" />
     <Content Include="Views\Home\Checkout.cshtml" />
     <Content Include="Views\Home\Cart.cshtml" />
     <Content Include="Views\Home\SliderSection.cshtml" />

@@ -229,32 +229,32 @@ namespace drugStore7.Web.Controllers
             return PartialView(products);
         }
 
-        public ActionResult Shop()
-        {
-            return View();
-        }
-        public ActionResult ShopList()
-        {
-            return View();
-        }
-        public ActionResult Product()
-        {
-            return View();
-        }
-        public ActionResult Login()
-        {
-            return View();
-        }
+        //public ActionResult Shop()
+        //{
+        //    return View();
+        //}
+        //public ActionResult ShopList()
+        //{
+        //    return View();
+        //}
+        //public ActionResult Product()
+        //{
+        //    return View();
+        //}
+        //public ActionResult Login()
+        //{
+        //    return View();
+        //}
 
-        public ActionResult Register()
-        {
-            return View();
-        }
+        //public ActionResult Register()
+        //{
+        //    return View();
+        //}
 
-        public ActionResult WhishList()
-        {
-            return View();
-        }
+        //public ActionResult WhishList()
+        //{
+        //    return View();
+        //}
 
         [Route("Faq")]
         public ActionResult Faq()
@@ -266,43 +266,44 @@ namespace drugStore7.Web.Controllers
             ViewBag.Link = _staticContentRepo.GetStaticContentDetail(3).Link;
             ViewBag.Image = _staticContentRepo.GetStaticContentDetail(3).Image;
 
+            ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
+
             return View(model);
         }
 
-        public ActionResult BlogDetails()
-        {
-            return View();
-        }
+        //public ActionResult Guide()
+        //{
+        //    var guide = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Guide);
+        //    if (guide != null)
+        //        ViewBag.Guide = guide.ShortDescription;
 
-        public ActionResult Guide()
-        {
-            var guide = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Guide);
-            if (guide != null)
-                ViewBag.Guide = guide.ShortDescription;
+        //    var banner = "";
+        //    try
+        //    {
+        //        banner = _staticContentRepo.GetSingleContentDetailByTitle("سربرگ راهنمای آنلاین").Image;
+        //        banner = "/Files/StaticContentImages/Image/" + banner;
+        //    }
+        //    catch
+        //    {
 
-            var banner = "";
-            try
-            {
-                banner = _staticContentRepo.GetSingleContentDetailByTitle("سربرگ راهنمای آنلاین").Image;
-                banner = "/Files/StaticContentImages/Image/" + banner;
-            }
-            catch
-            {
+        //    }
 
-            }
+        //    ViewBag.banner = banner;
 
-            ViewBag.banner = banner;
-
-            return View();
-        }
+        //    return View();
+        //}
 
         public ActionResult Checkout()
         {
+            ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
+
             return View();
         }
 
         public ActionResult Cart()
         {
+            ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
+
             return View();
         }
 
@@ -319,6 +320,8 @@ namespace drugStore7.Web.Controllers
             };
 
             model.Image = _staticContentRepo.GetStaticContentDetail((int)StaticContents.firstImageAboutPage).Image;
+
+            ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
 
             return View(model);
         }
@@ -372,6 +375,8 @@ namespace drugStore7.Web.Controllers
 
             ViewBag.banner = banner;
 
+            ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
+
             return View(vm);
         }
 
@@ -391,6 +396,8 @@ namespace drugStore7.Web.Controllers
         public ActionResult ContactUsForm()
         {
             var model = new ContactForm();
+
+            ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
 
             return PartialView(model);
         }
@@ -493,6 +500,9 @@ namespace drugStore7.Web.Controllers
         public ActionResult Certificates()
         {
             var certificates = _certificatesRepo.GetAll();
+
+            ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
+
             return View(certificates);
         }
 
@@ -500,6 +510,8 @@ namespace drugStore7.Web.Controllers
         public ActionResult Gallery()
         {
             var model = _productsRepo.GetAllProductsWithGalleries();
+
+            ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
 
             return View(model);
         }

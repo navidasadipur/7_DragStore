@@ -115,14 +115,17 @@ namespace drugStore7.Web.Controllers
                 ViewBag.Title = $"محصولات {selectedProductGroup.Title}";
             }
 
-            if(banner.Equals(""))
-            {
-                banner = _staticContentRepo.GetSingleContentDetailByTitle("سربرگ محصولات").Image;
-                banner = "/Files/StaticContentImages/Image/" + banner;
-            }
+            //if(banner.Equals(""))
+            //{
+            //    banner = _staticContentRepo.GetSingleContentDetailByTitle("سربرگ محصولات").Image;
+            //    banner = "/Files/StaticContentImages/Image/" + banner;
+            //}
 
             ViewBag.SearchString = searchString;
             ViewBag.Banner = banner;
+
+            ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
+
             return View(vm);
         }
 
@@ -234,6 +237,8 @@ namespace drugStore7.Web.Controllers
             ViewBag.ProductColors = _productsRepo.GetProductColors(product.Id);
             ViewBag.ProductVolumes = _productsRepo.GetProductPerfumeVolumes(product.Id);
 
+            ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
+
             return View(vm);
         }
 
@@ -277,6 +282,7 @@ namespace drugStore7.Web.Controllers
             }
             return RedirectToAction("ProductDetails", new { id = form.ProductId });
         }
+
         public string GetProductPrice(int productId, int mainFeatureId)
         {
             var product = _productsRepo.Get(productId);
@@ -290,6 +296,7 @@ namespace drugStore7.Web.Controllers
             var jsonStr = Newtonsoft.Json.JsonConvert.SerializeObject(result);
             return jsonStr;
         }
+
         [HttpPost]
         public string AddToCart(int productId, int? mainFeatureId, int count=1)
         {
@@ -474,6 +481,8 @@ namespace drugStore7.Web.Controllers
         }
         public ActionResult WishList()
         {
+            ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
+
             return View();
         }
         public ActionResult WishListTable()
@@ -492,6 +501,8 @@ namespace drugStore7.Web.Controllers
         }
         public ActionResult Cart()
         {
+            ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
+
             return View();
         }
         public ActionResult CartTable()
