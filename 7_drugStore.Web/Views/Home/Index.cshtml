@@ -1387,10 +1387,9 @@
                         <h4 class="content">با عضویت در خبرنامه از جدیدترین محصولات و تخفیف ها باخبر شوید</h4>
                     </div>
                     <div class="subscribe action">
-                        <form action="#">
+                        <form action="/Home/AddEmailSubscription" method="post">
                             <div class="input-group">
-                                <input type="email" placeholder="آدرس ایمیل خود را وارد کنید" aria-label="Email Adress"
-                                       required="">
+                                <input name="Email" id="Name" type="email" required placeholder="آدرس ایمیل خود را وارد کنید" aria-label="Email Adress">
                                 <div class="input-group-append">
                                     <button class="btn btn-subscribe" type="submit">
                                         <span>

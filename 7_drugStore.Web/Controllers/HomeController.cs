@@ -449,13 +449,15 @@ namespace drugStore7.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddEmailSubscription(FormCollection collection)
+        public ActionResult AddEmailSubscription(string Email)
         {
             var email = "";
             var isValid = true;
             try
             {
-                email = collection["Email"];
+                //email = collection["Email"];
+
+                email = Email;
             }
             catch
             {

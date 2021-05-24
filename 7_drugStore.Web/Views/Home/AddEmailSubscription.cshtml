@@ -9,13 +9,16 @@
 @if(ViewBag.Added)
 {
     <div class="container">
-        <div class="row">
-            <div class="alert alert-success col-md-12" >
-                <b>با تشکر از شما</b>
-                <div>ایمیل شما با موفقیت در سیستم ثبت شد</div>
-                <div>
-                    <br />
-                    <a href="/">بازگشت به صفحه اصلی</a>
+        <div class="subscribe text-center">
+            <div class="row">
+                <div class="col-md-12 intro" style="margin: 0 auto; text-align: center; padding: 200px 0">
+
+                    <h2>ایمیل شما با موفقیت در سیستم ثبت شد</h2>
+                    <h3>با تشکر از شما</h3>
+                    <div style="font-size: 20px;">
+                        <br />
+                        <a href="/">بازگشت به صفحه اصلی</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -23,16 +26,18 @@
 }
 else
 {<div class="container">
-    <div class="row">
-        <div class="alert alert-warning col-md-12">
-            <b>خطا!</b>
-            <div>اطلاعات وارد شده معتبر نمی باشد</div>
-            <div>
-                <br />
-                <a href="/">باز گشت به صفحه اصلی</a>
+    <div class="subscribe text-center">
+        <div class="row">
+            <div class="col-md-12 intro" style="margin: 0 auto; text-align: center; padding: 200px 0">
+                <p style="font-size: 20px;">خطا!</p>
+                <h2>اطلاعات وارد شده معتبر نمی باشد</h2>
+                <div style="font-size: 20px;">
+                    <br />
+                    <a href="/">باز گشت به صفحه اصلی</a>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-}
+        </div>
+ </div>
+ }
 
