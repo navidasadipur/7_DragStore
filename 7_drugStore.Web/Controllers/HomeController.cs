@@ -179,6 +179,17 @@ namespace drugStore7.Web.Controllers
             return PartialView(vm);
         }
 
+        public ActionResult HighRateProductsSection(int take)
+        {
+            var products = _productService.GetHighRatedProductsWithPrice(take);
+            var vm = new List<ProductWithPriceViewModel>();
+            foreach (var product in products)
+                vm.Add(new ProductWithPriceViewModel(product));
+
+            return PartialView(vm);
+        }
+        
+
         public ActionResult LatestArticlesSection(int take)
         {
             //var articles = _articlesRepo.GetLatestArticles(3);

@@ -27,6 +27,14 @@ namespace drugStore7.Infratructure.Services
             _discountRepo = discountRepo;
             _context = context;
         }
+
+        public List<Product> GetHighRatedProducts(int take)
+        {
+            var products = _context.Products.Where(p => p.IsDeleted == false).OrderByDescending(p => p.Rate).Take(take).ToList();
+
+            return products;
+        }
+
         public List<Product> GetTopSoldProducts(int take)
         {
             var products = new List<Product>();
@@ -223,13 +231,43 @@ namespace drugStore7.Infratructure.Services
                     Price = price,
                     PriceAfterDiscount = price - productDiscount.DiscountValue,
                     DiscountAmount = productDiscount.DiscountAmount,
-                    DiscountType = productDiscount.DiscountType
+                    DiscountType = productDiscount.DiscountType,
+                    Rate = product.Rate,
                 };
                 productsDto.Add(productDto);
             }
             #endregion
             return productsDto;
         }
+
+        public List<ProductWithPriceDto> GetHighRatedProductsWithPrice(int take)
+        {
+            var productsDto = new List<ProductWithPriceDto>();
+            var products = GetHighRatedProducts(take);
+
+            #region Getting Product Price And Discount
+
+            foreach (var product in products)
+            {
+                var price = GetProductPrice(product);
+                var productDiscount = GetProductDiscount(product);
+                var productDto = new ProductWithPriceDto()
+                {
+                    Id = product.Id,
+                    ShortTitle = product.ShortTitle,
+                    Image = product.Image,
+                    Price = price,
+                    PriceAfterDiscount = price - productDiscount.DiscountValue,
+                    DiscountAmount = productDiscount.DiscountAmount,
+                    DiscountType = productDiscount.DiscountType,
+                    Rate = product.Rate,
+                };
+                productsDto.Add(productDto);
+            }
+            #endregion
+            return productsDto;
+        }
+
         public List<ProductWithPriceDto> GetRelatedProducts(int productId,int take)
         {
             var productt = _productRepo.Get(productId);
@@ -281,7 +319,8 @@ namespace drugStore7.Infratructure.Services
                     ShortTitle = product.ShortTitle,
                     Image = product.Image,
                     Price = price,
-                    PriceAfterDiscount = priceAfterDiscount
+                    PriceAfterDiscount = priceAfterDiscount,
+                    Rate = product.Rate,
                 };
                 productsDto.Add(productDto);
             }
@@ -309,7 +348,8 @@ namespace drugStore7.Infratructure.Services
                     Price = price,
                     PriceAfterDiscount = price - productDiscount.DiscountValue,
                     DiscountAmount = productDiscount.DiscountAmount,
-                    DiscountType = productDiscount.DiscountType
+                    DiscountType = productDiscount.DiscountType,
+                    Rate = product.Rate,
                 };
                 productsDto.Add(productDto);
             }
@@ -330,7 +370,8 @@ namespace drugStore7.Infratructure.Services
                 Price = price,
                 PriceAfterDiscount = price - productDiscount.DiscountValue,
                 DiscountAmount = productDiscount.DiscountAmount,
-                DiscountType = productDiscount.DiscountType
+                DiscountType = productDiscount.DiscountType,
+                Rate = product.Rate,
             };
             return productDto;
         }
@@ -348,7 +389,8 @@ namespace drugStore7.Infratructure.Services
                 Price = price,
                 PriceAfterDiscount = price - productDiscount.DiscountValue,
                 DiscountAmount = productDiscount.DiscountAmount,
-                DiscountType = productDiscount.DiscountType
+                DiscountType = productDiscount.DiscountType,
+                Rate = product.Rate,
             };
             return productDto;
         }
@@ -365,7 +407,8 @@ namespace drugStore7.Infratructure.Services
                 Price = price,
                 PriceAfterDiscount = price - productDiscount.DiscountValue,
                 DiscountAmount = productDiscount.DiscountAmount,
-                DiscountType = productDiscount.DiscountType
+                DiscountType = productDiscount.DiscountType,
+                Rate = product.Rate,
             };
             return productDto;
         }
@@ -382,7 +425,8 @@ namespace drugStore7.Infratructure.Services
                 Price = price,
                 PriceAfterDiscount = price - productDiscount.DiscountValue,
                 DiscountAmount = productDiscount.DiscountAmount,
-                DiscountType = productDiscount.DiscountType
+                DiscountType = productDiscount.DiscountType,
+                Rate = product.Rate,
             };
             return productDto;
         }

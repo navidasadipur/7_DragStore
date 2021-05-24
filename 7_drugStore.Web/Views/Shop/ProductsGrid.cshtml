@@ -206,7 +206,12 @@
                             </div> End .product-price*@ 
                             <div class="ratings-container">
                                 <div class="ratings">
-                                    <div class="ratings-val" style="width: 20%;"></div>
+                                    @{
+                                        var rate = (item.Rate < 6 ? item.Rate : 5);
+                                        rate = (rate > 0 ? rate : 0);
+                                        var ratingPercentage = (item.Rate * 100) / 5;
+                                    }
+                                    <div class="ratings-val" style="width: @ratingPercentage%;"></div>
                                     <!-- End .ratings-val -->
                                 </div><!-- End .ratings -->
                                 @*<span class="ratings-text">( 2 بازدید )</span>*@

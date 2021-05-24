@@ -66,6 +66,7 @@ namespace drugStore7.Web.ViewModels
             this.PriceAfterDiscount = dto.PriceAfterDiscount;
             this.DiscountAmount = dto.DiscountAmount;
             this.DiscountType = dto.DiscountType;
+            this.Rate = dto.Rate;
         }
 
         public int Id { get; set; }
@@ -75,6 +76,7 @@ namespace drugStore7.Web.ViewModels
         public long PriceAfterDiscount { get; set; }
         public long DiscountAmount { get; set; }
         public DiscountType DiscountType { get; set; }
+        public int Rate { get; set; }
     }
 
     public class GridViewModel
