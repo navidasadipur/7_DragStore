@@ -139,9 +139,9 @@ namespace drugStore7.Web.Controllers
             }
             return PartialView(cartModel);
         }
-        public ActionResult SliderSection()
+        public ActionResult HomeTopSliderSection()
         {
-            var content = _staticContentRepo.GetContentByTypeId((int)StaticContentTypes.Slider);
+            var content = _staticContentRepo.GetContentByTypeId((int)StaticContentTypes.HomeTopSlider);
             return PartialView(content);
         }
 

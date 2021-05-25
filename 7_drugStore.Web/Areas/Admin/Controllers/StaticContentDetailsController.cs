@@ -28,7 +28,7 @@ namespace drugStore7.Web.Areas.Admin.Controllers
         public ActionResult Index()
         {
             var content = _repo.GetStaticContentDetails();
-            content = content.OrderByDescending(c => c.StaticContentTypeId == (int)StaticContentTypes.Slider)
+            content = content.OrderByDescending(c => c.StaticContentTypeId == (int)StaticContentTypes.HomeTopSlider)
                 .ThenByDescending(c => c.InsertDate).ToList();
             return View(content);
         }
@@ -54,7 +54,7 @@ namespace drugStore7.Web.Areas.Admin.Controllers
 
                     // Resizing Image
                     ImageResizer image = new ImageResizer();
-                    if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.Slider)
+                    if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.HomeTopSlider)
                         image = new ImageResizer(1413, 600, true);
                     if(staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.PageBanner)
                         image = new ImageResizer(1450, 250, true);
@@ -117,7 +117,7 @@ namespace drugStore7.Web.Areas.Admin.Controllers
 
                     // Resizing Image
                     ImageResizer image = new ImageResizer();
-                    if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.Slider)
+                    if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.HomeTopSlider)
                         image = new ImageResizer(1413, 600, true);
                     if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.PageBanner)
                         image = new ImageResizer(1450, 250, true);

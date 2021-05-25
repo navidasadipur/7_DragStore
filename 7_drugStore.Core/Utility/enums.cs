@@ -54,7 +54,7 @@ namespace drugStore7.Core.Utility
         About = 13,
         AboutProperties,
 
-        Slider = 1,
+        HomeTopSlider = 17,
         Contact = 2,
 
         Guide = 9,
