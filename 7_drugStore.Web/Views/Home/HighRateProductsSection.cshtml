@@ -99,7 +99,7 @@
                     <span class="product-label label-new">جدید</span>
 
                     <a href="/Shop/Product/@item.Id/@item.ShortTitle">
-                        <img width="300px" height="300px" src="./Files/ProductImages/Thumb/@item.Image" alt="@item.ShortTitle"
+                        <img width="300px" height="300px" src="/Files/ProductImages/Thumb/@item.Image" alt="@item.ShortTitle"
                              class="product-image">
                     </a>
 
@@ -130,15 +130,15 @@
                     <!-- End .product-title -->
                     @if (item.PriceAfterDiscount < item.Price)
                     {
-                        <span class="price">@item.PriceAfterDiscount.ToString("##,###") تومان</span>
-                        <div class="product-price">
-                            @item.Price.ToString("##,###") تومان
+                        <span class="new-price">@item.PriceAfterDiscount.ToString("##,###") تومان</span>
+                        <div class="old-price">
+                            @item.Price.ToString("##,###") 
                         </div><!-- End .product-price -->
                         @*<del class="price old-price">@item.Price.ToString("##,###") تومان</del>*@
                     }
                     else
                     {
-                        <div class="product-price">
+                        <div class="new-price">
                             @item.Price.ToString("##,###") تومان
                         </div><!-- End .product-price -->
                         @*<span class="price">@item.Price.ToString("##,###") تومان</span>*@
