@@ -44,12 +44,20 @@
             <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
             <li> ارتفاع: 31سانتی متر; عرض: 32سانتی متر; عمق: 12سانتی متر</li>
         </ul>*@
+
         @foreach (var featureValue in Model.ProductFeatureValues)
         {
-            var subFeatureValues = string.Join("، ", featureValue.SubFeature.Value);
+            <h3>@(featureValue.Feature != null ? featureValue.Feature.Title : @featureValue.Value)</h3>
 
-            <h3>@(featureValue.Feature != null? featureValue.Feature.Title : @featureValue.Value)</h3>
-            <p>@subFeatureValues</p>
+            if (featureValue.SubFeature != null)
+            {
+                var subFeatureValues = string.Join("، ", featureValue.SubFeature.Value);
+                <p>@subFeatureValues</p>
+            }
+            else
+            {
+                <p>@featureValue.Value</p>
+            }
         }
     </div><!-- End .product-desc-content -->
 </div><!-- .End .tab-pane -->
