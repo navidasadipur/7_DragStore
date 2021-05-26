@@ -80,7 +80,7 @@
                                     @item.MinPrice.ToString("##,###")
                                 </span>
                             }
-                            if (item.MaxPrice != 0)
+                            if (item.MaxPrice != 0 && item.MaxPrice != item.MinPrice)
                             {
                                 <text> – </text>
                                 <span class="lynessa-Price-amount amount">

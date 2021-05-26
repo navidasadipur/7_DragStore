@@ -239,6 +239,8 @@ namespace drugStore7.Web.Controllers
 
             ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
 
+            ViewBag.CallForProductNumber = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Phone);
+
             return View(vm);
         }
 
