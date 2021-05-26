@@ -868,7 +868,7 @@
                                 @{
                                     var featureName = Model.ProductMainFeatures.FirstOrDefault().Feature.Title;
 
-                                                                            var i = 0;
+                                    var i = 0;
 
                                     var className = "";
                                     i++;
@@ -937,7 +937,19 @@
                             {
                                 <div class="product-details-action">
                                     <a href="tel:@ViewBag.CallForProductNumber.Title" class="btn-product btn-cart"><span>برای سفارش محصول تماس بگیرید</span></a>
-                                </div>
+
+                                    <div class="details-action-wrapper">
+                                        <a href="javascript:void(0)" onclick="AddToWishList(@Model.Product.Id)" class="btn-product btn-wishlist"
+                                           title="لیست علاقه مندی">
+                                            <span>
+                                                افزودن
+                                                به
+                                                علاقه مندی
+                                            </span>
+                                        </a>
+
+                                    </div><!-- End .details-action-wrapper -->
+                                </div><!-- End .product-details-action -->
                             }
 
                             <div class="product-details-footer">

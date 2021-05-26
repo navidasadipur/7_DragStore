@@ -83,7 +83,17 @@ namespace drugStore7.Web.Controllers
 
             ViewBag.LogoImage = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Logo).Image;
 
-            ViewBag.WishListCount = 5;
+            var wishListModel = new WishListModel();
+
+            HttpCookie cartCookie = Request.Cookies["wishList"] ?? new HttpCookie("wishList");
+
+            if (!string.IsNullOrEmpty(cartCookie.Values["wishList"]))
+            {
+                string cartJsonStr = cartCookie.Values["wishList"];
+                wishListModel = new WishListModel(cartJsonStr);
+            }
+
+            ViewBag.WishListCount = wishListModel.WishListItems.Count();
 
             return PartialView(allMainGroups);
         }
@@ -100,7 +110,17 @@ namespace drugStore7.Web.Controllers
 
             ViewBag.LogoImage = _staticContentRepo.GetStaticContentDetail((int)StaticContents.Logo).Image;
 
-            ViewBag.WishListCount = 5;
+            var wishListModel = new WishListModel();
+
+            HttpCookie cartCookie = Request.Cookies["wishList"] ?? new HttpCookie("wishList");
+
+            if (!string.IsNullOrEmpty(cartCookie.Values["wishList"]))
+            {
+                string cartJsonStr = cartCookie.Values["wishList"];
+                wishListModel = new WishListModel(cartJsonStr);
+            }
+
+            ViewBag.WishListCount = wishListModel.WishListItems.Count();
 
             return PartialView(allMainGroups);
         }
