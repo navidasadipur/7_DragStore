@@ -72,8 +72,32 @@
                             </h3><!-- End .product-title -->
                         </div><!-- End .product -->
                     </td>
-                    <td class="price-col">84,000 تومان</td>
-                    <td class="stock-col"><span class="in-stock">موجود</span></td>
+                    <td class="price-col">
+                        @{
+                            if (item.MinPrice != 0)
+                            {
+                                <span class="lynessa-Price-amount amount">
+                                    @item.MinPrice.ToString("##,###")
+                                </span>
+                            }
+                            if (item.MaxPrice != 0)
+                            {
+                                <text> – </text>
+                                <span class="lynessa-Price-amount amount">
+                                    @item.MaxPrice.ToString("##,###")
+                                </span>
+                            }
+                        }
+                        تومان
+                    </td>
+                    @if (item.Quantity > 0)
+                    {
+                        <td class="stock-col"><span class="in-stock">موجود</span></td>
+                    }
+                    else
+                    {
+                        <td class="stock-col"><span class="in-stock">نا موجود</span></td>
+                    }
                     <td class="action-col">
                         <a class="btn btn-block btn-outline-primary-2" href="/Shop/Product/@item.Id">مشاهده محصول و خرید</a>
                         @*<div class="dropdown">

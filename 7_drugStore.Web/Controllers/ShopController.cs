@@ -434,14 +434,17 @@ namespace drugStore7.Web.Controllers
             }
             #endregion
 
-            var product = _productsRepo.Get(productId);
+            var product = _productsRepo.GetProduct(productId);
             if (withListItemsModel.Any(i => i.Id == productId) == false)
             {
                 withListItemsModel.Add(new WishListItemModel()
                 {
                     Id = product.Id,
                     ProductName = product.ShortTitle,
-                    Image = product.Image
+                    Image = product.Image,
+                    MinPrice = product.ProductMainFeatures.Select(pmf => pmf.Price).Min(),
+                    MaxPrice = product.ProductMainFeatures.Select(pmf => pmf.Price).Max(),
+                    Quantity = product.ProductMainFeatures.Select(pmf => pmf.Quantity).Min(),
                 });
             }
             withListModel.WishListItems = withListItemsModel;

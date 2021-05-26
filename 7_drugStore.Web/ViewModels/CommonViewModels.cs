@@ -114,6 +114,9 @@ namespace drugStore7.Web.ViewModels
                     Id = Convert.ToInt32(item["Id"]),
                     ProductName = (string)item["ProductName"],
                     Image = (string)item["Image"],
+                    MinPrice = Convert.ToInt64(item["MinPrice"]),
+                    MaxPrice = Convert.ToInt64(item["MaxPrice"]),
+                    Quantity = Convert.ToInt32(item["Quantity"])
                 });
             }
 
@@ -126,6 +129,9 @@ namespace drugStore7.Web.ViewModels
         public int Id { get; set; }
         public string ProductName { get; set; }
         public string Image { get; set; }
+        public long MinPrice { get; set; }
+        public long MaxPrice { get; set; }
+        public int Quantity { get; set; }
     }
 
     public class CommentFormViewModel
