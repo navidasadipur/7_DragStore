@@ -16,19 +16,19 @@
 
 <div class="social-icons social-icons-sm mb-2">
     <label class="social-label">اشتراک گذاری در : </label>
-    <a href="#" class="social-icon" title="فیسبوک" target="_blank">
-        <i class="icon-facebook-f"></i>
+    <a href="@Model.Facebook.Link" class="social-icon" title="فیسبوک" target="_blank">
+        @Html.Raw(Model.Facebook.ShortDescription)
     </a>
-    <a href="#" class="social-icon" title="توییتر" target="_blank">
-        <i class="icon-twitter"></i>
+    <a href="@Model.Twitter.Link" class="social-icon" title="توییتر" target="_blank">
+        @Html.Raw(Model.Twitter.ShortDescription)
     </a>
-    <a href="#" class="social-icon" title="اینستاگرام" target="_blank">
-        <i class="icon-instagram"></i>
+    <a href="@Model.Instagram.Link" class="social-icon" title="اینستاگرام" target="_blank">
+        @Html.Raw(Model.Instagram.ShortDescription)
     </a>
-    <a href="#" class="social-icon" title="یوتیوب" target="_blank">
-        <i class="icon-youtube"></i>
+    <a href="@Model.Youtube.Link" class="social-icon" title="یوتیوب" target="_blank">
+        @Html.Raw(Model.Youtube.ShortDescription)
     </a>
-    <a href="#" class="social-icon" title="پینترست" target="_blank">
-        <i class="icon-pinterest"></i>
+    <a href="@Model.Pinterest.Link" class="social-icon" title="پینترست" target="_blank">
+        @Html.Raw(Model.Pinterest.ShortDescription)
     </a>
 </div><!-- End .soial-icons -->

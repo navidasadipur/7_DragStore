@@ -446,7 +446,7 @@ namespace drugStore7.Web.Controllers
                     Image = product.Image,
                     MinPrice = product.ProductMainFeatures.Select(pmf => pmf.Price).Min(),
                     MaxPrice = product.ProductMainFeatures.Select(pmf => pmf.Price).Max(),
-                    Quantity = product.ProductMainFeatures.Select(pmf => pmf.Quantity).Min(),
+                    Quantity = product.ProductMainFeatures.Select(pmf => pmf.Quantity).Max(),
                 });
             }
             withListModel.WishListItems = withListItemsModel;
