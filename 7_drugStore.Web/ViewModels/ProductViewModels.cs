@@ -124,6 +124,7 @@ namespace drugStore7.Web.ViewModels
         public long PriceAfterDiscount { get; set; }
         public List<ProductCommentViewModel> ProductComments { get; set; }
         public CommentFormViewModel CommentForm { get; set; }
+        public ProductGroup Group { get; set; }
     }
 
     public class DiscountProductViewModel

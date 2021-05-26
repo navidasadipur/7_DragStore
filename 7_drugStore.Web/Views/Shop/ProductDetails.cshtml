@@ -956,8 +956,12 @@
                                 <div class="product-cat text-center">
                                     <span>دسته بندی : </span>
                                     @*<a href="#">سرد درد</a>،
-                <a href="#">مسکن</a>،*@
-                                    <a href="#">پروداکت گروپ</a>
+        <a href="#">مسکن</a>،*@
+                                    @if (Model.Group != null)
+                                    {
+                                        <a href="/Shop/ProductList/@Model.Group.Id">@Model.Group.Title</a>
+                                    }
+
                                 </div><!-- End .product-cat -->
 
 

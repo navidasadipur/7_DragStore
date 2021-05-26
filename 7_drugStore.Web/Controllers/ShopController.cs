@@ -203,6 +203,14 @@ namespace drugStore7.Web.Controllers
         public ActionResult ProductDetails(int id)
         {
             var product = _productsRepo.GetProduct(id);
+
+            var productGroup = new ProductGroup();
+
+            if (product.ProductGroupId != null)
+            {
+                productGroup = _productGroupRepo.GetProductGroup(product.ProductGroupId.Value);
+            }
+
             var productGallery = _productGalleryRepo.GetProductGalleries(id);
             var productMainFeatures = _productMainFeaturesRepo.GetProductMainFeatures(id);
             var productFeatureValues = _productFeatureValueRepo.GetProductFeatures(id);
@@ -223,6 +231,7 @@ namespace drugStore7.Web.Controllers
             var vm = new ProductDetailsViewModel()
             {
                 Product = product,
+                Group = productGroup,
                 ProductGalleries = productGallery,
                 ProductMainFeatures = productMainFeatures,
                 ProductFeatureValues = productFeatureValues,
