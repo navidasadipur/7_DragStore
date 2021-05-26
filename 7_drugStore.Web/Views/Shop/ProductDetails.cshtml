@@ -991,31 +991,9 @@
                 </ul>
                 <div class="tab-content">
                     @Html.Action("ProductDetailsDescrioptinSection", "Shop", new { productId = Model.Product.Id })
-                    <div class="tab-pane fade" id="product-info-tab" role="tabpanel"
-                         aria-labelledby="product-info-link">
-                        <div class="product-desc-content">
-                            <h3>اطلاعات</h3>
-                            <p>
-                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید
-                                سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوملورم ایپسوم متن
-                                ساختگی با تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوملورم
-                                ایپسوم متن ساختگی با تولید سادگی نامفهوم.
-                            </p>
+                    
+                    @Html.Action("ProductFeaturesSection", "Shop", new { productId = Model.Product.Id})
 
-                            <h3>اطلاعات بیشتر</h3>
-                            <ul>
-                                <li>لورم ایپسوم متن ساختگی</li>
-                                <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
-                                <li>لورم ایپسوم</li>
-                                <li>لورم ایپسوم متن ساختگی </li>
-                                <li>لورم ایپسوم متن ساختگی با تولید سادگی</li>
-                                <li> ارتفاع: 31سانتی متر; عرض: 32سانتی متر; عمق: 12سانتی متر</li>
-                            </ul>
-
-                            <h3>سایز</h3>
-                            <p>تک سایز</p>
-                        </div><!-- End .product-desc-content -->
-                    </div><!-- .End .tab-pane -->
                     @Html.Action("ProductDetailsBrandSection", "Shop", new { productId = Model.Product.Id })
                     <div class="tab-pane fade" id="product-review-tab" role="tabpanel"
                          aria-labelledby="product-review-link">

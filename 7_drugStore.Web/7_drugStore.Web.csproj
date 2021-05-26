@@ -10680,6 +10680,7 @@
     <Content Include="Views\Home\MobileHeaderSection.cshtml" />
     <Content Include="Views\Home\HighRateProductsSection.cshtml" />
     <Content Include="Views\Home\ServicesSection.cshtml" />
+    <Content Include="Views\Shop\ProductFeaturesSection.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
