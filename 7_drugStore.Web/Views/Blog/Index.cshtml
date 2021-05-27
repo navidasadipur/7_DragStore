@@ -109,8 +109,8 @@
     <nav aria-label="breadcrumb" class="breadcrumb-nav mb-3">
         <div class="container">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/home">خانه</a></li>
-                <li class="breadcrumb-item"><a href="#">اخبار</a></li>
+                <li class="breadcrumb-item"><a href="/">خانه</a></li>
+                <li class="breadcrumb-item"><a href="/Blog">اخبار</a></li>
                 <li class="breadcrumb-item active" aria-current="page">@ViewBag.Title</li>
             </ol>
         </div><!-- End .container -->
@@ -152,7 +152,7 @@
                             <div class="row align-items-center">
                                 <div class="col-md-5">
                                     <figure class="entry-media">
-                                        <a href="single.html">
+                                        <a href="/Blog/Article/@article.Id/@article.Title.Replace(' ', '-')">
                                             <img src="~/Files/ArticleImages/Thumb/@article.Image"
                                                  alt="@article.Title">
                                         </a>

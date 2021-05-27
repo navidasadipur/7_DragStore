@@ -98,7 +98,7 @@
 
                     <span class="product-label label-new">جدید</span>
 
-                    <a href="/Shop/Product/@item.Id/@item.ShortTitle">
+                    <a href="/Shop/Product/@item.Id">
                         <img width="300px" height="300px" src="/Files/ProductImages/Thumb/@item.Image" alt="@item.ShortTitle"
                              class="product-image">
                     </a>
@@ -110,7 +110,7 @@
                                 لیست علاقه مندی
                             </span>
                         </a>
-                        <a href="popup/quickView.html" class="btn-product-icon btn-quickview"
+                        <a href="/Shop/Product/@item.Id" class="btn-product-icon btn-quickview"
                            title="مشاهده سریع"><span>مشاهده سریع</span></a>
                         @*<a href="#" class="btn-product-icon btn-compare" title="مقایسه">
                 <span>
@@ -126,7 +126,7 @@
                 </figure><!-- End .product-media -->
 
                 <div class="product-body">
-                    <h3 class="product-title text-center"><a href="/Shop/Product/@item.Id/@item.ShortTitle">@item.ShortTitle</a></h3>
+                    <h3 class="product-title text-center"><a href="/Shop/Product/@item.Id">@item.ShortTitle</a></h3>
                     <!-- End .product-title -->
                     @if (item.PriceAfterDiscount < item.Price)
                     {
