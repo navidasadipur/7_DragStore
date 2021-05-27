@@ -93,7 +93,10 @@ namespace drugStore7.Web.Controllers
                 wishListModel = new WishListModel(cartJsonStr);
             }
 
-            ViewBag.WishListCount = wishListModel.WishListItems.Count();
+            if (wishListModel.WishListItems != null)
+            {
+                ViewBag.WishListCount = wishListModel.WishListItems.Count();
+            }
 
             return PartialView(allMainGroups);
         }
@@ -120,7 +123,10 @@ namespace drugStore7.Web.Controllers
                 wishListModel = new WishListModel(cartJsonStr);
             }
 
-            ViewBag.WishListCount = wishListModel.WishListItems.Count();
+            if (wishListModel.WishListItems != null)
+            {
+                ViewBag.WishListCount = wishListModel.WishListItems.Count();
+            }
 
             return PartialView(allMainGroups);
         }
