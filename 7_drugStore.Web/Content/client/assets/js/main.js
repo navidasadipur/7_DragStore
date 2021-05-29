@@ -178,7 +178,7 @@ $(document).ready(function () {
         noUiSlider.create(priceSlider, {
             start: [0, 750000],
             connect: true,
-            step: 50,
+            step: 100,
             margin: 200,
             range: {
                 'min': 1000,
@@ -194,6 +194,7 @@ $(document).ready(function () {
         // Update Price Range
         priceSlider.noUiSlider.on('update', function (values, handle) {
             $('#filter-price-range').text(values.join(' - '));
+
         });
     }
 
