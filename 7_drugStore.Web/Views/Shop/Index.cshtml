@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-12 col-lg-4 col-xl-3">
                     <div class="sidebar mb-md-30">
-                        @*<div class="sidebar-default sidebar-banner d-none d-lg-block">
+                        <div class="sidebar-default sidebar-banner d-none d-lg-block">
                                 <a href="javascript:void(0)">
                                     <img src="images/sidebar-banner.jpg" alt="">
                                 </a>
@@ -43,7 +43,7 @@
                         <div class="sidebar-default">
                             <div class="category-content">
                                 <h2 class="cat-title">فیلتر بر اساس</h2>
-                                @*<a class="btn btn-color small btn-filter mb-20" href="#"><i class="fa fa-close"></i><span>حذف همه</span></a>*@@*
+                                <a class="btn btn-color small btn-filter mb-20" href="#"><i class="fa fa-close"></i><span>حذف همه</span></a>*@@*
                                 <div class="mb-20">
                                     <div class="inner-title expandable edeactive">برند</div>
                                     <ul class="filter-sub-section" style="">
@@ -218,7 +218,7 @@
                         <div class="toolbox-right">
                             <div class="toolbox-sort">
                                 <label for="sortby">مرتب سازی براساس : </label>
-                                <div class="select-custom">
+                                <div class="">
                                     <select onchange="GetGrid()" name="sort" id="sort" class="form-control">
                                         <option value="date" selected="selected">تاریخ ثبت</option>
                                         <option value="name">اسم محصول</option>
@@ -374,8 +374,11 @@
                                             <div class="filter-item">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input"
-                                                           id="brand-@brand.Id">
-                                                    <label class="custom-control-label" for="brand-@brand.Id">@brand.Name</label>
+                                                           id="b_@brand.Id"
+                                                           onchange="GetGrid()"
+                                                           value="@brand.Id"
+                                                           name="brands">
+                                                    <label class="custom-control-label" for="b_@brand.Id">@brand.Name</label>
                                                 </div><!-- End .custom-checkbox -->
                                             </div><!-- End .filter-item -->
                                         }

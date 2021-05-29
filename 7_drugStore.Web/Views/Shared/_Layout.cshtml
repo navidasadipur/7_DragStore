@@ -405,7 +405,7 @@
                 type: 'POST',
                 url: '/Shop/AddToWishList?productId=' + id,
                 success: function (data) {
-                    toastr.info("محصول مورد نظر به لیست علاقه مندی های شما افزوده شد");
+                    toastr.success("محصول مورد نظر به لیست علاقه مندی های شما افزوده شد");
                     GetWishList();
                 },
                 error: function (data) {
