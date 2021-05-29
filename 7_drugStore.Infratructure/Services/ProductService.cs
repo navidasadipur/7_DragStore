@@ -455,18 +455,33 @@ namespace drugStore7.Infratructure.Services
                 if (string.IsNullOrEmpty(searchString))
                 {
                     products = _context.Products.Include(p => p.ProductMainFeatures).Include(p => p.ProductFeatureValues).Where(p => p.IsDeleted == false).OrderByDescending(p => p.InsertDate).ToList();
+
+                    foreach (var product in products)
+                    {
+                        product.ProductMainFeatures = product.ProductMainFeatures.Where(f => f.IsDeleted == false).ToList();
+                    }
                 }
                 else
                 {
-                 products = _context.Products.Include(p => p.ProductMainFeatures)
-                     .Include(p => p.ProductFeatureValues)
-                     .Where(p => p.IsDeleted == false && (p.ShortTitle.Trim().ToLower().Contains(searchString.Trim().ToLower()) || p.Title.Trim().ToLower().Contains(searchString.Trim().ToLower())))
-                     .OrderByDescending(p => p.InsertDate).ToList();
+                    products = _context.Products.Include(p => p.ProductMainFeatures)
+                        .Include(p => p.ProductFeatureValues)
+                        .Where(p => p.IsDeleted == false && (p.ShortTitle.Trim().ToLower().Contains(searchString.Trim().ToLower()) || p.Title.Trim().ToLower().Contains(searchString.Trim().ToLower())))
+                        .OrderByDescending(p => p.InsertDate).ToList();
+
+                    foreach (var product in products)
+                    {
+                        product.ProductMainFeatures = product.ProductMainFeatures.Where(f => f.IsDeleted == false).ToList();
+                    }
                 }
             }
             else
             {
                 products = _context.Products.Include(p=>p.ProductMainFeatures).Include(p=>p.ProductFeatureValues).Where(p => p.IsDeleted == false && p.ProductGroupId == productGroupId).OrderByDescending(p => p.InsertDate).ToList();
+
+                foreach (var product in products)
+                {
+                    product.ProductMainFeatures = product.ProductMainFeatures.Where(f => f.IsDeleted == false).ToList();
+                }
 
                 var allChildrenGroups = GetAllChildrenProductGroupIds(productGroupId.Value);
                 foreach (var groupId in allChildrenGroups)
@@ -476,6 +491,11 @@ namespace drugStore7.Infratructure.Services
                     products = products
                         .Where(p => p.IsDeleted == false && (p.ShortTitle.Trim().ToLower().Contains(searchString.Trim().ToLower()) || p.Title.Trim().ToLower().Contains(searchString.Trim().ToLower())))
                         .OrderByDescending(p => p.InsertDate).ToList();
+
+                    foreach (var product in products)
+                    {
+                        product.ProductMainFeatures = product.ProductMainFeatures.Where(f => f.IsDeleted == false).ToList();
+                    }
                 }
             }
 
@@ -492,6 +512,11 @@ namespace drugStore7.Infratructure.Services
                 foreach (var subFeature in subFeatureIds.Where(f=>f != 0))
                     productsFilteredByFeature.AddRange(products.Where(p => p.ProductFeatureValues.Any(pf => pf.SubFeatureId == subFeature) || p.ProductMainFeatures.Any(pf => pf.SubFeatureId == subFeature)).OrderByDescending(p => p.InsertDate).ToList());
                 products = productsFilteredByFeature;
+
+                foreach (var product in products)
+                {
+                    product.ProductMainFeatures = product.ProductMainFeatures.Where(f => f.IsDeleted == false).ToList();
+                }
             }
 
             if (fromPrice != null)
