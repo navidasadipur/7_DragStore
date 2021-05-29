@@ -266,7 +266,7 @@
                                     {
                                         <div class="widget widget-collapsible border-0">
                                             <h3 class="widget-title widget-title-custome">
-                                                <a data-toggle="collapse" href="#category-@item.Id" role="button"
+                                                <a data-toggle="collapse" href="#category-@item.Id" onclick="GetGrid(null, @item.Id)" role="button"
                                                    aria-expanded="true"
                                                    aria-controls="category-@item.Id">
                                                     @item.Title
@@ -285,7 +285,7 @@
                                                         {
                                                             continue;
                                                         }
-                                                        <li><a href="/Shop/ProductList/@subItem.Id">@subItem.Title</a></li>
+                                                        <li><a href="javascript:void(0)" onclick="GetGrid(null, @subItem.Id)">@subItem.Title</a></li>
                                                     }
                                                 </ul>
                                             </div>
@@ -406,7 +406,8 @@
 @section scripts
 {
     <script>
-        function GetGrid(page) {
+
+        function GetGrid(page, groupId) {
             $("#loading").show();
             var pageNumber = 1;
             if (page != null) {
@@ -414,7 +415,7 @@
             }
             var sort = $("#sort").find(":selected").val();
             var take = $("#take").find(":selected").val();
-            var categoryId = @(Model.SelectedGroupId??null);
+            var categoryId = groupId !== undefined ? groupId : null ;
             var searchString =  '@ViewBag.SearchString';
             console.log(searchString);
             var brands = [];
