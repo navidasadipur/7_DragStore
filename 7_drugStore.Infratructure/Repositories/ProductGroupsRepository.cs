@@ -180,5 +180,12 @@ namespace drugStore7.Infrastructure.Repositories
 
             return groups;
         }
+
+        public ProductGroup GetGroupByProductId(int productId)
+        {
+            var ProductGroupId = _context.Products.Where(p => p.IsDeleted == false && p.Id == productId).Select(p => p.ProductGroupId).FirstOrDefault();
+
+            return GetProductGroup(ProductGroupId.Value);
+        }
     }
 }

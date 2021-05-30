@@ -77,6 +77,9 @@ namespace drugStore7.Web.ViewModels
         public long DiscountAmount { get; set; }
         public DiscountType DiscountType { get; set; }
         public int Rate { get; set; }
+
+        public int ProductGroupId { get; set; }
+        public string ProductGroupTitle { get; set; }
     }
 
     public class GridViewModel

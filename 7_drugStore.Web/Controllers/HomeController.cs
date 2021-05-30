@@ -216,8 +216,19 @@ namespace drugStore7.Web.Controllers
             var products = _productService.GetLatestProductsWithPrice(take);
             var vm = new List<ProductWithPriceViewModel>();
             foreach (var product in products)
-                vm.Add(new ProductWithPriceViewModel(product));
+            {
+                var tempVm = new ProductWithPriceViewModel(product);
 
+                var group = _productGroupRepo.GetGroupByProductId(product.Id);
+
+                tempVm.ProductGroupId = group.Id;
+
+                tempVm.ProductGroupTitle = group.Title;
+
+                vm.Add(tempVm);
+            }
+
+            
             return PartialView(vm);
         }
 
