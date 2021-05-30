@@ -1,4 +1,4 @@
-﻿@model  List<drugStore7.Web.ViewModels.ProductWithPriceViewModel>
+﻿@*@model  List<drugStore7.Web.ViewModels.ProductWithPriceViewModel>
 <div class="sidebar-default">
     <div class="sidebar-product">
         <h2 class="cat-title">آخرین محصولات</h2>
@@ -30,7 +30,7 @@
                         </div>
                         <div class="cart-link">
                             <form>
-                                <button title="افزودن به سبد خرید">افزودن به سبد خرید</button>
+                                <button title="افزودن به سبد خرید" href="javascript:void(0)" onclick="AddToCart(@item.Id)">افزودن به سبد خرید</button>
                             </form>
                         </div>
                     </div>
@@ -38,4 +38,4 @@
             }
         </ul>
     </div>
-</div>
+</div>*@
