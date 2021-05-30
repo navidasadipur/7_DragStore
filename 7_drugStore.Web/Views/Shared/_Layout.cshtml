@@ -435,12 +435,12 @@
                 }
             });
     }
-    function GetWishList() {
-        $.ajax({
+        function GetWishList() {
+            $.ajax({
                 type: 'GET',
-                url: '/Shop/WishListTable',
+                url: '/Home/WishListSection',
                 success: function (data) {
-                    $("#WishListTable").html(data);
+                    $("#wishListSection").html(data);
                 },
                 error: function (data) {
                     console.log("error");
@@ -449,6 +449,21 @@
                 complete: function () {
                 }
             });
+            if ($("#CartTable") !== undefined) {
+                $.ajax({
+                    type: 'GET',
+                    url: '/Shop/WishListTable',
+                    success: function (data) {
+                        $("#WishListTable").html(data);
+                    },
+                    error: function (data) {
+                        console.log("error");
+                        console.log(data);
+                    },
+                    complete: function () {
+                    }
+                });
+            }
     }
     </script>
     <script>

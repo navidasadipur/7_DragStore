@@ -165,6 +165,22 @@ namespace drugStore7.Web.Controllers
             }
             return PartialView(cartModel);
         }
+
+        public ActionResult WishListSection()
+        {
+            var wishListModel = new WishListModel();
+
+            HttpCookie cartCookie = Request.Cookies["wishList"] ?? new HttpCookie("wishList");
+
+            if (!string.IsNullOrEmpty(cartCookie.Values["wishList"]))
+            {
+                string cartJsonStr = cartCookie.Values["wishList"];
+                wishListModel = new WishListModel(cartJsonStr);
+            }
+
+            return PartialView(wishListModel);
+        }
+
         public ActionResult HomeTopSliderSection()
         {
             var content = _staticContentRepo.GetContentByTypeId((int)StaticContentTypes.HomeTopSlider);
