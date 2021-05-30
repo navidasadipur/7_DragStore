@@ -2,6 +2,9 @@
 @{
     ViewBag.Title = "ثبت نهایی";
 }
+
+
+
 <div class="contant">
     <div id="banner-part" class="banner inner-banner">
         <div class="container">
@@ -159,7 +162,7 @@
                                             <td>@overallPrice.ToString("##,###") تومان</td>
                                         </tr>
                                         <tr>
-                                            @{ 
+                                            @{
                                                 var strDiscount = ViewBag.DiscountAmount == 0 ? "0 تومان" : ViewBag.DiscountAmount.ToString("##,###") + " تومان";
                                             }
                                             <td><b>تخفیف</b></td>
@@ -171,14 +174,14 @@
                                                 <div class="price-box"><span class="price finalPrice">@Model.TotalPrice.ToString("##,###") تومان</span></div>
                                             </td>
                                         </tr>
-                                        @*<tr>
-                            <td><b>روش پرداخت</b></td>
-                            <td>درب منزل</td>
-                        </tr>
-                        <tr>
-                            <td><b>شماره سفارش</b></td>
-                            <td>#011052</td>
-                        </tr>*@
+                                        <tr>
+                                            <td><b>روش پرداخت</b></td>
+                                            <td>درب منزل</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>شماره سفارش</b></td>
+                                            <td>#011052</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -189,6 +192,234 @@
         </div>
     </div>
 </div>
+
+
+
+
+<main class="main">
+    <div class="page-header text-center" style="background-image: url('/Content/client/assets/images/page-header-bg.jpg')">
+        <div class="container">
+            <h1 class="page-title">صفحه پرداخت<span>فروشگاه</span></h1>
+        </div><!-- End .container -->
+    </div><!-- End .page-header -->
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">خانه</a></li>
+                <li class="breadcrumb-item"><a href="/shop">فروشگاه</a></li>
+                <li class="breadcrumb-item active" aria-current="page">صفحه پرداخت</li>
+            </ol>
+        </div><!-- End .container -->
+    </nav><!-- End .breadcrumb-nav -->
+
+    <div class="page-content">
+        <div class="checkout">
+            <div class="container">
+                <div class="checkout-discount">
+                    @if (ViewBag.Errors.Count > 0)
+                    {
+                        <div class="row">
+                            <div class="col-12 alert alert-danger">
+                                @foreach (string error in ViewBag.Errors)
+                                {
+                                    <div>@error</div>
+                                }
+                            </div>
+                        </div>
+                    }
+                    <form action="#">
+                        <input type="text" class="form-control" required id="checkout-discount-input">
+                        <label for="checkout-discount-input" class="text-truncate">
+                            کد تخفیف دارید؟ <span>
+                                برای
+                                وارد کردن کد تخفیف خود اینجا کلیک کنید
+                            </span>
+                        </label>
+                    </form>
+                </div><!-- End .checkout-discount -->
+                <form action="#">
+                    <div class="row">
+                        
+
+                        @if (ViewBag.Errors.Count < 1) // don't show checkout form if there are errors
+                        {
+                            @Html.Action("CheckoutForm", "Shop", new { invoiceNumber = ViewBag.InvoiceNumber })
+                        }
+                        <aside class="col-lg-3">
+                            <div class="summary">
+                                <h3 class="summary-title">سفارش شما</h3><!-- End .summary-title -->
+
+                                <table class="table table-summary">
+                                    <thead>
+                                        <tr>
+                                            <th>محصول</th>
+                                            <th class="text-left">جمع</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        @foreach (var item in Model.CartItems)
+                                        {
+                                            <tr>
+                                                <td><a href="./Product/@item.Id/@item.ProductName.Replace(' ', '-')">@item.ProductName</a></td>
+                                                <td class="text-left">@item.Price.ToString("##,###") تومان</td>
+                                            </tr>
+                                        }
+
+                                        @*<tr>
+                            <td><a href="#">سارافون آبی بلند</a></td>
+                            <td class="text-left">152,000 تومان</td>
+                        </tr>*@
+                                        @*@{
+                            var overallPrice = ViewBag.DiscountAmount + Model.TotalPrice;
+                            var strDiscount = ViewBag.DiscountAmount == 0 ? "0 تومان" : ViewBag.DiscountAmount.ToString("##,###") + " تومان";
+                        }*@
+                                        <tr class="summary-subtotal">
+                                            <td>جمع سبد خرید</td>
+                                            <td class="text-left">@overallPrice.ToString("##,###") تومان</td>
+                                        </tr><!-- End .summary-subtotal -->
+                                        <tr class="summary-subtotal">
+                                            <td>تخفیف</td>
+                                            <td class="text-left">@strDiscount</td>
+                                        </tr><!-- End .summary-subtotal -->
+                                        @if (overallPrice > 200000)
+                                        {
+                                            <tr>
+                                                <td>شیوه ارسال : </td>
+                                                <td class="text-left">ارسال رایگان</td>
+                                            </tr>
+                                        }
+                                        <tr>
+                                            <td>تاریخ </td>
+                                            <td class="text-left">@ViewBag.Today</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>شماره سفارش</b></td>
+                                            <td class="text-left">#@ViewBag.InvoiceNumber</td>
+                                        </tr>
+                                        <tr class="summary-total">
+                                            <td>مبلغ قابل پرداخت :</td>
+                                            <td class="text-left">@Model.TotalPrice.ToString("##,###") تومان</td>
+                                        </tr><!-- End .summary-total -->
+                                    </tbody>
+                                </table><!-- End .table table-summary -->
+
+                                <div class="accordion-summary" id="accordion-payment">
+                                    <div class="card">
+                                        <div class="card-header" id="heading-1">
+                                            <h2 class="card-title">
+                                                <a role="button" data-toggle="collapse" href="#collapse-1"
+                                                   aria-expanded="true" aria-controls="collapse-1">
+                                                    درگاه بانک ملت
+                                                </a>
+                                            </h2>
+                                        </div><!-- End .card-header -->
+                                        <div id="collapse-1" class="collapse show" aria-labelledby="heading-1"
+                                             data-parent="#accordion-payment">
+                                            <div class="card-body">
+                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن
+                                                ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با تولید
+                                                سادگی نامفهوم.
+                                            </div><!-- End .collapse -->
+                                        </div><!-- End .card -->
+
+                                        <div class="card">
+                                            <div class="card-header" id="heading-2">
+                                                <h2 class="card-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse"
+                                                       href="#collapse-2" aria-expanded="false"
+                                                       aria-controls="collapse-2">
+                                                        درگاه شاپرک
+                                                    </a>
+                                                </h2>
+                                            </div><!-- End .card-header -->
+                                            <div id="collapse-2" class="collapse" aria-labelledby="heading-2"
+                                                 data-parent="#accordion-payment">
+                                                <div class="card-body">
+                                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوملورم ایپسوم متن
+                                                    ساختگی با تولید سادگی نامفهوم.
+                                                </div><!-- End .card-body -->
+                                            </div><!-- End .collapse -->
+                                        </div><!-- End .card -->
+
+                                        <div class="card">
+                                            <div class="card-header" id="heading-3">
+                                                <h2 class="card-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse"
+                                                       href="#collapse-3" aria-expanded="false"
+                                                       aria-controls="collapse-3">
+                                                        زرین پال <small class="float-left paypal-link">
+                                                            زرین پال
+                                                            چیست؟
+                                                        </small>
+                                                    </a>
+                                                </h2>
+                                            </div><!-- End .card-header -->
+                                            <div id="collapse-3" class="collapse" aria-labelledby="heading-3"
+                                                 data-parent="#accordion-payment">
+                                                <div class="card-body">
+                                                    لورم ایپسوم متن ساختگی با تولید سادگی
+                                                    نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.
+                                                </div><!-- End .card-body -->
+                                            </div><!-- End .collapse -->
+                                        </div><!-- End .card -->
+
+                                        <div class="card">
+                                            <div class="card-header" id="heading-4">
+                                                <h2 class="card-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse"
+                                                       href="#collapse-4" aria-expanded="false"
+                                                       aria-controls="collapse-4">
+                                                        واریز بانک
+                                                    </a>
+                                                </h2>
+                                            </div><!-- End .card-header -->
+                                            <div id="collapse-4" class="collapse" aria-labelledby="heading-4"
+                                                 data-parent="#accordion-payment">
+                                                <div class="card-body">
+                                                    لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم
+                                                    متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با
+                                                    تولید سادگی نامفهوم.
+                                                </div><!-- End .card-body -->
+                                            </div><!-- End .collapse -->
+                                        </div><!-- End .card -->
+
+                                        <div class="card">
+                                            <div class="card-header" id="heading-5">
+                                                <h2 class="card-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse"
+                                                       href="#collapse-5" aria-expanded="false"
+                                                       aria-controls="collapse-5">
+                                                        کارت به کارت
+                                                    </a>
+                                                </h2>
+                                            </div><!-- End .card-header -->
+                                            <div id="collapse-5" class="collapse" aria-labelledby="heading-5"
+                                                 data-parent="#accordion-payment">
+                                                <div class="card-body">
+                                                    لورم ایپسوم متن ساختگی با تولید سادگی
+                                                    نامفهوم لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم.
+                                                </div><!-- End .card-body -->
+                                            </div><!-- End .collapse -->
+                                        </div><!-- End .card -->
+                                    </div><!-- End .accordion -->
+
+                                    <button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">
+                                        <span class="btn-text">ثبت</span>
+                                        <span class="btn-hover-text">پرداخت</span>
+                                    </button>
+                                </div><!-- End .summary -->
+                        </aside><!-- End .col-lg-3 -->
+                    </div><!-- End .row -->
+                </form>
+            </div><!-- End .container -->
+        </div><!-- End .checkout -->
+    </div><!-- End .page-content -->
+</main><!-- End .main -->
+
+
+
+
 @section scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
