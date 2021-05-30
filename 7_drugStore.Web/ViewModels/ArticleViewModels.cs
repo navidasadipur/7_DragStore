@@ -110,6 +110,7 @@ namespace drugStore7.Web.ViewModels
         {
             this.Id = article.Id;
             this.CategoryId = article.ArticleCategoryId.Value;
+            this.CategoryTitle = article.ArticleCategory.Title;
             this.Title = article.Title;
             this.Image = article.Image;
             this.ShortDescription = article.ShortDescription;
@@ -121,6 +122,7 @@ namespace drugStore7.Web.ViewModels
         }
         public int Id { get; set; }
         public int CategoryId { get; set; }
+        public string CategoryTitle { get; set; }
         public string Title { get; set; }
         public string Image { get; set; }
         public string ShortDescription { get; set; }
