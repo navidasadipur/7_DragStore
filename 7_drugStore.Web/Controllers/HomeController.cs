@@ -68,6 +68,8 @@ namespace drugStore7.Web.Controllers
 
             var popup = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Popup);
 
+            ViewBag.BackImage = _staticContentRepo.GetStaticContentDetail((int)StaticContents.BackGroundImage).Image;
+
             return View(popup);
         }
 
@@ -199,7 +201,17 @@ namespace drugStore7.Web.Controllers
             var products = _productService.GetTopSoldProductsWithPrice(take);
             var vm = new List<ProductWithPriceViewModel>();
             foreach (var product in products)
-                vm.Add(new ProductWithPriceViewModel(product));
+            {
+                var tempVm = new ProductWithPriceViewModel(product);
+
+                var group = _productGroupRepo.GetGroupByProductId(product.Id);
+
+                tempVm.ProductGroupId = group.Id;
+
+                tempVm.ProductGroupTitle = group.Title;
+
+                vm.Add(tempVm);
+            }
 
             return PartialView(vm);
         }

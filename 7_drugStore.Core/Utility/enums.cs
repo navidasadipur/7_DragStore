@@ -43,7 +43,7 @@ namespace drugStore7.Core.Utility
         DiscountNews = 5027,
 
         Logo = 14,
-        BackGroundImage = 4022,
+        BackGroundImage = 2,
 
         BlogAd = 32,
     }
