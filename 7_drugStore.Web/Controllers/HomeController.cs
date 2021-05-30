@@ -358,19 +358,19 @@ namespace drugStore7.Web.Controllers
         //    return View();
         //}
 
-        public ActionResult Checkout()
-        {
-            ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
+        //public ActionResult Checkout()
+        //{
+        //    ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
 
-            return View();
-        }
+        //    return View();
+        //}
 
-        public ActionResult Cart()
-        {
-            ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
+        //public ActionResult Cart()
+        //{
+        //    ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
 
-            return View();
-        }
+        //    return View();
+        //}
 
         [Route("About")]
         public ActionResult About()
