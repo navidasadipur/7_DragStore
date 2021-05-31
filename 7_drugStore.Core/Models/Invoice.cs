@@ -33,6 +33,12 @@ namespace drugStore7.Core.Models
         public ICollection<InvoiceItem> InvoiceItems { get; set; }
         public int? GeoDivisionId { get; set; }
         public GeoDivision GeoDivision { get; set; }
+        [DisplayName("نام شرکت")]
+        public string CompanyName { get; set; }
+        [DisplayName("کشور")]
+        public string Country { get; set; }
+        [DisplayName("شهر")]
+        public string City { get; set; }
         [MaxLength(500, ErrorMessage = "آدرس وارد شده باید از 500 کارکتر کمتر باشد")]
         [DisplayName("آدرس")]
         public string Address { get; set; }
@@ -45,6 +51,8 @@ namespace drugStore7.Core.Models
         [DisplayName("ایمیل")]
         [EmailAddress(ErrorMessage = "ایمیل نا معتبر")]
         public string Email { get; set; }
+        [DisplayName("توضیحات")]
+        public string Description { get; set; }
         [DisplayName("پرداخت شده")]
         public bool IsPayed { get; set; }
         public int? DiscountCodeId { get; set; }

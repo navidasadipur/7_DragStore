@@ -7,13 +7,13 @@ namespace drugStore7.Infratructure.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Updatedcontactform2 : IMigrationMetadata
+    public sealed partial class ChangeInvoceTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Updatedcontactform2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeInvoceTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202101081430454_Updated-contactform2"; }
+            get { return "202105310735360_ChangeInvoceTable"; }
         }
         
         string IMigrationMetadata.Source
