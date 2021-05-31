@@ -190,7 +190,7 @@ namespace drugStore7.Web.ViewModels
 
         public int GeoDivisionId { get; set; }
         
-        [Display(Name = "توضیحات")]
+        [Display(Name = "توضیحات(اختیاری)")]
         [DataType(DataType.MultilineText)]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(800, ErrorMessage = "{0} باید کمتر از 800 کارکتر باشد")]
