@@ -831,16 +831,16 @@
                                     )
                                 </a>
                             </div><!-- End .rating-container -->
+                                @if (Model.PriceAfterDiscount < Model.Price)
+                                {
+                                    <span class="product-price"><span id="productPriceAfterDiscount">@Model.PriceAfterDiscount.ToString("##,###")&nbsp;</span>تومان</span>
 
-                            @if (Model.PriceAfterDiscount < Model.Price)
-                            {
-                                <span class="product-price"><span id="productPriceAfterDiscount">@Model.PriceAfterDiscount.ToString("##,###")&nbsp;</span>تومان</span>
-                                <del class="price old-price"><span id="productPrice">@Model.Price.ToString("##,###")</span> </del>
-                            }
-                            else if (Model.Price != 0)
-                            {
-                                <span class="product-price"><span id="productPrice">@Model.Price.ToString("##,###") &nbsp;</span> تومان</span>
-                            }
+                                    <del class="price"><span id="productPrice">@Model.Price.ToString("##,###")</span> </del>
+                                }
+                                else if (Model.Price != 0)
+                                {
+                                    <span class="product-price"><span id="productPrice">@Model.Price.ToString("##,###") &nbsp;</span> تومان</span>
+                                }
 
                             <div class="product-content">
                                 <p>

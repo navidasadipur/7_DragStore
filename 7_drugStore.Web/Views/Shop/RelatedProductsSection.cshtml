@@ -111,7 +111,14 @@
     {
         <div class="product product-7 text-center">
             <figure class="product-media">
-                <span class="product-label label-new">جدید</span>
+                @if (item.DiscountAmount > 0)
+                {
+                    <span class="product-label label-sale">فروش ویژه</span>
+                }
+                @if (item.Price == 0)
+                {
+                    <span class="product-label label-out">ناموجود</span>
+                }
                 <a href="/Shop/Product/@item.Id">
                     <img width="300px" height="300px" src="/Files/ProductImages/Thumb/@item.Image" alt="@item.ShortTitle"
                          class="product-image">
@@ -127,11 +134,11 @@
                     <a href="/Shop/Product/@item.Id" class="btn-product-icon btn-quickview"
                        title="مشاهده سریع"><span>مشاهده سریع</span></a>
                     @*<a href="#" class="btn-product-icon btn-compare" title="مقایسه">
-                        <span>
-                            لیست
-                            مقایسه
-                        </span>
-                    </a>*@
+                <span>
+                    لیست
+                    مقایسه
+                </span>
+            </a>*@
                 </div><!-- End .product-action-vertical -->
 
                 <div class="product-action">
@@ -143,11 +150,33 @@
                 <h3 class="product-title text-center"><a href="/Shop/Product/@item.Id">محصول</a></h3>
                 <!-- End .product-title -->
                 <div class="product-price">
-                    60,000 تومان
+                    @if (item.Price == 0)
+                    {
+                        <a href="javascript:void(0)">-</a>
+                    }
+                    else if (item.PriceAfterDiscount < item.Price)
+                    {
+                        <span class="new-price">@item.PriceAfterDiscount.ToString("##,###") تومان</span>
+                        <span class="old-price">@item.Price.ToString("##,###")</span>
+
+                        @*<del class="price old-price">@item.Price.ToString("##,###")</del>
+            <span class="price">@item.PriceAfterDiscount.ToString("##,###") تومان</span>*@
+                    }
+                    else
+                    {
+                        <span class="new-price">@item.Price.ToString("##,###") تومان</span>
+
+                        @*<span class="price">@item.Price.ToString("##,###") تومان</span>*@
+                    }
                 </div><!-- End .product-price -->
                 <div class="ratings-container">
                     <div class="ratings">
-                        <div class="ratings-val" style="width: 20%;"></div><!-- End .ratings-val -->
+                        @{
+                            var rate = (item.Rate < 6 ? item.Rate : 5);
+                            rate = (rate > 0 ? rate : 0);
+                            var ratingPercentage = (item.Rate * 100) / 5;
+                        }
+                        <div class="ratings-val" style="width: @ratingPercentage%;"></div><!-- End .ratings-val -->
                     </div><!-- End .ratings -->
                     @*<span class="ratings-text">( 2 دیدگاه )</span>*@
                 </div><!-- End .rating-container -->

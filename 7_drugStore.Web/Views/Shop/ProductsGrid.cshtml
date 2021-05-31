@@ -138,14 +138,28 @@
 <div class="products mb-3">
     @if (Model.Any())
     {
+        var i = 0;
         <div class="row justify-content-center">
             @foreach (var item in Model)
             {
+                i++;
                 var discountTypeStr = ((int)item.DiscountType) == 1 ? "درصد" : "تومان";
                 <div class="col-6 col-md-4 col-lg-4 col-xl-3">
                     <div class="product product-7 text-center">
                         <figure class="product-media">
-                            <span class="product-label label-new">جدید</span>
+                            @if (item.DiscountAmount > 0)
+                            {
+                                <span class="product-label label-sale">فروش ویژه</span>
+                            }
+                            @if (i <= 10)
+                            {
+                                <span class="product-label label-new">جدید</span>
+                            }
+
+                            @if (item.Price == 0)
+                            {
+                                <span class="product-label label-out">ناموجود</span>
+                            }
                             <a href="/Shop/Product/@item.Id">
                                 <img width="200px" height="200px" src="~/Files/ProductImages/Thumb/@item.Image"
                                      alt="@item.ShortTitle" class="product-image">
@@ -163,7 +177,7 @@
                                    class="btn-product-icon btn-quickview"
                                    title="مشاهده سریع محصول"><span>مشاهده سریع</span></a>
                                 @*<a href="#" class="btn-product-icon btn-compare"
-                                   title="مقایسه"><span>مقایسه</span></a>*@
+            title="مقایسه"><span>مقایسه</span></a>*@
                             </div><!-- End .product-action-vertical -->
 
                             <div class="product-action">
