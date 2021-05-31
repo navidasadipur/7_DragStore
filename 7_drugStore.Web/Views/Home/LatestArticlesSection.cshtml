@@ -118,7 +118,7 @@
         {
             <article class="entry">
                 <figure class="entry-media">
-                    <a href="/Blog/Article/@article.Id/@article.Title">
+                    <a href="/Blog/Article/@article.Id/@article.Title.Replace(' ', '-')">
                         <img src="~/Files/ArticleImages/Image/@article.Image" alt="@article.Title">
                     </a>
                 </figure><!-- End .entry-media -->
@@ -129,11 +129,11 @@
                     </div><!-- End .entry-meta -->
 
                     <h3 class="entry-title text-center">
-                        <a href="/Blog/Article/@article.Id/@article.Title">@article.Title</a>
+                        <a href="/Blog/Article/@article.Id/@article.Title.Replace(' ', '-')">@article.Title</a>
                     </h3><!-- End .entry-title -->
 
                     <div class="entry-content">
-                        <a href="/Blog/Article/@article.Id/@article.Title" class="read-more">ادامه خواندن</a>
+                        <a href="/Blog/Article/@article.Id/@article.Title.Replace(' ', '-')" class="read-more">ادامه خواندن</a>
                     </div><!-- End .entry-content -->
                 </div><!-- End .entry-body -->
             </article><!-- End .entry -->

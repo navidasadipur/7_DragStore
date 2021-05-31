@@ -337,20 +337,20 @@
                                                                             <li>
                                                                                 @if (group.Children != null)
                                                                                 {
-                                                                                    <a href="#" class="sf-with-ul">@group.Title</a>
+                                                                                    <a href="/Shop/ProductList/@group.Id" class="sf-with-ul">@group.Title</a>
                                                                                     <ul>
                                                                                         @foreach (var group2 in group.Children)
                                                                                         {
                                                                                             <li>
                                                                                                 @if (group2.Children != null)
                                                                                                 {
-                                                                                                    <a href="productlist.html" class="sf-with-ul">@group2.Title</a>
+                                                                                                    <a href="/Shop/ProductList/@group2.Id" class="sf-with-ul">@group2.Title</a>
                                                                                                     <ul>
 
                                                                                                         @foreach (var item in group2.Children)
                                                                                                         {
                                                                                                             <li>
-                                                                                                                <a href="productlist.html">@item.Title</a>
+                                                                                                                <a href="/Shop/ProductList/@item.Id">@item.Title</a>
                                                                                                             </li>
                                                                                                         }
 
@@ -358,7 +358,7 @@
                                                                                                 }
                                                                                                 else
                                                                                                 {
-                                                                                                    <a href="productlist.html">@group2.Title</a>
+                                                                                                    <a href="/Shop/ProductList/@group2.Id">@group2.Title</a>
                                                                                                 }
                                                                                             </li>
                                                                                         }
@@ -366,7 +366,7 @@
                                                                                 }
                                                                                 else
                                                                                 {
-                                                                                    <a href="#">@group.Title</a>
+                                                                                    <a href="/Shop/ProductList/@group.Id">@group.Title</a>
                                                                                 }
                                                                             </li>
                                                                         }
