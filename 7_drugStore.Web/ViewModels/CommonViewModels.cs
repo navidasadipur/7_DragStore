@@ -170,6 +170,7 @@ namespace drugStore7.Web.ViewModels
         public string Phone { get; set; }
 
         [Display(Name = "نام شرکت")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public string CompanyName { get; set; }
 
         [Display(Name = "کشور")]
@@ -192,7 +193,6 @@ namespace drugStore7.Web.ViewModels
         
         [Display(Name = "توضیحات(اختیاری)")]
         [DataType(DataType.MultilineText)]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(800, ErrorMessage = "{0} باید کمتر از 800 کارکتر باشد")]
         public string Message { get; set; }
 
