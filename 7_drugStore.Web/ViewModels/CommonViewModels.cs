@@ -162,23 +162,38 @@ namespace drugStore7.Web.ViewModels
         [Display(Name = "ایمیل")]
         [EmailAddress(ErrorMessage = "ایمیل نا معتبر")]
         [MaxLength(400, ErrorMessage = "{0} باید کمتر از 400 کارکتر باشد")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public string Email { get; set; }
         [Display(Name = "تلفن")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(400, ErrorMessage = "{0} باید کمتر از 400 کارکتر باشد")]
         public string Phone { get; set; }
+
+        [Display(Name = "نام شرکت")]
+        public string CompanyName { get; set; }
+
+        [Display(Name = "کشور")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        public string Country { get; set; }
+
+        [Display(Name = "شهر")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        public string City { get; set; }
+
         [Display(Name = "آدرس")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public string Address { get; set; }
+
         [Display(Name = "کد پستی")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public string PostalCode { get; set; }
+
         public int GeoDivisionId { get; set; }
-        /*
-        [Display(Name = "پیام")]
+        
+        [Display(Name = "توضیحات")]
         [DataType(DataType.MultilineText)]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        [MaxLength(800, ErrorMessage = "{0} باید کمتر از 800 کارکتر باشد")]*/
+        [MaxLength(800, ErrorMessage = "{0} باید کمتر از 800 کارکتر باشد")]
         public string Message { get; set; }
 
         public string DiscountCode { get; set; }
