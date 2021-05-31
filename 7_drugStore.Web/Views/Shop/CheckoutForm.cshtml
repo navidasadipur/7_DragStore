@@ -83,15 +83,15 @@
             @Html.LabelFor(model => model.CompanyName, new { })*
             @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "form-control " } })
             @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "form-text text-danger" })
-            <label>نام شرکت (اختیاری)</label>
-            <input type="text" class="form-control">
+            @*<label>نام شرکت (اختیاری)</label>
+            <input type="text" class="form-control">*@
         </div>
         <div class="col-sm-6">
             @Html.LabelFor(model => model.Country, new { })*
-            @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control " } })
+            @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control ", @Value= "ایران" }  })
             @Html.ValidationMessageFor(model => model.Country, "", new { @class = "form-text text-danger" })
-            <label>کشور *</label>
-            <input type="text" class="form-control" required>
+            @*<label>کشور *</label>
+            <input type="text" class="form-control" required>*@
         </div>
     </div>
     <div class="row">
@@ -105,8 +105,8 @@
             @Html.LabelFor(model => model.City, new { })*
             @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control " } })
             @Html.ValidationMessageFor(model => model.City, "", new { @class = "form-text text-danger" })
-            <label>شهر *</label>
-            <input type="text" class="form-control" required>
+            @*<label>شهر *</label>
+            <input type="text" class="form-control" required>*@
 
         </div><!-- End .col-sm-6 -->
         @*<div class="col-sm-6">

@@ -687,7 +687,10 @@ namespace drugStore7.Web.Controllers
                     currentInvoice.AddedDate = DateTime.Now;
                     currentInvoice.CustomerId = customer.Id;
                     currentInvoice.CustomerName = checkoutForm.Name;
+                    currentInvoice.CompanyName = checkoutForm.CompanyName;
+                    currentInvoice.Country = checkoutForm.Country;
                     currentInvoice.GeoDivisionId = checkoutForm.GeoDivisionId;
+                    currentInvoice.City = checkoutForm.City;
                     currentInvoice.Address = checkoutForm.Address;
                     currentInvoice.Phone = checkoutForm.Phone;
                     currentInvoice.PostalCode = checkoutForm.PostalCode;
@@ -798,7 +801,10 @@ namespace drugStore7.Web.Controllers
                     currentInvoice.AddedDate = DateTime.Now;
                     currentInvoice.CustomerId = customer.Id;
                     currentInvoice.CustomerName = checkoutForm.Name;
+                    currentInvoice.CompanyName = checkoutForm.CompanyName;
+                    currentInvoice.Country = checkoutForm.Country;
                     currentInvoice.GeoDivisionId = checkoutForm.GeoDivisionId;
+                    currentInvoice.City = checkoutForm.City;
                     currentInvoice.Address = checkoutForm.Address;
                     currentInvoice.Phone = checkoutForm.Phone;
                     currentInvoice.PostalCode = checkoutForm.PostalCode;
