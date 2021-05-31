@@ -135,9 +135,12 @@
                         {
                             <span class="product-label label-sale">فروش ویژه</span>
                         }
-                        <span class="product-label label-out">ناموجود</span>
 
-                        <span class="product-label label-new">جدید</span>
+                        @if (item.Price == 0)
+                        {
+                            <span class="product-label label-out">ناموجود</span>
+                        }
+
                         <a href="/Shop/Product/@item.Id">
                             <img src="/Files/ProductImages/Thumb/@item.Image"
                                  alt="@item.ShortTitle" class="product-image">

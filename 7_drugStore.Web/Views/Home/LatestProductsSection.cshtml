@@ -129,7 +129,10 @@
                         {
                             <span class="product-label label-sale">فروش ویژه</span>
                         }
-                        <span class="product-label label-out">ناموجود</span>
+                        @if (item.Price == 0)
+                        {
+                            <span class="product-label label-out">ناموجود</span>
+                        }
 
                         <span class="product-label label-new">جدید</span>
 
