@@ -1,7 +1,7 @@
 ﻿@model List<drugStore7.Core.Models.Offer>
 
 
-<div class="sub-banner-part pb-100">
+@*<div class="sub-banner-part pb-100">
     <div class="container">
         @if (Model.Any())
         {
@@ -55,7 +55,7 @@
             </div>
         }
     </div>
-</div>
+</div>*@
 
 
 <div class="container banner-container">
@@ -70,12 +70,12 @@
                 </a>
                 <div class="banner-content">
                     <div class="title">
-                        <a href="category.html">تا 30% تخفیف @item.Title</a>
+                        <a href="category.html">@item.Title</a>
                     </div>
                     <div class="content">
                         <a href="category.html">
-                            <h3 class="highlight">برندهای معروف </h3>
-                            <h4>برای همه سنین</h4>
+                            <h3 class="highlight">@Html.Raw(item.Description)</h3>
+                            @*<h4>برای همه سنین</h4>*@
                         </a>
                     </div>
                     <div class="action">
