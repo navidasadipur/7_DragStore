@@ -65,21 +65,21 @@
             @foreach (var item in Model)
             {
                 <div class="col-lg-6 col-md-6 col-sm-6 banner-lg">
-                <a href="category.html">
+                <a href="~/Offer?offerId=@item.Id">
                     <img src="/Files/OffersImages/@item.Image">
                 </a>
                 <div class="banner-content">
                     <div class="title">
-                        <a href="category.html">@item.Title</a>
+                        <a href="~/Offer?offerId=@item.Id">@item.Title</a>
                     </div>
                     <div class="content">
-                        <a href="category.html">
+                        <a href="~/Offer?offerId=@item.Id">
                             <h3 class="highlight">@Html.Raw(item.Description)</h3>
                             @*<h4>برای همه سنین</h4>*@
                         </a>
                     </div>
                     <div class="action">
-                        <a href="category.html">خرید</a>
+                        <a href="~/Offer?offerId=@item.Id">خرید</a>
                     </div>
                 </div>
             </div>
