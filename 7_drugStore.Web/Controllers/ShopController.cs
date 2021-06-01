@@ -108,11 +108,17 @@ namespace drugStore7.Web.Controllers
                 //banner = _productGroupRepo.GetProductGroup(id.Value).Image;
                 //banner = "/Files/ProductGroupImages/Image/" + banner;
 
+
                 vm.Features = _featuresRepo.GetAllGroupFeatures(id.Value);
                 vm.Brands = _brandsRepo.GetAllGroupBrands(id.Value);
                 var selectedProductGroup = _productGroupRepo.Get(id.Value);
-                //var childrenGroups = _productGroupRepo.GetChildrenProductGroups(id.Value);
-                var childrenGroups = _productGroupRepo.GetChildrenProductGroups();
+                var childrenGroups = _productGroupRepo.GetChildrenProductGroups(id.Value);
+
+                //vm.Features = _featuresRepo.GetAllFeatures();
+                //vm.Brands = _brandsRepo.GetAll();
+                //var selectedProductGroup = _productGroupRepo.Get(id.Value);
+                //var childrenGroups = _productGroupRepo.GetChildrenProductGroups();
+
                 vm.ProductGroups = childrenGroups;
                 ViewBag.ProductGroupName = selectedProductGroup.Title;
                 ViewBag.ProductGroupId = selectedProductGroup.Id;
