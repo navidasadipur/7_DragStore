@@ -115,6 +115,10 @@
     <Compile Include="Migrations\202105310735360_ChangeInvoceTable.Designer.cs">
       <DependentUpon>202105310735360_ChangeInvoceTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106010811559_AddDescripotionToOfferModel.cs" />
+    <Compile Include="Migrations\202106010811559_AddDescripotionToOfferModel.Designer.cs">
+      <DependentUpon>202106010811559_AddDescripotionToOfferModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -183,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105310735360_ChangeInvoceTable.resx">
       <DependentUpon>202105310735360_ChangeInvoceTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106010811559_AddDescripotionToOfferModel.resx">
+      <DependentUpon>202106010811559_AddDescripotionToOfferModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -39,6 +39,7 @@
 .Columns(columns =>
 {
     columns.Bound(model => model.Title);
+    columns.Bound(model => model.Description);
     columns.Bound(item => @item.Image).Filterable(false).Groupable(false).Title("تصویر")
         .Template(@<text>
                       @if (item.Image != null)

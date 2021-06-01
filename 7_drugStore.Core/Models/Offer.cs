@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace drugStore7.Core.Models
 {
@@ -14,6 +15,10 @@ namespace drugStore7.Core.Models
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(600, ErrorMessage = "{0} باید کمتر از 600 کارکتر باشد")]
         public string Title { get; set; }
+        [Display(Name = "توضیح")]
+        [DataType(DataType.MultilineText)]
+        [AllowHtml]
+        public string Description { get; set; }
         [Display(Name = "تصویر")]
         public string Image { get; set; }
         public ICollection<Discount> Discounts { get; set; }
