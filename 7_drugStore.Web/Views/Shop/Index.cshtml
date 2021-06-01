@@ -294,45 +294,45 @@
                                                         </div>
                                                     }
                                                     @*<li><a href="product.html">قرص استامینوقن</a></li>
-            <li><a href="product.html">قرص ژلوفن</a></li>
-            <li><a href="product.html">قرص سرماخوردگی</a></li>*@
+                                                        <li><a href="product.html">قرص ژلوفن</a></li>
+                                                        <li><a href="product.html">قرص سرماخوردگی</a></li>*@
 
 
                                                 }
                                                 @*<div class="widget widget-collapsible border-0">
-            <h3 class="widget-title widget-title-custome">
-                <a data-toggle="collapse" href="#category1" role="button"
-                   aria-expanded="true"
-                   aria-controls="category1">
-                    قرص
-                </a>
-            </h3>
-        </div>
-        <div class="collapse" id="category1">
-            <ul class="category-collaps">
-                <li><a href="product.html">قرص استامینوقن</a></li>
-                <li><a href="product.html">قرص ژلوفن</a></li>
-                <li><a href="product.html">قرص سرماخوردگی</a></li>
-            </ul>
-        </div>
-        <!--End Item 1-->
-        <!--Item 2-->
-        <div class="widget widget-collapsible border-0">
-            <h3 class="widget-title widget-title-custome">
-                <a data-toggle="collapse" href="#category2" role="button"
-                   aria-expanded="true"
-                   aria-controls="category2">
-                    ضدعفونی کننده
-                </a>
-            </h3>
-        </div>
-        <div class="collapse" id="category2">
-            <ul class="category-collaps">
-                <li><a href="product.html">ژل ضدعفونی کننده</a></li>
-                <li><a href="product.html">اسپری ضدعفونی کننده</a></li>
-            </ul>
-        </div>
-        <!--End Item 3-->*@
+                                                        <h3 class="widget-title widget-title-custome">
+                                                            <a data-toggle="collapse" href="#category1" role="button"
+                                                               aria-expanded="true"
+                                                               aria-controls="category1">
+                                                                قرص
+                                                            </a>
+                                                        </h3>
+                                                    </div>
+                                                    <div class="collapse" id="category1">
+                                                        <ul class="category-collaps">
+                                                            <li><a href="product.html">قرص استامینوقن</a></li>
+                                                            <li><a href="product.html">قرص ژلوفن</a></li>
+                                                            <li><a href="product.html">قرص سرماخوردگی</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <!--End Item 1-->
+                                                    <!--Item 2-->
+                                                    <div class="widget widget-collapsible border-0">
+                                                        <h3 class="widget-title widget-title-custome">
+                                                            <a data-toggle="collapse" href="#category2" role="button"
+                                                               aria-expanded="true"
+                                                               aria-controls="category2">
+                                                                ضدعفونی کننده
+                                                            </a>
+                                                        </h3>
+                                                    </div>
+                                                    <div class="collapse" id="category2">
+                                                        <ul class="category-collaps">
+                                                            <li><a href="product.html">ژل ضدعفونی کننده</a></li>
+                                                            <li><a href="product.html">اسپری ضدعفونی کننده</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <!--End Item 3-->*@
 
                                             </div>
                                         </div><!-- End .widget -->
@@ -405,9 +405,34 @@
                 </div><!-- End .page-content -->
             </main><!-- End .main -->
             <!-- Loading -->
-            @section scripts
+@section scripts
 {
+    <script>
+    var brandIds = null;
+    var groupIds = null;
+    var productIds = null;
+    </script>
+
+    @if (ViewBag.brandIds != null)
+    {
+        <script>
+            brandIds = "@ViewBag.BrandIds";
+        </script>
+    }
+    @if (ViewBag.groupIds != null)
+    {
+        <script>
+            groupIds = "@ViewBag.GroupIds";
+        </script>
+    }
+    @if (ViewBag.productIds != null)
+    {
+        <script>
+            productIds = "@ViewBag.ProductIds";
+        </script>
+    }
                 <script>
+        var selectedGroupId = @Model.SelectedGroupId;
 
         function GetGrid(page, groupId) {
             $("#loading").show();
@@ -417,7 +442,8 @@
             }
             var sort = $("#sort").find(":selected").val();
             var take = $("#take").find(":selected").val();
-            var categoryId = groupId !== undefined ? groupId : null ;
+            var categoryId = groupId !== undefined ? groupId : null;
+            categoryId = categoryId === null ? selectedGroupId : categoryId;
             var searchString =  '@ViewBag.SearchString';
             var brands = [];
             var priceFrom = null;
@@ -456,7 +482,10 @@
                 subFeatures: subFeatures.join('-'),
                 pageNumber: pageNumber,
                 take: take,
-                sort: sort
+                sort: sort,
+                BrandIds: brandIds,
+                GroupIds: groupIds,
+                ProductIds: productIds,
             }
             $.ajax({
                 type: 'GET',

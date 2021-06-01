@@ -35,6 +35,7 @@ namespace drugStore7.Web.Controllers
         private CustomersRepository _customerRepo;
         private ShoppingRepository _shoppingRepo;
         private SMSLogRepository _smsLogRepo;
+        private readonly DiscountsRepository _discountsRepo;
 
         public ShopController(ProductService productService,
             ProductGroupsRepository productGroupRepo,
@@ -50,7 +51,8 @@ namespace drugStore7.Web.Controllers
             ShoppingRepository shoppingRepo,
             StaticContentDetailsRepository staticContentDetailsRepository,
             InvoicesRepository invoicesRepository,
-            SMSLogRepository smsLogRepository
+            SMSLogRepository smsLogRepository,
+            DiscountsRepository discountsRepo
             )
         {
             _productService = productService;
@@ -69,6 +71,7 @@ namespace drugStore7.Web.Controllers
             _staticContentRepo = staticContentDetailsRepository;
             _invoicesRepository = invoicesRepository;
             _smsLogRepo = smsLogRepository;
+            _discountsRepo = discountsRepo;
         }
         // GET: Products
         [Route("Shop/")]
@@ -76,7 +79,7 @@ namespace drugStore7.Web.Controllers
         [Route("Shop/ProductList/{id}")]
         [Route("Shop/ProductList")]
         [Route("Shop/ProductList/Search/{searchString}")]
-        public ActionResult Index(int? id, string searchString = null)
+        public ActionResult Index(int? id, string searchString = null, string groupIds = null, string productIds = null, string brandIds = null)
         {
             var vm = new ProductListViewModel();
             vm.SelectedGroupId = id ?? 0;
@@ -102,13 +105,14 @@ namespace drugStore7.Web.Controllers
             }
             else
             {
-                banner = _productGroupRepo.GetProductGroup(id.Value).Image;
-                banner = "/Files/ProductGroupImages/Image/" + banner;
+                //banner = _productGroupRepo.GetProductGroup(id.Value).Image;
+                //banner = "/Files/ProductGroupImages/Image/" + banner;
 
                 vm.Features = _featuresRepo.GetAllGroupFeatures(id.Value);
                 vm.Brands = _brandsRepo.GetAllGroupBrands(id.Value);
                 var selectedProductGroup = _productGroupRepo.Get(id.Value);
-                var childrenGroups = _productGroupRepo.GetChildrenProductGroups(id.Value);
+                //var childrenGroups = _productGroupRepo.GetChildrenProductGroups(id.Value);
+                var childrenGroups = _productGroupRepo.GetChildrenProductGroups();
                 vm.ProductGroups = childrenGroups;
                 ViewBag.ProductGroupName = selectedProductGroup.Title;
                 ViewBag.ProductGroupId = selectedProductGroup.Id;
@@ -121,7 +125,20 @@ namespace drugStore7.Web.Controllers
             //    banner = "/Files/StaticContentImages/Image/" + banner;
             //}
 
+            if (searchString != null)
+                ViewBag.SearchString = searchString;
+
+            if (groupIds != null)
+                ViewBag.GroupIds = groupIds;
+
+            if (productIds != null)
+                ViewBag.ProductIds = productIds;
+
+            if (brandIds != null)
+                ViewBag.BrandIds = brandIds;
+
             ViewBag.SearchString = searchString;
+
             ViewBag.Banner = banner;
 
             ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
@@ -161,6 +178,99 @@ namespace drugStore7.Web.Controllers
 
             products = _productService.GetProductsGrid(grid.categoryId, brandsIntArr, subFeaturesIntArr, grid.priceFrom, grid.priceTo, grid.searchString);
 
+            #region Get Products Base on Group, Brand and Products of "offer"
+
+            var allSearchedTargetProducts = new List<Product>();
+
+            if (grid.GroupIds != null || grid.ProductIds != null || grid.BrandIds != null)
+            {
+                //search based on multiple group ids
+                if (string.IsNullOrEmpty(grid.GroupIds) == false)
+                {
+                    var groupIdsIntArr = new List<int>();
+
+                    var groupIdsArr = grid.GroupIds.Split('-').ToList();
+                    groupIdsArr.ForEach(g => groupIdsIntArr.Add(Convert.ToInt32(g)));
+
+                    var allTargetGroups = new List<ProductGroup>();
+
+                    foreach (var id in groupIdsIntArr)
+                    {
+                        var group = _productGroupRepo.GetProductGroup(id);
+
+                        allTargetGroups.Add(group);
+                    }
+
+                    foreach (var group in allTargetGroups)
+                    {
+                        if (group != null)
+                        {
+                            var allProductsOfOneGroup = _productsRepo.getProductsByGroupId(group.Id);
+
+                            foreach (var product in allProductsOfOneGroup)
+                            {
+                                allSearchedTargetProducts.Add(product);
+                            }
+                        }
+                    }
+                }
+
+                //search based on multiple brand ids
+                if (string.IsNullOrEmpty(grid.BrandIds) == false)
+                {
+                    var brandIdsIntArr = new List<int>();
+
+                    var brandIdsArr = grid.BrandIds.Split('-').ToList();
+                    brandIdsArr.ForEach(b => brandIdsIntArr.Add(Convert.ToInt32(b)));
+
+                    var allTargetBrands = new List<Brand>();
+
+                    foreach (var id in brandIdsIntArr)
+                    {
+                        var brand = _brandsRepo.GetBrand(id);
+
+                        allTargetBrands.Add(brand);
+                    }
+
+                    foreach (var brand in allTargetBrands)
+                    {
+                        if (brand != null)
+                        {
+                            var allProductsOfOneBrand = _productsRepo.getProductsByBrandId(brand.Id);
+
+                            foreach (var product in allProductsOfOneBrand)
+                            {
+                                allSearchedTargetProducts.Add(product);
+                            }
+                        }
+                    }
+                }
+
+                //search based on multiple product ids
+                if (string.IsNullOrEmpty(grid.ProductIds) == false)
+                {
+                    var productIdsIntArr = new List<int>();
+
+                    var productIdsArr = grid.ProductIds.Split('-').ToList();
+                    productIdsArr.ForEach(b => productIdsIntArr.Add(Convert.ToInt32(b)));
+
+                    foreach (var id in productIdsIntArr)
+                    {
+                        var product = _productsRepo.GetProduct(id);
+
+                        //if product not found in allSearchedTargetProducts
+                        if (!allSearchedTargetProducts.Contains(product))
+                        {
+                            allSearchedTargetProducts.Add(product);
+                        }
+                    }
+                }
+
+                products = allSearchedTargetProducts;
+            }
+
+            #endregion
+
             #region Sorting
 
             if (grid.sort != "date")
@@ -183,6 +293,8 @@ namespace drugStore7.Web.Controllers
             }
             #endregion
 
+
+
             var count = products.Count;
             var skip = grid.pageNumber * grid.take - grid.take;
             int pageCount = (int)Math.Ceiling((double)count / grid.take);
@@ -196,6 +308,87 @@ namespace drugStore7.Web.Controllers
                 vm.Add(_productService.CreateProductWithPriceDto(product));
 
             return PartialView(vm);
+        }
+
+        [Route("offer")]
+        public ActionResult Offer(int offerId = 0)
+        {
+            var allGroupIds = new List<int>();
+            var allProductIds = new List<int>();
+            var allBrandIds = new List<int>();
+
+            if (offerId == 0)
+            {
+                return RedirectToAction("Index");
+            }
+
+            var allOfferDiscounts = _discountsRepo.GetAllOfferDiscountsByOfferId(offerId);
+
+            foreach (var discount in allOfferDiscounts)
+            {
+                if (discount.ProductGroupId != null)
+                {
+                    allGroupIds.Add(discount.ProductGroupId.Value);
+                }
+                else if (discount.ProductId != null)
+                {
+                    var product = _productsRepo.GetProduct(discount.ProductId.Value);
+
+                    allProductIds.Add(product.Id);
+                }
+                else if (discount.BrandId != null)
+                {
+                    allBrandIds.Add(discount.BrandId.Value);
+                }
+            }
+
+            //if (discount.ProductGroupId != null)
+            //{
+            //    groupId = discount.ProductGroupId.Value;
+            //}
+            //else if (discount.BrandId != null)
+            //{
+            //    brandId = discount.BrandId.Value.ToString();
+
+            //    //var allGroups = _productGroupsRepo.GetAllProductGroups();
+
+            //    //foreach (var group in allGroups)
+            //    //{
+            //    //    group.ProductGroupBrands = _productGroupsRepo.GetProductGroupBrands(group.Id);
+
+            //    //    var allGorupBrands = group.ProductGroupBrands.Where(gb => gb.IsDeleted == false && gb.BrandId == discount.BrandId).ToList();
+
+            //    //    if (allGorupBrands.Count() != 0)
+            //    //    {
+            //    //        groupId = allGorupBrands.Select(gb => gb.ProductGroupId).FirstOrDefault();
+            //    //    }
+            //    //}
+            //}
+            //else
+            //{
+            //    var allGroups = _productGroupsRepo.GetAllProductGroupsWithProducts();
+
+            //    foreach (var group in allGroups)
+            //    {
+            //        if (group.Products.Count() != 0)
+            //        {
+            //            allProducts = group.Products.Where(p => p.IsDeleted == false && p.Id == discount.ProductId).ToList();
+            //        }
+
+            //        if (allProducts.Count() != 0)
+            //        {
+            //            groupId = allProducts.Select(p => p.ProductGroupId).FirstOrDefault().Value;
+            //        }
+            //    }
+            //}
+
+            var allGroupIdsStr = string.Join("-", allGroupIds);
+
+            var allProductIdsStr = string.Join("-", allProductIds);
+
+            var allBrandIdsStr = string.Join("-", allBrandIds);
+
+            return RedirectToAction("Index", new { groupIds = allGroupIdsStr, productIds = allProductIdsStr, brandIds = allBrandIdsStr});
         }
 
         [Route("Shop/Product/{id}/{title}")]

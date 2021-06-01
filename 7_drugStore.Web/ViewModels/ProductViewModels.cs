@@ -93,6 +93,10 @@ namespace drugStore7.Web.ViewModels
         public int pageNumber { get; set; }
         public int take { get; set; }
         public string sort { get; set; }
+
+        public string BrandIds { get; set; }
+        public string GroupIds { get; set; }
+        public string ProductIds { get; set; }
     }
     public class ProductCommentViewModel
     {

@@ -54,6 +54,9 @@ namespace drugStore7.Infrastructure.Repositories
             return result;
         }
 
-
+        public List<Discount> GetAllOfferDiscountsByOfferId(int offerId)
+        {
+            return _context.Discounts.Where(d => d.IsDeleted == false && d.OfferId == offerId).ToList();
+        }
     }
 }

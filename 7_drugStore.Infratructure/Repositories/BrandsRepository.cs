@@ -23,5 +23,10 @@ namespace drugStore7.Infrastructure.Repositories
             var brands = pgBrands.Select(item => _context.Brands.Find(item.BrandId)).ToList();
             return brands;
         }
+
+        public Brand GetBrand(int id)
+        {
+            return _context.Brands.Where(b => b.IsDeleted == false && b.Id == id).FirstOrDefault();
+        }
     }
 }
