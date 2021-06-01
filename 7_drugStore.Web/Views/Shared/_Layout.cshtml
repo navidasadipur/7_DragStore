@@ -573,24 +573,24 @@
     <script src="~/Content/client/js/jquery.magnific-popup.min.js"></script>
     <script>
 
-        $(".spn-product-code").hover(function (e) {
-            e.stopPropagation();
-            var val = this.firstElementChild.firstElementChild.innerHTML;
-            $(".color-notification").html(val);
+        //$(".spn-product-code").hover(function (e) {
+        //    e.stopPropagation();
+        //    var val = this.firstElementChild.firstElementChild.innerHTML;
+        //    $(".color-notification").html(val);
 
-            var pos = $(this).position();
+        //    var pos = $(this).position();
 
-            var outerWidth = $(".color-notification").outerWidth() - 20;
+        //    var outerWidth = $(".color-notification").outerWidth() - 20;
 
 
-            if ($(window).outerWidth() < 768) {
-                $(".color-notification").css({ left: (pos.left - outerWidth) + "px", top: (pos.top + 72) + "px", display: "inline-block" });
-            }
-            else {
-                $(".color-notification").css({ left: (pos.left - outerWidth) + "px", top: (pos.top + 42) + "px", display: "inline-block" });
-            }
+        //    if ($(window).outerWidth() < 768) {
+        //        $(".color-notification").css({ left: (pos.left - outerWidth) + "px", top: (pos.top + 72) + "px", display: "inline-block" });
+        //    }
+        //    else {
+        //        $(".color-notification").css({ left: (pos.left - outerWidth) + "px", top: (pos.top + 42) + "px", display: "inline-block" });
+        //    }
 
-        });
+        //});
         $(".spn-product-code").mouseleave(function () {
 
             $(".color-notification").css({ display: "none" });

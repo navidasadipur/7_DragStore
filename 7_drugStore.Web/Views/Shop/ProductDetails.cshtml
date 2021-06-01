@@ -4,6 +4,12 @@
     ViewBag.Title = "ProductDetails";
 }
 
+<style>
+    .product-nav-thumbs a.active {
+        background-color: burlywood;
+    }
+</style>
+
 <!-- Product detail contant start -->
 @*<input type="hidden" name="mainFeatureId" id="mainFeatureId" value="@Model.ProductMainFeatures.FirstOrDefault().Id" />
     <div class="contant">
@@ -831,17 +837,21 @@
                                     )
                                 </a>
                             </div><!-- End .rating-container -->
-                            @if (Model.PriceAfterDiscount < Model.Price)
-                            {
-                                <span class="product-price"><span id="productPriceAfterDiscount">@Model.PriceAfterDiscount.ToString("##,###")&nbsp;</span>تومان</span>
-
-                                <del class="price"><span id="productPrice">@Model.Price.ToString("##,###")</span> </del>
-                            }
-                            else if (Model.Price != 0)
-                            {
-                                <span class="product-price"><span id="productPrice">@Model.Price.ToString("##,###") &nbsp;</span> تومان</span>
-                            }
-
+                            <div class="ratings-container">
+                                @if (Model.PriceAfterDiscount < Model.Price)
+                                {
+                                    <div class="col-md-4">
+                                        <span class="product-price"><span id="productPriceAfterDiscount">@Model.PriceAfterDiscount.ToString("##,###")&nbsp;</span>تومان</span>
+                                    </div>
+                                    <div class="col-md-8 rtl">
+                                        <del class="price"><span id="productPrice">@Model.Price.ToString("##,###")</span> </del>
+                                    </div><!-- End .ratings -->
+                                }
+                                else if (Model.Price != 0)
+                                {
+                                    <span class="product-price"><span id="productPrice">@Model.Price.ToString("##,###") &nbsp;</span> تومان</span>
+                                }
+                            </div>
                             <div class="product-content">
                                 <p>
                                     @{
@@ -870,19 +880,19 @@
 
                                     var i = 0;
 
-                                    var className = "";
-                                    i++;
-
-                                    if (i == 1)
-                                    {
-                                        className = "active";
-                                    }
                                     <label>@featureName : </label>
 
-                                    <div class="product-nav product-nav-thumbs">
+                                    <div class="product-nav product-nav-thumbs" id="product-main-btn">
                                         @foreach (var item in Model.ProductMainFeatures)
                                         {
-                                            <a href="javascript:void(0)" onclick="UpdateProductPrice(@item.ProductId,@item.Id, this)" class="@className">
+                                            var className = "";
+                                            i++;
+
+                                            if (i == 1)
+                                            {
+                                                className = "active";
+                                            }
+                                            <a href="javascript:void(0)" onclick="UpdateProductPrice(@item.ProductId,@item.Id, this)" class="test1 b @className">
                                                 @(item.SubFeature != null ? item.SubFeature.Value : item.Value)
                                             </a>
                                         }
@@ -1106,7 +1116,6 @@
         </div><!-- End .container -->
     </div><!-- End .page-content -->
 </main><!-- End .main -->
-
 <!-- Sticky Bar -->
 <div class="sticky-bar">
     <div class="container">
@@ -1125,18 +1134,18 @@
                 <div class="product-price">
                     @if (Model.PriceAfterDiscount < Model.Price)
                     {
-                        <span class="product-price"><span id="productPriceAfterDiscount">@Model.PriceAfterDiscount.ToString("##,###")&nbsp;</span>تومان</span>
+                        <span class="product-price"><span id="stiky-productPriceAfterDiscount">@Model.PriceAfterDiscount.ToString("##,###")&nbsp;</span>تومان</span>
 
-                        <del class="price"><span id="productPrice">@Model.Price.ToString("##,###")</span> </del>
+                        <del class="price"><span id="stiky-productPrice">@Model.Price.ToString("##,###")</span> </del>
                     }
                     else if (Model.Price != 0)
                     {
-                        <span class="product-price"><span id="productPrice">@Model.Price.ToString("##,###") &nbsp;</span> تومان</span>
+                        <span class="product-price"><span id="stiky-productPrice">@Model.Price.ToString("##,###") &nbsp;</span> تومان</span>
                     }
                 </div><!-- End .product-price -->
                 <div class="product-details-quantity">
                     @*<input type="number" id="sticky-cart-qty" class="form-control" value="1" min="1" max="10"
-                           step="1" data-decimals="0" required>*@
+                        step="1" data-decimals="0" required>*@
                     <div class="input-group  input-spinner">
                         <div class="input-group-append"><button class="btn btn-decrement btn-spinner" onclick="StikyIncreaseProductCount()" style="min-width: 26px"><i class="icon-plus"></i></button></div>
                         <div class="form-control"><span readonly="readonly" id="stiky-txtProductCount">1</span></div>
@@ -1184,6 +1193,7 @@
                 addCount -= 1;
             $("#stiky-txtProductCount").html(addCount);
         }
+
         //$(document).ready(function () {
         //    $('div.product-nav :first-child').addClass("active");
 
@@ -1194,13 +1204,32 @@
 
 
         $(document).ready(function () {
-            $('#glasscase').glassCase({
-                'thumbsPosition': 'bottom',
-                'widthDisplayPerc': 100,
-                isDownloadEnabled: false,
-                zoomPosition: 'left'
-            });
+            //$('#glasscase').glassCase({
+            //    'thumbsPosition': 'bottom',
+            //    'widthDisplayPerc': 100,
+            //    isDownloadEnabled: false,
+            //    zoomPosition: 'left'
+            //});
+
+            // Get the container element
+            var btnContainer = document.getElementById("product-main-btn");
+
+            // Get all buttons with class="btn" inside the container
+            var btns = btnContainer.getElementsByClassName("test1");
+
+            console.log(btns)
+            // Loop through the buttons and add the active class to the current/clicked button
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].addEventListener("click", function () {
+                    var current = document.getElementsByClassName("b active");
+                    console.log(current)
+                    current[0].className = current[0].className.replace(" b active", "");
+                    this.className += " b active";
+                });
+            }
+
         });
+
         function UpdateProductPrice(productId, mainFeatureId, target) {
             //$(".product-side-price-box").LoadingOverlay("show", {
             //    image: "",
@@ -1213,9 +1242,10 @@
                 success: function (data) {
                     var obj = JSON.parse(data);
                     $("#productPrice").html(obj.price);
+                    $("#stiky-productPrice").html(obj.price);
                     $("#mainFeatureId").val(mainFeatureId);
                     $("#productPriceAfterDiscount").html(obj.priceAfterDiscount);
-
+                    $("#stiky-productPriceAfterDiscount").html(obj.priceAfterDiscount);
 
                     //$(".active-color").removeClass("active-color");
                     //var selected = target.getElementsByClassName("spn-product-code")[0];
