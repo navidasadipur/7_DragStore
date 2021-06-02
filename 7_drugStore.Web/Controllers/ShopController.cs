@@ -152,16 +152,6 @@ namespace drugStore7.Web.Controllers
             return View(vm);
         }
 
-        //public ActionResult LatestProductsSidebar(int take)
-        //{
-        //    var products = _productService.GetTopSoldProductsWithPrice(take);
-        //    var vm = new List<ProductWithPriceViewModel>();
-        //    foreach (var product in products)
-        //        vm.Add(new ProductWithPriceViewModel(product));
-
-        //    return PartialView(vm);
-        //}
-
         [Route("ProductsGrid")]
         public ActionResult ProductsGrid(GridViewModel grid)
         {

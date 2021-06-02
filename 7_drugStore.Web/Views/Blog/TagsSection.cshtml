@@ -1,21 +1,6 @@
 ﻿@model List<drugStore7.Core.Models.ArticleTag>
 
 
-@*<div id="tag_cloud-3" class="widget widget_tag_cloud">
-    <h2 class="widgettitle">
-        برچسب ها<span class="arrow"></span>
-    </h2>
-    <div class="tagcloud">
-        @for (int i = 0; i < Model.Count(); i++)
-        {
-            <a href="/Blog?searchString=@Model[i].Title.Replace(" ", "+")"
-               class="tag-cloud-link tag-link-42 tag-link-position-@(i+1)"
-               aria-label="Just In (@(i+1) items)">@Model[i].Title</a>
-
-        }
-    </div>
-</div>*@
-
 <div class="widget">
     <h3 class="widget-title">برچسب ها</h3><!-- End .widget-title -->
 

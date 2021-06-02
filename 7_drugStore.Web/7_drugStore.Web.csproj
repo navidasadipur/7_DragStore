@@ -10614,19 +10614,8 @@
     <Content Include="Views\Account\AccessDenied.cshtml" />
     <Content Include="Views\Account\Login2.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
-    <Content Include="Views\Home\Shop.cshtml" />
-    <Content Include="Views\Home\ShopList.cshtml" />
-    <Content Include="Views\Home\Product.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Home\Register.cshtml" />
-    <Content Include="Views\Home\WhishList.cshtml" />
     <Content Include="Views\Home\Faq.cshtml" />
-    <Content Include="Views\Home\Guide.cshtml" />
-    <Content Include="Views\Home\Checkout.cshtml" />
-    <Content Include="Views\Home\Cart.cshtml" />
     <Content Include="Views\Home\HomeTopSliderSection.cshtml" />
-    <Content Include="Views\Shared\_HeaderPartial.cshtml" />
-    <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\Home\OffersSection.cshtml" />
     <Content Include="Views\Home\TopSoldProductsSection.cshtml" />
     <Content Include="Views\Home\TestimonialsSection.cshtml" />
@@ -10662,7 +10651,6 @@
     <Content Include="Views\Payment\Error.cshtml" />
     <Content Include="Views\Payment\Succeed.cshtml" />
     <Content Include="Views\Home\FooterSection.cshtml" />
-    <Content Include="Views\Home\FooterTopSection.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\OurTeamsSection.cshtml" />
     <Content Include="Views\Home\AboutOurPropertiesSection.cshtml" />
@@ -10674,7 +10662,6 @@
     <Content Include="Views\Blog\SocialsSection.cshtml" />
     <Content Include="Views\Blog\RelatedBlogsSection.cshtml" />
     <Content Include="Views\Shop\SocialsSection.cshtml" />
-    <Content Include="Views\Shop\ProductGallerySection.cshtml" />
     <Content Include="Views\Shop\ProductDetailsDescrioptinSection.cshtml" />
     <Content Include="Views\Shop\ProductDetailsBrandSection.cshtml" />
     <Content Include="Views\Home\MobileHeaderSection.cshtml" />

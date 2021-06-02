@@ -298,33 +298,6 @@ namespace drugStore7.Web.Controllers
             return PartialView(products);
         }
 
-        //public ActionResult Shop()
-        //{
-        //    return View();
-        //}
-        //public ActionResult ShopList()
-        //{
-        //    return View();
-        //}
-        //public ActionResult Product()
-        //{
-        //    return View();
-        //}
-        //public ActionResult Login()
-        //{
-        //    return View();
-        //}
-
-        //public ActionResult Register()
-        //{
-        //    return View();
-        //}
-
-        //public ActionResult WhishList()
-        //{
-        //    return View();
-        //}
-
         [Route("Faq")]
         public ActionResult Faq()
         {
@@ -339,42 +312,6 @@ namespace drugStore7.Web.Controllers
 
             return View(model);
         }
-
-        //public ActionResult Guide()
-        //{
-        //    var guide = _staticContentRepo.GetSingleContentByTypeId((int)StaticContentTypes.Guide);
-        //    if (guide != null)
-        //        ViewBag.Guide = guide.ShortDescription;
-
-        //    var banner = "";
-        //    try
-        //    {
-        //        banner = _staticContentRepo.GetSingleContentDetailByTitle("سربرگ راهنمای آنلاین").Image;
-        //        banner = "/Files/StaticContentImages/Image/" + banner;
-        //    }
-        //    catch
-        //    {
-
-        //    }
-
-        //    ViewBag.banner = banner;
-
-        //    return View();
-        //}
-
-        //public ActionResult Checkout()
-        //{
-        //    ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
-
-        //    return View();
-        //}
-
-        //public ActionResult Cart()
-        //{
-        //    ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
-
-        //    return View();
-        //}
 
         [Route("About")]
         public ActionResult About()
