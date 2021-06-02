@@ -216,17 +216,18 @@
         <div class="checkout">
             <div class="container">
                 <div class="checkout-discount">
-                    <div class="checkout-discount">
+                    @*<div class="checkout-discount">
                         <form action="#">
-                            <input type="text" class="form-control" id="checkout-discount-input" required >
-                            <label for="checkout-discount-input" class="text-truncate">
+                            <label for="txtDiscountCode" class="text-truncate">
                                 کد تخفیف دارید؟ <span>
                                     برای
                                     وارد کردن کد تخفیف خود اینجا کلیک کنید
                                 </span>
                             </label>
+                            <input type="text" class="form-control" id="txtDiscountCode" name="txtDiscountCode" required>
                         </form>
-                    </div><!-- End .checkout-discount -->
+                    </div> End .checkout-discount*@ 
+
                     @*@if (ViewBag.Errors.Count > 0)
                     {
                         <div class="row">

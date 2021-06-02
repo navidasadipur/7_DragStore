@@ -170,7 +170,6 @@ namespace drugStore7.Web.ViewModels
         public string Phone { get; set; }
 
         [Display(Name = "نام شرکت")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public string CompanyName { get; set; }
 
         [Display(Name = "کشور")]
