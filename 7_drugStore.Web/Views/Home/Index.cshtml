@@ -170,12 +170,12 @@
         @Html.Action("LatestArticlesSection", "Home", new { take = 4})
 
         <div class="newsletter m-0"
-             style="background-image: url(./Content/client/assets/images/medicine_images/newsletter/cdc-tLQRMO33DeI-unsplash-2.jpg);">
+             style="background-image: url(/Files/StaticContentImages/Image/@ViewBag.NewsBackImage);">
             <div class="container">
                 <div class="subscribe text-center">
                     <div class="intro">
-                        <h3 class="title text-center">عضویت در خبرنامه ما</h3>
-                        <h4 class="content">با عضویت در خبرنامه از جدیدترین محصولات و تخفیف ها باخبر شوید</h4>
+                        <h3 class="title text-center">@ViewBag.NewsTitle</h3>
+                        <h4 class="content">@ViewBag.NewsShorDescription</h4>
                     </div>
                     <div class="subscribe action">
                         <form action="/Home/AddEmailSubscription" method="post">

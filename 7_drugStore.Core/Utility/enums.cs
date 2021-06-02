@@ -44,6 +44,7 @@ namespace drugStore7.Core.Utility
 
         Logo = 14,
         BackGroundImage = 2,
+        NewsBackImage = 8,
 
         BlogAd = 32,
     }

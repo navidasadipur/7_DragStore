@@ -70,6 +70,10 @@ namespace drugStore7.Web.Controllers
 
             ViewBag.BackImage = _staticContentRepo.GetStaticContentDetail((int)StaticContents.BackGroundImage).Image;
 
+            ViewBag.NewsBackImage = _staticContentRepo.GetStaticContentDetail((int)StaticContents.NewsBackImage).Image;
+            ViewBag.NewsTitle = _staticContentRepo.GetStaticContentDetail((int)StaticContents.NewsBackImage).Title;
+            ViewBag.NewsShorDescription = _staticContentRepo.GetStaticContentDetail((int)StaticContents.NewsBackImage).ShortDescription;
+
             return View(popup);
         }
 
