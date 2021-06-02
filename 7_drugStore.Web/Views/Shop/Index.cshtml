@@ -251,7 +251,14 @@
                                 <div class="sidebar sidebar-shop">
                                     <div class="widget widget-clean">
                                         <label>فیلترها : </label>
-                                        <a href='#' onclick='location.reload(true); return false;' class="sidebar-filter-clear">پاک کردن همه</a>
+                                        @if (@Request.Url.AbsoluteUri.ToString().EndsWith("hop") || @Request.Url.AbsoluteUri.ToString().EndsWith("hop#"))
+                                        {
+                                            <a href='#' onclick='location.reload(true); return false;' class="sidebar-filter-clear">پاک کردن همه</a>
+                                        }
+                                        else
+                                        {   
+                                            <a href="javascript:void(0)" class="sidebar-filter-clear" id="reload">پاک کردن همه</a>
+                                        }
                                     </div><!-- End .widget widget-clean -->
 
                                     <div class="widget widget-collapsible">
@@ -520,7 +527,14 @@
             $('#price-slider').mouseup(function () {
                 GetGrid();
             });
+
+            document.getElementById("reload").onclick = function() {reload()};
+
+
         });
+                function reload() {
+                window.location = window.location.href.split("?")[0];
+            }
 
                     function CheckPriceUpdated() {
         var newMintxt = $('.from').text();
