@@ -197,7 +197,7 @@
 
 
 <main class="main">
-    <div class="page-header text-center" style="background-image: url('/Content/client/assets/images/page-header-bg.jpg')">
+    <div class="page-header text-center" style="background-image: url('/Files/StaticContentImages/Image/@ViewBag.BanerImage')">
         <div class="container">
             <h1 class="page-title">صفحه پرداخت<span>فروشگاه</span></h1>
         </div><!-- End .container -->
@@ -274,7 +274,7 @@
 
 
                 </div><!-- End .checkout-discount -->
-                <form action="#">
+                <form action="/Shop/Checkout" method="post">
                     <div class="row">
                         
 
@@ -319,13 +319,13 @@
                                             <td>تخفیف</td>
                                             <td class="text-left">@strDiscount</td>
                                         </tr><!-- End .summary-subtotal -->
-                                        @if (overallPrice > 200000)
+                                        @*@if (overallPrice > 200000)
                                         {
                                             <tr>
                                                 <td>شیوه ارسال : </td>
                                                 <td class="text-left">ارسال رایگان</td>
                                             </tr>
-                                        }
+                                        }*@
                                         <tr>
                                             <td>تاریخ </td>
                                             <td class="text-left">@ViewBag.Today</td>

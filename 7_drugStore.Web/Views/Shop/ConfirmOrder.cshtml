@@ -1,10 +1,10 @@
 ﻿@model drugStore7.Web.ViewModels.CartModel
 
 @{
-    ViewBag.Title = "تایید نهایی";
+    ViewBag.Title = "تایید نهایی و پرداخت";
 }
 
-<div class="contant">
+@*<div class="contant">
     <div id="banner-part" class="banner inner-banner">
         <div class="container">
             <div class="bread-crumb-main">
@@ -22,11 +22,6 @@
         <div class="container">
             <div>
                 <div class="row">
-
-
-
-
-
 
                     <div class="col-12 col-lg-8">
 
@@ -173,7 +168,179 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
+
+
+
+<main class="main">
+    <div class="page-header text-center" style="background-image: url('/Files/StaticContentImages/Image/@ViewBag.BanerImage')">
+        <div class="container">
+            <h1 class="page-title">@ViewBag.Title<span>فروشگاه</span></h1>
+        </div><!-- End .container -->
+    </div><!-- End .page-header -->
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">خانه</a></li>
+                <li class="breadcrumb-item"><a href="/Shop">فروشگاه</a></li>
+                <li class="breadcrumb-item active" aria-current="page">@ViewBag.Title</li>
+            </ol>
+        </div><!-- End .container -->
+    </nav><!-- End .breadcrumb-nav -->
+
+    <div class="page-content">
+        <div class="checkout">
+            <div class="container">
+                <form action="/Payment/InitPay" method="post">
+                    <div class="row">
+                        <div class="col-lg-6 rtl">
+                            <a href="/Shop/Checkout/?invoiceNumber=@ViewBag.InvoiceNumber" class="btn-recheckout">بازگشت به صفحه قبل</a>
+                            <h2 class="checkout-title">مشخصات مشتری</h2><!-- End .checkout-title -->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>نام و نام خانوادگی :</label>
+                                </div><!-- End .col-sm-6 -->
+
+                                <div class="col-sm-6">
+                                    <label>@ViewBag.CustomerInfoView.Name</label>
+                                </div><!-- End .col-sm-6 -->
+                            </div><!-- End .row -->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>آدرس ایمیل : </label>
+                                </div><!-- End .col-sm-6 -->
+
+                                <div class="col-sm-6">
+                                    <label>@ViewBag.CustomerInfoView.Email</label>
+                                </div><!-- End .col-sm-6 -->
+                            </div><!-- End .row -->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>شماره موبایل :</label>
+                                </div><!-- End .col-sm-6 -->
+
+                                <div class="col-sm-6">
+                                    <label>@ViewBag.CustomerInfoView.Phone</label>
+                                </div><!-- End .col-sm-6 -->
+                            </div><!-- End .row -->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>آدرس :</label>
+                                </div><!-- End .col-sm-6 -->
+
+                                <div class="col-sm-6">
+                                    <label>@ViewBag.CustomerInfoView.Address</label>
+                                </div><!-- End .col-sm-6 -->
+                            </div><!-- End .row -->
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>کد پستی :</label>
+                                </div><!-- End .col-sm-6 -->
+
+                                <div class="col-sm-6">
+                                    <label>@ViewBag.CustomerInfoView.PostalCode</label>
+                                </div><!-- End .col-sm-6 -->
+                            </div><!-- End .row -->
+
+
+
+
+                        </div><!-- End .col-lg-9 -->
+                        <aside class="col-lg-6">
+                            <div class="summary">
+                                <h3 class="summary-title">سفارش شما</h3><!-- End .summary-title -->
+
+                                <table class="table table-summary">
+                                    <thead>
+                                        <tr>
+                                            <th>محصول</th>
+                                            <th>تصویر محصول</th>
+                                            <th class="text-left">جمع</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        @foreach (var item in Model.CartItems)
+                                        {
+                                            <tr>
+                                                <td><a href="./Product/@item.Id/@item.ProductName.Replace(' ', '-')">@item.ProductName</a></td>
+                                                <td class="product-col dt-center">
+                                                    <figure class="product-media">
+                                                        <a href="/Shop/Product/@item.Id">
+                                                            <img width="60px" height="60px" src="/Files/ProductImages/Thumb/@item.Image"
+                                                                 alt="@item.ProductName">
+                                                        </a>
+                                                    </figure>
+                                                </td>
+                                                <td class="text-left">@item.Price.ToString("##,###") تومان</td>
+                                            </tr>
+                                        }
+
+                                        @*<tr>
+                                    <td><a href="#">سارافون آبی بلند</a></td>
+                                    <td class="text-left">152,000 تومان</td>
+                                </tr>*@
+                                        @{
+                                            var overallPrice = ViewBag.DiscountAmount + Model.TotalPrice;
+                                            var strDiscount = ViewBag.DiscountAmount == 0 ? "0 تومان" : ViewBag.DiscountAmount.ToString("##,###") + " تومان";
+                                        }
+                                        <tr class="summary-subtotal">
+                                            <td>جمع سبد خرید</td>
+                                            <td></td>
+                                            <td class="text-left">@overallPrice.ToString("##,###") تومان</td>
+                                        </tr><!-- End .summary-subtotal -->
+                                        <tr class="summary-subtotal">
+                                            <td>تخفیف</td>
+                                            <td></td>
+                                            <td class="text-left">@strDiscount</td>
+                                        </tr><!-- End .summary-subtotal -->
+                                        @*@if (overallPrice > 200000)
+                                        {
+                                            <tr>
+                                                <td>شیوه ارسال : </td>
+                                                <td class="text-left">ارسال رایگان</td>
+                                            </tr>
+                                        }*@
+                                    <tr>
+                                        <td>تاریخ </td>
+                                        <td></td>
+                                        <td class="text-left">@ViewBag.Today</td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>شماره سفارش</b></td>
+                                        <td></td>
+                                        <td class="text-left">#@ViewBag.InvoiceNumber</td>
+                                    </tr>
+                                    <tr class="summary-total">
+                                        <td>مبلغ قابل پرداخت :</td>
+                                        <td></td>
+                                        <td class="text-left">@Model.TotalPrice.ToString("##,###") تومان</td>
+                                    </tr><!-- End .summary-total -->
+                                    </tbody>
+                                </table><!-- End .table table-summary -->
+
+                                <div class="accordion-summary" id="accordion-payment">
+                                    <input type="hidden" name="invoiceNumber" value="@ViewBag.InvoiceNumber" readonly="readonly" required />
+
+                                    <button type="submit" class="btn btn-outline-primary-2 btn-order btn-block">
+                                        <span class="btn-text">انتقال به درگاه بانکی</span>
+                                        <span class="btn-hover-text">پرداخت</span>
+                                    </button>
+                                </div>
+                            </div><!-- End .summary -->
+                        </aside><!-- End .col-lg-3 -->
+
+                    </div><!-- End .row -->
+                </form>
+            </div><!-- End .container -->
+        </div><!-- End .checkout -->
+    </div><!-- End .page-content -->
+</main><!-- End .main -->
+
+
+
+
+
 @section scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

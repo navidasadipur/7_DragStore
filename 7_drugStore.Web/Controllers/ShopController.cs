@@ -844,6 +844,9 @@ namespace drugStore7.Web.Controllers
             ViewBag.Errors = errors;
             ViewBag.DiscountCode = discountCode;
             ViewBag.DiscountAmount = discountAmount;
+
+            ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
+
             return View(cartModel);
         }
 
@@ -1095,6 +1098,9 @@ namespace drugStore7.Web.Controllers
             ViewBag.InvoiceNumber = invoiceNumber;
             ViewBag.DiscountCode = discountCode;
             ViewBag.DiscountAmount = discountAmount;
+
+            ViewBag.BanerImage = _staticContentRepo.GetStaticContentDetail(13).Image;
+
             return View(cartModel);
 
 
