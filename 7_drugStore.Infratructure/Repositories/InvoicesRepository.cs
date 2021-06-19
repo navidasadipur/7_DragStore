@@ -62,7 +62,8 @@ namespace drugStore7.Infrastructure.Repositories
         {
             var invoiceItem = _context.InvoiceItems.Find(invoiceItemId);
             var mainFeature = _context.ProductMainFeatures.Include(m=>m.SubFeature).FirstOrDefault(m=>m.Id == invoiceItem.MainFeatureId);
-            return mainFeature.SubFeature.Value;
+            //return mainFeature.SubFeature.Value;
+            return mainFeature.Value;
         }
 
         public List<Product> GertTopSoldProducts(int take)

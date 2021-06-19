@@ -48,7 +48,8 @@
                         @foreach (var item in Model.InvoiceItems)
                         {
                             <tr class="font-weight-boldest">
-                                <td class="pl-0 pt-7">@item.InvoiceItem.Product.Title (@item.MainFeature)</td>
+                                <td class="pl-0 pt-7">@item.InvoiceItem.Product.Title 
+                                (@item.MainFeature)</td>
                                 <td class="text-right pt-7">@item.InvoiceItem.Price تومان</td>
                                 <td class="text-right pt-7">@item.InvoiceItem.Quantity</td>
                                 <td class="text-danger pr-0 pt-7 text-right">@item.InvoiceItem.TotalPrice تومان</td>

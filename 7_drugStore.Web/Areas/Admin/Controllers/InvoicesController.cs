@@ -15,11 +15,13 @@ namespace drugStore7.Web.Areas.Admin.Controllers
     {
         private readonly InvoicesRepository _repo;
         private readonly GeoDivisionsRepository _GeoRepo;
+        private readonly ProductsRepository _productsRepo;
 
-        public InvoicesController(InvoicesRepository repo, GeoDivisionsRepository geoRepo)
+        public InvoicesController(InvoicesRepository repo, GeoDivisionsRepository geoRepo, ProductsRepository productsRepo)
         {
             _repo = repo;
             _GeoRepo = geoRepo;
+            this._productsRepo = productsRepo;
         }
 
         // GET: Admin/Invoices
@@ -54,7 +56,6 @@ namespace drugStore7.Web.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-
                 _repo.Update(invoice);
                 return RedirectToAction("Index");
             }
@@ -72,12 +73,15 @@ namespace drugStore7.Web.Areas.Admin.Controllers
             // Getting Invoice Item SubFeatures
             foreach (var invoiceItem in invoice.InvoiceItems)
             {
+                invoiceItem.Product = _productsRepo.GetProduct(invoiceItem.ProductId);
+
                 var invoiceItemWithMainFeature = new InvoiceItemWithMainFeatureViewModel
                 {
-                    InvoiceItem = invoiceItem, MainFeature = _repo.GetInvoiceItemsMainFeature(invoiceItem.Id)
+                    InvoiceItem = invoiceItem,
+                    MainFeature = _repo.GetInvoiceItemsMainFeature(invoiceItem.Id), 
+                  
                 };
                 vm.InvoiceItems.Add(invoiceItemWithMainFeature);
-
             }
             return View(vm);
         }
