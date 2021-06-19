@@ -387,27 +387,25 @@
                         <div class="entry-author-details">
                             <figure class="author-media">
                                 <a href="#">
-                                    <img src="/Content/client/assets/images/blog/single/author.jpg" alt="User name">
+                                    <img src="/Files/UserAvatars/Image/@Model.AuthorImage" alt="درباره نویسنده">
                                 </a>
                             </figure><!-- End .author-media -->
 
                             <div class="author-body">
                                 <div class="author-header row no-gutters flex-column flex-md-row">
                                     <div class="col-12">
-                                        <h4><a href="#">مدیر سایت</a></h4>
+                                        <h4><a href="#">@Model.Author</a></h4>
                                     </div><!-- End .col -->
-                                    <div class="col-auto mt-1 mt-md-0">
+                                    @*<div class="col-auto mt-1 mt-md-0">
                                         <a href="#" class="author-link">
                                             مشاهده همه پست های این نویسنده <i class="icon-long-arrow-left"></i>
                                         </a>
-                                    </div><!-- End .col -->
+                                    </div> End .col*@ 
                                 </div><!-- End .row -->
 
                                 <div class="author-content">
                                     <p>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم ایپسوم متن ساختگی با
-                                        تولید سادگی نامفهوملورم ایپسوم متن ساختگی با تولید سادگی نامفهوم لورم
-                                        ایپسوم متن ساختگی با تولید سادگی
+                                        @Model.AuthorInfo
                                     </p>
                                 </div><!-- End .author-content -->
                             </div><!-- End .author-body -->
@@ -437,7 +435,7 @@
                     <!-- End .related-posts -->
 
                     <div class="comments">
-                        <h3 class="title">3 دیدگاه</h3><!-- End .title -->
+                        <h3 class="title">@Model.ArticleComments.Count() دیدگاه</h3><!-- End .title -->
 
                         <ul>
                             @foreach (var comment in Model.ArticleComments)
@@ -446,7 +444,7 @@
                                     <div class="comment">
                                         <figure class="comment-media">
                                             <a href="#">
-                                                <img src="/Content/client/assets/images/blog/comments/3.jpg" alt="User name">
+                                                <img src="/Content/client/assets/images/blog/single/anonymousUser.png" alt="img">
                                             </a>
                                         </figure>
 
