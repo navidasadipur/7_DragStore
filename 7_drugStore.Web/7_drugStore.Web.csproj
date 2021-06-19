@@ -1834,10 +1834,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\client\.idea\.gitignore" />
-    <Content Include="Content\client\.idea\misc.xml" />
-    <Content Include="Content\client\.idea\modules.xml" />
-    <Content Include="Content\client\.idea\workspace.xml" />
     <Content Include="Content\client\assets\css\bootstrap-rtl.min.css" />
     <Content Include="Content\client\assets\css\bootstrap.min.css" />
     <Content Include="Content\client\assets\css\demos\carousel-layout.css" />
@@ -2107,7 +2103,7 @@
     <Content Include="Content\client\assets\images\medicine_images\garbage images\pexels-photo-415825_blue white pills.jpg" />
     <Content Include="Content\client\assets\images\medicine_images\garbage images\Pills-012.jpg" />
     <Content Include="Content\client\assets\images\medicine_images\garbage images\pina-messina-kfJkpeI6Lgc-unsplash.jpg" />
-    <Content Include="Content\client\assets\images\medicine_images\garbage images\pqzA565QxaPcdtTDqyTJz0i_ddN2_kqHoEyC1DW9e7xMWLufyZhl4EyEsvAYl_oDzWslTyTDMD0J9k4oGGaswxfMIl8h8AD1M1IO-BY051iE45JqD4gTFP_52-PdxQ-vaMmOXIcL.jfif" />
+    <Content Include="Content\client\assets\images\medicine_images\garbage images\pqzA565QxaPcdtTDqyTJz0i_d.jfif" />
     <Content Include="Content\client\assets\images\medicine_images\header\102838-2.jpg" />
     <Content Include="Content\client\assets\images\medicine_images\header\102838.jpg" />
     <Content Include="Content\client\assets\images\medicine_images\header\A_course_of_green_cefalexin_pills-2.jpg" />
@@ -8312,7 +8308,6 @@
     <Content Include="Areas\Admin\Views\ContactForm\View.cshtml" />
     <Content Include="Areas\Admin\Views\EmailSubscription\Index.cshtml" />
     <Content Include="Areas\Admin\Views\EmailSubscription\Delete.cshtml" />
-    <Content Include="Content\client\.idea\7_drug_store.iml" />
     <Content Include="Content\client\assets\fonts\dana-fanum-regular.woff" />
     <Content Include="Content\client\assets\fonts\dana-fanum-regular.woff2" />
     <Content Include="Content\client\assets\fonts\flaming\flaming-webfont.woff" />
@@ -8451,6 +8446,7 @@
     <Content Include="Areas\Customer\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Customer\Views\web.config" />
     <Content Include="Areas\Customer\Views\_ViewStart.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
